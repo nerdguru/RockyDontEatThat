@@ -122,6 +122,16 @@
 		F4C33E0815B62FFD00816700 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C33E0715B62FFD00816700 /* AppDelegate.m */; };
 		F4C33E0B15B62FFD00816700 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C33E0A15B62FFD00816700 /* RootViewController.m */; };
 		F4C33E0E15B62FFD00816700 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C33E0D15B62FFD00816700 /* HelloWorldLayer.m */; };
+		F4C33E1A15B7219000816700 /* AppIcon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E1915B7219000816700 /* AppIcon72x72.png */; };
+		F4C33E1C15B721AA00816700 /* AppIcon114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E1B15B721AA00816700 /* AppIcon114x114.png */; };
+		F4C33E1E15B721B200816700 /* AppIcon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E1D15B721B200816700 /* AppIcon57x57.png */; };
+		F4C33E2415B721DE00816700 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2315B721DE00816700 /* Default-Portrait~ipad.png */; };
+		F4C33E2615B721E500816700 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2515B721E500816700 /* Default-Landscape~ipad.png */; };
+		F4C33E2815B7221700816700 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2715B7221700816700 /* Default-Portrait@2x~ipad.png */; };
+		F4C33E2A15B7221C00816700 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2915B7221C00816700 /* Default-Landscape@2x~ipad.png */; };
+		F4C33E2B15B7308700816700 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2115B721D000816700 /* Default@2x.png */; };
+		F4C33E2C15B730A300816700 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E1F15B721CB00816700 /* Default.png */; };
+		F4C33E2E15B733B000816700 /* AppIcon144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2D15B733B000816700 /* AppIcon144x144.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -360,6 +370,16 @@
 		F4C33E0C15B62FFD00816700 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
 		F4C33E0D15B62FFD00816700 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		F4C33E0F15B62FFD00816700 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
+		F4C33E1915B7219000816700 /* AppIcon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon72x72.png; sourceTree = "<group>"; };
+		F4C33E1B15B721AA00816700 /* AppIcon114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon114x114.png; sourceTree = "<group>"; };
+		F4C33E1D15B721B200816700 /* AppIcon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon57x57.png; sourceTree = "<group>"; };
+		F4C33E1F15B721CB00816700 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		F4C33E2115B721D000816700 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		F4C33E2315B721DE00816700 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		F4C33E2515B721E500816700 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		F4C33E2715B7221700816700 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		F4C33E2915B7221C00816700 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		F4C33E2D15B733B000816700 /* AppIcon144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon144x144.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,6 +404,16 @@
 		F4C33C9515B62FFB00816700 = {
 			isa = PBXGroup;
 			children = (
+				F4C33E2D15B733B000816700 /* AppIcon144x144.png */,
+				F4C33E2915B7221C00816700 /* Default-Landscape@2x~ipad.png */,
+				F4C33E2715B7221700816700 /* Default-Portrait@2x~ipad.png */,
+				F4C33E2515B721E500816700 /* Default-Landscape~ipad.png */,
+				F4C33E2315B721DE00816700 /* Default-Portrait~ipad.png */,
+				F4C33E2115B721D000816700 /* Default@2x.png */,
+				F4C33E1F15B721CB00816700 /* Default.png */,
+				F4C33E1D15B721B200816700 /* AppIcon57x57.png */,
+				F4C33E1B15B721AA00816700 /* AppIcon114x114.png */,
+				F4C33E1915B7219000816700 /* AppIcon72x72.png */,
 				F4C33CB415B62FFB00816700 /* RockyDontEatThat */,
 				F4C33CA315B62FFB00816700 /* Frameworks */,
 				F4C33CA115B62FFB00816700 /* Products */,
@@ -817,6 +847,16 @@
 				F4C33CC315B62FFC00816700 /* Icon.png in Resources */,
 				F4C33CC515B62FFC00816700 /* Icon@2x.png in Resources */,
 				F4C33CC815B62FFC00816700 /* iTunesArtwork in Resources */,
+				F4C33E1A15B7219000816700 /* AppIcon72x72.png in Resources */,
+				F4C33E1C15B721AA00816700 /* AppIcon114x114.png in Resources */,
+				F4C33E1E15B721B200816700 /* AppIcon57x57.png in Resources */,
+				F4C33E2415B721DE00816700 /* Default-Portrait~ipad.png in Resources */,
+				F4C33E2615B721E500816700 /* Default-Landscape~ipad.png in Resources */,
+				F4C33E2815B7221700816700 /* Default-Portrait@2x~ipad.png in Resources */,
+				F4C33E2A15B7221C00816700 /* Default-Landscape@2x~ipad.png in Resources */,
+				F4C33E2B15B7308700816700 /* Default@2x.png in Resources */,
+				F4C33E2C15B730A300816700 /* Default.png in Resources */,
+				F4C33E2E15B733B000816700 /* AppIcon144x144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
