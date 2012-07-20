@@ -15,7 +15,6 @@
 		F4C33CAF15B62FFB00816700 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C33CAE15B62FFB00816700 /* UIKit.framework */; };
 		F4C33CB115B62FFB00816700 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C33CB015B62FFB00816700 /* Foundation.framework */; };
 		F4C33CB315B62FFB00816700 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C33CB215B62FFB00816700 /* CoreGraphics.framework */; };
-		F4C33CB715B62FFB00816700 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33CB615B62FFB00816700 /* Default.png */; };
 		F4C33CB915B62FFB00816700 /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33CB815B62FFB00816700 /* fps_images.png */; };
 		F4C33CBB15B62FFB00816700 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33CBA15B62FFB00816700 /* Icon-72.png */; };
 		F4C33CBD15B62FFC00816700 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33CBC15B62FFC00816700 /* Icon-Small-50.png */; };
@@ -132,6 +131,7 @@
 		F4C33E2B15B7308700816700 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2115B721D000816700 /* Default@2x.png */; };
 		F4C33E2C15B730A300816700 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E1F15B721CB00816700 /* Default.png */; };
 		F4C33E2E15B733B000816700 /* AppIcon144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2D15B733B000816700 /* AppIcon144x144.png */; };
+		F4C33E3915B8483200816700 /* ScaleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C33E3815B8483200816700 /* ScaleManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,7 +144,6 @@
 		F4C33CAE15B62FFB00816700 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F4C33CB015B62FFB00816700 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F4C33CB215B62FFB00816700 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		F4C33CB615B62FFB00816700 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
 		F4C33CB815B62FFB00816700 /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fps_images.png; path = Resources/fps_images.png; sourceTree = "<group>"; };
 		F4C33CBA15B62FFB00816700 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = "<group>"; };
 		F4C33CBC15B62FFC00816700 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Resources/Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -380,6 +379,8 @@
 		F4C33E2715B7221700816700 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		F4C33E2915B7221C00816700 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		F4C33E2D15B733B000816700 /* AppIcon144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon144x144.png; sourceTree = "<group>"; };
+		F4C33E3715B8483200816700 /* ScaleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleManager.h; sourceTree = "<group>"; };
+		F4C33E3815B8483200816700 /* ScaleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -450,6 +451,8 @@
 				F4C33E0715B62FFD00816700 /* AppDelegate.m */,
 				F4C33E0915B62FFD00816700 /* RootViewController.h */,
 				F4C33E0A15B62FFD00816700 /* RootViewController.m */,
+				F4C33E3715B8483200816700 /* ScaleManager.h */,
+				F4C33E3815B8483200816700 /* ScaleManager.m */,
 				F4C33E0C15B62FFD00816700 /* HelloWorldLayer.h */,
 				F4C33E0D15B62FFD00816700 /* HelloWorldLayer.m */,
 				F4C33E0F15B62FFD00816700 /* GameConfig.h */,
@@ -463,7 +466,6 @@
 		F4C33CB515B62FFB00816700 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F4C33CB615B62FFB00816700 /* Default.png */,
 				F4C33CB815B62FFB00816700 /* fps_images.png */,
 				F4C33CBA15B62FFB00816700 /* Icon-72.png */,
 				F4C33CBC15B62FFC00816700 /* Icon-Small-50.png */,
@@ -838,7 +840,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4C33CB715B62FFB00816700 /* Default.png in Resources */,
 				F4C33CB915B62FFB00816700 /* fps_images.png in Resources */,
 				F4C33CBB15B62FFB00816700 /* Icon-72.png in Resources */,
 				F4C33CBD15B62FFC00816700 /* Icon-Small-50.png in Resources */,
@@ -965,6 +966,7 @@
 				F4C33E0815B62FFD00816700 /* AppDelegate.m in Sources */,
 				F4C33E0B15B62FFD00816700 /* RootViewController.m in Sources */,
 				F4C33E0E15B62FFD00816700 /* HelloWorldLayer.m in Sources */,
+				F4C33E3915B8483200816700 /* ScaleManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

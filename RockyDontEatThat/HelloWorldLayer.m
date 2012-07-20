@@ -9,6 +9,7 @@
 
 // Import the interfaces
 #import "HelloWorldLayer.h"
+#import "ScaleManager.h"
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
@@ -33,10 +34,12 @@
 {
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
-	if( (self=[super init])) {
+	if( (self=[super initWithColor:ccc4(0, 255, 0, 255)])) {
 		
+        ScaleManager *scaleManager = [ScaleManager sharedScaleManager]; 
+        
 		// create and initialize a Label
-		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64];
+		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:[scaleManager scaleFontSize:64]];
 
 		// ask director the the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
@@ -46,6 +49,26 @@
 		
 		// add the label as a child to this Layer
 		[self addChild: label];
+        
+        // create and initialize a Label
+		CCLabelTTF *label2 = [CCLabelTTF labelWithString:@"TR" fontName:@"Marker Felt" fontSize:[scaleManager scaleFontSize:24]];
+		label2.position =  [scaleManager scalePointX:460 andY:300];
+		[self addChild: label2];
+        
+        // create and initialize a Label
+		CCLabelTTF *label3 = [CCLabelTTF labelWithString:@"TL" fontName:@"Marker Felt" fontSize:[scaleManager scaleFontSize:24]];
+		label3.position =  [scaleManager scalePointX:20 andY:300];
+		[self addChild: label3];
+        
+        // create and initialize a Label
+		CCLabelTTF *label4 = [CCLabelTTF labelWithString:@"BL" fontName:@"Marker Felt" fontSize:[scaleManager scaleFontSize:24]];
+		label4.position =  [scaleManager scalePointX:20 andY:20];
+		[self addChild: label4];
+        
+        // create and initialize a Label
+		CCLabelTTF *label5 = [CCLabelTTF labelWithString:@"BR" fontName:@"Marker Felt" fontSize:[scaleManager scaleFontSize:24]];
+		label5.position =  [scaleManager scalePointX:460 andY:20];
+		[self addChild: label5];
 	}
 	return self;
 }
