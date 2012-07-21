@@ -16,4 +16,5 @@
 +(id)sharedScaleManager;
 -(CGPoint)scalePointX:(float)x andY:(float)y; 
 -(float)scaleFontSize:(float)size;
+-(float)scaleImage;
 @end

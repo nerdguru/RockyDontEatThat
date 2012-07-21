@@ -75,4 +75,14 @@
         return 2*size;    
 }
 
+-(float)scaleImage {
+    float retval = 1.0;
+    if (!iPad)
+        retval =  0.50;
+    
+    NSLog(@"scaleImage: %f", retval);
+    return retval;
+    
+}
+
 @end
