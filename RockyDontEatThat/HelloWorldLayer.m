@@ -10,6 +10,7 @@
 // Import the interfaces
 #import "HelloWorldLayer.h"
 #import "ScaleManager.h"
+#import "CCAnimate+SequenceLoader.h"
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
@@ -57,6 +58,12 @@
         CCSprite *rocky = [CCSprite spriteWithSpriteFrameName:@"rocky01.png"];
         rocky.position = [scaleManager scalePointX:offset+85 andY:65];
         rocky.scale = [scaleManager scaleImage];
+        id rockyAnimate = [CCAnimate actionWithSpriteSequence:@"rocky%02d.png"
+                                                    numFrames:2
+                                                        delay:0.5
+                                         restoreOriginalFrame:NO];
+        id rockyRepeat=[CCRepeatForever actionWithAction:rockyAnimate];
+        [rocky runAction:rockyRepeat];
         [spritesBNode addChild:rocky];
         
         // Set up cheese sprite
