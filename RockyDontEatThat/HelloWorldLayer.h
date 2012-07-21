@@ -13,6 +13,7 @@
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayerColor
 {
+    CCLabelTTF *label1;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

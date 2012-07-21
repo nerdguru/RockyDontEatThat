@@ -132,6 +132,7 @@
 		F4C7242815BB2D62002F89FC /* home-sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242415BB2D62002F89FC /* home-sprites-hd.pvr.ccz */; };
 		F4C7242915BB2D62002F89FC /* home-sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242515BB2D62002F89FC /* home-sprites.plist */; };
 		F4C7242A15BB2D62002F89FC /* home-sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242615BB2D62002F89FC /* home-sprites.pvr.ccz */; };
+		F4C7242C15BB5607002F89FC /* Hobo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242B15BB5607002F89FC /* Hobo.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -383,6 +384,7 @@
 		F4C7242415BB2D62002F89FC /* home-sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-sprites-hd.pvr.ccz"; sourceTree = "<group>"; };
 		F4C7242515BB2D62002F89FC /* home-sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "home-sprites.plist"; sourceTree = "<group>"; };
 		F4C7242615BB2D62002F89FC /* home-sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-sprites.pvr.ccz"; sourceTree = "<group>"; };
+		F4C7242B15BB5607002F89FC /* Hobo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hobo.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -472,6 +474,7 @@
 		F4C33CB515B62FFB00816700 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F4C7242B15BB5607002F89FC /* Hobo.ttf */,
 				F4C7242315BB2D62002F89FC /* home-sprites-hd.plist */,
 				F4C7242415BB2D62002F89FC /* home-sprites-hd.pvr.ccz */,
 				F4C7242515BB2D62002F89FC /* home-sprites.plist */,
@@ -860,6 +863,7 @@
 				F4C7242815BB2D62002F89FC /* home-sprites-hd.pvr.ccz in Resources */,
 				F4C7242915BB2D62002F89FC /* home-sprites.plist in Resources */,
 				F4C7242A15BB2D62002F89FC /* home-sprites.pvr.ccz in Resources */,
+				F4C7242C15BB5607002F89FC /* Hobo.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

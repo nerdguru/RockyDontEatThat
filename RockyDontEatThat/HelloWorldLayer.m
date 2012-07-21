@@ -30,6 +30,10 @@
 	return scene;
 }
 
+-(void) changeColor1 {
+    label1.color = ccc3(255,255,255);
+}
+
 // on "init" you need to initialize your instance
 -(id) init
 {
@@ -105,37 +109,34 @@
         [spritesBNode addChild:rbonetreat];
 
         
-		// create and initialize a Label
-		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:[scaleManager scaleFontSize:64]];
-
-		// ask director the the window size
-		CGSize size = [[CCDirector sharedDirector] winSize];
-	
-		// position the label on the center of the screen
-		label.position =  ccp( size.width /2 , size.height/2 );
-		
-		// add the label as a child to this Layer
-		[self addChild: label];
+		// create and initialize a Labels
+		label1 = [CCLabelTTF labelWithString:@"Rocky" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54]];
+        label1.color = ccc3(153,102,51);
+		label1.position =  [scaleManager scalePointX:70 andY:280];
+        [self addChild: label1];
+        id delay = [CCDelayTime actionWithDuration: 2.0];
+        id callback=[CCCallFunc actionWithTarget:self selector:@selector(changeColor1)];
+        [label1 runAction:[CCSequence actions:delay, callback, nil]];
         
         // create and initialize a Label
-		CCLabelTTF *label2 = [CCLabelTTF labelWithString:@"TR" fontName:@"Marker Felt" fontSize:[scaleManager scaleFontSize:24]];
-		label2.position =  [scaleManager scalePointX:460 andY:300];
+		CCLabelTTF *label2 = [CCLabelTTF labelWithString:@"Don't" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54]];
+        label2.color = ccc3(153,102,51);
+		label2.position =  [scaleManager scalePointX:210 andY:280];
 		[self addChild: label2];
         
         // create and initialize a Label
-		CCLabelTTF *label3 = [CCLabelTTF labelWithString:@"TL" fontName:@"Marker Felt" fontSize:[scaleManager scaleFontSize:24]];
-		label3.position =  [scaleManager scalePointX:20 andY:300];
+		CCLabelTTF *label3 = [CCLabelTTF labelWithString:@"Eat" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54]];
+        label3.color = ccc3(153,102,51);
+		label3.position =  [scaleManager scalePointX:320 andY:280];
 		[self addChild: label3];
         
         // create and initialize a Label
-		CCLabelTTF *label4 = [CCLabelTTF labelWithString:@"BL" fontName:@"Marker Felt" fontSize:[scaleManager scaleFontSize:24]];
-		label4.position =  [scaleManager scalePointX:20 andY:20];
+		CCLabelTTF *label4 = [CCLabelTTF labelWithString:@"That!" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54]];
+        label4.color = ccc3(153,102,51);
+		label4.position =  [scaleManager scalePointX:420 andY:280];
 		[self addChild: label4];
         
-        // create and initialize a Label
-		CCLabelTTF *label5 = [CCLabelTTF labelWithString:@"BR" fontName:@"Marker Felt" fontSize:[scaleManager scaleFontSize:24]];
-		label5.position =  [scaleManager scalePointX:460 andY:20];
-		[self addChild: label5];
+
 	}
 	return self;
 }
