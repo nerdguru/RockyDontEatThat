@@ -126,12 +126,12 @@
 		F4C33E2C15B730A300816700 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E1F15B721CB00816700 /* Default.png */; };
 		F4C33E2E15B733B000816700 /* AppIcon144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2D15B733B000816700 /* AppIcon144x144.png */; };
 		F4C33E3915B8483200816700 /* ScaleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C33E3815B8483200816700 /* ScaleManager.m */; };
-		F4C7240115BB10A3002F89FC /* home-sprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4C723FD15BB10A3002F89FC /* home-sprites-hd.plist */; };
-		F4C7240215BB10A3002F89FC /* home-sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4C723FE15BB10A3002F89FC /* home-sprites-hd.pvr.ccz */; };
-		F4C7240315BB10A3002F89FC /* home-sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4C723FF15BB10A3002F89FC /* home-sprites.plist */; };
-		F4C7240415BB10A3002F89FC /* home-sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4C7240015BB10A3002F89FC /* home-sprites.pvr.ccz */; };
 		F4C7241115BB1BBF002F89FC /* CCAnimate+SequenceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C7240E15BB1BBE002F89FC /* CCAnimate+SequenceLoader.m */; };
 		F4C7241215BB1BBF002F89FC /* CCAnimation+SequenceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C7241015BB1BBF002F89FC /* CCAnimation+SequenceLoader.m */; };
+		F4C7242715BB2D62002F89FC /* home-sprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242315BB2D62002F89FC /* home-sprites-hd.plist */; };
+		F4C7242815BB2D62002F89FC /* home-sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242415BB2D62002F89FC /* home-sprites-hd.pvr.ccz */; };
+		F4C7242915BB2D62002F89FC /* home-sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242515BB2D62002F89FC /* home-sprites.plist */; };
+		F4C7242A15BB2D62002F89FC /* home-sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242615BB2D62002F89FC /* home-sprites.pvr.ccz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -375,14 +375,14 @@
 		F4C33E2D15B733B000816700 /* AppIcon144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon144x144.png; sourceTree = "<group>"; };
 		F4C33E3715B8483200816700 /* ScaleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleManager.h; sourceTree = "<group>"; };
 		F4C33E3815B8483200816700 /* ScaleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleManager.m; sourceTree = "<group>"; };
-		F4C723FD15BB10A3002F89FC /* home-sprites-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "home-sprites-hd.plist"; sourceTree = "<group>"; };
-		F4C723FE15BB10A3002F89FC /* home-sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-sprites-hd.pvr.ccz"; sourceTree = "<group>"; };
-		F4C723FF15BB10A3002F89FC /* home-sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "home-sprites.plist"; sourceTree = "<group>"; };
-		F4C7240015BB10A3002F89FC /* home-sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-sprites.pvr.ccz"; sourceTree = "<group>"; };
 		F4C7240D15BB1BBE002F89FC /* CCAnimate+SequenceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCAnimate+SequenceLoader.h"; sourceTree = "<group>"; };
 		F4C7240E15BB1BBE002F89FC /* CCAnimate+SequenceLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCAnimate+SequenceLoader.m"; sourceTree = "<group>"; };
 		F4C7240F15BB1BBF002F89FC /* CCAnimation+SequenceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCAnimation+SequenceLoader.h"; sourceTree = "<group>"; };
 		F4C7241015BB1BBF002F89FC /* CCAnimation+SequenceLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCAnimation+SequenceLoader.m"; sourceTree = "<group>"; };
+		F4C7242315BB2D62002F89FC /* home-sprites-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "home-sprites-hd.plist"; sourceTree = "<group>"; };
+		F4C7242415BB2D62002F89FC /* home-sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-sprites-hd.pvr.ccz"; sourceTree = "<group>"; };
+		F4C7242515BB2D62002F89FC /* home-sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "home-sprites.plist"; sourceTree = "<group>"; };
+		F4C7242615BB2D62002F89FC /* home-sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-sprites.pvr.ccz"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -472,10 +472,10 @@
 		F4C33CB515B62FFB00816700 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F4C723FD15BB10A3002F89FC /* home-sprites-hd.plist */,
-				F4C723FE15BB10A3002F89FC /* home-sprites-hd.pvr.ccz */,
-				F4C723FF15BB10A3002F89FC /* home-sprites.plist */,
-				F4C7240015BB10A3002F89FC /* home-sprites.pvr.ccz */,
+				F4C7242315BB2D62002F89FC /* home-sprites-hd.plist */,
+				F4C7242415BB2D62002F89FC /* home-sprites-hd.pvr.ccz */,
+				F4C7242515BB2D62002F89FC /* home-sprites.plist */,
+				F4C7242615BB2D62002F89FC /* home-sprites.pvr.ccz */,
 				F4C33CB815B62FFB00816700 /* fps_images.png */,
 				F4C33CC615B62FFC00816700 /* Info.plist */,
 				F4C33CC715B62FFC00816700 /* iTunesArtwork */,
@@ -856,10 +856,10 @@
 				F4C33E2B15B7308700816700 /* Default@2x.png in Resources */,
 				F4C33E2C15B730A300816700 /* Default.png in Resources */,
 				F4C33E2E15B733B000816700 /* AppIcon144x144.png in Resources */,
-				F4C7240115BB10A3002F89FC /* home-sprites-hd.plist in Resources */,
-				F4C7240215BB10A3002F89FC /* home-sprites-hd.pvr.ccz in Resources */,
-				F4C7240315BB10A3002F89FC /* home-sprites.plist in Resources */,
-				F4C7240415BB10A3002F89FC /* home-sprites.pvr.ccz in Resources */,
+				F4C7242715BB2D62002F89FC /* home-sprites-hd.plist in Resources */,
+				F4C7242815BB2D62002F89FC /* home-sprites-hd.pvr.ccz in Resources */,
+				F4C7242915BB2D62002F89FC /* home-sprites.plist in Resources */,
+				F4C7242A15BB2D62002F89FC /* home-sprites.pvr.ccz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

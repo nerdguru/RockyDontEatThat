@@ -46,6 +46,8 @@
         bg.scale = [scaleManager scaleImage];
         [self addChild: bg];*/
         
+        [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
+
 
         // Initialize sprite sheet
         CCSpriteBatchNode *spritesBNode;

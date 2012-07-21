@@ -7,7 +7,7 @@
             <key>cheese.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{658,451},{185,167}}</string>
+                <string>{{672,465},{185,167}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>chocolate.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{658,144},{255,149}}</string>
+                <string>{{672,150},{255,149}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,54 +33,54 @@
             <key>pgrapes.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{658,293},{216,158}}</string>
+                <string>{{672,301},{220,162}}</string>
                 <key>offset</key>
-                <string>{-1,0}</string>
+                <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{1,2},{216,158}}</string>
+                <string>{{0,0},{220,162}}</string>
                 <key>sourceSize</key>
                 <string>{220,162}</string>
             </dict>
             <key>rbonetreat.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{658,0},{262,144}}</string>
+                <string>{{672,0},{266,148}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{2,2},{262,144}}</string>
+                <string>{{0,0},{266,148}}</string>
                 <key>sourceSize</key>
                 <string>{266,148}</string>
             </dict>
             <key>rocky01.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,0},{658,477}}</string>
+                <string>{{0,487},{670,485}}</string>
                 <key>offset</key>
-                <string>{-1,0}</string>
+                <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{5,3},{658,477}}</string>
+                <string>{{0,0},{670,485}}</string>
                 <key>sourceSize</key>
-                <string>{670,483}</string>
+                <string>{670,485}</string>
             </dict>
             <key>rocky02.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,477},{657,421}}</string>
+                <string>{{0,0},{670,485}}</string>
                 <key>offset</key>
-                <string>{0,28}</string>
+                <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{6,3},{657,421}}</string>
+                <string>{{0,0},{670,485}}</string>
                 <key>sourceSize</key>
-                <string>{669,483}</string>
+                <string>{670,485}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -90,9 +90,9 @@
             <key>realTextureFileName</key>
             <string>home-sprites-hd.pvr.ccz</string>
             <key>size</key>
-            <string>{920,898}</string>
+            <string>{938,972}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:78c7235ca61f57e0212c58e307af85c2$</string>
+            <string>$TexturePacker:SmartUpdate:7ae67c7d13ead1f86a6af349827e6d2a$</string>
             <key>textureFileName</key>
             <string>home-sprites-hd.pvr.ccz</string>
         </dict>
