@@ -1,19 +1,19 @@
 //
-//  HelloWorldLayer.m
+//  AWHHomeLayer.m
 //  RockyDontEatThat
 //
-//  Created by Pete Johnson on 7/17/12.
-//  Copyright __MyCompanyName__ 2012. All rights reserved.
+//  Created by Pete Johnson on 7/22/12.
+//  Copyright 2012 Apps With Heart. All rights reserved.
 //
 
-
-// Import the interfaces
-#import "HelloWorldLayer.h"
-#import "ScaleManager.h"
+#import "AWHHomeLayer.h"
+#import "SimpleAudioEngine.h"
+#import "AWHScaleManager.h"
 #import "CCAnimate+SequenceLoader.h"
+#import "AWHSynchLabel.h"
 
-// HelloWorldLayer implementation
-@implementation HelloWorldLayer
+
+@implementation AWHHomeLayer
 
 +(CCScene *) scene
 {
@@ -21,7 +21,7 @@
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	HelloWorldLayer *layer = [HelloWorldLayer node];
+	AWHHomeLayer *layer = [AWHHomeLayer node];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
@@ -41,18 +41,23 @@
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super initWithColor:ccc4(242, 220, 219, 255)])) {
 		
-        ScaleManager *scaleManager = [ScaleManager sharedScaleManager]; 
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"Title.mp3"];
+        AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
+        AWHSynchLabel *synchLabel=[[AWHSynchLabel alloc] initWithLabel:@"Rocky Don't Eat That!"];
+        [self addChild:synchLabel];
+        
+        //SoundSynchedLabel *mainLabel = [[SoundSynchedLabel alloc] initWithLabel:@"Rocky Don't Eat That!" @"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54]];
         
         //CCSprite *bg=[CCSprite spriteWithFile:@"home-bg-1920x1280.png"];
         /*CCSprite *bg=[CCSprite spriteWithFile:@"home-bg-960x640.png"];
-        bg.anchorPoint = ccp(0,0);
-        bg.position=[scaleManager scalePointX:0 andY:0];
-        bg.scale = [scaleManager scaleImage];
-        [self addChild: bg];*/
+         bg.anchorPoint = ccp(0,0);
+         bg.position=[scaleManager scalePointX:0 andY:0];
+         bg.scale = [scaleManager scaleImage];
+         [self addChild: bg];*/
         
         [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
-
-
+        
+        
         // Initialize sprite sheet
         CCSpriteBatchNode *spritesBNode;
         spritesBNode = [CCSpriteBatchNode batchNodeWithFile:@"home-sprites.pvr.ccz"];
@@ -107,7 +112,7 @@
         id rbonetreatRepeat=[CCRepeatForever actionWithAction:rbonetreatRotate];
         [rbonetreat runAction:rbonetreatRepeat];
         [spritesBNode addChild:rbonetreat];
-
+        
         
 		// create and initialize a Labels
 		label1 = [CCLabelTTF labelWithString:@"Rocky" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54]];
@@ -136,7 +141,7 @@
 		label4.position =  [scaleManager scalePointX:420 andY:280];
 		[self addChild: label4];
         
-
+        [[SimpleAudioEngine sharedEngine] playEffect:@"Title.mp3"];
 	}
 	return self;
 }
@@ -151,4 +156,6 @@
 	// don't forget to call "super dealloc"
 	[super dealloc];
 }
+
+
 @end

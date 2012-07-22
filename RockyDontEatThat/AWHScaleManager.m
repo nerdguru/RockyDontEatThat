@@ -1,14 +1,14 @@
 //
-//  ScaleManager.m
+//  AWHScaleManager.m
 //  RockyDontEatThat
 //
 //  Created by Pete Johnson on 7/19/12.
 //  Copyright (c) 2012 Apps With Heart. All rights reserved.
 //
 
-#import "ScaleManager.h"
+#import "AWHScaleManager.h"
 
-@implementation ScaleManager
+@implementation AWHScaleManager
 
 + (id)sharedScaleManager {
     static id sharedScaleManager = nil;

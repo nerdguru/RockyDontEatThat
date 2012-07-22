@@ -114,7 +114,6 @@
 		F4C33E0515B62FFD00816700 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C33E0415B62FFD00816700 /* main.m */; };
 		F4C33E0815B62FFD00816700 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C33E0715B62FFD00816700 /* AppDelegate.m */; };
 		F4C33E0B15B62FFD00816700 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C33E0A15B62FFD00816700 /* RootViewController.m */; };
-		F4C33E0E15B62FFD00816700 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C33E0D15B62FFD00816700 /* HelloWorldLayer.m */; };
 		F4C33E1A15B7219000816700 /* AppIcon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E1915B7219000816700 /* AppIcon72x72.png */; };
 		F4C33E1C15B721AA00816700 /* AppIcon114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E1B15B721AA00816700 /* AppIcon114x114.png */; };
 		F4C33E1E15B721B200816700 /* AppIcon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E1D15B721B200816700 /* AppIcon57x57.png */; };
@@ -125,7 +124,7 @@
 		F4C33E2B15B7308700816700 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2115B721D000816700 /* Default@2x.png */; };
 		F4C33E2C15B730A300816700 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E1F15B721CB00816700 /* Default.png */; };
 		F4C33E2E15B733B000816700 /* AppIcon144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2D15B733B000816700 /* AppIcon144x144.png */; };
-		F4C33E3915B8483200816700 /* ScaleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C33E3815B8483200816700 /* ScaleManager.m */; };
+		F4C33E3915B8483200816700 /* AWHScaleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C33E3815B8483200816700 /* AWHScaleManager.m */; };
 		F4C7241115BB1BBF002F89FC /* CCAnimate+SequenceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C7240E15BB1BBE002F89FC /* CCAnimate+SequenceLoader.m */; };
 		F4C7241215BB1BBF002F89FC /* CCAnimation+SequenceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C7241015BB1BBF002F89FC /* CCAnimation+SequenceLoader.m */; };
 		F4C7242715BB2D62002F89FC /* home-sprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242315BB2D62002F89FC /* home-sprites-hd.plist */; };
@@ -133,6 +132,9 @@
 		F4C7242915BB2D62002F89FC /* home-sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242515BB2D62002F89FC /* home-sprites.plist */; };
 		F4C7242A15BB2D62002F89FC /* home-sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242615BB2D62002F89FC /* home-sprites.pvr.ccz */; };
 		F4C7242C15BB5607002F89FC /* Hobo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242B15BB5607002F89FC /* Hobo.ttf */; };
+		F4C7242E15BB6008002F89FC /* Title.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242D15BB6008002F89FC /* Title.mp3 */; };
+		F4C7243415BC65C1002F89FC /* AWHSynchLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C7243315BC65C1002F89FC /* AWHSynchLabel.m */; };
+		F4C7243B15BC685C002F89FC /* AWHHomeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C7243A15BC685C002F89FC /* AWHHomeLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -361,8 +363,6 @@
 		F4C33E0715B62FFD00816700 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F4C33E0915B62FFD00816700 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		F4C33E0A15B62FFD00816700 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		F4C33E0C15B62FFD00816700 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		F4C33E0D15B62FFD00816700 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		F4C33E0F15B62FFD00816700 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		F4C33E1915B7219000816700 /* AppIcon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon72x72.png; sourceTree = "<group>"; };
 		F4C33E1B15B721AA00816700 /* AppIcon114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon114x114.png; sourceTree = "<group>"; };
@@ -374,8 +374,8 @@
 		F4C33E2715B7221700816700 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		F4C33E2915B7221C00816700 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		F4C33E2D15B733B000816700 /* AppIcon144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon144x144.png; sourceTree = "<group>"; };
-		F4C33E3715B8483200816700 /* ScaleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleManager.h; sourceTree = "<group>"; };
-		F4C33E3815B8483200816700 /* ScaleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleManager.m; sourceTree = "<group>"; };
+		F4C33E3715B8483200816700 /* AWHScaleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHScaleManager.h; sourceTree = "<group>"; };
+		F4C33E3815B8483200816700 /* AWHScaleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHScaleManager.m; sourceTree = "<group>"; };
 		F4C7240D15BB1BBE002F89FC /* CCAnimate+SequenceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCAnimate+SequenceLoader.h"; sourceTree = "<group>"; };
 		F4C7240E15BB1BBE002F89FC /* CCAnimate+SequenceLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCAnimate+SequenceLoader.m"; sourceTree = "<group>"; };
 		F4C7240F15BB1BBF002F89FC /* CCAnimation+SequenceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCAnimation+SequenceLoader.h"; sourceTree = "<group>"; };
@@ -385,6 +385,11 @@
 		F4C7242515BB2D62002F89FC /* home-sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "home-sprites.plist"; sourceTree = "<group>"; };
 		F4C7242615BB2D62002F89FC /* home-sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-sprites.pvr.ccz"; sourceTree = "<group>"; };
 		F4C7242B15BB5607002F89FC /* Hobo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hobo.ttf; sourceTree = "<group>"; };
+		F4C7242D15BB6008002F89FC /* Title.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Title.mp3; sourceTree = "<group>"; };
+		F4C7243215BC65C1002F89FC /* AWHSynchLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHSynchLabel.h; sourceTree = "<group>"; };
+		F4C7243315BC65C1002F89FC /* AWHSynchLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHSynchLabel.m; sourceTree = "<group>"; };
+		F4C7243915BC685C002F89FC /* AWHHomeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHHomeLayer.h; sourceTree = "<group>"; };
+		F4C7243A15BC685C002F89FC /* AWHHomeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHHomeLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -451,19 +456,17 @@
 		F4C33CB415B62FFB00816700 /* RockyDontEatThat */ = {
 			isa = PBXGroup;
 			children = (
-				F4C7240D15BB1BBE002F89FC /* CCAnimate+SequenceLoader.h */,
-				F4C7240E15BB1BBE002F89FC /* CCAnimate+SequenceLoader.m */,
-				F4C7240F15BB1BBF002F89FC /* CCAnimation+SequenceLoader.h */,
-				F4C7241015BB1BBF002F89FC /* CCAnimation+SequenceLoader.m */,
 				F4C33E0615B62FFD00816700 /* AppDelegate.h */,
 				F4C33E0715B62FFD00816700 /* AppDelegate.m */,
+				F4C33E0F15B62FFD00816700 /* GameConfig.h */,
 				F4C33E0915B62FFD00816700 /* RootViewController.h */,
 				F4C33E0A15B62FFD00816700 /* RootViewController.m */,
-				F4C33E3715B8483200816700 /* ScaleManager.h */,
-				F4C33E3815B8483200816700 /* ScaleManager.m */,
-				F4C33E0C15B62FFD00816700 /* HelloWorldLayer.h */,
-				F4C33E0D15B62FFD00816700 /* HelloWorldLayer.m */,
-				F4C33E0F15B62FFD00816700 /* GameConfig.h */,
+				F4C33E3715B8483200816700 /* AWHScaleManager.h */,
+				F4C33E3815B8483200816700 /* AWHScaleManager.m */,
+				F4C7243215BC65C1002F89FC /* AWHSynchLabel.h */,
+				F4C7243315BC65C1002F89FC /* AWHSynchLabel.m */,
+				F4C7243915BC685C002F89FC /* AWHHomeLayer.h */,
+				F4C7243A15BC685C002F89FC /* AWHHomeLayer.m */,
 				F4C33CB515B62FFB00816700 /* Resources */,
 				F4C33CC915B62FFC00816700 /* libs */,
 				F4C33E0215B62FFD00816700 /* Supporting Files */,
@@ -474,6 +477,7 @@
 		F4C33CB515B62FFB00816700 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F4C7242D15BB6008002F89FC /* Title.mp3 */,
 				F4C7242B15BB5607002F89FC /* Hobo.ttf */,
 				F4C7242315BB2D62002F89FC /* home-sprites-hd.plist */,
 				F4C7242415BB2D62002F89FC /* home-sprites-hd.pvr.ccz */,
@@ -494,6 +498,7 @@
 				F4C33DD915B62FFD00816700 /* LICENSE_TouchJSON.txt */,
 				F4C33E0115B62FFD00816700 /* LICENSE_FontLabel.txt */,
 				F4C33CCA15B62FFC00816700 /* cocos2d */,
+				F4C7243815BC67F7002F89FC /* cocos2dExtensions */,
 				F4C33DC015B62FFD00816700 /* CocosDenshion */,
 				F4C33DCF15B62FFD00816700 /* cocoslive */,
 				F4C33DDA15B62FFD00816700 /* TouchJSON */,
@@ -797,6 +802,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F4C7243815BC67F7002F89FC /* cocos2dExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				F4C7240D15BB1BBE002F89FC /* CCAnimate+SequenceLoader.h */,
+				F4C7240E15BB1BBE002F89FC /* CCAnimate+SequenceLoader.m */,
+				F4C7240F15BB1BBF002F89FC /* CCAnimation+SequenceLoader.h */,
+				F4C7241015BB1BBF002F89FC /* CCAnimation+SequenceLoader.m */,
+			);
+			name = cocos2dExtensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -864,6 +880,7 @@
 				F4C7242915BB2D62002F89FC /* home-sprites.plist in Resources */,
 				F4C7242A15BB2D62002F89FC /* home-sprites.pvr.ccz in Resources */,
 				F4C7242C15BB5607002F89FC /* Hobo.ttf in Resources */,
+				F4C7242E15BB6008002F89FC /* Title.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -971,10 +988,11 @@
 				F4C33E0515B62FFD00816700 /* main.m in Sources */,
 				F4C33E0815B62FFD00816700 /* AppDelegate.m in Sources */,
 				F4C33E0B15B62FFD00816700 /* RootViewController.m in Sources */,
-				F4C33E0E15B62FFD00816700 /* HelloWorldLayer.m in Sources */,
-				F4C33E3915B8483200816700 /* ScaleManager.m in Sources */,
+				F4C33E3915B8483200816700 /* AWHScaleManager.m in Sources */,
 				F4C7241115BB1BBF002F89FC /* CCAnimate+SequenceLoader.m in Sources */,
 				F4C7241215BB1BBF002F89FC /* CCAnimation+SequenceLoader.m in Sources */,
+				F4C7243415BC65C1002F89FC /* AWHSynchLabel.m in Sources */,
+				F4C7243B15BC685C002F89FC /* AWHHomeLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

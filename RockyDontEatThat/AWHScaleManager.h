@@ -1,5 +1,5 @@
 //
-//  ScaleManager.h
+//  AWHScaleManager.h
 //  RockyDontEatThat
 //
 //  Created by Pete Johnson on 7/19/12.
@@ -8,7 +8,7 @@
 
 #import "cocos2d.h"
 
-@interface ScaleManager : NSObject
+@interface AWHScaleManager : NSObject
 {
     BOOL iPad;
     BOOL retina;
