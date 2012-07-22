@@ -10,8 +10,11 @@
 #import "cocos2d.h"
 
 @interface AWHSynchLabel : CCNode {
+    NSMutableArray *labelArray; 
+    ccColor3B myBaseColor;
+    ccColor3B myHighlightColor;
     
 }
--(id)initWithLabel:(NSString *)label;
+-(id)initWithLabel:(NSString *)label fontName:(NSString *)fname fontSize:(float)fsize withAnchor:(CGPoint)anchor withBaseColor:(ccColor3B)baseColor withHighlightColor:(ccColor3B)highlightColor;
 
 @end

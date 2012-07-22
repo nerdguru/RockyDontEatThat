@@ -43,10 +43,12 @@
 		
         [[SimpleAudioEngine sharedEngine] preloadEffect:@"Title.mp3"];
         AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
-        AWHSynchLabel *synchLabel=[[AWHSynchLabel alloc] initWithLabel:@"Rocky Don't Eat That!"];
+        ccColor3B rockyBrown = ccc3(153,102,51);
+        ccColor3B white = ccc3(255,255,255);
+        AWHSynchLabel *synchLabel=[[AWHSynchLabel alloc] initWithLabel:@"Rocky Don't Eat That!" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54] withAnchor:[scaleManager scalePointX:5 andY:250] withBaseColor:rockyBrown withHighlightColor:white];
         [self addChild:synchLabel];
         
-        //SoundSynchedLabel *mainLabel = [[SoundSynchedLabel alloc] initWithLabel:@"Rocky Don't Eat That!" @"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54]];
+        //SoundSynchedLabel *mainLabel = [[SoundSynchedLabel alloc] initWithLabel:@"Rocky Don't Eat That!" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54]];
         
         //CCSprite *bg=[CCSprite spriteWithFile:@"home-bg-1920x1280.png"];
         /*CCSprite *bg=[CCSprite spriteWithFile:@"home-bg-960x640.png"];
@@ -113,7 +115,7 @@
         [rbonetreat runAction:rbonetreatRepeat];
         [spritesBNode addChild:rbonetreat];
         
-        
+        /*
 		// create and initialize a Labels
 		label1 = [CCLabelTTF labelWithString:@"Rocky" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54]];
         label1.color = ccc3(153,102,51);
@@ -122,7 +124,7 @@
         id delay = [CCDelayTime actionWithDuration: 2.0];
         id callback=[CCCallFunc actionWithTarget:self selector:@selector(changeColor1)];
         [label1 runAction:[CCSequence actions:delay, callback, nil]];
-        
+
         // create and initialize a Label
 		CCLabelTTF *label2 = [CCLabelTTF labelWithString:@"Don't" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54]];
         label2.color = ccc3(153,102,51);
@@ -142,9 +144,24 @@
 		[self addChild: label4];
         
         [[SimpleAudioEngine sharedEngine] playEffect:@"Title.mp3"];
+         */
 	}
 	return self;
 }
+
+/*- (void)draw {
+    // ...
+    
+    // draw a simple line
+    // The default state is:
+    // Line Width: 1
+    // color: 255,255,255,255 (white, non-transparent)
+    // Anti-Aliased
+    glEnable(GL_LINE_SMOOTH);
+    ccDrawLine( ccp(307.5-(67.5/2), 230), ccp(307.5+(67.5/2), 230) );
+    
+    // ...
+}*/
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
