@@ -41,7 +41,9 @@
         AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
         ccColor3B rockyBrown = ccc3(153,102,51);
         ccColor3B white = ccc3(255,255,255);
-        AWHSynchLabel *synchLabel=[[AWHSynchLabel alloc] initWithLabel:@"Rocky Don't Eat That!" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54] withAnchor:[scaleManager scalePointX:5 andY:250] withBaseColor:rockyBrown withHighlightColor:white withIntervals:[NSArray arrayWithObjects:@"0.15",@"0.70",@"1.05",@"1.42", @"2.30",nil] withSound:@"Title.mp3"];
+        // Prepare the sound to be synched with
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"Title.mp3"];
+        AWHSynchLabel *synchLabel=[[AWHSynchLabel alloc] initWithLabel:@"Rocky Don't Eat That!" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54] withAnchor:[scaleManager scalePointX:5 andY:250] withBaseColor:rockyBrown withHighlightColor:white withIntervals:[NSArray arrayWithObjects:@"0.15",@"0.70",@"1.05",@"1.42", @"2.30",nil]];
         [self addChild:synchLabel];
         
         
@@ -102,6 +104,8 @@
         id rbonetreatRepeat=[CCRepeatForever actionWithAction:rbonetreatRotate];
         [rbonetreat runAction:rbonetreatRepeat];
         [spritesBNode addChild:rbonetreat];
+        [[SimpleAudioEngine sharedEngine] playEffect:@"Title.mp3"];
+
         
 	}
 	return self;

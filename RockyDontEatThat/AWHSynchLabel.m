@@ -45,11 +45,10 @@
 }
 
 // Note that initWithLabel assumes an Anchor (meaning bottom left) not a position (meaning center of the whole object)
--(id)initWithLabel:(NSString *)label fontName:(NSString *)fname fontSize:(float)fsize withAnchor:(CGPoint)anchor withBaseColor:(ccColor3B)baseColor withHighlightColor:(ccColor3B)highlightColor withIntervals:(NSArray *)intervalArray withSound:(NSString *)soundName{
+-(id)initWithLabel:(NSString *)label fontName:(NSString *)fname fontSize:(float)fsize withAnchor:(CGPoint)anchor withBaseColor:(ccColor3B)baseColor withHighlightColor:(ccColor3B)highlightColor withIntervals:(NSArray *)intervalArray {
     self = [super init];
     if (self) {
-        // Prepare the sound to be synched with
-        [[SimpleAudioEngine sharedEngine] preloadEffect:soundName];
+        
         
         // Save off the anchor position and the colors for later use
         float cumulativeX = anchor.x;
@@ -86,11 +85,6 @@
             [actionsArray addObject:[CCCallFunc actionWithTarget:self selector:@selector(toggleColor)]];
             cumulativeTime =intervalFloat;
         }
-        //id delay = [CCDelayTime actionWithDuration: 2.0];
-        //id toggle=[CCCallFunc actionWithTarget:self selector:@selector(toggleColor)];
-        //[self runAction:[CCSequence actions:delay, toggle, delay, toggle, delay, toggle, delay, toggle, delay, toggle, nil]];
-        
-        [[SimpleAudioEngine sharedEngine] playEffect:soundName];
         [self runAction:[CCSequence actionsWithArray:actionsArray]];
 
     }

@@ -15,6 +15,6 @@
     ccColor3B myHighlightColor;
     int highlightIndex;
 }
--(id)initWithLabel:(NSString *)label fontName:(NSString *)fname fontSize:(float)fsize withAnchor:(CGPoint)anchor withBaseColor:(ccColor3B)baseColor withHighlightColor:(ccColor3B)highlightColor withIntervals:(NSArray *)intervalArray withSound:(NSString *)soundName;
+-(id)initWithLabel:(NSString *)label fontName:(NSString *)fname fontSize:(float)fsize withAnchor:(CGPoint)anchor withBaseColor:(ccColor3B)baseColor withHighlightColor:(ccColor3B)highlightColor withIntervals:(NSArray *)intervalArray;
 
 @end
