@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 
 @interface AWHHomeLayer : CCLayerColor {
-    CCLabelTTF *label1;
+
 }
 +(CCScene *) scene;
 @end

@@ -30,10 +30,6 @@
 	return scene;
 }
 
--(void) changeColor1 {
-    label1.color = ccc3(255,255,255);
-}
-
 // on "init" you need to initialize your instance
 -(id) init
 {
@@ -41,21 +37,13 @@
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super initWithColor:ccc4(242, 220, 219, 255)])) {
 		
-        [[SimpleAudioEngine sharedEngine] preloadEffect:@"Title.mp3"];
+        
         AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
         ccColor3B rockyBrown = ccc3(153,102,51);
         ccColor3B white = ccc3(255,255,255);
-        AWHSynchLabel *synchLabel=[[AWHSynchLabel alloc] initWithLabel:@"Rocky Don't Eat That!" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54] withAnchor:[scaleManager scalePointX:5 andY:250] withBaseColor:rockyBrown withHighlightColor:white];
+        AWHSynchLabel *synchLabel=[[AWHSynchLabel alloc] initWithLabel:@"Rocky Don't Eat That!" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54] withAnchor:[scaleManager scalePointX:5 andY:250] withBaseColor:rockyBrown withHighlightColor:white withIntervals:[NSArray arrayWithObjects:@"0.15",@"0.70",@"1.05",@"1.42", @"2.30",nil] withSound:@"Title.mp3"];
         [self addChild:synchLabel];
         
-        //SoundSynchedLabel *mainLabel = [[SoundSynchedLabel alloc] initWithLabel:@"Rocky Don't Eat That!" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54]];
-        
-        //CCSprite *bg=[CCSprite spriteWithFile:@"home-bg-1920x1280.png"];
-        /*CCSprite *bg=[CCSprite spriteWithFile:@"home-bg-960x640.png"];
-         bg.anchorPoint = ccp(0,0);
-         bg.position=[scaleManager scalePointX:0 andY:0];
-         bg.scale = [scaleManager scaleImage];
-         [self addChild: bg];*/
         
         [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
         
@@ -115,36 +103,6 @@
         [rbonetreat runAction:rbonetreatRepeat];
         [spritesBNode addChild:rbonetreat];
         
-        /*
-		// create and initialize a Labels
-		label1 = [CCLabelTTF labelWithString:@"Rocky" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54]];
-        label1.color = ccc3(153,102,51);
-		label1.position =  [scaleManager scalePointX:70 andY:280];
-        [self addChild: label1];
-        id delay = [CCDelayTime actionWithDuration: 2.0];
-        id callback=[CCCallFunc actionWithTarget:self selector:@selector(changeColor1)];
-        [label1 runAction:[CCSequence actions:delay, callback, nil]];
-
-        // create and initialize a Label
-		CCLabelTTF *label2 = [CCLabelTTF labelWithString:@"Don't" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54]];
-        label2.color = ccc3(153,102,51);
-		label2.position =  [scaleManager scalePointX:210 andY:280];
-		[self addChild: label2];
-        
-        // create and initialize a Label
-		CCLabelTTF *label3 = [CCLabelTTF labelWithString:@"Eat" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54]];
-        label3.color = ccc3(153,102,51);
-		label3.position =  [scaleManager scalePointX:320 andY:280];
-		[self addChild: label3];
-        
-        // create and initialize a Label
-		CCLabelTTF *label4 = [CCLabelTTF labelWithString:@"That!" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54]];
-        label4.color = ccc3(153,102,51);
-		label4.position =  [scaleManager scalePointX:420 andY:280];
-		[self addChild: label4];
-        
-        [[SimpleAudioEngine sharedEngine] playEffect:@"Title.mp3"];
-         */
 	}
 	return self;
 }
