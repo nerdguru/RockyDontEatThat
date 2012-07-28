@@ -8,10 +8,11 @@
 
 #import "AWHHomeLayer.h"
 #import "SimpleAudioEngine.h"
+#import "CCAnimate+SequenceLoader.h"
 #import "AWHScaleManager.h"
 #import "AWHResourceManager.h"
-#import "CCAnimate+SequenceLoader.h"
 #import "AWHSynchLabel.h"
+#import "AWHSprite.h"
 
 
 @implementation AWHHomeLayer
@@ -82,16 +83,23 @@
                                          restoreOriginalFrame:NO];
         id rockyRepeat=[CCRepeatForever actionWithAction:rockyAnimate];
         [rocky runAction:rockyRepeat];
-        [spritesBNode addChild:rocky];
+        //[spritesBNode addChild:rocky];
+        [self addChild:rocky];
         
         // Set up cheese sprite
+        /*
         CCSprite *cheese = [CCSprite spriteWithSpriteFrameName:@"cheese.png"];
         cheese.position = [scaleManager scalePointX:offset+195 andY:65];
         cheese.scale = [scaleManager scaleImage];
         id cheeseRotate=[CCRotateBy actionWithDuration:4.0 angle:360];
         id cheeseRepeat=[CCRepeatForever actionWithAction:cheeseRotate];
         [cheese runAction:cheeseRepeat];
-        [spritesBNode addChild:cheese];
+        [spritesBNode addChild:cheese];*/
+        
+        NSArray *spriteArray = [levelDict objectForKey:@"Sprites"];
+        NSDictionary *cheeseDict = [spriteArray objectAtIndex:0];
+        AWHSprite *cheese=[[AWHSprite alloc] initWithDict:cheeseDict];
+        [self addChild:cheese];
         
         // Set up purple grapes sprite
         CCSprite *pgrapes = [CCSprite spriteWithSpriteFrameName:@"pgrapes.png"];

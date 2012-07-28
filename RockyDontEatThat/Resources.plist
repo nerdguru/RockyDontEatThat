@@ -21,7 +21,30 @@
 				<string>255</string>
 			</dict>
 			<key>Sprites</key>
-			<array/>
+			<array>
+				<dict>
+					<key>Name</key>
+					<string>cheese.png</string>
+					<key>PositionX</key>
+					<string>210</string>
+					<key>PositionY</key>
+					<string>65</string>
+					<key>Action</key>
+					<dict>
+						<key>ActionType</key>
+						<string>RepeatForever</string>
+						<key>ChildAction</key>
+						<dict>
+							<key>ActionType</key>
+							<string>RotateBy</string>
+							<key>Duration</key>
+							<string>4.0</string>
+							<key>Angle</key>
+							<string>360</string>
+						</dict>
+					</dict>
+				</dict>
+			</array>
 		</dict>
 	</array>
 </dict>
