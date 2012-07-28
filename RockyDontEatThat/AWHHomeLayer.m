@@ -37,20 +37,19 @@
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super initWithColor:ccc4(242, 220, 219, 255)])) {
 		
-        
+        // Get the ScaleManager
         AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
+        
+        // Place animated title label
         ccColor3B rockyBrown = ccc3(153,102,51);
         ccColor3B white = ccc3(255,255,255);
-        // Prepare the sound to be synched with
         [[SimpleAudioEngine sharedEngine] preloadEffect:@"Title.mp3"];
         AWHSynchLabel *synchLabel=[[AWHSynchLabel alloc] initWithLabel:@"Rocky Don't Eat That!" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54] withAnchor:[scaleManager scalePointX:5 andY:250] withBaseColor:rockyBrown withHighlightColor:white withIntervals:[NSArray arrayWithObjects:@"0.15",@"0.70",@"1.05",@"1.42", @"2.30",nil]];
         [self addChild:synchLabel];
         
         
-        [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
-        
-        
         // Initialize sprite sheet
+        [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
         CCSpriteBatchNode *spritesBNode;
         spritesBNode = [CCSpriteBatchNode batchNodeWithFile:@"home-sprites.pvr.ccz"];
         [self addChild:spritesBNode];    
@@ -104,6 +103,30 @@
         id rbonetreatRepeat=[CCRepeatForever actionWithAction:rbonetreatRotate];
         [rbonetreat runAction:rbonetreatRepeat];
         [spritesBNode addChild:rbonetreat];
+        
+        // Load up the high score labels
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"high-scores" ofType:@"plist"];
+        NSDictionary *highScoreDict = [[NSDictionary alloc] initWithContentsOfFile:filePath];
+        NSArray *highScoreArray = [highScoreDict objectForKey:@"scores"];
+        float currentY = 230;
+        
+        CCLabelTTF *hsTitleLabel = [CCLabelTTF labelWithString:@"HIGH SCORES" fontName:@"color basic.ttf" fontSize:[scaleManager scaleFontSize:16] ];
+        hsTitleLabel.color = ccc3(255, 0, 0);
+		hsTitleLabel.position = [scaleManager scalePointX:350 andY:currentY];
+		[self addChild: hsTitleLabel];
+        
+        
+        for (NSDictionary* entryDict in highScoreArray ){
+            NSString *name = [entryDict objectForKey:@"name"];
+            NSString *score = [entryDict objectForKey:@"score"];
+            currentY -= 20;
+            CCLabelTTF *currentHSLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%@     %@", name, score] fontName:@"color basic.ttf" fontSize:[scaleManager scaleFontSize:16] ];
+            currentHSLabel.color = ccc3(255, 0, 0);
+            currentHSLabel.position = [scaleManager scalePointX:350 andY:currentY];
+            [self addChild: currentHSLabel];
+        }
+        
+        // Play the sound
         [[SimpleAudioEngine sharedEngine] playEffect:@"Title.mp3"];
 
         

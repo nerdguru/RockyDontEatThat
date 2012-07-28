@@ -135,6 +135,8 @@
 		F4C7242E15BB6008002F89FC /* Title.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242D15BB6008002F89FC /* Title.mp3 */; };
 		F4C7243415BC65C1002F89FC /* AWHSynchLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C7243315BC65C1002F89FC /* AWHSynchLabel.m */; };
 		F4C7243B15BC685C002F89FC /* AWHHomeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C7243A15BC685C002F89FC /* AWHHomeLayer.m */; };
+		F4D33F5915BFA60500694C75 /* high-scores.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4D33F5815BFA60500694C75 /* high-scores.plist */; };
+		F4D33F6015C0EA6100694C75 /* color basic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4D33F5F15C0EA6100694C75 /* color basic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -390,6 +392,8 @@
 		F4C7243315BC65C1002F89FC /* AWHSynchLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHSynchLabel.m; sourceTree = "<group>"; };
 		F4C7243915BC685C002F89FC /* AWHHomeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHHomeLayer.h; sourceTree = "<group>"; };
 		F4C7243A15BC685C002F89FC /* AWHHomeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHHomeLayer.m; sourceTree = "<group>"; };
+		F4D33F5815BFA60500694C75 /* high-scores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "high-scores.plist"; sourceTree = "<group>"; };
+		F4D33F5F15C0EA6100694C75 /* color basic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "color basic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -478,6 +482,7 @@
 			isa = PBXGroup;
 			children = (
 				F4C7242D15BB6008002F89FC /* Title.mp3 */,
+				F4D33F5F15C0EA6100694C75 /* color basic.ttf */,
 				F4C7242B15BB5607002F89FC /* Hobo.ttf */,
 				F4C7242315BB2D62002F89FC /* home-sprites-hd.plist */,
 				F4C7242415BB2D62002F89FC /* home-sprites-hd.pvr.ccz */,
@@ -486,6 +491,7 @@
 				F4C33CB815B62FFB00816700 /* fps_images.png */,
 				F4C33CC615B62FFC00816700 /* Info.plist */,
 				F4C33CC715B62FFC00816700 /* iTunesArtwork */,
+				F4D33F5815BFA60500694C75 /* high-scores.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -881,6 +887,8 @@
 				F4C7242A15BB2D62002F89FC /* home-sprites.pvr.ccz in Resources */,
 				F4C7242C15BB5607002F89FC /* Hobo.ttf in Resources */,
 				F4C7242E15BB6008002F89FC /* Title.mp3 in Resources */,
+				F4D33F5915BFA60500694C75 /* high-scores.plist in Resources */,
+				F4D33F6015C0EA6100694C75 /* color basic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
