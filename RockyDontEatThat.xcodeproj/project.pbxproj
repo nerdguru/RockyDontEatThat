@@ -137,6 +137,8 @@
 		F4C7243B15BC685C002F89FC /* AWHHomeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C7243A15BC685C002F89FC /* AWHHomeLayer.m */; };
 		F4D33F5915BFA60500694C75 /* high-scores.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4D33F5815BFA60500694C75 /* high-scores.plist */; };
 		F4D33F6015C0EA6100694C75 /* color basic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4D33F5F15C0EA6100694C75 /* color basic.ttf */; };
+		F4D33F6B15C43B5400694C75 /* AWHResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D33F6A15C43B5400694C75 /* AWHResourceManager.m */; };
+		F4D33F6D15C43E1D00694C75 /* Resources.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4D33F6C15C43E1D00694C75 /* Resources.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -394,6 +396,9 @@
 		F4C7243A15BC685C002F89FC /* AWHHomeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHHomeLayer.m; sourceTree = "<group>"; };
 		F4D33F5815BFA60500694C75 /* high-scores.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "high-scores.plist"; sourceTree = "<group>"; };
 		F4D33F5F15C0EA6100694C75 /* color basic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "color basic.ttf"; sourceTree = "<group>"; };
+		F4D33F6915C43B5400694C75 /* AWHResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHResourceManager.h; sourceTree = "<group>"; };
+		F4D33F6A15C43B5400694C75 /* AWHResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHResourceManager.m; sourceTree = "<group>"; };
+		F4D33F6C15C43E1D00694C75 /* Resources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Resources.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -467,6 +472,8 @@
 				F4C33E0A15B62FFD00816700 /* RootViewController.m */,
 				F4C33E3715B8483200816700 /* AWHScaleManager.h */,
 				F4C33E3815B8483200816700 /* AWHScaleManager.m */,
+				F4D33F6915C43B5400694C75 /* AWHResourceManager.h */,
+				F4D33F6A15C43B5400694C75 /* AWHResourceManager.m */,
 				F4C7243215BC65C1002F89FC /* AWHSynchLabel.h */,
 				F4C7243315BC65C1002F89FC /* AWHSynchLabel.m */,
 				F4C7243915BC685C002F89FC /* AWHHomeLayer.h */,
@@ -492,6 +499,7 @@
 				F4C33CC615B62FFC00816700 /* Info.plist */,
 				F4C33CC715B62FFC00816700 /* iTunesArtwork */,
 				F4D33F5815BFA60500694C75 /* high-scores.plist */,
+				F4D33F6C15C43E1D00694C75 /* Resources.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -889,6 +897,7 @@
 				F4C7242E15BB6008002F89FC /* Title.mp3 in Resources */,
 				F4D33F5915BFA60500694C75 /* high-scores.plist in Resources */,
 				F4D33F6015C0EA6100694C75 /* color basic.ttf in Resources */,
+				F4D33F6D15C43E1D00694C75 /* Resources.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1001,6 +1010,7 @@
 				F4C7241215BB1BBF002F89FC /* CCAnimation+SequenceLoader.m in Sources */,
 				F4C7243415BC65C1002F89FC /* AWHSynchLabel.m in Sources */,
 				F4C7243B15BC685C002F89FC /* AWHHomeLayer.m in Sources */,
+				F4D33F6B15C43B5400694C75 /* AWHResourceManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

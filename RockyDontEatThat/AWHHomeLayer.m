@@ -9,6 +9,7 @@
 #import "AWHHomeLayer.h"
 #import "SimpleAudioEngine.h"
 #import "AWHScaleManager.h"
+#import "AWHResourceManager.h"
 #import "CCAnimate+SequenceLoader.h"
 #import "AWHSynchLabel.h"
 
@@ -33,9 +34,14 @@
 // on "init" you need to initialize your instance
 -(id) init
 {
-	// always call "super" init
-	// Apple recommends to re-assign "self" with the "super" return value
-	if( (self=[super initWithColor:ccc4(242, 220, 219, 255)])) {
+    // Start up the ResourceManager and get/apply the background colors
+    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
+    NSDictionary *levelDict = [resourceManager levelDictionaryWithIndex:0];
+    NSDictionary *backgroundDict = [levelDict objectForKey:@"Background"];
+	if( (self=[super initWithColor:ccc4([[backgroundDict objectForKey:@"Red"] intValue], 
+                                        [[backgroundDict objectForKey:@"Green"] intValue], 
+                                        [[backgroundDict objectForKey:@"Blue"] intValue], 
+                                        [[backgroundDict objectForKey:@"Opacity"] intValue])])) {
 		
         // Get the ScaleManager
         AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
@@ -49,11 +55,21 @@
         
         
         // Initialize sprite sheet
-        [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
+        
+        // Set the image format, defaulting to RGBA4444
+        NSString *imageFormat = [levelDict objectForKey:@"ImageFormat"];
+        if (imageFormat == nil || imageFormat == @"RGBA4444") {
+            [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
+        } else if (imageFormat == @"RGBA8888") {
+            [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
+        } 
+        
+        // Load the sheets
+        NSString *spriteSheet = [levelDict objectForKey:@"SpriteSheet"];
         CCSpriteBatchNode *spritesBNode;
-        spritesBNode = [CCSpriteBatchNode batchNodeWithFile:@"home-sprites.pvr.ccz"];
+        spritesBNode = [CCSpriteBatchNode batchNodeWithFile:[NSString stringWithFormat:@"%@.pvr.ccz", spriteSheet]];
         [self addChild:spritesBNode];    
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"home-sprites.plist"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%@.plist", spriteSheet]];
         
         float offset=15;
         // Set up Rocky sprite

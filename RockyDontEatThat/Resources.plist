@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Levels</key>
+	<array>
+		<dict>
+			<key>SpriteSheet</key>
+			<string>home-sprites</string>
+			<key>ImageFormat</key>
+			<string>RGBA4444</string>
+			<key>Background</key>
+			<dict>
+				<key>Red</key>
+				<string>242</string>
+				<key>Green</key>
+				<string>220</string>
+				<key>Blue</key>
+				<string>219</string>
+				<key>Opacity</key>
+				<string>255</string>
+			</dict>
+			<key>Sprites</key>
+			<array/>
+		</dict>
+	</array>
+</dict>
+</plist>
