@@ -77,7 +77,8 @@
         CCSprite *rocky = [CCSprite spriteWithSpriteFrameName:@"rocky01.png"];
         rocky.position = [scaleManager scalePointX:offset+85 andY:65];
         rocky.scale = [scaleManager scaleImage];
-        id rockyAnimate = [CCAnimate actionWithSpriteSequence:@"rocky%02d.png"
+        NSString *seq = @"rocky%02d.png";
+        id rockyAnimate = [CCAnimate actionWithSpriteSequence:seq
                                                     numFrames:2
                                                         delay:0.5
                                          restoreOriginalFrame:NO];

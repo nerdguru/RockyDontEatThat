@@ -8,6 +8,7 @@
 
 #import "AWHSprite.h"
 #import "AWHScaleManager.h"
+#import "CCAnimate+SequenceLoader.h"
 
 
 @implementation AWHSprite 
@@ -56,6 +57,13 @@
     else if ([actionType isEqualToString:@"RotateBy"]) {
         NSLog(@"Action processing a %@", actionType);
         return [CCRotateBy actionWithDuration:[[action objectForKey:@"Duration"] floatValue] angle:[[action objectForKey:@"Angle"] floatValue]];
+    }
+    else if ([actionType isEqualToString:@"Animate"]) {
+        NSLog(@"Action processing a %@", actionType);
+        return [CCAnimate actionWithSpriteSequence:[action objectForKey:@"Sequence"]
+                                           numFrames:[[action objectForKey:@"NumFrames"] intValue]
+                                               delay:[[action objectForKey:@"Delay"] floatValue]
+                                restoreOriginalFrame:[[action objectForKey:@"RestoreOriginalFrame"] boolValue]];
     }
     
     // Finally, the custom ones
