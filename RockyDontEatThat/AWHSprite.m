@@ -23,6 +23,11 @@
 -(void) touchesOff {
     beenTouched = YES;
 }
+// Revert the sprite to the original actions passed in at init time
+-(void) revertOriginalActions {
+    [mySprite stopAllActions];
+    [mySprite runAction:[self processActions:originalActions]];
+}
 
 
 // Build the data structure of actions to execute on this sprite, recursively if necessary
@@ -33,7 +38,7 @@
     // Walk through the action types, first the composite ones
     if ([actionType isEqualToString:@"RepeatForever"]) {
         NSLog(@"Action processing a %@", actionType);
-        CCAction *childAction = [self processActions:[action objectForKey:@"ChildAction"]];
+        id childAction = [self processActions:[action objectForKey:@"ChildAction"]];
         return [CCRepeatForever actionWithAction:childAction];
     } 
     else if ([actionType isEqualToString:@"Sequence"]) {
@@ -62,6 +67,10 @@
         NSLog(@"Action processing a %@", actionType);
         return [CCCallFunc actionWithTarget:self selector:@selector(touchesOff)];
     }
+    else if ([actionType isEqualToString:@"RevertOriginalActions"]) {
+        NSLog(@"Action processing a %@", actionType);
+        return [CCCallFunc actionWithTarget:self selector:@selector(revertOriginalActions)];
+    }
     
     // Return a nil if nothing matched
     return nil;
@@ -80,7 +89,8 @@
         mySprite.scale = [scaleManager scaleImage];
         
         // Set up actions
-        [mySprite runAction:[self processActions:[spriteDict objectForKey:@"Action"]]];
+        originalActions = [spriteDict objectForKey:@"Action"];
+        [mySprite runAction:[self processActions:originalActions]];
         
         // Record touch reactions for later
         touchReactions = [spriteDict objectForKey:@"TouchReactions"];
@@ -88,6 +98,7 @@
         // Set member variables
         [self addChild:mySprite];
         beenTouched = NO;
+
     }
     return self;
 }
@@ -119,6 +130,8 @@
 }
 
 // Rewrote this one from the Bob Ueland example since his didn't work with sprite sheets
+// http://stackoverflow.com/questions/7070486/make-a-rectangle-around-a-sprite-in-cocos2d
+// http://www.cocos2d-iphone.org/forum/topic/12115
 -(BOOL)containsTouch:(UITouch *)touch {
     CGRect r=[self mySpriteRect];
     CGPoint location = [touch locationInView:[touch view]];

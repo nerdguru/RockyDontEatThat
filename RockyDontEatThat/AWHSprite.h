@@ -13,6 +13,7 @@
     CCSprite *mySprite;
     BOOL beenTouched;
     NSArray *touchReactions;
+    NSDictionary *originalActions;
 }
 @property (nonatomic, retain) CCSprite *mySprite;
 -(id)initWithDict:(NSDictionary *)spriteDict;

@@ -86,47 +86,11 @@
         //[spritesBNode addChild:rocky];
         [self addChild:rocky];
         
-        // Set up cheese sprite
-        /*
-        CCSprite *cheese = [CCSprite spriteWithSpriteFrameName:@"cheese.png"];
-        cheese.position = [scaleManager scalePointX:offset+195 andY:65];
-        cheese.scale = [scaleManager scaleImage];
-        id cheeseRotate=[CCRotateBy actionWithDuration:4.0 angle:360];
-        id cheeseRepeat=[CCRepeatForever actionWithAction:cheeseRotate];
-        [cheese runAction:cheeseRepeat];
-        [spritesBNode addChild:cheese];*/
-        
-        NSArray *spriteArray = [levelDict objectForKey:@"Sprites"];
-        NSDictionary *cheeseDict = [spriteArray objectAtIndex:0];
-        AWHSprite *cheese=[[AWHSprite alloc] initWithDict:cheeseDict];
-        [self addChild:cheese];
-        
-        // Set up purple grapes sprite
-        CCSprite *pgrapes = [CCSprite spriteWithSpriteFrameName:@"pgrapes.png"];
-        pgrapes.position = [scaleManager scalePointX:offset+265 andY:65];
-        pgrapes.scale = [scaleManager scaleImage];
-        id pgrapesRotate=[CCRotateBy actionWithDuration:4.0 angle:360];
-        id pgrapesRepeat=[CCRepeatForever actionWithAction:pgrapesRotate];
-        [pgrapes runAction:pgrapesRepeat];
-        [spritesBNode addChild:pgrapes];
-        
-        // Set up chocolate sprite
-        CCSprite *chocolate = [CCSprite spriteWithSpriteFrameName:@"chocolate.png"];
-        chocolate.position = [scaleManager scalePointX:offset+335 andY:65];
-        chocolate.scale = [scaleManager scaleImage];
-        id chocolateRotate=[CCRotateBy actionWithDuration:4.0 angle:360];
-        id chocolateRepeat=[CCRepeatForever actionWithAction:chocolateRotate];
-        [chocolate runAction:chocolateRepeat];
-        [spritesBNode addChild:chocolate];
-        
-        // Set up red bone sprite
-        CCSprite *rbonetreat = [CCSprite spriteWithSpriteFrameName:@"rbonetreat.png"];
-        rbonetreat.position = [scaleManager scalePointX:offset+410 andY:65];
-        rbonetreat.scale = [scaleManager scaleImage];
-        id rbonetreatRotate=[CCRotateBy actionWithDuration:4.0 angle:360];
-        id rbonetreatRepeat=[CCRepeatForever actionWithAction:rbonetreatRotate];
-        [rbonetreat runAction:rbonetreatRepeat];
-        [spritesBNode addChild:rbonetreat];
+        // Set up cheese sprites
+        for (NSDictionary* spriteDict in [levelDict objectForKey:@"Sprites"] ){
+            AWHSprite *sprite=[[AWHSprite alloc] initWithDict:spriteDict];
+            [self addChild:sprite];
+        }
         
         // Load up the high score labels
         NSString *filePath = [[NSBundle mainBundle] pathForResource:@"high-scores" ofType:@"plist"];
