@@ -72,22 +72,7 @@
         [self addChild:spritesBNode];    
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%@.plist", spriteSheet]];
         
-        float offset=15;
-        // Set up Rocky sprite
-        CCSprite *rocky = [CCSprite spriteWithSpriteFrameName:@"rocky01.png"];
-        rocky.position = [scaleManager scalePointX:offset+85 andY:65];
-        rocky.scale = [scaleManager scaleImage];
-        NSString *seq = @"rocky%02d.png";
-        id rockyAnimate = [CCAnimate actionWithSpriteSequence:seq
-                                                    numFrames:2
-                                                        delay:0.5
-                                         restoreOriginalFrame:NO];
-        id rockyRepeat=[CCRepeatForever actionWithAction:rockyAnimate];
-        [rocky runAction:rockyRepeat];
-        //[spritesBNode addChild:rocky];
-        [self addChild:rocky];
-        
-        // Set up cheese sprites
+        // Set up sprites
         for (NSDictionary* spriteDict in [levelDict objectForKey:@"Sprites"] ){
             AWHSprite *sprite=[[AWHSprite alloc] initWithDict:spriteDict];
             [self addChild:sprite];
