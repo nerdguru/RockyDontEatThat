@@ -12,6 +12,7 @@
 @interface AWHSprite : CCNode <CCTargetedTouchDelegate> {
     CCSprite *mySprite;
     BOOL beenTouched;
+    NSArray *touchReactions;
 }
 @property (nonatomic, retain) CCSprite *mySprite;
 -(id)initWithDict:(NSDictionary *)spriteDict;

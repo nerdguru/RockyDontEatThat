@@ -43,6 +43,34 @@
 							<string>360</string>
 						</dict>
 					</dict>
+					<key>TouchReactions</key>
+					<array>
+						<dict>
+							<key>TouchReactionType</key>
+							<string>Actions</string>
+							<key>Action</key>
+							<dict>
+								<key>ActionType</key>
+								<string>Sequence</string>
+								<key>ChildActions</key>
+								<array>
+									<dict>
+										<key>ActionType</key>
+										<string>RepeatForever</string>
+										<key>ChildAction</key>
+										<dict>
+											<key>ActionType</key>
+											<string>RotateBy</string>
+											<key>Duration</key>
+											<string>1.0</string>
+											<key>Angle</key>
+											<string>360</string>
+										</dict>
+									</dict>
+								</array>
+							</dict>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
