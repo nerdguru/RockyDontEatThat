@@ -7,8 +7,10 @@
 //
 
 #import "AWHSprite.h"
-#import "AWHScaleManager.h"
+
 #import "CCAnimate+SequenceLoader.h"
+#import "AWHScaleManager.h"
+#import "AWHResourceManager.h"
 
 
 @implementation AWHSprite 
@@ -28,6 +30,12 @@
 -(void) revertOriginalActions {
     [mySprite stopAllActions];
     [mySprite runAction:[self processActions:originalActions]];
+}
+// Test method that loads the high score plist from fileand saves it to user defaults
+-(void) loadSaveHighScores {
+    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
+    resourceManager.loadHighScoresPlist;
+    resourceManager.saveHighScores;
 }
 
 
@@ -78,6 +86,10 @@
     else if ([actionType isEqualToString:@"RevertOriginalActions"]) {
         NSLog(@"Action processing a %@", actionType);
         return [CCCallFunc actionWithTarget:self selector:@selector(revertOriginalActions)];
+    }
+    else if ([actionType isEqualToString:@"LoadSaveHighScores"]) {
+        NSLog(@"Action processing a %@", actionType);
+        return [CCCallFunc actionWithTarget:self selector:@selector(loadSaveHighScores)];
     }
     
     // Return a nil if nothing matched

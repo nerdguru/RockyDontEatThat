@@ -122,6 +122,10 @@
 									</dict>
 									<dict>
 										<key>ActionType</key>
+										<string>LoadSaveHighScores</string>
+									</dict>
+									<dict>
+										<key>ActionType</key>
 										<string>RevertOriginalActions</string>
 									</dict>
 								</array>

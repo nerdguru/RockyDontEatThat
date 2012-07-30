@@ -11,8 +11,13 @@
 @interface AWHResourceManager : NSObject
 {
     NSDictionary *resourcesDict;
+    NSArray *highScoreArray;
 }
 
 +(id)sharedResourceManager;
 -(NSDictionary *)levelDictionaryWithIndex:(int)index;
+-(NSArray *) getHighScores;
+-(void) saveHighScores;
+-(void) deleteHighScores;
+-(void) loadHighScoresPlist;
 @end

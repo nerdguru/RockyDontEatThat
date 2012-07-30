@@ -80,11 +80,9 @@
         }
         
         // Load up the high score labels
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"high-scores" ofType:@"plist"];
-        NSDictionary *highScoreDict = [[NSDictionary alloc] initWithContentsOfFile:filePath];
-        NSArray *highScoreArray = [highScoreDict objectForKey:@"scores"];
-        AWHHighScoreLabels *highScoreLabels = [[AWHHighScoreLabels alloc] initWithArray:highScoreArray];
+        AWHHighScoreLabels *highScoreLabels = [[AWHHighScoreLabels alloc] initWithArray:[resourceManager getHighScores]];
         [self addChild:highScoreLabels];
+
         
         // Play the sound
         [[SimpleAudioEngine sharedEngine] playEffect:@"Title.mp3"];
