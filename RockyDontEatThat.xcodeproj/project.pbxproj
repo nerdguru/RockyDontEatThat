@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F486185F15C609190065B464 /* AWHHighScoreLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = F486185E15C609190065B464 /* AWHHighScoreLabels.m */; };
 		F4C33CA515B62FFB00816700 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C33CA415B62FFB00816700 /* QuartzCore.framework */; };
 		F4C33CA715B62FFB00816700 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C33CA615B62FFB00816700 /* OpenGLES.framework */; };
 		F4C33CA915B62FFB00816700 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C33CA815B62FFB00816700 /* OpenAL.framework */; };
@@ -143,6 +144,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F486185D15C609190065B464 /* AWHHighScoreLabels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHHighScoreLabels.h; sourceTree = "<group>"; };
+		F486185E15C609190065B464 /* AWHHighScoreLabels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHHighScoreLabels.m; sourceTree = "<group>"; };
 		F4C33CA015B62FFB00816700 /* RockyDontEatThat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RockyDontEatThat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C33CA415B62FFB00816700 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F4C33CA615B62FFB00816700 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -479,6 +482,8 @@
 				F4D33F6A15C43B5400694C75 /* AWHResourceManager.m */,
 				F4C7243215BC65C1002F89FC /* AWHSynchLabel.h */,
 				F4C7243315BC65C1002F89FC /* AWHSynchLabel.m */,
+				F486185D15C609190065B464 /* AWHHighScoreLabels.h */,
+				F486185E15C609190065B464 /* AWHHighScoreLabels.m */,
 				F4D33F6E15C44B7700694C75 /* AWHSprite.h */,
 				F4D33F6F15C44B7700694C75 /* AWHSprite.m */,
 				F4C7243915BC685C002F89FC /* AWHHomeLayer.h */,
@@ -1017,6 +1022,7 @@
 				F4C7243B15BC685C002F89FC /* AWHHomeLayer.m in Sources */,
 				F4D33F6B15C43B5400694C75 /* AWHResourceManager.m in Sources */,
 				F4D33F7015C44B7800694C75 /* AWHSprite.m in Sources */,
+				F486185F15C609190065B464 /* AWHHighScoreLabels.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

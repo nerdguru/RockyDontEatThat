@@ -13,6 +13,7 @@
 #import "AWHResourceManager.h"
 #import "AWHSynchLabel.h"
 #import "AWHSprite.h"
+#import "AWHHighScoreLabels.h"
 
 
 @implementation AWHHomeLayer
@@ -82,23 +83,8 @@
         NSString *filePath = [[NSBundle mainBundle] pathForResource:@"high-scores" ofType:@"plist"];
         NSDictionary *highScoreDict = [[NSDictionary alloc] initWithContentsOfFile:filePath];
         NSArray *highScoreArray = [highScoreDict objectForKey:@"scores"];
-        float currentY = 230;
-        
-        CCLabelTTF *hsTitleLabel = [CCLabelTTF labelWithString:@"HIGH SCORES" fontName:@"color basic.ttf" fontSize:[scaleManager scaleFontSize:16] ];
-        hsTitleLabel.color = ccc3(255, 0, 0);
-		hsTitleLabel.position = [scaleManager scalePointX:350 andY:currentY];
-		[self addChild: hsTitleLabel];
-        
-        
-        for (NSDictionary* entryDict in highScoreArray ){
-            NSString *name = [entryDict objectForKey:@"name"];
-            NSString *score = [entryDict objectForKey:@"score"];
-            currentY -= 20;
-            CCLabelTTF *currentHSLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%@     %@", name, score] fontName:@"color basic.ttf" fontSize:[scaleManager scaleFontSize:16] ];
-            currentHSLabel.color = ccc3(255, 0, 0);
-            currentHSLabel.position = [scaleManager scalePointX:350 andY:currentY];
-            [self addChild: currentHSLabel];
-        }
+        AWHHighScoreLabels *highScoreLabels = [[AWHHighScoreLabels alloc] initWithArray:highScoreArray];
+        [self addChild:highScoreLabels];
         
         // Play the sound
         [[SimpleAudioEngine sharedEngine] playEffect:@"Title.mp3"];
