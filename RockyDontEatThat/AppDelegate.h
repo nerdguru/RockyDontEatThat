@@ -16,5 +16,7 @@
 }
 
 @property (nonatomic, retain) UIWindow *window;
+// Needed for AdWhirl
+@property (nonatomic, retain) RootViewController *viewController;
 
 @end

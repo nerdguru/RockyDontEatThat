@@ -16,6 +16,8 @@
 @implementation AppDelegate
 
 @synthesize window;
+// Needed for AdWhirl
+@synthesize viewController;
 
 - (void) removeStartupFlicker
 {

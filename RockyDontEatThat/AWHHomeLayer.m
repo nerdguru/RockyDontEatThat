@@ -17,6 +17,7 @@
 
 
 @implementation AWHHomeLayer
+@synthesize adWhirlView;
 
 +(CCScene *) scene
 {
@@ -112,10 +113,107 @@
 	// in case you have something to dealloc, do it in this method
 	// in this particular example nothing needs to be released.
 	// cocos2d will automatically release all the children (Label)
-	
+	self.adWhirlView.delegate = nil;
+    self.adWhirlView = nil;
+    
 	// don't forget to call "super dealloc"
 	[super dealloc];
 }
+
+- (void)adWhirlWillPresentFullScreenModal {
+    
+    
+}
+
+- (void)adWhirlDidDismissFullScreenModal {
+    
+    
+}
+
+- (NSString *)adWhirlApplicationKey {
+    //return @"42e1997a83504f34a065bafe838b35e0";
+    return @"ed84628313c54d739a528136cf4c6914";
+}
+
+- (UIViewController *)viewControllerForPresentingModalView {
+    return viewController;    
+}
+
+-(void)adjustAdSize {
+	//1
+	[UIView beginAnimations:@"AdResize" context:nil];
+	[UIView setAnimationDuration:0.2];
+	//2
+	CGSize adSize = [adWhirlView actualAdSize];
+	//3
+	CGRect newFrame = adWhirlView.frame;
+	//4
+	newFrame.size.height = adSize.height;
+	
+   	//5 
+    CGSize winSize = [CCDirector sharedDirector].winSize;
+    //6
+	newFrame.size.width = winSize.width;
+	//7
+	//newFrame.origin.x = (self.adWhirlView.bounds.size.width - adSize.width)/2;
+    newFrame.origin.x = (self.adWhirlView.bounds.size.width - adSize.width);
+    
+    //8 
+	newFrame.origin.y = (winSize.height - adSize.height);
+	//9
+	adWhirlView.frame = newFrame;
+	//10
+	[UIView commitAnimations];
+}
+
+- (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlVieww {
+    //1
+    [adWhirlView rotateToOrientation:UIInterfaceOrientationLandscapeRight];
+	//2    
+    [self adjustAdSize];
+    
+}
+
+-(void)onEnter {
+    //1
+    viewController = [(AppDelegate *)[[UIApplication sharedApplication] delegate] viewController];
+    //2
+    self.adWhirlView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
+    //3
+    self.adWhirlView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
+    
+    //4
+    [adWhirlView updateAdWhirlConfig];
+    //5
+	CGSize adSize = [adWhirlView actualAdSize];
+    //6
+    CGSize winSize = [CCDirector sharedDirector].winSize;
+    //7
+	//self.adWhirlView.frame = CGRectMake((winSize.width/2)-(adSize.width/2),winSize.height-adSize.height,winSize.width,adSize.height);
+    self.adWhirlView.frame = CGRectMake((winSize.width)-(adSize.width),winSize.height-adSize.height,winSize.width,adSize.height);
+    
+    //8
+	self.adWhirlView.clipsToBounds = YES;
+    //9
+    [viewController.view addSubview:adWhirlView];
+    //10
+    [viewController.view bringSubviewToFront:adWhirlView];
+    //11
+    [super onEnter];
+}
+
+-(void)onExit {
+    //1
+    if (adWhirlView) {
+        [adWhirlView removeFromSuperview];
+        [adWhirlView replaceBannerViewWith:nil];
+        [adWhirlView ignoreNewAdRequests];
+        [adWhirlView setDelegate:nil];
+        self.adWhirlView = nil;
+    }
+	[super onExit];
+}
+
 
 
 @end
