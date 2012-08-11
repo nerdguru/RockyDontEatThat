@@ -10,6 +10,7 @@
 
 @implementation AWHScaleManager
 
+// Singleton accessor method
 + (id)sharedScaleManager {
     static id sharedScaleManager = nil;
     
@@ -20,6 +21,7 @@
     return sharedScaleManager;
 }
 
+// One-time logic for computing specifics of the current device
 -(id) init
 {
 	if( (self=[super init]) ) {
@@ -53,21 +55,23 @@
 	return self;
 }
 
+// Take in an X, Y in Cocos2d coordinates and, if on an iPad, convert them to their equivalents
+// in the centered letterbox
 -(CGPoint)scalePointX:(float)x andY:(float)y {
     if (!iPad)
         return ccp(x,y);
     
-    
     CGSize size = [[CCDirector sharedDirector] winSize];
     float xOffset = (size.width - 960) / 2;
     float yOffset = (size.height - 640) / 2;
-    NSLog(@"xOffset: %f", xOffset);
-    NSLog(@"yOffset: %f", yOffset);
-    NSLog(@"2*x+xOffset: %f", 2*x+xOffset);
-    NSLog(@"2*y+yOffset: %f", 2*y+yOffset);
+    //NSLog(@"xOffset: %f", xOffset);
+    //NSLog(@"yOffset: %f", yOffset);
+    //NSLog(@"2*x+xOffset: %f", 2*x+xOffset);
+    //NSLog(@"2*y+yOffset: %f", 2*y+yOffset);
     return ccp(2*x+xOffset, 2*y+yOffset);
 }
 
+// Enforces font size scaling for iPad vs iPhone
 -(float)scaleFontSize:(float)size {
     if (!iPad)
         return size;
@@ -75,6 +79,7 @@
         return 2*size;    
 }
 
+// Enforces image scaling for iPad vs iPhone
 -(float)scaleImage {
     float retval = 1.0;
     if (!iPad)
@@ -85,6 +90,7 @@
     
 }
 
+// Enforces house ad scaling for iPad vs iPhone
 -(float)scaleAd {
     float retval = 2.0;
     if (!iPad)
@@ -95,6 +101,8 @@
     
 }
 
+// Builds a correctly scaled frame for ads
+// Note: this is in UIKit pixels, not Cocos2d points
 -(CGRect)scaledAdFrame {
     if(iPad)
         return CGRectMake(0,0,640,100);
@@ -102,6 +110,8 @@
         return CGRectMake(0,0,320,50);
 }
 
+// Builds a correctly scaled size for ads
+// Note: this is in UIKit pixels, not Cocos2d points
 -(CGSize)scaledAdSize {
     if(iPad)
         return CGSizeMake(640,100);
@@ -109,11 +119,14 @@
         return CGSizeMake(320,50);
 }
 
+// Properly scales the Y of an ad for iPad vs iPhone 
+// Note: this is in UIKit pixels, not Cocos2d points
 -(float)scaleAdOriginY {
     if(iPad)
-        return 75;
+        return 70;
     else 
         return 0;
 }
+
 
 @end

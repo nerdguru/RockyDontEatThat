@@ -13,7 +13,8 @@
 #import "RootViewController.h"
 #import "AppDelegate.h"
 
-@interface AWHHomeLayer : CCLayerColor {
+@interface AWHHomeLayer : CCLayerColor <AdWhirlDelegate>
+{
 
     // Needed for AdWhirl
     // See http://www.raywenderlich.com/5350/how-to-integrate-adwhirl-into-a-cocos2d-game

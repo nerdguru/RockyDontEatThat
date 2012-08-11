@@ -300,7 +300,7 @@
       imageURL = [adInfo objectForKey:@"img_url"];
     }
       NSLog(@"Image URL: %@ scale: %f  adtype: %d",imageURL, self.scale, adType);
-      NSLog(@"AdViewSize h: %f w:%f", adNetworkView.frame.size.height, adNetworkView.frame.size.width);
+      NSLog(@"Self AdViewSize h: %f w:%f", self.adView.frame.size.height, self.adView.frame.size.width);
     AWLogDebug(@"Request custom ad image at %@", imageURL);
     NSURLRequest *imageRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:imageURL]];
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:imageRequest
@@ -355,11 +355,14 @@
   }
   else if (conn == imageConnection) {
     UIImage *image = [[UIImage alloc] initWithData:imageData];
-    if (self.scale == 2.0) {
+    // PCJ Remove scaling code since we handle this elsewhere
+    /*if (self.scale == 2.0) {
       UIImage *img = [[UIImage alloc] initWithCGImage:image.CGImage scale:2.0 orientation:image.imageOrientation];
+        
       [image release];
       image = img;
-    }
+        NSLog (@"Scale  branch");
+    }*/
     if (image == nil) {
       [self.adWhirlView adapter:self didFailAd:[AdWhirlError errorWithCode:AdWhirlCustomAdImageError
                                                           description:@"Cannot initialize custom ad image from data"]];

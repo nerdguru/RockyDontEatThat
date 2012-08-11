@@ -154,13 +154,15 @@
     //6
 	newFrame.size.width = winSize.width;
 	//7
+    AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager];
 	//newFrame.origin.x = (self.adWhirlView.bounds.size.width - adSize.width)/2;
     newFrame.origin.x = (self.adWhirlView.bounds.size.width - adSize.width);
     
     //8 
-    AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager];
+    
 	newFrame.origin.y = (winSize.height - adSize.height-[scaleManager scaleAdOriginY]);
 	//9
+    NSLog(@"adjustAdSize Ad x: %f y: %f  Win x: %f y: %f ", adSize.width, adSize.height, winSize.width, winSize.height);
 	adWhirlView.frame = newFrame;
 	//10
 	[UIView commitAnimations];

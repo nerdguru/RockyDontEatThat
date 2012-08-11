@@ -8,6 +8,11 @@
 
 #import "cocos2d.h"
 
+/*
+ * AWHScaleManager is used to handle all the universal app scaling needs and helps create a centered
+ * letterbox given the different aspect ratios of iPhone vs iPad
+ */
+
 @interface AWHScaleManager : NSObject
 {
     BOOL iPad;

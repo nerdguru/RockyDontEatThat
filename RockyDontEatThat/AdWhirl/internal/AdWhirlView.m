@@ -98,8 +98,8 @@ NSInteger adNetworkPriorityComparer(id a, id b, void *ctx) {
     self = [super initWithFrame:[scaleManager scaledAdFrame]];
   if (self != nil) {
     delegate = d;
-    //self.backgroundColor = [UIColor clearColor];
-      self.backgroundColor = [UIColor blueColor];
+    self.backgroundColor = [UIColor clearColor];
+    
     // to prevent ugly artifacts if ad network banners are bigger than the
     // default frame
     self.clipsToBounds = YES;
