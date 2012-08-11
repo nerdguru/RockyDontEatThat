@@ -26,4 +26,5 @@
 -(CGRect)scaledAdFrame;
 -(CGSize)scaledAdSize;
 -(float)scaleAdOriginY;
+-(float)scaleAdPadding;
 @end

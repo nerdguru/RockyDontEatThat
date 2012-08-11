@@ -580,7 +580,7 @@ static BOOL randSeeded = NO;
         srandom(CFAbsoluteTimeGetCurrent());
       }
       // range is 1 to 7, inclusive
-      animType = (random() % 7) + 1;
+      animType = (random() % 2) + 1;
       AWLogDebug(@"Animation type chosen by random is %d", animType);
     }
     else {

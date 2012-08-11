@@ -54,7 +54,7 @@
 					<key>PositionX</key>
 					<string>215</string>
 					<key>PositionY</key>
-					<string>90</string>
+					<string>95</string>
 					<key>Action</key>
 					<dict>
 						<key>ActionType</key>
@@ -122,10 +122,6 @@
 									</dict>
 									<dict>
 										<key>ActionType</key>
-										<string>LoadSaveHighScores</string>
-									</dict>
-									<dict>
-										<key>ActionType</key>
 										<string>RevertOriginalActions</string>
 									</dict>
 								</array>
@@ -139,7 +135,7 @@
 					<key>PositionX</key>
 					<string>285</string>
 					<key>PositionY</key>
-					<string>90</string>
+					<string>95</string>
 					<key>Action</key>
 					<dict>
 						<key>ActionType</key>
@@ -220,7 +216,7 @@
 					<key>PositionX</key>
 					<string>355</string>
 					<key>PositionY</key>
-					<string>90</string>
+					<string>95</string>
 					<key>Action</key>
 					<dict>
 						<key>ActionType</key>
@@ -303,7 +299,7 @@
 					<key>PositionX</key>
 					<string>430</string>
 					<key>PositionY</key>
-					<string>90</string>
+					<string>95</string>
 					<key>Action</key>
 					<dict>
 						<key>ActionType</key>

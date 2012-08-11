@@ -19,7 +19,7 @@
         AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager];
         
         // Set the starting height
-        float currentY = 240;
+        float currentY = 245;
         
         // Init the array that tracks the rows
         hiScoreRows = [[NSMutableArray alloc] initWithCapacity:5];

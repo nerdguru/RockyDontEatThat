@@ -128,5 +128,14 @@
         return 0;
 }
 
+// Properly scales the padding of an ad for iPad vs iPhone 
+// Note: this is in UIKit pixels, not Cocos2d points
+-(float)scaleAdPadding {
+    if(iPad)
+        return 10;
+    else 
+        return 5;
+}
+
 
 @end

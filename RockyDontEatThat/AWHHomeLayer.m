@@ -156,11 +156,11 @@
 	//7
     AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager];
 	//newFrame.origin.x = (self.adWhirlView.bounds.size.width - adSize.width)/2;
-    newFrame.origin.x = (self.adWhirlView.bounds.size.width - adSize.width);
+    newFrame.origin.x = (self.adWhirlView.bounds.size.width - adSize.width-[scaleManager scaleAdPadding]);
     
     //8 
     
-	newFrame.origin.y = (winSize.height - adSize.height-[scaleManager scaleAdOriginY]);
+	newFrame.origin.y = (winSize.height - adSize.height-[scaleManager scaleAdOriginY]-[scaleManager scaleAdPadding]);
 	//9
     NSLog(@"adjustAdSize Ad x: %f y: %f  Win x: %f y: %f ", adSize.width, adSize.height, winSize.width, winSize.height);
 	adWhirlView.frame = newFrame;
@@ -192,9 +192,10 @@
     CGSize winSize = [CCDirector sharedDirector].winSize;
     NSLog(@"Ad x: %f y: %f  Win x: %f y: %f ", adSize.width, adSize.height, winSize.width, winSize.height);
     //7
+    // Original code commented out to center the ad
 	//self.adWhirlView.frame = CGRectMake((winSize.width/2)-(adSize.width/2),winSize.height-adSize.height,winSize.width,adSize.height);
     AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager];
-    self.adWhirlView.frame = CGRectMake((winSize.width)-(adSize.width),winSize.height-adSize.height-[scaleManager scaleAdOriginY],winSize.width,adSize.height);
+    self.adWhirlView.frame = CGRectMake((winSize.width)-(adSize.width)-[scaleManager scaleAdPadding],winSize.height-adSize.height-[scaleManager scaleAdOriginY]-[scaleManager scaleAdPadding],winSize.width,adSize.height);
     
     
     //8
