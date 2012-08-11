@@ -29,6 +29,9 @@
 #import "AdWhirlConfigStore.h"
 #import "AWNetworkReachabilityWrapper.h"
 
+//PCJ
+#import "AWHScaleManager.h"
+
 #define kAdWhirlViewAdSubViewTag   1000
 
 
@@ -89,10 +92,14 @@ NSInteger adNetworkPriorityComparer(id a, id b, void *ctx) {
 }
 
 - (id)initWithDelegate:(id<AdWhirlDelegate>)d {
-  self = [super initWithFrame:kAdWhirlViewDefaultFrame];
+  //self = [super initWithFrame:kAdWhirlViewDefaultFrame];
+    //PCJ Get the ScaleManager and set the ad size
+    AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
+    self = [super initWithFrame:[scaleManager scaledAdFrame]];
   if (self != nil) {
     delegate = d;
-    self.backgroundColor = [UIColor clearColor];
+    //self.backgroundColor = [UIColor clearColor];
+      self.backgroundColor = [UIColor blueColor];
     // to prevent ugly artifacts if ad network banners are bigger than the
     // default frame
     self.clipsToBounds = YES;
@@ -542,8 +549,12 @@ static BOOL randSeeded = NO;
 #pragma mark UI methods
 
 - (CGSize)actualAdSize {
-  if (currAdapter == nil || currAdapter.adNetworkView == nil)
-    return kAdWhirlViewDefaultSize;
+    if (currAdapter == nil || currAdapter.adNetworkView == nil) {
+      //return kAdWhirlViewDefaultSize;
+      //PCJ Get the ScaleManager and set the ad size
+      AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
+      return [scaleManager scaledAdSize];
+    }
   return currAdapter.adNetworkView.frame.size;
 }
 

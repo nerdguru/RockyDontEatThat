@@ -17,4 +17,8 @@
 -(CGPoint)scalePointX:(float)x andY:(float)y; 
 -(float)scaleFontSize:(float)size;
 -(float)scaleImage;
+-(float)scaleAd;
+-(CGRect)scaledAdFrame;
+-(CGSize)scaledAdSize;
+-(float)scaleAdOriginY;
 @end

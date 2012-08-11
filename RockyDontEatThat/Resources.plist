@@ -26,7 +26,7 @@
 					<key>Name</key>
 					<string>rocky01.png</string>
 					<key>PositionX</key>
-					<string>100</string>
+					<string>95</string>
 					<key>PositionY</key>
 					<string>65</string>
 					<key>Action</key>
@@ -52,9 +52,9 @@
 					<key>Name</key>
 					<string>cheese.png</string>
 					<key>PositionX</key>
-					<string>210</string>
+					<string>215</string>
 					<key>PositionY</key>
-					<string>65</string>
+					<string>90</string>
 					<key>Action</key>
 					<dict>
 						<key>ActionType</key>
@@ -137,9 +137,9 @@
 					<key>Name</key>
 					<string>pgrapes.png</string>
 					<key>PositionX</key>
-					<string>280</string>
+					<string>285</string>
 					<key>PositionY</key>
-					<string>65</string>
+					<string>90</string>
 					<key>Action</key>
 					<dict>
 						<key>ActionType</key>
@@ -218,9 +218,9 @@
 					<key>Name</key>
 					<string>chocolate.png</string>
 					<key>PositionX</key>
-					<string>350</string>
+					<string>355</string>
 					<key>PositionY</key>
-					<string>65</string>
+					<string>90</string>
 					<key>Action</key>
 					<dict>
 						<key>ActionType</key>
@@ -235,6 +235,8 @@
 							<string>360</string>
 						</dict>
 					</dict>
+					<key>New item</key>
+					<string></string>
 					<key>TouchReactions</key>
 					<array>
 						<dict>
@@ -299,9 +301,9 @@
 					<key>Name</key>
 					<string>rbonetreat.png</string>
 					<key>PositionX</key>
-					<string>425</string>
+					<string>430</string>
 					<key>PositionY</key>
-					<string>65</string>
+					<string>90</string>
 					<key>Action</key>
 					<dict>
 						<key>ActionType</key>

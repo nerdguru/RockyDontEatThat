@@ -16,6 +16,7 @@
 @interface AWHHomeLayer : CCLayerColor {
 
     // Needed for AdWhirl
+    // See http://www.raywenderlich.com/5350/how-to-integrate-adwhirl-into-a-cocos2d-game
     RootViewController *viewController;
     AdWhirlView *adWhirlView;
 }

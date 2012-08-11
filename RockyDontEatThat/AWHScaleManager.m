@@ -85,4 +85,35 @@
     
 }
 
+-(float)scaleAd {
+    float retval = 2.0;
+    if (!iPad)
+        retval =  1.0;
+    
+    NSLog(@"scaleAd: %f", retval);
+    return retval;
+    
+}
+
+-(CGRect)scaledAdFrame {
+    if(iPad)
+        return CGRectMake(0,0,640,100);
+    else 
+        return CGRectMake(0,0,320,50);
+}
+
+-(CGSize)scaledAdSize {
+    if(iPad)
+        return CGSizeMake(640,100);
+    else 
+        return CGSizeMake(320,50);
+}
+
+-(float)scaleAdOriginY {
+    if(iPad)
+        return 75;
+    else 
+        return 0;
+}
+
 @end

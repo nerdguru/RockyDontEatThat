@@ -29,6 +29,9 @@
 #import "AdWhirlAdNetworkAdapter+Helpers.h"
 #import "AdWhirlAdNetworkRegistry.h"
 
+//PCJ
+#import "AWHScaleManager.h"
+
 @interface AdWhirlAdapterCustom ()
 
 - (BOOL)parseAdData:(NSData *)data error:(NSError **)error;
@@ -84,7 +87,7 @@
     if (requesting) return;
     requesting = YES;
   }
-
+    NSLog(@"In AdWhirlAdapterCustom getAd()");
   NSURL *adRequestBaseURL = nil;
   if ([self.adWhirlDelegate respondsToSelector:@selector(adWhirlCustomAdURL)]) {
     adRequestBaseURL = [self.adWhirlDelegate adWhirlCustomAdURL];
@@ -112,6 +115,7 @@
              self.networkConfig.nid,
              locationStr,
              [[NSDate date] timeIntervalSince1970]];
+      NSLog(@"Location query: %@", query);
   }
   else {
     AWLogDebug(@"Do not allow location access in custom ad");
@@ -120,6 +124,7 @@
              [[NSLocale currentLocale] localeIdentifier],
              self.adWhirlConfig.appKey,
              self.networkConfig.nid];
+      NSLog(@"Non location query: %@", query);
   }
   NSURL *adRequestURL = [NSURL URLWithString:query relativeToURL:adRequestBaseURL];
   AWLogDebug(@"Requesting custom ad at %@", adRequestURL);
@@ -277,7 +282,13 @@
     }
 
     // fetch image, set scale
-    self.scale = [[UIScreen mainScreen] respondsToSelector:@selector(scale)] ? [[UIScreen mainScreen] scale] : 1.0;
+    // Original code commented out
+    // self.scale = [[UIScreen mainScreen] respondsToSelector:@selector(scale)] ? [[UIScreen mainScreen] scale] : 1.0;
+      
+    //PCJ Get the ScaleManager and set the ad scale
+    AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
+    self.scale = [scaleManager scaleAd];
+      
     NSString *imageURL;
     if (self.scale == 2.0 && adType == AWCustomAdTypeBanner) {
       imageURL = [adInfo objectForKey:@"img_url_640x100"];
@@ -288,6 +299,8 @@
     } else {
       imageURL = [adInfo objectForKey:@"img_url"];
     }
+      NSLog(@"Image URL: %@ scale: %f  adtype: %d",imageURL, self.scale, adType);
+      NSLog(@"AdViewSize h: %f w:%f", adNetworkView.frame.size.height, adNetworkView.frame.size.width);
     AWLogDebug(@"Request custom ad image at %@", imageURL);
     NSURLRequest *imageRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:imageURL]];
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:imageRequest
@@ -362,6 +375,7 @@
 }
 
 - (void)connection:(NSURLConnection *)conn didReceiveData:(NSData *)data {
+    
   if (conn == adConnection) {
     [adData appendData:data];
   }

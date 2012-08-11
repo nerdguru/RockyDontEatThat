@@ -19,13 +19,13 @@
         AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager];
         
         // Set the starting height
-        float currentY = 230;
+        float currentY = 240;
         
         // Init the array that tracks the rows
         hiScoreRows = [[NSMutableArray alloc] initWithCapacity:5];
         
         // Init the header
-        CCLabelTTF *hsTitleLabel = [CCLabelTTF labelWithString:@"HIGH SCORES" fontName:@"color basic.ttf" fontSize:[scaleManager scaleFontSize:16] ];
+        CCLabelTTF *hsTitleLabel = [CCLabelTTF labelWithString:@"HIGH SCORES" fontName:@"PressStart2P.ttf" fontSize:[scaleManager scaleFontSize:16] ];
         hsTitleLabel.color = ccc3(255, 0, 0);
 		hsTitleLabel.position = [scaleManager scalePointX:350 andY:currentY];
 		[self addChild: hsTitleLabel];
@@ -35,7 +35,7 @@
             NSString *name = [entryDict objectForKey:@"name"];
             NSString *score = [entryDict objectForKey:@"score"];
             currentY -= 20;
-            CCLabelTTF *currentHSLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%@     %@", name, score] fontName:@"color basic.ttf" fontSize:[scaleManager scaleFontSize:16] ];
+            CCLabelTTF *currentHSLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%@     %@", name, score] fontName:@"PressStart2P.ttf" fontSize:[scaleManager scaleFontSize:16] ];
             currentHSLabel.color = ccc3(255, 0, 0);
             currentHSLabel.position = [scaleManager scalePointX:350 andY:currentY];
             [hiScoreRows addObject:currentHSLabel];

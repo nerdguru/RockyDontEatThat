@@ -22,6 +22,9 @@
 #import "AdWhirlView.h"
 #import "AdWhirlLog.h"
 
+//PCJ
+#import "AWHScaleManager.h"
+
 
 @implementation AdWhirlCustomAdView
 
@@ -45,8 +48,11 @@
               animType:(AWCustomAdWebViewAnimType)anim
        backgroundColor:(UIColor *)bgColor
              textColor:(UIColor *)fgColor {
+  // PCJ orignal commented out
+  // self = [super initWithFrame:kAdWhirlViewDefaultFrame];
+  AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
+  self = [super initWithFrame:[scaleManager scaledAdFrame]];
   
-  self = [super initWithFrame:kAdWhirlViewDefaultFrame];
   if (self != nil) {
     delegate = d;
     redirectURL = [rURL retain];
