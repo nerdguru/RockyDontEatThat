@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F422EC5215DA018300963D33 /* home-sprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F422EC4E15DA018300963D33 /* home-sprites-hd.plist */; };
+		F422EC5315DA018300963D33 /* home-sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F422EC4F15DA018300963D33 /* home-sprites-hd.pvr.ccz */; };
+		F422EC5815DA020E00963D33 /* home-sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = F422EC5615DA020E00963D33 /* home-sprites.plist */; };
+		F422EC5915DA020E00963D33 /* home-sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F422EC5715DA020E00963D33 /* home-sprites.pvr.ccz */; };
 		F42F05F115CB703D0063F763 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2515B721E500816700 /* Default-Landscape~ipad.png */; };
 		F42F05F215CB70420063F763 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2915B7221C00816700 /* Default-Landscape@2x~ipad.png */; };
 		F42F05F315CB70480063F763 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2715B7221700816700 /* Default-Portrait@2x~ipad.png */; };
@@ -150,10 +154,6 @@
 		F4C33E3915B8483200816700 /* AWHScaleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C33E3815B8483200816700 /* AWHScaleManager.m */; };
 		F4C7241115BB1BBF002F89FC /* CCAnimate+SequenceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C7240E15BB1BBE002F89FC /* CCAnimate+SequenceLoader.m */; };
 		F4C7241215BB1BBF002F89FC /* CCAnimation+SequenceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C7241015BB1BBF002F89FC /* CCAnimation+SequenceLoader.m */; };
-		F4C7242715BB2D62002F89FC /* home-sprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242315BB2D62002F89FC /* home-sprites-hd.plist */; };
-		F4C7242815BB2D62002F89FC /* home-sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242415BB2D62002F89FC /* home-sprites-hd.pvr.ccz */; };
-		F4C7242915BB2D62002F89FC /* home-sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242515BB2D62002F89FC /* home-sprites.plist */; };
-		F4C7242A15BB2D62002F89FC /* home-sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242615BB2D62002F89FC /* home-sprites.pvr.ccz */; };
 		F4C7242C15BB5607002F89FC /* Hobo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242B15BB5607002F89FC /* Hobo.ttf */; };
 		F4C7242E15BB6008002F89FC /* Title.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4C7242D15BB6008002F89FC /* Title.mp3 */; };
 		F4C7243415BC65C1002F89FC /* AWHSynchLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C7243315BC65C1002F89FC /* AWHSynchLabel.m */; };
@@ -166,6 +166,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F422EC4E15DA018300963D33 /* home-sprites-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "home-sprites-hd.plist"; sourceTree = "<group>"; };
+		F422EC4F15DA018300963D33 /* home-sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-sprites-hd.pvr.ccz"; sourceTree = "<group>"; };
+		F422EC5615DA020E00963D33 /* home-sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "home-sprites.plist"; sourceTree = "<group>"; };
+		F422EC5715DA020E00963D33 /* home-sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-sprites.pvr.ccz"; sourceTree = "<group>"; };
 		F42F081515CDD4D90063F763 /* AdWhirlAdNetworkAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWhirlAdNetworkAdapter.h; sourceTree = "<group>"; };
 		F42F081615CDD4D90063F763 /* AdWhirlDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWhirlDelegateProtocol.h; sourceTree = "<group>"; };
 		F42F081715CDD4D90063F763 /* AdWhirlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWhirlView.h; sourceTree = "<group>"; };
@@ -454,10 +458,6 @@
 		F4C7240E15BB1BBE002F89FC /* CCAnimate+SequenceLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCAnimate+SequenceLoader.m"; sourceTree = "<group>"; };
 		F4C7240F15BB1BBF002F89FC /* CCAnimation+SequenceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCAnimation+SequenceLoader.h"; sourceTree = "<group>"; };
 		F4C7241015BB1BBF002F89FC /* CCAnimation+SequenceLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCAnimation+SequenceLoader.m"; sourceTree = "<group>"; };
-		F4C7242315BB2D62002F89FC /* home-sprites-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "home-sprites-hd.plist"; sourceTree = "<group>"; };
-		F4C7242415BB2D62002F89FC /* home-sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-sprites-hd.pvr.ccz"; sourceTree = "<group>"; };
-		F4C7242515BB2D62002F89FC /* home-sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "home-sprites.plist"; sourceTree = "<group>"; };
-		F4C7242615BB2D62002F89FC /* home-sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-sprites.pvr.ccz"; sourceTree = "<group>"; };
 		F4C7242B15BB5607002F89FC /* Hobo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hobo.ttf; sourceTree = "<group>"; };
 		F4C7242D15BB6008002F89FC /* Title.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Title.mp3; sourceTree = "<group>"; };
 		F4C7243215BC65C1002F89FC /* AWHSynchLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHSynchLabel.h; sourceTree = "<group>"; };
@@ -605,10 +605,10 @@
 		F42F086815CDD8090063F763 /* SpriteSheets */ = {
 			isa = PBXGroup;
 			children = (
-				F4C7242315BB2D62002F89FC /* home-sprites-hd.plist */,
-				F4C7242415BB2D62002F89FC /* home-sprites-hd.pvr.ccz */,
-				F4C7242515BB2D62002F89FC /* home-sprites.plist */,
-				F4C7242615BB2D62002F89FC /* home-sprites.pvr.ccz */,
+				F422EC5615DA020E00963D33 /* home-sprites.plist */,
+				F422EC5715DA020E00963D33 /* home-sprites.pvr.ccz */,
+				F422EC4E15DA018300963D33 /* home-sprites-hd.plist */,
+				F422EC4F15DA018300963D33 /* home-sprites-hd.pvr.ccz */,
 			);
 			name = SpriteSheets;
 			sourceTree = "<group>";
@@ -1071,10 +1071,6 @@
 				F4C33E2B15B7308700816700 /* Default@2x.png in Resources */,
 				F4C33E2C15B730A300816700 /* Default.png in Resources */,
 				F4C33E2E15B733B000816700 /* AppIcon144x144.png in Resources */,
-				F4C7242715BB2D62002F89FC /* home-sprites-hd.plist in Resources */,
-				F4C7242815BB2D62002F89FC /* home-sprites-hd.pvr.ccz in Resources */,
-				F4C7242915BB2D62002F89FC /* home-sprites.plist in Resources */,
-				F4C7242A15BB2D62002F89FC /* home-sprites.pvr.ccz in Resources */,
 				F4C7242C15BB5607002F89FC /* Hobo.ttf in Resources */,
 				F4C7242E15BB6008002F89FC /* Title.mp3 in Resources */,
 				F4D33F5915BFA60500694C75 /* high-scores.plist in Resources */,
@@ -1086,6 +1082,10 @@
 				F42F05F415CB70510063F763 /* Default-Portrait~ipad.png in Resources */,
 				F42F085C15CDD4D90063F763 /* AdWhirlWebBrowser.xib in Resources */,
 				F4625E7F15D4C6BC0077CC98 /* PressStart2P.ttf in Resources */,
+				F422EC5215DA018300963D33 /* home-sprites-hd.plist in Resources */,
+				F422EC5315DA018300963D33 /* home-sprites-hd.pvr.ccz in Resources */,
+				F422EC5815DA020E00963D33 /* home-sprites.plist in Resources */,
+				F422EC5915DA020E00963D33 /* home-sprites.pvr.ccz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

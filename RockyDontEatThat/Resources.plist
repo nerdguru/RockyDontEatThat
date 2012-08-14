@@ -50,6 +50,32 @@
 				</dict>
 				<dict>
 					<key>Name</key>
+					<string>start01.png</string>
+					<key>PositionX</key>
+					<string>130</string>
+					<key>PositionY</key>
+					<string>200</string>
+					<key>Action</key>
+					<dict>
+						<key>ActionType</key>
+						<string>RepeatForever</string>
+						<key>ChildAction</key>
+						<dict>
+							<key>ActionType</key>
+							<string>Animate</string>
+							<key>Sequence</key>
+							<string>start%02d.png</string>
+							<key>NumFrames</key>
+							<string>2</string>
+							<key>Delay</key>
+							<string>0.5</string>
+							<key>RestoreOriginalFrame</key>
+							<false/>
+						</dict>
+					</dict>
+				</dict>
+				<dict>
+					<key>Name</key>
 					<string>cheese.png</string>
 					<key>PositionX</key>
 					<string>215</string>

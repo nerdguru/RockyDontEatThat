@@ -7,7 +7,7 @@
             <key>cheese.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{337,236},{93,84}}</string>
+                <string>{{387,83},{93,84}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,11 +20,11 @@
             <key>chocolate.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{337,76},{128,75}}</string>
+                <string>{{387,169},{128,75}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{128,75}}</string>
                 <key>sourceSize</key>
@@ -33,7 +33,7 @@
             <key>pgrapes.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{337,153},{110,81}}</string>
+                <string>{{387,0},{110,81}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,11 +46,11 @@
             <key>rbonetreat.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{337,0},{133,74}}</string>
+                <string>{{387,299},{133,74}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{133,74}}</string>
                 <key>sourceSize</key>
@@ -59,28 +59,54 @@
             <key>rocky01.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,245},{335,243}}</string>
+                <string>{{0,695},{359,261}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{335,243}}</string>
+                <string>{{0,0},{359,261}}</string>
                 <key>sourceSize</key>
-                <string>{335,243}</string>
+                <string>{359,261}</string>
             </dict>
             <key>rocky02.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,0},{335,243}}</string>
+                <string>{{0,432},{359,261}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{335,243}}</string>
+                <string>{{0,0},{359,261}}</string>
                 <key>sourceSize</key>
-                <string>{335,243}</string>
+                <string>{359,261}</string>
+            </dict>
+            <key>start01.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0,216},{385,214}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{385,214}}</string>
+                <key>sourceSize</key>
+                <string>{385,214}</string>
+            </dict>
+            <key>start02.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0,0},{385,214}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{385,214}}</string>
+                <key>sourceSize</key>
+                <string>{385,214}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -90,9 +116,9 @@
             <key>realTextureFileName</key>
             <string>home-sprites.pvr.ccz</string>
             <key>size</key>
-            <string>{470,488}</string>
+            <string>{497,956}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:057d7429e4f7b8b7300609df87605cda$</string>
+            <string>$TexturePacker:SmartUpdate:22cfca733231c4f42d26a8cda6786b20$</string>
             <key>textureFileName</key>
             <string>home-sprites.pvr.ccz</string>
         </dict>
