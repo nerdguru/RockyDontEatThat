@@ -26,6 +26,10 @@
 -(void) touchesOff {
     beenTouched = YES;
 }
+// Flip to the next level
+-(void) nextLevel {
+    NSLog(@"In nextLevel");
+}
 // Revert the sprite to the original actions passed in at init time
 -(void) revertOriginalActions {
     [mySprite stopAllActions];
@@ -66,6 +70,14 @@
         NSLog(@"Action processing a %@", actionType);
         return [CCRotateBy actionWithDuration:[[action objectForKey:@"Duration"] floatValue] angle:[[action objectForKey:@"Angle"] floatValue]];
     }
+    else if ([actionType isEqualToString:@"Delay"]) {
+        NSLog(@"Action processing a %@", actionType);
+        return [CCDelayTime actionWithDuration:[[action objectForKey:@"Duration"] floatValue]];
+    }
+    else if ([actionType isEqualToString:@"ScaleTo"]) {
+        NSLog(@"Action processing a %@", actionType);
+        return [CCScaleTo actionWithDuration:[[action objectForKey:@"Duration"] floatValue]  scale:[[action objectForKey:@"Scale"] floatValue]];
+    }
     else if ([actionType isEqualToString:@"Animate"]) {
         NSLog(@"Action processing a %@", actionType);
         return [CCAnimate actionWithSpriteSequence:[action objectForKey:@"Sequence"]
@@ -82,6 +94,10 @@
     else if ([actionType isEqualToString:@"TouchesOff"]) {
         NSLog(@"Action processing a %@", actionType);
         return [CCCallFunc actionWithTarget:self selector:@selector(touchesOff)];
+    }
+    else if ([actionType isEqualToString:@"NextLevel"]) {
+        NSLog(@"Action processing a %@", actionType);
+        return [CCCallFunc actionWithTarget:self selector:@selector(nextLevel)];
     }
     else if ([actionType isEqualToString:@"RevertOriginalActions"]) {
         NSLog(@"Action processing a %@", actionType);

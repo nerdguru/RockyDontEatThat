@@ -73,6 +73,43 @@
 							<false/>
 						</dict>
 					</dict>
+					<key>TouchReactions</key>
+					<array>
+						<dict>
+							<key>TouchReactionType</key>
+							<string>Actions</string>
+							<key>Action</key>
+							<dict>
+								<key>ActionType</key>
+								<string>Sequence</string>
+								<key>ChildActions</key>
+								<array>
+									<dict>
+										<key>ActionType</key>
+										<string>TouchesOff</string>
+									</dict>
+									<dict>
+										<key>ActionType</key>
+										<string>ScaleTo</string>
+										<key>Duration</key>
+										<string>0.1</string>
+										<key>Scale</key>
+										<string>0.47</string>
+									</dict>
+									<dict>
+										<key>ActionType</key>
+										<string>Delay</string>
+										<key>Duration</key>
+										<string>0.3</string>
+									</dict>
+									<dict>
+										<key>ActionType</key>
+										<string>NextLevel</string>
+									</dict>
+								</array>
+							</dict>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>Name</key>
