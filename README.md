@@ -9,7 +9,12 @@
 * When tests pass: update this file, tag, archive, close milestone, push archive to TestFlight, and install on Suzie's iPhone
 * Increment build #s as needed
 
-## Home Screen Epic (Versions 0.1.x) started 7/17/12
+## Game Play Screen Epic (Versions 0.2.x), started 8/15/12
+The second Epic does the following:
+
+* TBD
+
+## Home Screen Epic (Versions 0.1.x) started 7/17/12, completed 8/14/12
 This first Epic does the following:
 
 * Establishes new project, linked to GitHub, and TestFlight that runs on all 3 of our personal devices (Done, v0.1.2)
@@ -19,5 +24,5 @@ This first Epic does the following:
 * Adds a high score board loaded from a plist using the Color Basic font (Done v0.1.6)
 * Adds a saved high score board when pressing one food, reload it from the plist when pressing another (Done v0.1.7)
 * Pop up house ads on the bottom of the screen (Done v0.1.8)
-* Add a button that non-readers will understand to start the game (Slated v0.1.9)
+* Add a button that non-readers will understand to start the game (Done v0.1.9)
 
