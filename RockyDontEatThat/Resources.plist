@@ -90,11 +90,11 @@
 									</dict>
 									<dict>
 										<key>ActionType</key>
-										<string>ScaleTo</string>
+										<string>ScaleBy</string>
 										<key>Duration</key>
 										<string>0.1</string>
 										<key>Scale</key>
-										<string>0.47</string>
+										<string>0.9</string>
 									</dict>
 									<dict>
 										<key>ActionType</key>

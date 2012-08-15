@@ -11,6 +11,8 @@
 #import "CCAnimate+SequenceLoader.h"
 #import "AWHScaleManager.h"
 #import "AWHResourceManager.h"
+#import "AWHLevelLayer.h"
+#import "AWHGameStateManager.h"
 
 
 @implementation AWHSprite 
@@ -28,7 +30,8 @@
 }
 // Flip to the next level
 -(void) nextLevel {
-    NSLog(@"In nextLevel");
+    AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
+    [gameStateManager gotoNextLevel];
 }
 // Revert the sprite to the original actions passed in at init time
 -(void) revertOriginalActions {
@@ -74,9 +77,9 @@
         NSLog(@"Action processing a %@", actionType);
         return [CCDelayTime actionWithDuration:[[action objectForKey:@"Duration"] floatValue]];
     }
-    else if ([actionType isEqualToString:@"ScaleTo"]) {
+    else if ([actionType isEqualToString:@"ScaleBy"]) {
         NSLog(@"Action processing a %@", actionType);
-        return [CCScaleTo actionWithDuration:[[action objectForKey:@"Duration"] floatValue]  scale:[[action objectForKey:@"Scale"] floatValue]];
+        return [CCScaleBy actionWithDuration:[[action objectForKey:@"Duration"] floatValue]  scale:[[action objectForKey:@"Scale"] floatValue]];
     }
     else if ([actionType isEqualToString:@"Animate"]) {
         NSLog(@"Action processing a %@", actionType);

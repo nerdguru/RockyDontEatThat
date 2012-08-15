@@ -11,6 +11,8 @@
 		F422EC5315DA018300963D33 /* home-sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F422EC4F15DA018300963D33 /* home-sprites-hd.pvr.ccz */; };
 		F422EC5815DA020E00963D33 /* home-sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = F422EC5615DA020E00963D33 /* home-sprites.plist */; };
 		F422EC5915DA020E00963D33 /* home-sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F422EC5715DA020E00963D33 /* home-sprites.pvr.ccz */; };
+		F422EC5C15DB1C2B00963D33 /* AWHLevelLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F422EC5B15DB1C2B00963D33 /* AWHLevelLayer.m */; };
+		F422EDE715DB1EEB00963D33 /* AWHGameStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F422EDE615DB1EEB00963D33 /* AWHGameStateManager.m */; };
 		F42F05F115CB703D0063F763 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2515B721E500816700 /* Default-Landscape~ipad.png */; };
 		F42F05F215CB70420063F763 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2915B7221C00816700 /* Default-Landscape@2x~ipad.png */; };
 		F42F05F315CB70480063F763 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2715B7221700816700 /* Default-Portrait@2x~ipad.png */; };
@@ -170,6 +172,10 @@
 		F422EC4F15DA018300963D33 /* home-sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-sprites-hd.pvr.ccz"; sourceTree = "<group>"; };
 		F422EC5615DA020E00963D33 /* home-sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "home-sprites.plist"; sourceTree = "<group>"; };
 		F422EC5715DA020E00963D33 /* home-sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-sprites.pvr.ccz"; sourceTree = "<group>"; };
+		F422EC5A15DB1C2B00963D33 /* AWHLevelLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHLevelLayer.h; sourceTree = "<group>"; };
+		F422EC5B15DB1C2B00963D33 /* AWHLevelLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHLevelLayer.m; sourceTree = "<group>"; };
+		F422EDE515DB1EEB00963D33 /* AWHGameStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHGameStateManager.h; sourceTree = "<group>"; };
+		F422EDE615DB1EEB00963D33 /* AWHGameStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHGameStateManager.m; sourceTree = "<group>"; };
 		F42F081515CDD4D90063F763 /* AdWhirlAdNetworkAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWhirlAdNetworkAdapter.h; sourceTree = "<group>"; };
 		F42F081615CDD4D90063F763 /* AdWhirlDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWhirlDelegateProtocol.h; sourceTree = "<group>"; };
 		F42F081715CDD4D90063F763 /* AdWhirlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWhirlView.h; sourceTree = "<group>"; };
@@ -657,6 +663,8 @@
 				F4C33E0A15B62FFD00816700 /* RootViewController.m */,
 				F4C33E3715B8483200816700 /* AWHScaleManager.h */,
 				F4C33E3815B8483200816700 /* AWHScaleManager.m */,
+				F422EDE515DB1EEB00963D33 /* AWHGameStateManager.h */,
+				F422EDE615DB1EEB00963D33 /* AWHGameStateManager.m */,
 				F4D33F6915C43B5400694C75 /* AWHResourceManager.h */,
 				F4D33F6A15C43B5400694C75 /* AWHResourceManager.m */,
 				F4C7243215BC65C1002F89FC /* AWHSynchLabel.h */,
@@ -667,6 +675,8 @@
 				F4D33F6F15C44B7700694C75 /* AWHSprite.m */,
 				F4C7243915BC685C002F89FC /* AWHHomeLayer.h */,
 				F4C7243A15BC685C002F89FC /* AWHHomeLayer.m */,
+				F422EC5A15DB1C2B00963D33 /* AWHLevelLayer.h */,
+				F422EC5B15DB1C2B00963D33 /* AWHLevelLayer.m */,
 				F4C33CB515B62FFB00816700 /* Resources */,
 				F4C33CC915B62FFC00816700 /* libs */,
 				F4C33E0215B62FFD00816700 /* Supporting Files */,
@@ -1219,6 +1229,8 @@
 				F4625E7915CE433D0077CC98 /* AdWhirlAdNetworkAdapter.m in Sources */,
 				F4625E7B15CE43650077CC98 /* AdWhirlAdapterGeneric.m in Sources */,
 				F4625E7D15CE43740077CC98 /* AdWhirlAdapterEvent.m in Sources */,
+				F422EC5C15DB1C2B00963D33 /* AWHLevelLayer.m in Sources */,
+				F422EDE715DB1EEB00963D33 /* AWHGameStateManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
