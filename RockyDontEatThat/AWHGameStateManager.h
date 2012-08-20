@@ -16,4 +16,6 @@
 +(id)sharedGameStateManager;
 -(int)theCurrentLevel;
 -(void)gotoNextLevel;
+-(NSDictionary*)getLevelDict;
+-(NSArray *) getHighScores;
 @end

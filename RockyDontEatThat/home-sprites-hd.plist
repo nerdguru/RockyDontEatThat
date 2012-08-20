@@ -117,6 +117,8 @@
             <string>home-sprites-hd.pvr.ccz</string>
             <key>size</key>
             <string>{992,1906}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:be02fc180569c709f670da928713bebd$</string>
             <key>textureFileName</key>
             <string>home-sprites-hd.pvr.ccz</string>
         </dict>

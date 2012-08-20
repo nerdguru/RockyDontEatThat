@@ -11,6 +11,7 @@
 #import "CCAnimate+SequenceLoader.h"
 #import "AWHScaleManager.h"
 #import "AWHResourceManager.h"
+#import "AWHGameStateManager.h"
 #import "AWHSynchLabel.h"
 #import "AWHSprite.h"
 #import "AWHHighScoreLabels.h"
@@ -38,8 +39,9 @@
 -(id) init
 {
     // Start up the ResourceManager and get/apply the background colors
-    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
-    NSDictionary *levelDict = [resourceManager levelDictionaryWithIndex:0];
+    AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
+    
+	NSDictionary *levelDict = [gameStateManager getLevelDict];
     NSDictionary *backgroundDict = [levelDict objectForKey:@"Background"];
 	if( (self=[super initWithColor:ccc4([[backgroundDict objectForKey:@"Red"] intValue], 
                                         [[backgroundDict objectForKey:@"Green"] intValue], 
@@ -81,7 +83,7 @@
         }
         
         // Load up the high score labels
-        AWHHighScoreLabels *highScoreLabels = [[AWHHighScoreLabels alloc] initWithArray:[resourceManager getHighScores]];
+        AWHHighScoreLabels *highScoreLabels = [[AWHHighScoreLabels alloc] initWithArray:[gameStateManager getHighScores]];
         [self addChild:highScoreLabels];
 
         

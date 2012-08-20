@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F422EC5215DA018300963D33 /* home-sprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F422EC4E15DA018300963D33 /* home-sprites-hd.plist */; };
-		F422EC5315DA018300963D33 /* home-sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F422EC4F15DA018300963D33 /* home-sprites-hd.pvr.ccz */; };
-		F422EC5815DA020E00963D33 /* home-sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = F422EC5615DA020E00963D33 /* home-sprites.plist */; };
-		F422EC5915DA020E00963D33 /* home-sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F422EC5715DA020E00963D33 /* home-sprites.pvr.ccz */; };
 		F422EC5C15DB1C2B00963D33 /* AWHLevelLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F422EC5B15DB1C2B00963D33 /* AWHLevelLayer.m */; };
 		F422EDE715DB1EEB00963D33 /* AWHGameStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F422EDE615DB1EEB00963D33 /* AWHGameStateManager.m */; };
+		F422EDEC15DC75F300963D33 /* home-sprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F422EDE815DC75F200963D33 /* home-sprites-hd.plist */; };
+		F422EDED15DC75F300963D33 /* home-sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F422EDE915DC75F200963D33 /* home-sprites-hd.pvr.ccz */; };
+		F422EDEE15DC75F300963D33 /* home-sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = F422EDEA15DC75F300963D33 /* home-sprites.plist */; };
+		F422EDEF15DC75F300963D33 /* home-sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F422EDEB15DC75F300963D33 /* home-sprites.pvr.ccz */; };
+		F422EE2015E1F0AC00963D33 /* sample-sprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F422EE1C15E1F0AB00963D33 /* sample-sprites-hd.plist */; };
+		F422EE2115E1F0AC00963D33 /* sample-sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F422EE1D15E1F0AB00963D33 /* sample-sprites-hd.pvr.ccz */; };
+		F422EE2215E1F0AC00963D33 /* sample-sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = F422EE1E15E1F0AB00963D33 /* sample-sprites.plist */; };
+		F422EE2315E1F0AC00963D33 /* sample-sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F422EE1F15E1F0AC00963D33 /* sample-sprites.pvr.ccz */; };
 		F42F05F115CB703D0063F763 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2515B721E500816700 /* Default-Landscape~ipad.png */; };
 		F42F05F215CB70420063F763 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2915B7221C00816700 /* Default-Landscape@2x~ipad.png */; };
 		F42F05F315CB70480063F763 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C33E2715B7221700816700 /* Default-Portrait@2x~ipad.png */; };
@@ -168,14 +172,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F422EC4E15DA018300963D33 /* home-sprites-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "home-sprites-hd.plist"; sourceTree = "<group>"; };
-		F422EC4F15DA018300963D33 /* home-sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-sprites-hd.pvr.ccz"; sourceTree = "<group>"; };
-		F422EC5615DA020E00963D33 /* home-sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "home-sprites.plist"; sourceTree = "<group>"; };
-		F422EC5715DA020E00963D33 /* home-sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-sprites.pvr.ccz"; sourceTree = "<group>"; };
 		F422EC5A15DB1C2B00963D33 /* AWHLevelLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHLevelLayer.h; sourceTree = "<group>"; };
 		F422EC5B15DB1C2B00963D33 /* AWHLevelLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHLevelLayer.m; sourceTree = "<group>"; };
 		F422EDE515DB1EEB00963D33 /* AWHGameStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHGameStateManager.h; sourceTree = "<group>"; };
 		F422EDE615DB1EEB00963D33 /* AWHGameStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHGameStateManager.m; sourceTree = "<group>"; };
+		F422EDE815DC75F200963D33 /* home-sprites-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "home-sprites-hd.plist"; sourceTree = "<group>"; };
+		F422EDE915DC75F200963D33 /* home-sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-sprites-hd.pvr.ccz"; sourceTree = "<group>"; };
+		F422EDEA15DC75F300963D33 /* home-sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "home-sprites.plist"; sourceTree = "<group>"; };
+		F422EDEB15DC75F300963D33 /* home-sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "home-sprites.pvr.ccz"; sourceTree = "<group>"; };
+		F422EE1C15E1F0AB00963D33 /* sample-sprites-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sample-sprites-hd.plist"; sourceTree = "<group>"; };
+		F422EE1D15E1F0AB00963D33 /* sample-sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-sprites-hd.pvr.ccz"; sourceTree = "<group>"; };
+		F422EE1E15E1F0AB00963D33 /* sample-sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sample-sprites.plist"; sourceTree = "<group>"; };
+		F422EE1F15E1F0AC00963D33 /* sample-sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-sprites.pvr.ccz"; sourceTree = "<group>"; };
 		F42F081515CDD4D90063F763 /* AdWhirlAdNetworkAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWhirlAdNetworkAdapter.h; sourceTree = "<group>"; };
 		F42F081615CDD4D90063F763 /* AdWhirlDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWhirlDelegateProtocol.h; sourceTree = "<group>"; };
 		F42F081715CDD4D90063F763 /* AdWhirlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWhirlView.h; sourceTree = "<group>"; };
@@ -611,10 +619,14 @@
 		F42F086815CDD8090063F763 /* SpriteSheets */ = {
 			isa = PBXGroup;
 			children = (
-				F422EC5615DA020E00963D33 /* home-sprites.plist */,
-				F422EC5715DA020E00963D33 /* home-sprites.pvr.ccz */,
-				F422EC4E15DA018300963D33 /* home-sprites-hd.plist */,
-				F422EC4F15DA018300963D33 /* home-sprites-hd.pvr.ccz */,
+				F422EE1C15E1F0AB00963D33 /* sample-sprites-hd.plist */,
+				F422EE1D15E1F0AB00963D33 /* sample-sprites-hd.pvr.ccz */,
+				F422EE1E15E1F0AB00963D33 /* sample-sprites.plist */,
+				F422EE1F15E1F0AC00963D33 /* sample-sprites.pvr.ccz */,
+				F422EDE815DC75F200963D33 /* home-sprites-hd.plist */,
+				F422EDE915DC75F200963D33 /* home-sprites-hd.pvr.ccz */,
+				F422EDEA15DC75F300963D33 /* home-sprites.plist */,
+				F422EDEB15DC75F300963D33 /* home-sprites.pvr.ccz */,
 			);
 			name = SpriteSheets;
 			sourceTree = "<group>";
@@ -1092,10 +1104,14 @@
 				F42F05F415CB70510063F763 /* Default-Portrait~ipad.png in Resources */,
 				F42F085C15CDD4D90063F763 /* AdWhirlWebBrowser.xib in Resources */,
 				F4625E7F15D4C6BC0077CC98 /* PressStart2P.ttf in Resources */,
-				F422EC5215DA018300963D33 /* home-sprites-hd.plist in Resources */,
-				F422EC5315DA018300963D33 /* home-sprites-hd.pvr.ccz in Resources */,
-				F422EC5815DA020E00963D33 /* home-sprites.plist in Resources */,
-				F422EC5915DA020E00963D33 /* home-sprites.pvr.ccz in Resources */,
+				F422EDEC15DC75F300963D33 /* home-sprites-hd.plist in Resources */,
+				F422EDED15DC75F300963D33 /* home-sprites-hd.pvr.ccz in Resources */,
+				F422EDEE15DC75F300963D33 /* home-sprites.plist in Resources */,
+				F422EDEF15DC75F300963D33 /* home-sprites.pvr.ccz in Resources */,
+				F422EE2015E1F0AC00963D33 /* sample-sprites-hd.plist in Resources */,
+				F422EE2115E1F0AC00963D33 /* sample-sprites-hd.pvr.ccz in Resources */,
+				F422EE2215E1F0AC00963D33 /* sample-sprites.plist in Resources */,
+				F422EE2315E1F0AC00963D33 /* sample-sprites.pvr.ccz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

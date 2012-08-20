@@ -8,6 +8,7 @@
 
 #import "AWHGameStateManager.h"
 #import "AWHLevelLayer.h"
+#import "AWHResourceManager.h"
 
 @implementation AWHGameStateManager
 
@@ -34,6 +35,7 @@
     return currentLevel;
 }
 
+// Logic for incrementing the level state and swapping in the new scene
 -(void)gotoNextLevel {
     
     // Increment the level
@@ -47,5 +49,17 @@
     // Replace the scene
 
     [[CCDirector sharedDirector] replaceScene:scene];
+}
+
+// Logic for returning the correct Dictionary
+-(NSDictionary*)getLevelDict {
+    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
+    NSDictionary *groupDict = [resourceManager levelDictionaryWithIndex:currentLevel];
+    return [groupDict objectForKey:@"Level"];
+}
+
+-(NSArray *) getHighScores {
+    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
+    return [resourceManager getHighScores];
 }
 @end
