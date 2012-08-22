@@ -137,4 +137,26 @@
         return 5;
 }
 
+// Converts a text dimension specifier to a float value
+-(float)convertDimension:(NSString*)dim {
+    float retval = 0.0;
+    if ([dim isEqualToString:@"E"]) {
+        if (!iPad)
+            retval = 480;
+        else {
+            retval = 480 + (512-480)/2;
+        }
+    } else if ([dim isEqualToString:@"W"]) {
+        if (!iPad)
+            retval = 0;
+        else {
+            retval = -1 * (512-480)/2;
+        }
+    } else {
+        // Assume it's a number
+        retval = [dim floatValue];
+    }
+    return retval;
+}
+
 @end

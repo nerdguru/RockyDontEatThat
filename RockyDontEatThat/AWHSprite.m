@@ -84,7 +84,7 @@
     else if ([actionType isEqualToString:@"MoveTo"]) {
         NSLog(@"Action processing a %@", actionType);
         AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
-        return [CCMoveTo actionWithDuration:[[action objectForKey:@"Duration"] floatValue]  position:[scaleManager scalePointX:[[action objectForKey:@"PositionX"] floatValue] andY:[[action objectForKey:@"PositionY"] floatValue]]];
+        return [CCMoveTo actionWithDuration:[[action objectForKey:@"Duration"] floatValue]  position:[scaleManager scalePointX:[scaleManager convertDimension:[action objectForKey:@"PositionX"]] andY:[scaleManager convertDimension:[action objectForKey:@"PositionY"]]]];
     }
     else if ([actionType isEqualToString:@"Animate"]) {
         NSLog(@"Action processing a %@", actionType);
@@ -128,10 +128,11 @@
         // Initialize the sprite with data from the dict and with the help of the scaleManager
         AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
         self.mySprite=[CCSprite spriteWithSpriteFrameName:[spriteDict objectForKey:@"Name"]];
-        
-        mySprite.position=[scaleManager scalePointX:[[spriteDict objectForKey:@"PositionX"] floatValue] andY:[[spriteDict objectForKey:@"PositionY"] floatValue]];
-        NSLog(@"Position: x %f Y %f", mySprite.position.x,mySprite.position.y);
         mySprite.scale = [scaleManager scaleImage];
+        mySprite.position=[scaleManager scalePointX:[scaleManager convertDimension:[spriteDict objectForKey:@"PositionX"]] andY:[scaleManager convertDimension:[spriteDict objectForKey:@"PositionY"]]];
+        NSLog(@"Position: x %f y %f", mySprite.position.x,mySprite.position.y);
+        NSLog(@"Dimensions: w %f h %f", [mySprite boundingBox].size.width,[mySprite boundingBox].size.height);
+        
         
         // Set up actions
         originalActions = [spriteDict objectForKey:@"Action"];

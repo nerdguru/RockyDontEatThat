@@ -467,7 +467,7 @@
 							<key>Name</key>
 							<string>bg1.png</string>
 							<key>PositionX</key>
-							<string>210</string>
+							<string>E</string>
 							<key>PositionY</key>
 							<string>160</string>
 							<key>Action</key>
@@ -475,7 +475,7 @@
 								<key>ActionType</key>
 								<string>MoveTo</string>
 								<key>PositionX</key>
-								<string>0</string>
+								<string>W</string>
 								<key>PositionY</key>
 								<string>160</string>
 								<key>Duration</key>
@@ -486,9 +486,20 @@
 							<key>Name</key>
 							<string>bg2.png</string>
 							<key>PositionX</key>
-							<string>300</string>
+							<string>E</string>
 							<key>PositionY</key>
 							<string>210</string>
+							<key>Action</key>
+							<dict>
+								<key>ActionType</key>
+								<string>MoveTo</string>
+								<key>PositionX</key>
+								<string>W</string>
+								<key>PositionY</key>
+								<string>210</string>
+								<key>Duration</key>
+								<string>10.0</string>
+							</dict>
 						</dict>
 					</array>
 				</dict>

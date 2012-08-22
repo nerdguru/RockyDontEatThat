@@ -27,4 +27,5 @@
 -(CGSize)scaledAdSize;
 -(float)scaleAdOriginY;
 -(float)scaleAdPadding;
+-(float)convertDimension:(NSString*)dim;
 @end
