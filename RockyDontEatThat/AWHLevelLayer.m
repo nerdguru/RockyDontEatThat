@@ -33,7 +33,7 @@
                                         [[backgroundDict objectForKey:@"Opacity"] intValue])])) {
 		
         // Get the ScaleManager
-        AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
+        AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager];  
         
         // Set the image format, defaulting to RGBA4444
         NSString *imageFormat = [levelDict objectForKey:@"ImageFormat"];
