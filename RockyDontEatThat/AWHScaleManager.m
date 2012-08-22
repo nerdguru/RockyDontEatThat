@@ -138,7 +138,7 @@
 }
 
 // Converts a text dimension specifier to a float value
--(float)convertDimension:(NSString*)dim {
+-(float)convertDimension:(NSString*)dim ofSprite:(CCSprite*)sprite{
     float retval = 0.0;
     if ([dim isEqualToString:@"E"]) {
         if (!iPad)
@@ -146,13 +146,25 @@
         else {
             retval = 480 + (512-480)/2;
         }
+    } else if ([dim isEqualToString:@"E+"]) {
+        if (!iPad)
+            retval = 480 + [sprite boundingBox].size.width/2;
+        else {
+            retval = 480 + (512-480)/2 + [sprite boundingBox].size.width/4; // 4 to compensate for twice sized sprite on iPad
+        }
     } else if ([dim isEqualToString:@"W"]) {
         if (!iPad)
             retval = 0;
         else {
             retval = -1 * (512-480)/2;
         }
-    } else {
+    } else if ([dim isEqualToString:@"W-"]) {
+        if (!iPad)
+            retval = 0 - [sprite boundingBox].size.width/2;
+        else {
+            retval = -1 * (512-480)/2 - [sprite boundingBox].size.width/4;
+        }
+    }else {
         // Assume it's a number
         retval = [dim floatValue];
     }

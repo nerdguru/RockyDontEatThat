@@ -27,5 +27,5 @@
 -(CGSize)scaledAdSize;
 -(float)scaleAdOriginY;
 -(float)scaleAdPadding;
--(float)convertDimension:(NSString*)dim;
+-(float)convertDimension:(NSString*)dim ofSprite:(CCSprite*)sprite;
 @end

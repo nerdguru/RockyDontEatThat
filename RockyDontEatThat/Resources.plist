@@ -467,38 +467,82 @@
 							<key>Name</key>
 							<string>bg1.png</string>
 							<key>PositionX</key>
-							<string>E</string>
+							<string>E+</string>
 							<key>PositionY</key>
 							<string>160</string>
 							<key>Action</key>
 							<dict>
 								<key>ActionType</key>
-								<string>MoveTo</string>
-								<key>PositionX</key>
-								<string>W</string>
-								<key>PositionY</key>
-								<string>160</string>
-								<key>Duration</key>
-								<string>10.0</string>
+								<string>RepeatForever</string>
+								<key>ChildAction</key>
+								<dict>
+									<key>ActionType</key>
+									<string>Sequence</string>
+									<key>ChildActions</key>
+									<array>
+										<dict>
+											<key>ActionType</key>
+											<string>MoveTo</string>
+											<key>PositionX</key>
+											<string>W-</string>
+											<key>PositionY</key>
+											<string>160</string>
+											<key>Duration</key>
+											<string>9.0</string>
+										</dict>
+										<dict>
+											<key>ActionType</key>
+											<string>MoveTo</string>
+											<key>PositionX</key>
+											<string>E+</string>
+											<key>PositionY</key>
+											<string>160</string>
+											<key>Duration</key>
+											<string>0</string>
+										</dict>
+									</array>
+								</dict>
 							</dict>
 						</dict>
 						<dict>
 							<key>Name</key>
 							<string>bg2.png</string>
 							<key>PositionX</key>
-							<string>E</string>
+							<string>E+</string>
 							<key>PositionY</key>
 							<string>210</string>
 							<key>Action</key>
 							<dict>
 								<key>ActionType</key>
-								<string>MoveTo</string>
-								<key>PositionX</key>
-								<string>W</string>
-								<key>PositionY</key>
-								<string>210</string>
-								<key>Duration</key>
-								<string>10.0</string>
+								<string>RepeatForever</string>
+								<key>ChildAction</key>
+								<dict>
+									<key>ActionType</key>
+									<string>Sequence</string>
+									<key>ChildActions</key>
+									<array>
+										<dict>
+											<key>ActionType</key>
+											<string>MoveTo</string>
+											<key>PositionX</key>
+											<string>W-</string>
+											<key>PositionY</key>
+											<string>210</string>
+											<key>Duration</key>
+											<string>10.0</string>
+										</dict>
+										<dict>
+											<key>ActionType</key>
+											<string>MoveTo</string>
+											<key>PositionX</key>
+											<string>E+</string>
+											<key>PositionY</key>
+											<string>210</string>
+											<key>Duration</key>
+											<string>0</string>
+										</dict>
+									</array>
+								</dict>
 							</dict>
 						</dict>
 					</array>
