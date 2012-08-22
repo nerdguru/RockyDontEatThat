@@ -45,7 +45,6 @@
     resourceManager.saveHighScores;
 }
 
-
 // Build the data structure of actions to execute on this sprite, recursively if necessary
 -(CCAction *)processActions:(NSDictionary *)action {
  
@@ -55,6 +54,7 @@
     if ([actionType isEqualToString:@"RepeatForever"]) {
         NSLog(@"Action processing a %@", actionType);
         id childAction = [self processActions:[action objectForKey:@"ChildAction"]];
+        NSLog(@"Dict to repeat: %@", [action objectForKey:@"ChildAction"]);
         return [CCRepeatForever actionWithAction:childAction];
     } 
     else if ([actionType isEqualToString:@"Sequence"]) {
@@ -80,6 +80,11 @@
     else if ([actionType isEqualToString:@"ScaleBy"]) {
         NSLog(@"Action processing a %@", actionType);
         return [CCScaleBy actionWithDuration:[[action objectForKey:@"Duration"] floatValue]  scale:[[action objectForKey:@"Scale"] floatValue]];
+    }
+    else if ([actionType isEqualToString:@"MoveTo"]) {
+        NSLog(@"Action processing a %@", actionType);
+        AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
+        return [CCMoveTo actionWithDuration:[[action objectForKey:@"Duration"] floatValue]  position:[scaleManager scalePointX:[[action objectForKey:@"PositionX"] floatValue] andY:[[action objectForKey:@"PositionY"] floatValue]]];
     }
     else if ([actionType isEqualToString:@"Animate"]) {
         NSLog(@"Action processing a %@", actionType);
@@ -125,11 +130,13 @@
         self.mySprite=[CCSprite spriteWithSpriteFrameName:[spriteDict objectForKey:@"Name"]];
         
         mySprite.position=[scaleManager scalePointX:[[spriteDict objectForKey:@"PositionX"] floatValue] andY:[[spriteDict objectForKey:@"PositionY"] floatValue]];
+        NSLog(@"Position: x %f Y %f", mySprite.position.x,mySprite.position.y);
         mySprite.scale = [scaleManager scaleImage];
         
         // Set up actions
         originalActions = [spriteDict objectForKey:@"Action"];
-        [mySprite runAction:[self processActions:originalActions]];
+        if(originalActions!= nil)
+            [mySprite runAction:[self processActions:originalActions]];
         
         // Record touch reactions for later
         touchReactions = [spriteDict objectForKey:@"TouchReactions"];

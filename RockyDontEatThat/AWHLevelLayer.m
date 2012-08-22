@@ -50,10 +50,17 @@
         [self addChild:spritesBNode];    
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%@.plist", spriteSheet]];
         
+        // Load up background sprites
+        for (NSDictionary* spriteDict in [backgroundDict objectForKey:@"Sprites"] ){
+            AWHSprite *sprite=[[AWHSprite alloc] initWithDict:spriteDict];
+            [self addChild:sprite];
+        }
+        
         // Load up protagonist animation
         NSDictionary *protagonist = [levelDict objectForKey:@"Protagonist"];
         AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[protagonist objectForKey:@"MainSprite"]];
         [self addChild:sprite];
+        
         
         /*
 		// create and initialize a Label
