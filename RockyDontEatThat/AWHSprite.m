@@ -54,7 +54,7 @@
     if ([actionType isEqualToString:@"RepeatForever"]) {
         NSLog(@"Action processing a %@", actionType);
         id childAction = [self processActions:[action objectForKey:@"ChildAction"]];
-        NSLog(@"Dict to repeat: %@", [action objectForKey:@"ChildAction"]);
+        //NSLog(@"Dict to repeat: %@", [action objectForKey:@"ChildAction"]);
         return [CCRepeatForever actionWithAction:childAction];
     } 
     else if ([actionType isEqualToString:@"Sequence"]) {

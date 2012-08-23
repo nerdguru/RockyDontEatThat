@@ -15,6 +15,7 @@
 }
 
 +(id)sharedResourceManager;
++(NSDictionary *)expandSpriteDict:(NSDictionary *)dict;
 -(NSDictionary *)levelDictionaryWithIndex:(int)index;
 -(NSArray *) getHighScores;
 -(void) saveHighScores;

@@ -10,6 +10,7 @@
 #import "AWHGameStateManager.h"
 #import "AWHScaleManager.h"
 #import "AWHSprite.h"
+#import "AWHResourceManager.h"
 
 
 @implementation AWHLevelLayer
@@ -52,7 +53,7 @@
         
         // Load up background sprites
         for (NSDictionary* spriteDict in [backgroundDict objectForKey:@"Sprites"] ){
-            AWHSprite *sprite=[[AWHSprite alloc] initWithDict:spriteDict];
+            AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[AWHResourceManager expandSpriteDict:spriteDict]];
             [self addChild:sprite];
         }
         
@@ -61,6 +62,7 @@
         AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[protagonist objectForKey:@"MainSprite"]];
         [self addChild:sprite];
         
+
         
         /*
 		// create and initialize a Label

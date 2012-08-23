@@ -168,8 +168,12 @@
         retval = 160;
     } else if ([dim isEqualToString:@"StraightY"]) {
         retval = sprite.position.y;
-        if(iPad)
-            retval = retval/2;
+        if(iPad) {
+            NSLog(@"ipad logic for StraightY");
+            retval = sprite.position.y/2 - 32;
+        }
+            
+        NSLog(@"Straight Y: %f", retval);
     } else {
         // Assume it's a number
         retval = [dim floatValue];

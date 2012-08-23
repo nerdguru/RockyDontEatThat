@@ -510,40 +510,9 @@
 							<key>PositionX</key>
 							<string>E+</string>
 							<key>PositionY</key>
-							<string>210</string>
-							<key>Action</key>
-							<dict>
-								<key>ActionType</key>
-								<string>RepeatForever</string>
-								<key>ChildAction</key>
-								<dict>
-									<key>ActionType</key>
-									<string>Sequence</string>
-									<key>ChildActions</key>
-									<array>
-										<dict>
-											<key>ActionType</key>
-											<string>MoveTo</string>
-											<key>PositionX</key>
-											<string>W-</string>
-											<key>PositionY</key>
-											<string>StraightY</string>
-											<key>Speed</key>
-											<string>50</string>
-										</dict>
-										<dict>
-											<key>ActionType</key>
-											<string>MoveTo</string>
-											<key>PositionX</key>
-											<string>E+</string>
-											<key>PositionY</key>
-											<string>StraightY</string>
-											<key>Speed</key>
-											<string>0</string>
-										</dict>
-									</array>
-								</dict>
-							</dict>
+							<string>200</string>
+							<key>Template</key>
+							<string>R2LScrollWrap</string>
 						</dict>
 					</array>
 				</dict>

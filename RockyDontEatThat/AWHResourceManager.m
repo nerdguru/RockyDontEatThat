@@ -20,6 +20,29 @@
     return sharedResourceManager;
 }
 
+// Expands the NSDictionary passed in describing a Sprite given any templates it may contain
+// Based on http://www.mlsite.net/blog/?p=212
++(NSDictionary *)expandSpriteDict:(NSDictionary *)dict {
+    
+    // First, see if we need to do anything at all
+    if ([dict objectForKey:@"Template"]) {
+        // Assume that path is the pathname of a file with the XML contents shown above
+        NSString* template = [dict objectForKey:@"Template"];
+        NSLog(@"Template: %@", template);
+        CFStringRef errStr;
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:template ofType:@"plist"];
+        NSMutableDictionary* elements = (NSMutableDictionary*) CFPropertyListCreateFromXMLData(kCFAllocatorDefault, (CFDataRef) [NSData dataWithContentsOfFile:filePath], kCFPropertyListMutableContainersAndLeaves, &errStr);
+        // Now add the contents of dict to the template, except for the template
+        for(id key in dict) {
+            if (![key isEqualToString:@"Template"]) {
+                [elements setObject:[dict objectForKey:key] forKey:key];
+            }
+        }
+        return elements;
+    } else
+        return dict;
+}
+
 -(id) init
 {
 	if( (self=[super init]) ) {
