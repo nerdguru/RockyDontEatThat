@@ -164,10 +164,33 @@
         else {
             retval = -1 * (512-480)/2 - [sprite boundingBox].size.width/4;
         }
-    }else {
+    } else if ([dim isEqualToString:@"Middle"]) {
+        retval = 160;
+    } else if ([dim isEqualToString:@"StraightY"]) {
+        retval = sprite.position.y;
+        if(iPad)
+            retval = retval/2;
+    } else {
         // Assume it's a number
         retval = [dim floatValue];
     }
+    return retval;
+}
+
+// Allows plist for sprite MoveTos to be in terms of speed instead of duration
+-(float)computeDurationFromSpeed:(NSString*)speed ofSprite:(CCSprite*)sprite toX:(float)x toY:(float)y{
+    float retval = 0.0;
+    
+    if (![speed isEqualToString:@"0"]) {
+        float speedFloat = [speed floatValue];
+        
+        // Compute Distance
+        CGPoint finish = ccp(x,y);
+        float distance = ccpDistance(sprite.position, finish); 
+        NSLog(@"Distance: %f", distance);
+        retval = distance/speedFloat;
+    }
+    
     return retval;
 }
 

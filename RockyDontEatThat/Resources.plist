@@ -469,7 +469,7 @@
 							<key>PositionX</key>
 							<string>E+</string>
 							<key>PositionY</key>
-							<string>160</string>
+							<string>Middle</string>
 							<key>Action</key>
 							<dict>
 								<key>ActionType</key>
@@ -486,9 +486,9 @@
 											<key>PositionX</key>
 											<string>W-</string>
 											<key>PositionY</key>
-											<string>160</string>
-											<key>Duration</key>
-											<string>9.0</string>
+											<string>Middle</string>
+											<key>Speed</key>
+											<string>50</string>
 										</dict>
 										<dict>
 											<key>ActionType</key>
@@ -496,8 +496,8 @@
 											<key>PositionX</key>
 											<string>E+</string>
 											<key>PositionY</key>
-											<string>160</string>
-											<key>Duration</key>
+											<string>Middle</string>
+											<key>Speed</key>
 											<string>0</string>
 										</dict>
 									</array>
@@ -527,9 +527,9 @@
 											<key>PositionX</key>
 											<string>W-</string>
 											<key>PositionY</key>
-											<string>210</string>
-											<key>Duration</key>
-											<string>10.0</string>
+											<string>StraightY</string>
+											<key>Speed</key>
+											<string>50</string>
 										</dict>
 										<dict>
 											<key>ActionType</key>
@@ -537,8 +537,8 @@
 											<key>PositionX</key>
 											<string>E+</string>
 											<key>PositionY</key>
-											<string>210</string>
-											<key>Duration</key>
+											<string>StraightY</string>
+											<key>Speed</key>
 											<string>0</string>
 										</dict>
 									</array>

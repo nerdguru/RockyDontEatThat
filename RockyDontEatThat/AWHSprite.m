@@ -84,7 +84,12 @@
     else if ([actionType isEqualToString:@"MoveTo"]) {
         NSLog(@"Action processing a %@", actionType);
         AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
-        return [CCMoveTo actionWithDuration:[[action objectForKey:@"Duration"] floatValue]  position:[scaleManager scalePointX:[scaleManager convertDimension:[action objectForKey:@"PositionX"] ofSprite:self.mySprite] andY:[scaleManager convertDimension:[action objectForKey:@"PositionY"] ofSprite:self.mySprite]]];
+        //return [CCMoveTo actionWithDuration:[[action objectForKey:@"Duration"] floatValue]  position:[scaleManager scalePointX:[scaleManager convertDimension:[action objectForKey:@"PositionX"] ofSprite:self.mySprite] andY:[scaleManager convertDimension:[action objectForKey:@"PositionY"] ofSprite:self.mySprite]]];
+        float positionX = [scaleManager convertDimension:[action objectForKey:@"PositionX"] ofSprite:self.mySprite];
+        float positionY = [scaleManager convertDimension:[action objectForKey:@"PositionY"] ofSprite:self.mySprite];
+        float duration = [scaleManager computeDurationFromSpeed:[action objectForKey:@"Speed"] ofSprite:self.mySprite toX:positionX toY:positionY];
+        
+        return [CCMoveTo actionWithDuration:duration position:[scaleManager  scalePointX:positionX andY:positionY]];
     }
     else if ([actionType isEqualToString:@"Animate"]) {
         NSLog(@"Action processing a %@", actionType);

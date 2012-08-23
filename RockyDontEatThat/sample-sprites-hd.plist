@@ -7,15 +7,15 @@
             <key>bg1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{694,596},{257,1280}}</string>
+                <string>{{694,0},{282,1536}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{257,1280}}</string>
+                <string>{{0,0},{282,1536}}</string>
                 <key>sourceSize</key>
-                <string>{257,1280}</string>
+                <string>{282,1536}</string>
             </dict>
             <key>bg2.png</key>
             <dict>
@@ -33,7 +33,7 @@
             <key>cheese.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,1878},{185,167}}</string>
+                <string>{{834,1538},{185,167}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,7 +46,7 @@
             <key>chocolate.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{623,1878},{255,149}}</string>
+                <string>{{570,1686},{255,149}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,11 +59,11 @@
             <key>cupcake.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,1578},{228,139}}</string>
+                <string>{{448,1162},{228,139}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{1,1},{228,139}}</string>
                 <key>sourceSize</key>
@@ -72,11 +72,11 @@
             <key>dkgbonetreat.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{694,150},{264,148}}</string>
+                <string>{{150,1162},{264,148}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{1,0},{264,148}}</string>
                 <key>sourceSize</key>
@@ -85,11 +85,11 @@
             <key>ggrapes.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{405,1878},{216,158}}</string>
+                <string>{{827,1707},{216,158}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{1,2},{216,158}}</string>
                 <key>sourceSize</key>
@@ -98,11 +98,11 @@
             <key>ltgbonetreat.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{694,0},{264,148}}</string>
+                <string>{{0,1162},{264,148}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{1,0},{264,148}}</string>
                 <key>sourceSize</key>
@@ -111,11 +111,11 @@
             <key>pgrapes.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{187,1878},{216,158}}</string>
+                <string>{{448,1303},{216,158}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{1,2},{216,158}}</string>
                 <key>sourceSize</key>
@@ -124,11 +124,11 @@
             <key>rbonetreat.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{694,300},{264,146}}</string>
+                <string>{{300,1162},{264,146}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{1,1},{264,146}}</string>
                 <key>sourceSize</key>
@@ -137,7 +137,7 @@
             <key>rocky01.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,1162},{568,414}}</string>
+                <string>{{0,1538},{568,414}}</string>
                 <key>offset</key>
                 <string>{21,9}</string>
                 <key>rotated</key>
@@ -176,7 +176,7 @@
             <key>tanbonetreat.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{694,448},{262,146}}</string>
+                <string>{{570,1538},{262,146}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -196,7 +196,7 @@
             <key>size</key>
             <string>{1024,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:a6a039f315c35cc6365d66f27cc735ac$</string>
+            <string>$TexturePacker:SmartUpdate:8fb1d9c0c9a006705f2d7339213151ba$</string>
             <key>textureFileName</key>
             <string>sample-sprites-hd.pvr.ccz</string>
         </dict>
