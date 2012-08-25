@@ -465,16 +465,6 @@
 					<array>
 						<dict>
 							<key>Name</key>
-							<string>bg1.png</string>
-							<key>PositionX</key>
-							<string>E+</string>
-							<key>PositionY</key>
-							<string>Middle</string>
-							<key>Template</key>
-							<string>R2LScrollWrap</string>
-						</dict>
-						<dict>
-							<key>Name</key>
 							<string>bg2.png</string>
 							<key>PositionX</key>
 							<string>E+</string>
@@ -484,6 +474,17 @@
 							<string>R2LScrollWrap</string>
 						</dict>
 					</array>
+					<key>Tiled</key>
+					<dict>
+						<key>Name</key>
+						<string>bg1.png</string>
+						<key>Template</key>
+						<string>R2LScrollNoWrap</string>
+						<key>PositionY</key>
+						<string>Middle</string>
+						<key>PositionX</key>
+						<string>E+</string>
+					</dict>
 				</dict>
 				<key>Protagonist</key>
 				<dict>

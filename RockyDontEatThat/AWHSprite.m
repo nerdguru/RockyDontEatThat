@@ -44,6 +44,11 @@
     resourceManager.loadHighScoresPlist;
     resourceManager.saveHighScores;
 }
+// Get rid of the sprite
+-(void) removeMe {
+    NSLog(@"About to remove myself");
+    [self removeFromParentAndCleanup:YES];
+}
 
 // Build the data structure of actions to execute on this sprite, recursively if necessary
 -(CCAction *)processActions:(NSDictionary *)action {
@@ -117,6 +122,10 @@
     else if ([actionType isEqualToString:@"LoadSaveHighScores"]) {
         NSLog(@"Action processing a %@", actionType);
         return [CCCallFunc actionWithTarget:self selector:@selector(loadSaveHighScores)];
+    }
+    else if ([actionType isEqualToString:@"RemoveMe"]) {
+        NSLog(@"Action processing a %@", actionType);
+        return [CCCallFunc actionWithTarget:self selector:@selector(removeMe)];
     }
     
     // Return a nil if nothing matched

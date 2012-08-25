@@ -52,6 +52,10 @@
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%@.plist", spriteSheet]];
         
         // Load up background sprites
+        tiledBackgroundDict = [backgroundDict objectForKey:@"Tiled"];
+        AWHSprite *tiledSprite=[[AWHSprite alloc] initWithDict:[AWHResourceManager expandSpriteDict:tiledBackgroundDict]];
+        [self addChild:tiledSprite];
+
         for (NSDictionary* spriteDict in [backgroundDict objectForKey:@"Sprites"] ){
             AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[AWHResourceManager expandSpriteDict:spriteDict]];
             [self addChild:sprite];
