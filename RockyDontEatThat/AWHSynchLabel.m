@@ -80,7 +80,7 @@
         NSMutableArray *actionsArray = [[NSMutableArray alloc] initWithCapacity:(intervalArray.count*2)];
         for (NSString* intervalString in intervalArray ){
             float intervalFloat = [intervalString floatValue];
-            NSLog(@"intervalFloat: %f cumulativeTime %f delta: %f", intervalFloat, cumulativeTime, intervalFloat-cumulativeTime);
+            //NSLog(@"intervalFloat: %f cumulativeTime %f delta: %f", intervalFloat, cumulativeTime, intervalFloat-cumulativeTime);
             [actionsArray addObject:[CCDelayTime actionWithDuration: intervalFloat-cumulativeTime]];
             [actionsArray addObject:[CCCallFunc actionWithTarget:self selector:@selector(toggleColor)]];
             cumulativeTime =intervalFloat;

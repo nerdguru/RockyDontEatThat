@@ -164,7 +164,7 @@
     
 	newFrame.origin.y = (winSize.height - adSize.height-[scaleManager scaleAdOriginY]-[scaleManager scaleAdPadding]);
 	//9
-    NSLog(@"adjustAdSize Ad x: %f y: %f  Win x: %f y: %f ", adSize.width, adSize.height, winSize.width, winSize.height);
+    //NSLog(@"adjustAdSize Ad x: %f y: %f  Win x: %f y: %f ", adSize.width, adSize.height, winSize.width, winSize.height);
 	adWhirlView.frame = newFrame;
 	//10
 	[UIView commitAnimations];
@@ -192,7 +192,7 @@
 	CGSize adSize = [adWhirlView actualAdSize];
     //6
     CGSize winSize = [CCDirector sharedDirector].winSize;
-    NSLog(@"Ad x: %f y: %f  Win x: %f y: %f ", adSize.width, adSize.height, winSize.width, winSize.height);
+    //NSLog(@"Ad x: %f y: %f  Win x: %f y: %f ", adSize.width, adSize.height, winSize.width, winSize.height);
     //7
     // Original code commented out to center the ad
 	//self.adWhirlView.frame = CGRectMake((winSize.width/2)-(adSize.width/2),winSize.height-adSize.height,winSize.width,adSize.height);

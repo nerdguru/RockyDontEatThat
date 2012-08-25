@@ -85,7 +85,7 @@
     if (!iPad)
         retval =  0.50;
     
-    NSLog(@"scaleImage: %f", retval);
+    //NSLog(@"scaleImage: %f", retval);
     return retval;
     
 }
@@ -96,7 +96,7 @@
     if (!iPad)
         retval =  1.0;
     
-    NSLog(@"scaleAd: %f", retval);
+    //NSLog(@"scaleAd: %f", retval);
     return retval;
     
 }
@@ -150,8 +150,9 @@
         if (!iPad)
             retval = 480 + [sprite boundingBox].size.width/2;
         else {
-            retval = 480 + (512-480)/2 + [sprite boundingBox].size.width/4; // 4 to compensate for twice sized sprite on iPad
+            retval = 480 + (512-480)/2 + [sprite boundingBox].size.width/4;      
         }
+        //NSLog(@"In Convert Dimension E+: %f width: %f", retval, [sprite boundingBox].size.width);
     } else if ([dim isEqualToString:@"W"]) {
         if (!iPad)
             retval = 0;
@@ -164,16 +165,14 @@
         else {
             retval = -1 * (512-480)/2 - [sprite boundingBox].size.width/4;
         }
+        //NSLog(@"In Convert Dimension W-: %f width: %f", retval, [sprite boundingBox].size.width);
     } else if ([dim isEqualToString:@"Middle"]) {
         retval = 160;
     } else if ([dim isEqualToString:@"StraightY"]) {
         retval = sprite.position.y;
         if(iPad) {
-            NSLog(@"ipad logic for StraightY");
             retval = sprite.position.y/2 - 32;
         }
-            
-        NSLog(@"Straight Y: %f", retval);
     } else {
         // Assume it's a number
         retval = [dim floatValue];
@@ -189,10 +188,14 @@
         float speedFloat = [speed floatValue];
         
         // Compute Distance
-        CGPoint finish = ccp(x,y);
+        //CGPoint finish = ccp(x,y);
+        CGPoint finish = [self scalePointX:x andY:y];
         float distance = ccpDistance(sprite.position, finish); 
-        NSLog(@"Distance: %f", distance);
+        //NSLog(@"Speed: %f Distance: %f Duration: %f", speedFloat, distance, distance/speedFloat);
+        //NSLog(@"Start x:%f y:%f  Finish x:%f y:%f", sprite.position.x, sprite.position.y, x, y);
         retval = distance/speedFloat;
+        if(iPad)
+            retval = retval/2;
     }
     
     return retval;
