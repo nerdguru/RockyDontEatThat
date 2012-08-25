@@ -29,4 +29,6 @@
 -(float)scaleAdPadding;
 -(float)convertDimension:(NSString*)dim ofSprite:(CCSprite*)sprite;
 -(float)computeDurationFromSpeed:(NSString*)speed ofSprite:(CCSprite*)sprite toX:(float)x toY:(float)y;
+-(int)computeNumHorizTiles:(float)width; 
+-(float)pointsFromRightBoundary:(float)width n:(int)n;
 @end

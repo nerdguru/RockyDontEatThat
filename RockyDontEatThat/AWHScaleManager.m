@@ -201,4 +201,19 @@
     return retval;
 }
 
+-(int)computeNumHorizTiles:(float)width {
+    int retval = 0;
+    CGSize size = [[CCDirector sharedDirector] winSize];
+    retval = size.width/width;
+    NSLog(@"Sprite Width: %f Win width: %f Retval: %d", width, size.width, retval);
+    return retval+1;
+}
+
+-(float)pointsFromRightBoundary:(float)width n:(int)n {
+    float retval = 480-width/2-n*width+n+1;
+    if(iPad)
+        retval = 496 -width/4-n*width/2+n+1;
+    return retval;
+}
+
 @end

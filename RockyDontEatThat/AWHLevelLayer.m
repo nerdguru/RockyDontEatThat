@@ -19,6 +19,11 @@
     AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
     [gameStateManager gotoNextLevel];
 }
+/*
+-(void)newBackgroundTile {
+    AWHSprite *tiledSprite=[[AWHSprite alloc] initWithDict:[AWHResourceManager expandSpriteDict:tiledBackgroundDict]];
+    [self addChild:tiledSprite z:0];
+}*/
 
 // on "init" you need to initialize your instance
 -(id) init
@@ -52,19 +57,36 @@
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%@.plist", spriteSheet]];
         
         // Load up background sprites
-        tiledBackgroundDict = [backgroundDict objectForKey:@"Tiled"];
-        AWHSprite *tiledSprite=[[AWHSprite alloc] initWithDict:[AWHResourceManager expandSpriteDict:tiledBackgroundDict]];
-        [self addChild:tiledSprite];
+        tiledBackgroundDict = [AWHResourceManager expandSpriteDict:[backgroundDict objectForKey:@"Tiled"]];
+        AWHSprite *tiledSprite=[[AWHSprite alloc] initWithDict:tiledBackgroundDict];
+        [self addChild:tiledSprite z:0];
+
+        
+        for (int loopVar = 0; loopVar < [scaleManager computeNumHorizTiles:[tiledSprite.mySprite boundingBox].size.width]; loopVar++) {
+            float x = [scaleManager pointsFromRightBoundary:[tiledSprite.mySprite boundingBox].size.width n:loopVar];
+            NSMutableDictionary* tileDict = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                             [tiledBackgroundDict objectForKey:@"Name"], @"Name",
+                                             [tiledBackgroundDict objectForKey:@"PositionY"], @"PositionY",
+                                             [NSString stringWithFormat: @"%f", x], @"PositionX",  
+                                             [tiledBackgroundDict objectForKey:@"Action"], @"Action",
+                                             nil];
+            NSLog(@"Dict: %@", tileDict);
+            NSLog(@"Dict Orig: %@", tiledBackgroundDict);
+            AWHSprite *tile=[[AWHSprite alloc] initWithDict:tileDict];
+            //x=x-[tiledSprite.mySprite boundingBox].size.width+0.5;
+            [self addChild:tile z:0];
+        }
+        
 
         for (NSDictionary* spriteDict in [backgroundDict objectForKey:@"Sprites"] ){
             AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[AWHResourceManager expandSpriteDict:spriteDict]];
-            [self addChild:sprite];
+            [self addChild:sprite z:1];
         }
         
         // Load up protagonist animation
         NSDictionary *protagonist = [levelDict objectForKey:@"Protagonist"];
         AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[protagonist objectForKey:@"MainSprite"]];
-        [self addChild:sprite];
+        [self addChild:sprite z:2];
         
 
         
@@ -86,6 +108,16 @@
         item1.color = ccWHITE;
 		CCMenu *menu = [CCMenu menuWithItems: item1, nil];
 		[self addChild: menu];
+        */
+       /* 
+        // Set the timer to fire new background tiles
+        // First, unwind the template to get the speed
+        NSDictionary* actions = [tiledBackgroundDict objectForKey:@"Action"];
+        NSArray* childActions = [actions objectForKey:@"ChildActions"];
+        NSDictionary* moveAction = [childActions objectAtIndex:0];
+        int speed = [[moveAction objectForKey:@"Speed"] intValue];
+        NSLog(@"Speed: %d Width: %f", speed, [tiledSprite.mySprite boundingBox].size.width);
+        [self schedule:@selector(newBackgroundTile) interval:([tiledSprite.mySprite boundingBox].size.width/speed)/1];
         */
 	}
 	return self;
