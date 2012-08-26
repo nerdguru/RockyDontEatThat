@@ -59,9 +59,12 @@
     if ([actionType isEqualToString:@"RepeatForever"]) {
         NSLog(@"Action processing a %@", actionType);
         id childAction = [self processActions:[action objectForKey:@"ChildAction"]];
-        //NSLog(@"Dict to repeat: %@", [action objectForKey:@"ChildAction"]);
         return [CCRepeatForever actionWithAction:childAction];
-    } 
+    } else if ([actionType isEqualToString:@"Repeat"]) {
+        NSLog(@"Action processing a %@", actionType);
+        id childAction = [self processActions:[action objectForKey:@"ChildAction"]];
+        return [CCRepeat actionWithAction:childAction times:[[action objectForKey:@"Times"] intValue]];
+    }
     else if ([actionType isEqualToString:@"Sequence"]) {
         NSLog(@"Action processing a %@", actionType);
         NSArray *childArray = [action objectForKey:@"ChildActions"];
@@ -91,7 +94,21 @@
         AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
         float positionX = [scaleManager convertDimension:[action objectForKey:@"PositionX"] ofSprite:self.mySprite];
         float positionY = [scaleManager convertDimension:[action objectForKey:@"PositionY"] ofSprite:self.mySprite];
-        float duration = [scaleManager computeDurationFromSpeed:[action objectForKey:@"Speed"] ofSprite:self.mySprite toX:positionX toY:positionY];
+        
+        // The speed might be relative to a future position of the sprite, not the initial one
+        float startX = self.mySprite.position.x;
+        NSString* futureXstr = [action objectForKey:@"FutureX"];
+        if(futureXstr != nil)
+            startX = [scaleManager convertDimension:futureXstr ofSprite:self.mySprite];
+            
+        float startY = self.mySprite.position.y;
+        NSString* futureYstr = [action objectForKey:@"FutureY"];
+        if(futureYstr != nil)
+            startY = [scaleManager convertDimension:futureYstr ofSprite:self.mySprite];
+        
+        // Compute the duration and create the sprite
+        float duration = [scaleManager computeDurationFromSpeed:[action objectForKey:@"Speed"] fromX:startX fromY:startY toX:positionX toY:positionY];
+        NSLog(@"X: %f Y:%f Duration: %f", positionX,positionY, duration);
         return [CCMoveTo actionWithDuration:duration position:[scaleManager  scalePointX:positionX andY:positionY]];
     }
     else if ([actionType isEqualToString:@"Animate"]) {

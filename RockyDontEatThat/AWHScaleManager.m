@@ -173,6 +173,16 @@
         if(iPad) {
             retval = sprite.position.y/2 - 32;
         }
+    } else if ([dim isEqualToString:@"EScroll"]) {
+        int numTiles = [self computeNumHorizTiles:[sprite boundingBox].size.width];
+        CGSize size = [[CCDirector sharedDirector] winSize];
+        retval = numTiles*[sprite boundingBox].size.width - size.width;
+        if (!iPad)
+            retval = 480 + retval;
+        else {
+            retval = 480 + (512-480)/2 + retval;
+        }
+        NSLog(@"E-Scroll %f", retval);
     } else {
         // Assume it's a number
         retval = [dim floatValue];
@@ -181,7 +191,7 @@
 }
 
 // Allows plist for sprite MoveTos to be in terms of speed instead of duration
--(float)computeDurationFromSpeed:(NSString*)speed ofSprite:(CCSprite*)sprite toX:(float)x toY:(float)y{
+-(float)computeDurationFromSpeed:(NSString*)speed fromX:(float)fx fromY:(float)fy toX:(float)tx toY:(float)ty{
     float retval = 0.0;
     
     if (![speed isEqualToString:@"0"]) {
@@ -189,8 +199,9 @@
         
         // Compute Distance
         //CGPoint finish = ccp(x,y);
-        CGPoint finish = [self scalePointX:x andY:y];
-        float distance = ccpDistance(sprite.position, finish); 
+        CGPoint finish = [self scalePointX:tx andY:ty];
+        CGPoint start = [self scalePointX:fx andY:fy];
+        float distance = ccpDistance(start, finish); 
         //NSLog(@"Speed: %f Distance: %f Duration: %f", speedFloat, distance, distance/speedFloat);
         //NSLog(@"Start x:%f y:%f  Finish x:%f y:%f", sprite.position.x, sprite.position.y, x, y);
         retval = distance/speedFloat;

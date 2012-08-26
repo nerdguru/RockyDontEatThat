@@ -70,10 +70,9 @@
                                              [NSString stringWithFormat: @"%f", x], @"PositionX",  
                                              [tiledBackgroundDict objectForKey:@"Action"], @"Action",
                                              nil];
-            NSLog(@"Dict: %@", tileDict);
-            NSLog(@"Dict Orig: %@", tiledBackgroundDict);
+            
             AWHSprite *tile=[[AWHSprite alloc] initWithDict:tileDict];
-            //x=x-[tiledSprite.mySprite boundingBox].size.width+0.5;
+            NSLog(@"Dict: %@", tileDict);
             [self addChild:tile z:0];
         }
         

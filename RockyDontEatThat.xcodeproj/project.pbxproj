@@ -40,6 +40,7 @@
 		F4625E7D15CE43740077CC98 /* AdWhirlAdapterEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = F4625E7C15CE43740077CC98 /* AdWhirlAdapterEvent.m */; };
 		F4625E7F15D4C6BC0077CC98 /* PressStart2P.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4625E7E15D4C6BC0077CC98 /* PressStart2P.ttf */; };
 		F486185F15C609190065B464 /* AWHHighScoreLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = F486185E15C609190065B464 /* AWHHighScoreLabels.m */; };
+		F497AC5115E9B12100CFC9C4 /* R2LScrollTileWrap.plist in Resources */ = {isa = PBXBuildFile; fileRef = F497AC5015E9B12100CFC9C4 /* R2LScrollTileWrap.plist */; };
 		F4ABFEA315E5A98300501D40 /* sample-sprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4ABFE9F15E5A98300501D40 /* sample-sprites-hd.plist */; };
 		F4ABFEA415E5A98300501D40 /* sample-sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4ABFEA015E5A98300501D40 /* sample-sprites-hd.pvr.ccz */; };
 		F4ABFEA515E5A98300501D40 /* sample-sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4ABFEA115E5A98300501D40 /* sample-sprites.plist */; };
@@ -228,6 +229,7 @@
 		F4625E7E15D4C6BC0077CC98 /* PressStart2P.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart2P.ttf; sourceTree = "<group>"; };
 		F486185D15C609190065B464 /* AWHHighScoreLabels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHHighScoreLabels.h; sourceTree = "<group>"; };
 		F486185E15C609190065B464 /* AWHHighScoreLabels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHHighScoreLabels.m; sourceTree = "<group>"; };
+		F497AC5015E9B12100CFC9C4 /* R2LScrollTileWrap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = R2LScrollTileWrap.plist; sourceTree = "<group>"; };
 		F4ABFE9F15E5A98300501D40 /* sample-sprites-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sample-sprites-hd.plist"; sourceTree = "<group>"; };
 		F4ABFEA015E5A98300501D40 /* sample-sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-sprites-hd.pvr.ccz"; sourceTree = "<group>"; };
 		F4ABFEA115E5A98300501D40 /* sample-sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sample-sprites.plist"; sourceTree = "<group>"; };
@@ -640,6 +642,7 @@
 			children = (
 				F4ABFEAA15E886B500501D40 /* R2LScrollNoWrap.plist */,
 				F4ABFEA715E6D38B00501D40 /* R2LScrollWrap.plist */,
+				F497AC5015E9B12100CFC9C4 /* R2LScrollTileWrap.plist */,
 			);
 			name = SpriteTemplates;
 			sourceTree = "<group>";
@@ -1128,6 +1131,7 @@
 				F4ABFEA615E5A98300501D40 /* sample-sprites.pvr.ccz in Resources */,
 				F4ABFEA815E6D38B00501D40 /* R2LScrollWrap.plist in Resources */,
 				F4ABFEAB15E886B500501D40 /* R2LScrollNoWrap.plist in Resources */,
+				F497AC5115E9B12100CFC9C4 /* R2LScrollTileWrap.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
