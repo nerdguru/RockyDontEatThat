@@ -61,6 +61,7 @@
         id childAction = [self processActions:[action objectForKey:@"ChildAction"]];
         return [CCRepeatForever actionWithAction:childAction];
     } else if ([actionType isEqualToString:@"Repeat"]) {
+        // Remember that you can't embed a RepateForever inside a Sequence,hence the need for Repeat
         NSLog(@"Action processing a %@", actionType);
         id childAction = [self processActions:[action objectForKey:@"ChildAction"]];
         return [CCRepeat actionWithAction:childAction times:[[action objectForKey:@"Times"] intValue]];

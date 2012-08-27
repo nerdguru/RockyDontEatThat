@@ -478,7 +478,7 @@
 					<dict>
 						<key>Name</key>
 						<string>bg1.png</string>
-						<key>TemplateX</key>
+						<key>Template</key>
 						<string>R2LScrollTileWrap</string>
 						<key>PositionY</key>
 						<string>Middle</string>

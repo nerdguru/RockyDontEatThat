@@ -177,8 +177,9 @@
         int numTiles = [self computeNumHorizTiles:[sprite boundingBox].size.width];
         CGSize size = [[CCDirector sharedDirector] winSize];
         retval = numTiles*[sprite boundingBox].size.width - size.width;
+        NSLog(@"Numtiles: %d WinWidth %f SpriteWidth: %f Delta %f", numTiles, size.width, [sprite boundingBox].size.width, retval);
         if (!iPad)
-            retval = 480 + retval;
+            retval = 480 + [sprite boundingBox].size.width-retval*2-2;
         else {
             retval = 480 + (512-480)/2 + retval;
         }
