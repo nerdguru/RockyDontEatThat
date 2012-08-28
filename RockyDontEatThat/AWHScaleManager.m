@@ -181,7 +181,9 @@
         if (!iPad)
             retval = 480 + [sprite boundingBox].size.width-retval*2-2;
         else {
-            retval = 512 + [sprite boundingBox].size.width-retval;
+            retval = 496 + [sprite boundingBox].size.width-retval+6;
+        
+
         }
         NSLog(@"E-Scroll %f", retval);
     } else {
