@@ -26,11 +26,42 @@
     [self addChild:tiledSprite z:0];
 }*/
 
-// Interval callback to start the music
--(void)startMusic {
+// Interval callback to start the background music
+-(void)startBackgrondMusic {
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:[backgroundDict objectForKey:@"Music"]];
+    [self unschedule:@selector(startBackgrondMusic)];
+}
+
+-(void)fire {
+    NSLog(@"Food fire %d", counter);
     
-    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:backgroundMusic];
-    [self unschedule:@selector(startMusic)];
+    // First see if we're done
+    counter++;
+    if (counter < [[foodDict objectForKey:@"Quantity"] intValue]) {
+               
+    } else {
+
+        [self unschedule:@selector(fire)];
+    }
+    
+    [[SimpleAudioEngine sharedEngine] playEffect:[foodDict objectForKey:@"LaunchEffect"]];
+    /*
+    BOOL last = NO;
+    if (counter ==29) {
+        last = YES;
+    }
+    Food *food=[[Food alloc] initWithLayer:self lastSprite:last];
+    [food release];
+    
+    counter++;
+    [leftScore setString:[NSString stringWithFormat:@"%d", 30-counter]];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Launch.mp3"];
+    if (counter>=30) {
+        [self unschedule:@selector(fire)];
+        //[[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
+    }
+    */
+
 }
 
 // on "init" you need to initialize your instance
@@ -40,7 +71,7 @@
     AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
     
 	NSDictionary *levelDict = [gameStateManager getLevelDict];
-    NSDictionary *backgroundDict = [levelDict objectForKey:@"Background"];
+    backgroundDict = [levelDict objectForKey:@"Background"];
 	if( (self=[super initWithColor:ccc4([[backgroundDict objectForKey:@"Red"] intValue], 
                                         [[backgroundDict objectForKey:@"Green"] intValue], 
                                         [[backgroundDict objectForKey:@"Blue"] intValue], 
@@ -95,6 +126,8 @@
         AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[protagonist objectForKey:@"MainSprite"]];
         [self addChild:sprite z:2];
         
+        // Start food logic
+        foodDict = [levelDict objectForKey:@"Food"];
 
         
         /*
@@ -127,9 +160,14 @@
         [self schedule:@selector(newBackgroundTile) interval:([tiledSprite.mySprite boundingBox].size.width/speed)/1];
         */
         // Background music
-        backgroundMusic = [backgroundDict objectForKey:@"Music"];
-        [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:backgroundMusic];
-        [self schedule:@selector(startMusic) interval:1.0];
+        [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:[backgroundDict objectForKey:@"Music"]];
+        [self schedule:@selector(startBackgrondMusic) interval:1.0];
+        
+        // Food fire
+        [[SimpleAudioEngine sharedEngine] preloadEffect:[foodDict objectForKey:@"LaunchEffect"]];
+        [self schedule:@selector(fire) interval:[[foodDict objectForKey:@"Interval"] floatValue]];
+        
+        counter = 0;
 
 	}
 	return self;

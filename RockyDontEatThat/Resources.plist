@@ -518,6 +518,28 @@
 						</dict>
 					</dict>
 				</dict>
+				<key>Food</key>
+				<dict>
+					<key>Interval</key>
+					<string>2.0</string>
+					<key>LaunchEffect</key>
+					<string>Launch.mp3</string>
+					<key>Quantity</key>
+					<string>5</string>
+					<key>Template</key>
+					<string>R2LScrollNoWrap</string>
+					<key>Sprites</key>
+					<array>
+						<dict>
+							<key>Name</key>
+							<string>cheese.png</string>
+						</dict>
+						<dict>
+							<key>Name</key>
+							<string>chocolate.png</string>
+						</dict>
+					</array>
+				</dict>
 			</dict>
 			<key>Postlevel</key>
 			<dict/>

@@ -11,7 +11,8 @@
 
 @interface AWHLevelLayer : CCLayerColor {
     NSDictionary* tiledBackgroundDict;
-    NSString* backgroundMusic;
+    NSDictionary* backgroundDict;
+    NSDictionary *foodDict;
     int counter;
 }
 
