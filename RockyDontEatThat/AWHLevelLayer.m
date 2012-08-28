@@ -11,6 +11,7 @@
 #import "AWHScaleManager.h"
 #import "AWHSprite.h"
 #import "AWHResourceManager.h"
+#import "SimpleAudioEngine.h"
 
 
 @implementation AWHLevelLayer
@@ -25,6 +26,13 @@
     [self addChild:tiledSprite z:0];
 }*/
 
+// Interval callback to start the music
+-(void)startMusic {
+    
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:backgroundMusic];
+    [self unschedule:@selector(startMusic)];
+}
+
 // on "init" you need to initialize your instance
 -(id) init
 {
@@ -37,7 +45,7 @@
                                         [[backgroundDict objectForKey:@"Green"] intValue], 
                                         [[backgroundDict objectForKey:@"Blue"] intValue], 
                                         [[backgroundDict objectForKey:@"Opacity"] intValue])])) {
-		
+		        
         // Get the ScaleManager
         AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager];  
         
@@ -118,6 +126,11 @@
         NSLog(@"Speed: %d Width: %f", speed, [tiledSprite.mySprite boundingBox].size.width);
         [self schedule:@selector(newBackgroundTile) interval:([tiledSprite.mySprite boundingBox].size.width/speed)/1];
         */
+        // Background music
+        backgroundMusic = [backgroundDict objectForKey:@"Music"];
+        [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:backgroundMusic];
+        [self schedule:@selector(startMusic) interval:1.0];
+
 	}
 	return self;
 }

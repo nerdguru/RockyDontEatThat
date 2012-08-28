@@ -13,7 +13,7 @@
 The second Epic does the following:
 
 * Rocky running (Completed v0.2.1)
-* Scrolling background (Slated v0.2.2)
+* Scrolling background (Completed v0.2.2)
 * Launching food at random heights, rotate and move across screen (Slated v0.2.3)
 * Foods detect touches, move to Rocky's mouth (Slated 0.2.4)
 * HUD + scoring for correct touches and correct bad foods that fall off screen (Slated 0.2.5)

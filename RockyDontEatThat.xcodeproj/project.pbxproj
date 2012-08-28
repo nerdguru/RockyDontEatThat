@@ -172,6 +172,7 @@
 		F4D33F6B15C43B5400694C75 /* AWHResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D33F6A15C43B5400694C75 /* AWHResourceManager.m */; };
 		F4D33F6D15C43E1D00694C75 /* Resources.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4D33F6C15C43E1D00694C75 /* Resources.plist */; };
 		F4D33F7015C44B7800694C75 /* AWHSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D33F6F15C44B7700694C75 /* AWHSprite.m */; };
+		F4E9BCC715EC986B002B6C58 /* Doot Doo Theme Game.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCC615EC986B002B6C58 /* Doot Doo Theme Game.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -491,6 +492,7 @@
 		F4D33F6C15C43E1D00694C75 /* Resources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Resources.plist; sourceTree = "<group>"; };
 		F4D33F6E15C44B7700694C75 /* AWHSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHSprite.h; sourceTree = "<group>"; };
 		F4D33F6F15C44B7700694C75 /* AWHSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHSprite.m; sourceTree = "<group>"; };
+		F4E9BCC615EC986B002B6C58 /* Doot Doo Theme Game.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Doot Doo Theme Game.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -607,6 +609,7 @@
 		F42F086615CDD7E50063F763 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				F4E9BCC615EC986B002B6C58 /* Doot Doo Theme Game.mp3 */,
 				F4C7242D15BB6008002F89FC /* Title.mp3 */,
 			);
 			name = Sounds;
@@ -1132,6 +1135,7 @@
 				F4ABFEA815E6D38B00501D40 /* R2LScrollWrap.plist in Resources */,
 				F4ABFEAB15E886B500501D40 /* R2LScrollNoWrap.plist in Resources */,
 				F497AC5115E9B12100CFC9C4 /* R2LScrollTileWrap.plist in Resources */,
+				F4E9BCC715EC986B002B6C58 /* Doot Doo Theme Game.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
