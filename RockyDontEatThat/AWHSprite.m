@@ -98,15 +98,17 @@
         
         // The speed might be relative to a future position of the sprite, not the initial one
         float startX = self.mySprite.position.x;
-        NSString* futureXstr = [action objectForKey:@"FutureX"];
-        if(futureXstr != nil)
-            startX = [scaleManager convertDimension:futureXstr ofSprite:self.mySprite];
-            
         float startY = self.mySprite.position.y;
-        NSString* futureYstr = [action objectForKey:@"FutureY"];
-        if(futureYstr != nil)
+        NSString* futureXstr = [action objectForKey:@"FutureX"];
+        if(futureXstr != nil) {
+            startX = [scaleManager convertDimension:futureXstr ofSprite:self.mySprite];
+            NSString* futureYstr = [action objectForKey:@"FutureY"];
             startY = [scaleManager convertDimension:futureYstr ofSprite:self.mySprite];
-        
+            CGPoint start = [scaleManager  scalePointX:startX andY:startY];
+            startX= start.x;
+            startY= start.y;
+        }
+    
         // Compute the duration and create the sprite
         float duration = [scaleManager computeDurationFromSpeed:[action objectForKey:@"Speed"] fromX:startX fromY:startY toX:positionX toY:positionY];
         NSLog(@"X: %f Y:%f Duration: %f", positionX,positionY, duration);

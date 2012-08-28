@@ -163,7 +163,7 @@
         if (!iPad)
             retval = 0 - [sprite boundingBox].size.width/2;
         else {
-            retval = -1 * (512-480)/2 - [sprite boundingBox].size.width/4;
+            retval = -1 * (512-480)/2 - [sprite boundingBox].size.width/2;
         }
         //NSLog(@"In Convert Dimension W-: %f width: %f", retval, [sprite boundingBox].size.width);
     } else if ([dim isEqualToString:@"Middle"]) {
@@ -181,7 +181,7 @@
         if (!iPad)
             retval = 480 + [sprite boundingBox].size.width-retval*2-2;
         else {
-            retval = 480 + (512-480)/2 + retval;
+            retval = 512 + [sprite boundingBox].size.width-retval;
         }
         NSLog(@"E-Scroll %f", retval);
     } else {
@@ -200,14 +200,23 @@
         
         // Compute Distance
         //CGPoint finish = ccp(x,y);
-        CGPoint finish = [self scalePointX:tx andY:ty];
-        CGPoint start = [self scalePointX:fx andY:fy];
+        CGPoint finish;
+        CGPoint start;
+     //   if(iPad) {
+            start = ccp(fx,fy);
+            finish = [self scalePointX:tx andY:ty];
+      //  }
+     //   else {
+     //       start = [self scalePointX:fx andY:fy];
+     //       finish = [self scalePointX:tx andY:ty];
+    //    }
         float distance = ccpDistance(start, finish); 
-        //NSLog(@"Speed: %f Distance: %f Duration: %f", speedFloat, distance, distance/speedFloat);
-        //NSLog(@"Start x:%f y:%f  Finish x:%f y:%f", sprite.position.x, sprite.position.y, x, y);
+        NSLog(@"Speed: %f Distance: %f Duration: %f", speedFloat, distance, distance/speedFloat);
+        NSLog(@"Start x:%f y:%f  Finish x:%f y:%f", start.x, start.y, finish.x, finish.y);
         retval = distance/speedFloat;
-        if(iPad)
+        if(iPad) 
             retval = retval/2;
+        
     }
     
     return retval;

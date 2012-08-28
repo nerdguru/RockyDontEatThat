@@ -50,6 +50,8 @@
 							<string>50</string>
 							<key>FutureX</key>
 							<string>EScroll</string>
+							<key>FutureY</key>
+							<string>StraightY</string>
 						</dict>
 					</array>
 				</dict>
