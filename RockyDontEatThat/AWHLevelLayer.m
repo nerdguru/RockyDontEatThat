@@ -33,18 +33,30 @@
 }
 
 -(void)fire {
-    NSLog(@"Food fire %d", counter);
+    
     
     // First see if we're done
     counter++;
-    if (counter < [[foodDict objectForKey:@"Quantity"] intValue]) {
-               
+    if (counter <= [[foodDict objectForKey:@"Quantity"] intValue]) {
+        NSArray* foodArray = [foodDict objectForKey:@"Sprites"];
+        int foodIndex = arc4random() % [foodArray count];  
+        NSDictionary* currentSpriteDict = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                         [[foodArray objectAtIndex:foodIndex] objectForKey:@"Name"], @"Name",
+                                         [foodDict objectForKey:@"Template"], @"Template",
+                                         nil];
+
+        NSLog(@"Food fire %d %@", counter, currentSpriteDict);
+        AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[AWHResourceManager expandSpriteDict:currentSpriteDict]];
+        [self addChild:sprite z:3];
+        [sprite release];
+        [currentSpriteDict release];
+        [[SimpleAudioEngine sharedEngine] playEffect:[foodDict objectForKey:@"LaunchEffect"]];
     } else {
 
         [self unschedule:@selector(fire)];
     }
     
-    [[SimpleAudioEngine sharedEngine] playEffect:[foodDict objectForKey:@"LaunchEffect"]];
+    
     /*
     BOOL last = NO;
     if (counter ==29) {
@@ -113,12 +125,15 @@
             AWHSprite *tile=[[AWHSprite alloc] initWithDict:tileDict];
             NSLog(@"Dict: %@", tileDict);
             [self addChild:tile z:0];
+            [tileDict release];
+            [tile release];
         }
         
 
         for (NSDictionary* spriteDict in [backgroundDict objectForKey:@"Sprites"] ){
             AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[AWHResourceManager expandSpriteDict:spriteDict]];
             [self addChild:sprite z:1];
+            [sprite release];
         }
         
         // Load up protagonist animation

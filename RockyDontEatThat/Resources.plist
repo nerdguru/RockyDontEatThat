@@ -525,9 +525,9 @@
 					<key>LaunchEffect</key>
 					<string>Launch.mp3</string>
 					<key>Quantity</key>
-					<string>5</string>
+					<string>7</string>
 					<key>Template</key>
-					<string>R2LScrollNoWrap</string>
+					<string>R2LFood</string>
 					<key>Sprites</key>
 					<array>
 						<dict>
