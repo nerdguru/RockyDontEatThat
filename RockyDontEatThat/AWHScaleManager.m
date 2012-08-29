@@ -166,9 +166,16 @@
             retval = -1 * (512-480)/2 - [sprite boundingBox].size.width/2;
         }
         //NSLog(@"In Convert Dimension W-: %f width: %f", retval, [sprite boundingBox].size.width);
+    } else if ([dim isEqualToString:@"RandomY"]) {
+        int w=[sprite textureRect].size.width/2;
+        int h=[sprite textureRect].size.height/2;
+        int off=h;
+        if (w > h)
+            off = w;
+        retval = (arc4random() % (300-off)) + 50;
     } else if ([dim isEqualToString:@"Middle"]) {
         retval = 160;
-    } else if ([dim isEqualToString:@"StraightY"]) {
+    }else if ([dim isEqualToString:@"StraightY"]) {
         retval = sprite.position.y;
         if(iPad) {
             retval = sprite.position.y/2 - 32;
@@ -177,7 +184,7 @@
         int numTiles = [self computeNumHorizTiles:[sprite boundingBox].size.width];
         CGSize size = [[CCDirector sharedDirector] winSize];
         retval = numTiles*[sprite boundingBox].size.width - size.width;
-        NSLog(@"Numtiles: %d WinWidth %f SpriteWidth: %f Delta %f", numTiles, size.width, [sprite boundingBox].size.width, retval);
+        //NSLog(@"Numtiles: %d WinWidth %f SpriteWidth: %f Delta %f", numTiles, size.width, [sprite boundingBox].size.width, retval);
         if (!iPad)
             retval = 480 + [sprite boundingBox].size.width-retval*2-2;
         else {
@@ -185,7 +192,7 @@
         
 
         }
-        NSLog(@"E-Scroll %f", retval);
+        //NSLog(@"E-Scroll %f", retval);
     } else {
         // Assume it's a number
         retval = [dim floatValue];
