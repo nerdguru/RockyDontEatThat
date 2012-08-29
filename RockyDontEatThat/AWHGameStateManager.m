@@ -11,6 +11,8 @@
 #import "AWHResourceManager.h"
 
 @implementation AWHGameStateManager
+@synthesize removeX;
+@synthesize removeY;
 
 // Singleton accessor method
 + (id)sharedGameStateManager {

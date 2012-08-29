@@ -517,6 +517,10 @@
 							</dict>
 						</dict>
 					</dict>
+					<key>RemoveY</key>
+					<string>20</string>
+					<key>RemoveX</key>
+					<string>115</string>
 				</dict>
 				<key>Food</key>
 				<dict>

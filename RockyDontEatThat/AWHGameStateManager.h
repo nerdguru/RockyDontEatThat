@@ -12,10 +12,14 @@
 @interface AWHGameStateManager : NSObject
 {
     int currentLevel;
+    int removeX;
+    int removeY;
 }
 +(id)sharedGameStateManager;
 -(int)theCurrentLevel;
 -(void)gotoNextLevel;
 -(NSDictionary*)getLevelDict;
 -(NSArray *) getHighScores;
+@property (readwrite, assign) int removeX;
+@property (readwrite, assign) int removeY;
 @end

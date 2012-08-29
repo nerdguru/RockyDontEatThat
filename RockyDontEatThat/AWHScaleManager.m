@@ -7,6 +7,7 @@
 //
 
 #import "AWHScaleManager.h"
+#import "AWHGameStateManager.h"
 
 @implementation AWHScaleManager
 
@@ -140,6 +141,7 @@
 // Converts a text dimension specifier to a float value
 -(float)convertDimension:(NSString*)dim ofSprite:(CCSprite*)sprite{
     float retval = 0.0;
+    AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
     if ([dim isEqualToString:@"E"]) {
         if (!iPad)
             retval = 480;
@@ -175,6 +177,10 @@
         retval = (arc4random() % (300-off)) + 50;
     } else if ([dim isEqualToString:@"Middle"]) {
         retval = 160;
+    } else if ([dim isEqualToString:@"RemoteX"]) {
+        retval = gameStateManager.removeX;
+    }else if ([dim isEqualToString:@"RemoteY"]) {
+        retval = gameStateManager.removeY;
     }else if ([dim isEqualToString:@"StraightY"]) {
         retval = sprite.position.y;
         if(iPad) {

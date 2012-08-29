@@ -21,7 +21,7 @@
 						<key>PositionY</key>
 						<string>StraightY</string>
 						<key>Speed</key>
-						<string>75</string>
+						<string>80</string>
 					</dict>
 					<dict>
 						<key>ActionType</key>
@@ -63,7 +63,7 @@
 								<key>ActionType</key>
 								<string>ScaleBy</string>
 								<key>Duration</key>
-								<string>2.0</string>
+								<string>1.0</string>
 								<key>Scale</key>
 								<string>0.7</string>
 							</dict>
@@ -71,17 +71,17 @@
 								<key>ActionType</key>
 								<string>MoveTo</string>
 								<key>PositionX</key>
-								<string>10</string>
+								<string>RemoteX</string>
 								<key>PositionY</key>
-								<string>10</string>
+								<string>RemoteY</string>
 								<key>Duration</key>
-								<string>2.0</string>
+								<string>1.0</string>
 							</dict>
 							<dict>
 								<key>ActionType</key>
 								<string>Rotate</string>
 								<key>Duration</key>
-								<string>2.0</string>
+								<string>1.0</string>
 								<key>Angle</key>
 								<string>720</string>
 							</dict>

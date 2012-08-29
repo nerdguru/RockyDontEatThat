@@ -141,6 +141,9 @@
         AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[protagonist objectForKey:@"MainSprite"]];
         [self addChild:sprite z:2];
         
+        [gameStateManager setRemoveX:[[protagonist objectForKey:@"RemoveX"] intValue]];
+        [gameStateManager setRemoveY:[[protagonist objectForKey:@"RemoveY"] intValue]];
+        
         // Start food logic
         foodDict = [levelDict objectForKey:@"Food"];
 
