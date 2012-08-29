@@ -39,6 +39,62 @@
 			</dict>
 		</array>
 	</dict>
+	<key>TouchReactions</key>
+	<array>
+		<dict>
+			<key>TouchReactionType</key>
+			<string>Actions</string>
+			<key>Action</key>
+			<dict>
+				<key>ActionType</key>
+				<string>Sequence</string>
+				<key>ChildActions</key>
+				<array>
+					<dict>
+						<key>ActionType</key>
+						<string>Parallel</string>
+						<key>ChildActions</key>
+						<array>
+							<dict>
+								<key>ActionType</key>
+								<string>TouchesOff</string>
+							</dict>
+							<dict>
+								<key>ActionType</key>
+								<string>ScaleBy</string>
+								<key>Duration</key>
+								<string>2.0</string>
+								<key>Scale</key>
+								<string>0.7</string>
+							</dict>
+							<dict>
+								<key>ActionType</key>
+								<string>MoveTo</string>
+								<key>PositionX</key>
+								<string>10</string>
+								<key>PositionY</key>
+								<string>10</string>
+								<key>Duration</key>
+								<string>2.0</string>
+							</dict>
+							<dict>
+								<key>ActionType</key>
+								<string>Rotate</string>
+								<key>Duration</key>
+								<string>2.0</string>
+								<key>Angle</key>
+								<string>720</string>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>ActionType</key>
+						<string>RemoveMe</string>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+	</array>
 	<key>PositionY</key>
 	<string>RandomY</string>
 	<key>PositionX</key>

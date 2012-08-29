@@ -122,7 +122,13 @@
         }
     
         // Compute the duration and create the sprite
-        float duration = [scaleManager computeDurationFromSpeed:[action objectForKey:@"Speed"] fromX:startX fromY:startY toX:positionX toY:positionY];
+        float duration;
+        if ([action objectForKey:@"Duration"]) {
+            duration = [[action objectForKey:@"Duration"] floatValue ];
+        } else {
+            duration = [scaleManager computeDurationFromSpeed:[action objectForKey:@"Speed"] fromX:startX fromY:startY toX:positionX toY:positionY];
+        }
+        
         //NSLog(@"X: %f Y:%f Duration: %f", positionX,positionY, duration);
         return [CCMoveTo actionWithDuration:duration position:[scaleManager  scalePointX:positionX andY:positionY]];
     }
