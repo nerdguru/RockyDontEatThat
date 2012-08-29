@@ -65,8 +65,16 @@
         NSLog(@"Action processing a %@", actionType);
         id childAction = [self processActions:[action objectForKey:@"ChildAction"]];
         return [CCRepeat actionWithAction:childAction times:[[action objectForKey:@"Times"] intValue]];
-    }
-    else if ([actionType isEqualToString:@"Sequence"]) {
+    } else if ([actionType isEqualToString:@"Parallel"]) {
+        NSLog(@"Action processing a %@", actionType);
+        NSArray *childArray = [action objectForKey:@"ChildActions"];
+        NSMutableArray *actionsArray = [[NSMutableArray alloc] initWithCapacity:(childArray.count)];
+        for (NSDictionary* childDict in childArray ){
+            CCAction *currentAction = [self processActions:childDict];
+            [actionsArray addObject:currentAction];
+        }
+        return [CCSpawn actionsWithArray:actionsArray];
+    } else if ([actionType isEqualToString:@"Sequence"]) {
         NSLog(@"Action processing a %@", actionType);
         NSArray *childArray = [action objectForKey:@"ChildActions"];
         NSMutableArray *actionsArray = [[NSMutableArray alloc] initWithCapacity:(childArray.count)];
@@ -85,6 +93,10 @@
     else if ([actionType isEqualToString:@"Delay"]) {
         NSLog(@"Action processing a %@", actionType);
         return [CCDelayTime actionWithDuration:[[action objectForKey:@"Duration"] floatValue]];
+    }
+    else if ([actionType isEqualToString:@"Rotate"]) {
+        NSLog(@"Action processing a %@", actionType);
+        return [CCRotateBy actionWithDuration:[[action objectForKey:@"Duration"] floatValue] angle:[[action objectForKey:@"Angle"] floatValue]];
     }
     else if ([actionType isEqualToString:@"ScaleBy"]) {
         NSLog(@"Action processing a %@", actionType);
@@ -111,7 +123,7 @@
     
         // Compute the duration and create the sprite
         float duration = [scaleManager computeDurationFromSpeed:[action objectForKey:@"Speed"] fromX:startX fromY:startY toX:positionX toY:positionY];
-        NSLog(@"X: %f Y:%f Duration: %f", positionX,positionY, duration);
+        //NSLog(@"X: %f Y:%f Duration: %f", positionX,positionY, duration);
         return [CCMoveTo actionWithDuration:duration position:[scaleManager  scalePointX:positionX andY:positionY]];
     }
     else if ([actionType isEqualToString:@"Animate"]) {

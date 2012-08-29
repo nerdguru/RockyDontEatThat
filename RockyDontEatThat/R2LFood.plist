@@ -10,13 +10,28 @@
 		<array>
 			<dict>
 				<key>ActionType</key>
-				<string>MoveTo</string>
-				<key>PositionX</key>
-				<string>W-</string>
-				<key>PositionY</key>
-				<string>StraightY</string>
-				<key>Speed</key>
-				<string>75</string>
+				<string>Parallel</string>
+				<key>ChildActions</key>
+				<array>
+					<dict>
+						<key>ActionType</key>
+						<string>MoveTo</string>
+						<key>PositionX</key>
+						<string>W-</string>
+						<key>PositionY</key>
+						<string>StraightY</string>
+						<key>Speed</key>
+						<string>75</string>
+					</dict>
+					<dict>
+						<key>ActionType</key>
+						<string>Rotate</string>
+						<key>Duration</key>
+						<string>8.0</string>
+						<key>Angle</key>
+						<string>720</string>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>ActionType</key>
