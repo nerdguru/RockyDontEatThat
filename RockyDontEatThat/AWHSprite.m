@@ -13,6 +13,7 @@
 #import "AWHResourceManager.h"
 #import "AWHLevelLayer.h"
 #import "AWHGameStateManager.h"
+#import "SimpleAudioEngine.h"
 
 
 @implementation AWHSprite 
@@ -46,8 +47,12 @@
 }
 // Get rid of the sprite
 -(void) removeMe {
-    NSLog(@"About to remove myself");
     [self removeFromParentAndCleanup:YES];
+}
+
+-(void) eatEffect {
+    AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
+    [[SimpleAudioEngine sharedEngine] playEffect:gameStateManager.protagonistEffect];
 }
 
 // Build the data structure of actions to execute on this sprite, recursively if necessary
@@ -164,6 +169,9 @@
     else if ([actionType isEqualToString:@"RemoveMe"]) {
         NSLog(@"Action processing a %@", actionType);
         return [CCCallFunc actionWithTarget:self selector:@selector(removeMe)];
+    } else if ([actionType isEqualToString:@"EatEffect"]) {
+        NSLog(@"Action processing a %@", actionType);
+        return [CCCallFunc actionWithTarget:self selector:@selector(eatEffect)];
     }
     
     // Return a nil if nothing matched

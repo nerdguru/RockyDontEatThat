@@ -89,6 +89,10 @@
 					</dict>
 					<dict>
 						<key>ActionType</key>
+						<string>EatEffect</string>
+					</dict>
+					<dict>
+						<key>ActionType</key>
 						<string>RemoveMe</string>
 					</dict>
 				</array>

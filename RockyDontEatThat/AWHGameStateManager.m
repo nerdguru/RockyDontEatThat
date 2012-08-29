@@ -13,6 +13,7 @@
 @implementation AWHGameStateManager
 @synthesize removeX;
 @synthesize removeY;
+@synthesize protagonistEffect;
 
 // Singleton accessor method
 + (id)sharedGameStateManager {

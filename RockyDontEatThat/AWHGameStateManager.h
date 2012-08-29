@@ -14,6 +14,7 @@
     int currentLevel;
     int removeX;
     int removeY;
+    NSString* protagonistEffect;
 }
 +(id)sharedGameStateManager;
 -(int)theCurrentLevel;
@@ -22,4 +23,5 @@
 -(NSArray *) getHighScores;
 @property (readwrite, assign) int removeX;
 @property (readwrite, assign) int removeY;
+@property (readwrite, assign) NSString* protagonistEffect;
 @end

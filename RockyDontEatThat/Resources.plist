@@ -521,6 +521,8 @@
 					<string>20</string>
 					<key>RemoveX</key>
 					<string>115</string>
+					<key>Effect</key>
+					<string>Bite.mp3</string>
 				</dict>
 				<key>Food</key>
 				<dict>

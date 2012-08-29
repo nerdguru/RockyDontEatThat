@@ -143,6 +143,8 @@
         
         [gameStateManager setRemoveX:[[protagonist objectForKey:@"RemoveX"] intValue]];
         [gameStateManager setRemoveY:[[protagonist objectForKey:@"RemoveY"] intValue]];
+        gameStateManager.protagonistEffect = [protagonist objectForKey:@"Effect"];
+        //[gameStateManager protagonistEffect:[protagonist objectForKey:@"Effect"]];
         
         // Start food logic
         foodDict = [levelDict objectForKey:@"Food"];
