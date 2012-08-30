@@ -89,7 +89,28 @@
 					</dict>
 					<dict>
 						<key>ActionType</key>
-						<string>EatEffect</string>
+						<string>Parallel</string>
+						<key>ChildActions</key>
+						<array>
+							<dict>
+								<key>ActionType</key>
+								<string>EatStart</string>
+							</dict>
+							<dict>
+								<key>ActionType</key>
+								<string>EatEffect</string>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>ActionType</key>
+						<string>Delay</string>
+						<key>Duration</key>
+						<string>0.1</string>
+					</dict>
+					<dict>
+						<key>ActionType</key>
+						<string>EatEnd</string>
 					</dict>
 					<dict>
 						<key>ActionType</key>

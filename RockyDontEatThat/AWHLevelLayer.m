@@ -20,6 +20,10 @@
     AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
     [gameStateManager gotoNextLevel];
 }
+-(void)startOver {
+    AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
+    [gameStateManager startOver];
+}
 /*
 -(void)newBackgroundTile {
     AWHSprite *tiledSprite=[[AWHSprite alloc] initWithDict:[AWHResourceManager expandSpriteDict:tiledBackgroundDict]];
@@ -36,8 +40,9 @@
     
     
     // First see if we're done
-    counter++;
-    if (counter <= [[foodDict objectForKey:@"Quantity"] intValue]) {
+    AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
+    gameStateManager.counter++;
+    if (gameStateManager.counter <= [[foodDict objectForKey:@"Quantity"] intValue]) {
         NSArray* foodArray = [foodDict objectForKey:@"Sprites"];
         int foodIndex = arc4random() % [foodArray count];  
         NSDictionary* currentSpriteDict = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
@@ -45,7 +50,7 @@
                                          [foodDict objectForKey:@"Template"], @"Template",
                                          nil];
 
-        NSLog(@"Food fire %d %@", counter, currentSpriteDict);
+        NSLog(@"Food fire %d %@", gameStateManager.counter, currentSpriteDict);
         AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[AWHResourceManager expandSpriteDict:currentSpriteDict]];
         [self addChild:sprite z:3];
         [sprite release];
@@ -144,7 +149,14 @@
         [gameStateManager setRemoveX:[[protagonist objectForKey:@"RemoveX"] intValue]];
         [gameStateManager setRemoveY:[[protagonist objectForKey:@"RemoveY"] intValue]];
         gameStateManager.protagonistEffect = [protagonist objectForKey:@"Effect"];
-        //[gameStateManager protagonistEffect:[protagonist objectForKey:@"Effect"]];
+       
+        AWHSprite *eatSprite=[[AWHSprite alloc] initWithDict:[protagonist objectForKey:@"EatSprite"]];
+        eatSprite.visible = NO;
+        [self addChild:eatSprite z:2];
+        
+        gameStateManager.protagonist = sprite;
+        gameStateManager.protagonistEat = eatSprite;
+        
         
         // Start food logic
         foodDict = [levelDict objectForKey:@"Food"];
@@ -186,8 +198,15 @@
         // Food fire
         [[SimpleAudioEngine sharedEngine] preloadEffect:[foodDict objectForKey:@"LaunchEffect"]];
         [self schedule:@selector(fire) interval:[[foodDict objectForKey:@"Interval"] floatValue]];
+        gameStateManager.counter = 0;
+        gameStateManager.numSprites = [[foodDict objectForKey:@"Quantity"] intValue];
         
-        counter = 0;
+        CCMenuItemFont *item1 = [CCMenuItemFont itemFromString: @"Start Over" target:self selector:@selector(startOver)];
+        item1.color = ccWHITE;
+		CCMenu *menu = [CCMenu menuWithItems: item1, nil];
+        menu.visible = NO;
+		[self addChild: menu z:4];
+        gameStateManager.restartMenu = menu;
 
 	}
 	return self;

@@ -13,7 +13,6 @@
     NSDictionary* tiledBackgroundDict;
     NSDictionary* backgroundDict;
     NSDictionary *foodDict;
-    int counter;
 }
 
 @end

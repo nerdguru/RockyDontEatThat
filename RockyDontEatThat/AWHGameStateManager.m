@@ -8,12 +8,18 @@
 
 #import "AWHGameStateManager.h"
 #import "AWHLevelLayer.h"
+#import "AWHHomeLayer.h"
 #import "AWHResourceManager.h"
 
 @implementation AWHGameStateManager
 @synthesize removeX;
 @synthesize removeY;
 @synthesize protagonistEffect;
+@synthesize protagonist;
+@synthesize protagonistEat;
+@synthesize numSprites;
+@synthesize restartMenu;
+@synthesize counter;
 
 // Singleton accessor method
 + (id)sharedGameStateManager {
@@ -51,6 +57,22 @@
     
     // Replace the scene
 
+    [[CCDirector sharedDirector] replaceScene:scene];
+}
+
+// Logic for incrementing the level state and swapping in the new scene
+-(void)startOver {
+    
+    // Increment the level
+    currentLevel = 0;
+    
+    // Create autorelease objects
+    CCScene *scene = [CCScene node];
+    AWHHomeLayer *layer = [AWHHomeLayer node];
+    [scene addChild: layer];
+    
+    // Replace the scene
+    
     [[CCDirector sharedDirector] replaceScene:scene];
 }
 

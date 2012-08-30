@@ -48,11 +48,28 @@
 // Get rid of the sprite
 -(void) removeMe {
     [self removeFromParentAndCleanup:YES];
+    AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
+    NSLog(@"Counter: %d NumSprites: %d", gameStateManager.counter, gameStateManager.numSprites);
+    if(gameStateManager.counter > gameStateManager.numSprites) {
+        gameStateManager.restartMenu.visible = YES;
+    }
 }
 
 -(void) eatEffect {
     AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
     [[SimpleAudioEngine sharedEngine] playEffect:gameStateManager.protagonistEffect];
+}
+
+-(void) eatStart {
+    AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
+    gameStateManager.protagonist.visible = NO;
+    gameStateManager.protagonistEat.visible = YES;
+}
+
+-(void) eatEnd {
+    AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
+    gameStateManager.protagonistEat.visible = NO;
+    gameStateManager.protagonist.visible = YES;
 }
 
 // Build the data structure of actions to execute on this sprite, recursively if necessary
@@ -172,6 +189,12 @@
     } else if ([actionType isEqualToString:@"EatEffect"]) {
         NSLog(@"Action processing a %@", actionType);
         return [CCCallFunc actionWithTarget:self selector:@selector(eatEffect)];
+    } else if ([actionType isEqualToString:@"EatStart"]) {
+        NSLog(@"Action processing a %@", actionType);
+        return [CCCallFunc actionWithTarget:self selector:@selector(eatStart)];
+    } else if ([actionType isEqualToString:@"EatEnd"]) {
+        NSLog(@"Action processing a %@", actionType);
+        return [CCCallFunc actionWithTarget:self selector:@selector(eatEnd)];
     }
     
     // Return a nil if nothing matched
