@@ -10,6 +10,7 @@
 #import "AWHLevelLayer.h"
 #import "AWHHomeLayer.h"
 #import "AWHResourceManager.h"
+#import "SimpleAudioEngine.h"
 
 @implementation AWHGameStateManager
 @synthesize removeX;
@@ -49,11 +50,13 @@
     
     // Increment the level
     currentLevel++;
+    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
     
     // Create autorelease objects
     CCScene *scene = [CCScene node];
     AWHLevelLayer *layer = [AWHLevelLayer node];
     [scene addChild: layer];
+    
     
     // Replace the scene
 
@@ -65,6 +68,7 @@
     
     // Increment the level
     currentLevel = 0;
+    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
     
     // Create autorelease objects
     CCScene *scene = [CCScene node];
