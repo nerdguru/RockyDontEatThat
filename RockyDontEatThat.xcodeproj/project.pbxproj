@@ -41,10 +41,6 @@
 		F4625E7F15D4C6BC0077CC98 /* PressStart2P.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4625E7E15D4C6BC0077CC98 /* PressStart2P.ttf */; };
 		F486185F15C609190065B464 /* AWHHighScoreLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = F486185E15C609190065B464 /* AWHHighScoreLabels.m */; };
 		F497AC5115E9B12100CFC9C4 /* R2LScrollTileWrap.plist in Resources */ = {isa = PBXBuildFile; fileRef = F497AC5015E9B12100CFC9C4 /* R2LScrollTileWrap.plist */; };
-		F4ABFEA315E5A98300501D40 /* sample-sprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4ABFE9F15E5A98300501D40 /* sample-sprites-hd.plist */; };
-		F4ABFEA415E5A98300501D40 /* sample-sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4ABFEA015E5A98300501D40 /* sample-sprites-hd.pvr.ccz */; };
-		F4ABFEA515E5A98300501D40 /* sample-sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4ABFEA115E5A98300501D40 /* sample-sprites.plist */; };
-		F4ABFEA615E5A98300501D40 /* sample-sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4ABFEA215E5A98300501D40 /* sample-sprites.pvr.ccz */; };
 		F4ABFEA815E6D38B00501D40 /* R2LScrollWrap.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4ABFEA715E6D38B00501D40 /* R2LScrollWrap.plist */; };
 		F4ABFEAB15E886B500501D40 /* R2LScrollNoWrap.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4ABFEAA15E886B500501D40 /* R2LScrollNoWrap.plist */; };
 		F4C33CA515B62FFB00816700 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C33CA415B62FFB00816700 /* QuartzCore.framework */; };
@@ -172,6 +168,10 @@
 		F4D33F6B15C43B5400694C75 /* AWHResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D33F6A15C43B5400694C75 /* AWHResourceManager.m */; };
 		F4D33F6D15C43E1D00694C75 /* Resources.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4D33F6C15C43E1D00694C75 /* Resources.plist */; };
 		F4D33F7015C44B7800694C75 /* AWHSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D33F6F15C44B7700694C75 /* AWHSprite.m */; };
+		F4DBBE1F15F27E1D003D5169 /* sample-sprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4DBBE1B15F27E1D003D5169 /* sample-sprites-hd.plist */; };
+		F4DBBE2015F27E1D003D5169 /* sample-sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4DBBE1C15F27E1D003D5169 /* sample-sprites-hd.pvr.ccz */; };
+		F4DBBE2115F27E1D003D5169 /* sample-sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4DBBE1D15F27E1D003D5169 /* sample-sprites.plist */; };
+		F4DBBE2215F27E1D003D5169 /* sample-sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4DBBE1E15F27E1D003D5169 /* sample-sprites.pvr.ccz */; };
 		F4E9BCC715EC986B002B6C58 /* Doot Doo Theme Game.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCC615EC986B002B6C58 /* Doot Doo Theme Game.mp3 */; };
 		F4E9BCCE15ED1351002B6C58 /* Launch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCCD15ED1351002B6C58 /* Launch.mp3 */; };
 		F4E9BCD015ED1A01002B6C58 /* R2LFood.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCCF15ED1A01002B6C58 /* R2LFood.plist */; };
@@ -234,10 +234,6 @@
 		F486185D15C609190065B464 /* AWHHighScoreLabels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHHighScoreLabels.h; sourceTree = "<group>"; };
 		F486185E15C609190065B464 /* AWHHighScoreLabels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHHighScoreLabels.m; sourceTree = "<group>"; };
 		F497AC5015E9B12100CFC9C4 /* R2LScrollTileWrap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = R2LScrollTileWrap.plist; sourceTree = "<group>"; };
-		F4ABFE9F15E5A98300501D40 /* sample-sprites-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sample-sprites-hd.plist"; sourceTree = "<group>"; };
-		F4ABFEA015E5A98300501D40 /* sample-sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-sprites-hd.pvr.ccz"; sourceTree = "<group>"; };
-		F4ABFEA115E5A98300501D40 /* sample-sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sample-sprites.plist"; sourceTree = "<group>"; };
-		F4ABFEA215E5A98300501D40 /* sample-sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-sprites.pvr.ccz"; sourceTree = "<group>"; };
 		F4ABFEA715E6D38B00501D40 /* R2LScrollWrap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = R2LScrollWrap.plist; sourceTree = "<group>"; };
 		F4ABFEAA15E886B500501D40 /* R2LScrollNoWrap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = R2LScrollNoWrap.plist; sourceTree = "<group>"; };
 		F4C33CA015B62FFB00816700 /* RockyDontEatThat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RockyDontEatThat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -495,6 +491,10 @@
 		F4D33F6C15C43E1D00694C75 /* Resources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Resources.plist; sourceTree = "<group>"; };
 		F4D33F6E15C44B7700694C75 /* AWHSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHSprite.h; sourceTree = "<group>"; };
 		F4D33F6F15C44B7700694C75 /* AWHSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHSprite.m; sourceTree = "<group>"; };
+		F4DBBE1B15F27E1D003D5169 /* sample-sprites-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sample-sprites-hd.plist"; sourceTree = "<group>"; };
+		F4DBBE1C15F27E1D003D5169 /* sample-sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-sprites-hd.pvr.ccz"; sourceTree = "<group>"; };
+		F4DBBE1D15F27E1D003D5169 /* sample-sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sample-sprites.plist"; sourceTree = "<group>"; };
+		F4DBBE1E15F27E1D003D5169 /* sample-sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-sprites.pvr.ccz"; sourceTree = "<group>"; };
 		F4E9BCC615EC986B002B6C58 /* Doot Doo Theme Game.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Doot Doo Theme Game.mp3"; sourceTree = "<group>"; };
 		F4E9BCCD15ED1351002B6C58 /* Launch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Launch.mp3; sourceTree = "<group>"; };
 		F4E9BCCF15ED1A01002B6C58 /* R2LFood.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = R2LFood.plist; sourceTree = "<group>"; };
@@ -636,10 +636,10 @@
 		F42F086815CDD8090063F763 /* SpriteSheets */ = {
 			isa = PBXGroup;
 			children = (
-				F4ABFE9F15E5A98300501D40 /* sample-sprites-hd.plist */,
-				F4ABFEA015E5A98300501D40 /* sample-sprites-hd.pvr.ccz */,
-				F4ABFEA115E5A98300501D40 /* sample-sprites.plist */,
-				F4ABFEA215E5A98300501D40 /* sample-sprites.pvr.ccz */,
+				F4DBBE1B15F27E1D003D5169 /* sample-sprites-hd.plist */,
+				F4DBBE1C15F27E1D003D5169 /* sample-sprites-hd.pvr.ccz */,
+				F4DBBE1D15F27E1D003D5169 /* sample-sprites.plist */,
+				F4DBBE1E15F27E1D003D5169 /* sample-sprites.pvr.ccz */,
 				F422EDE815DC75F200963D33 /* home-sprites-hd.plist */,
 				F422EDE915DC75F200963D33 /* home-sprites-hd.pvr.ccz */,
 				F422EDEA15DC75F300963D33 /* home-sprites.plist */,
@@ -1137,10 +1137,6 @@
 				F422EDED15DC75F300963D33 /* home-sprites-hd.pvr.ccz in Resources */,
 				F422EDEE15DC75F300963D33 /* home-sprites.plist in Resources */,
 				F422EDEF15DC75F300963D33 /* home-sprites.pvr.ccz in Resources */,
-				F4ABFEA315E5A98300501D40 /* sample-sprites-hd.plist in Resources */,
-				F4ABFEA415E5A98300501D40 /* sample-sprites-hd.pvr.ccz in Resources */,
-				F4ABFEA515E5A98300501D40 /* sample-sprites.plist in Resources */,
-				F4ABFEA615E5A98300501D40 /* sample-sprites.pvr.ccz in Resources */,
 				F4ABFEA815E6D38B00501D40 /* R2LScrollWrap.plist in Resources */,
 				F4ABFEAB15E886B500501D40 /* R2LScrollNoWrap.plist in Resources */,
 				F497AC5115E9B12100CFC9C4 /* R2LScrollTileWrap.plist in Resources */,
@@ -1148,6 +1144,10 @@
 				F4E9BCCE15ED1351002B6C58 /* Launch.mp3 in Resources */,
 				F4E9BCD015ED1A01002B6C58 /* R2LFood.plist in Resources */,
 				F4E9BCD215EE6A96002B6C58 /* Bite.mp3 in Resources */,
+				F4DBBE1F15F27E1D003D5169 /* sample-sprites-hd.plist in Resources */,
+				F4DBBE2015F27E1D003D5169 /* sample-sprites-hd.pvr.ccz in Resources */,
+				F4DBBE2115F27E1D003D5169 /* sample-sprites.plist in Resources */,
+				F4DBBE2215F27E1D003D5169 /* sample-sprites.pvr.ccz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

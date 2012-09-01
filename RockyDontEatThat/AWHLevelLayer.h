@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "AWHGameStateManager.h"
 
 @interface AWHLevelLayer : CCLayerColor {
-    NSDictionary* tiledBackgroundDict;
-    NSDictionary* backgroundDict;
-    NSDictionary *foodDict;
+    AWHGameStateManager *gameStateManager;
+  //  NSDictionary* tiledBackgroundDict;
+   // NSDictionary* backgroundDict;
+   // NSDictionary *foodDict;
 }
 
 @end

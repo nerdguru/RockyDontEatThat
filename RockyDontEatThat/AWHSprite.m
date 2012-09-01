@@ -49,8 +49,7 @@
 -(void) removeMe {
     [self removeFromParentAndCleanup:YES];
     AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
-    NSLog(@"Counter: %d NumSprites: %d", gameStateManager.counter, gameStateManager.numSprites);
-    if(gameStateManager.counter > gameStateManager.numSprites) {
+    if(gameStateManager.counter == 0) {
         gameStateManager.restartMenu.visible = YES;
     }
 }

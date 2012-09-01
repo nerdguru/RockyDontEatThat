@@ -7,7 +7,6 @@
 //
 
 #import "AWHLevelLayer.h"
-#import "AWHGameStateManager.h"
 #import "AWHScaleManager.h"
 #import "AWHSprite.h"
 #import "AWHResourceManager.h"
@@ -17,11 +16,9 @@
 @implementation AWHLevelLayer
 
 -(void)incrementLevel {
-    AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
     [gameStateManager gotoNextLevel];
 }
 -(void)startOver {
-    AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
     [gameStateManager startOver];
 }
 /*
@@ -32,17 +29,19 @@
 
 // Interval callback to start the background music
 -(void)startBackgrondMusic {
+    NSDictionary *levelDict = [gameStateManager getLevelDict];
+    NSDictionary *backgroundDict = [levelDict objectForKey:@"Background"];
     [[SimpleAudioEngine sharedEngine] playBackgroundMusic:[backgroundDict objectForKey:@"Music"]];
     [self unschedule:@selector(startBackgrondMusic)];
 }
 
 -(void)fire {
     
-    
     // First see if we're done
-    AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
-    gameStateManager.counter++;
-    if (gameStateManager.counter <= [[foodDict objectForKey:@"Quantity"] intValue]) {
+    gameStateManager.counter--;
+    if (gameStateManager.counter > 0) {
+        NSDictionary *levelDict = [gameStateManager getLevelDict];
+        NSDictionary *foodDict = [levelDict objectForKey:@"Food"];
         NSArray* foodArray = [foodDict objectForKey:@"Sprites"];
         int foodIndex = arc4random() % [foodArray count];  
         NSDictionary* currentSpriteDict = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
@@ -50,7 +49,7 @@
                                          [foodDict objectForKey:@"Template"], @"Template",
                                          nil];
 
-        NSLog(@"Food fire %d %@", gameStateManager.counter, currentSpriteDict);
+        NSLog(@"Food fire %d", gameStateManager.counter);
         AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[AWHResourceManager expandSpriteDict:currentSpriteDict]];
         [self addChild:sprite z:3];
         [sprite release];
@@ -60,35 +59,16 @@
 
         [self unschedule:@selector(fire)];
     }
-    
-    
-    /*
-    BOOL last = NO;
-    if (counter ==29) {
-        last = YES;
-    }
-    Food *food=[[Food alloc] initWithLayer:self lastSprite:last];
-    [food release];
-    
-    counter++;
-    [leftScore setString:[NSString stringWithFormat:@"%d", 30-counter]];
-    [[SimpleAudioEngine sharedEngine] playEffect:@"Launch.mp3"];
-    if (counter>=30) {
-        [self unschedule:@selector(fire)];
-        //[[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
-    }
-    */
-
 }
 
 // on "init" you need to initialize your instance
 -(id) init
 {
     // Get the state manager and set the level background color
-    AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
+    gameStateManager = [AWHGameStateManager sharedGameStateManager];
     
 	NSDictionary *levelDict = [gameStateManager getLevelDict];
-    backgroundDict = [levelDict objectForKey:@"Background"];
+    NSDictionary *backgroundDict = [levelDict objectForKey:@"Background"];
 	if( (self=[super initWithColor:ccc4([[backgroundDict objectForKey:@"Red"] intValue], 
                                         [[backgroundDict objectForKey:@"Green"] intValue], 
                                         [[backgroundDict objectForKey:@"Blue"] intValue], 
@@ -113,11 +93,10 @@
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%@.plist", spriteSheet]];
         
         // Load up background sprites
-        tiledBackgroundDict = [AWHResourceManager expandSpriteDict:[backgroundDict objectForKey:@"Tiled"]];
+        NSDictionary *tiledBackgroundDict = [AWHResourceManager expandSpriteDict:[backgroundDict objectForKey:@"Tiled"]];
         AWHSprite *tiledSprite=[[AWHSprite alloc] initWithDict:tiledBackgroundDict];
         [self addChild:tiledSprite z:0];
 
-        
         for (int loopVar = 0; loopVar < [scaleManager computeNumHorizTiles:[tiledSprite.mySprite boundingBox].size.width]; loopVar++) {
             float x = [scaleManager pointsFromRightBoundary:[tiledSprite.mySprite boundingBox].size.width n:loopVar];
             NSMutableDictionary* tileDict = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
@@ -134,7 +113,6 @@
             [tile release];
         }
         
-
         for (NSDictionary* spriteDict in [backgroundDict objectForKey:@"Sprites"] ){
             AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[AWHResourceManager expandSpriteDict:spriteDict]];
             [self addChild:sprite z:1];
@@ -159,7 +137,7 @@
         
         
         // Start food logic
-        foodDict = [levelDict objectForKey:@"Food"];
+        NSDictionary *foodDict = [levelDict objectForKey:@"Food"];
 
         
         /*
@@ -198,8 +176,7 @@
         // Food fire
         [[SimpleAudioEngine sharedEngine] preloadEffect:[foodDict objectForKey:@"LaunchEffect"]];
         [self schedule:@selector(fire) interval:[[foodDict objectForKey:@"Interval"] floatValue]];
-        gameStateManager.counter = 0;
-        gameStateManager.numSprites = [[foodDict objectForKey:@"Quantity"] intValue];
+        gameStateManager.counter = [[foodDict objectForKey:@"Quantity"] intValue];
         
         CCMenuItemFont *item1 = [CCMenuItemFont itemFromString: @"Start Over" target:self selector:@selector(startOver)];
         item1.color = ccWHITE;
@@ -207,7 +184,20 @@
         menu.visible = NO;
 		[self addChild: menu z:4];
         gameStateManager.restartMenu = menu;
-
+        
+        // Finally, load up the HUD
+        /*int offset=150;
+        int height = 15;
+		CCLabelTTF *eatenLabel = [CCLabelTTF labelWithString:@"Level Score:" fontName:@"Marker Felt" fontSize:24 ];
+        [eatenLabel setColor:ccc3(51, 153, 0)];
+		eatenLabel.position =  ccp( offset + 75 , height );
+		[self addChild: eatenLabel];
+        
+        eatenScore = [CCLabelTTF labelWithString:@"0" fontName:@"Marker Felt" fontSize:24 ];
+        [eatenScore setColor:ccc3(51, 153, 0)];
+		eatenScore.position =  ccp( offset + 140 , height );
+		[self addChild: eatenScore];
+*/
 	}
 	return self;
 }
