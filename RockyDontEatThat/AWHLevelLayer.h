@@ -12,9 +12,8 @@
 
 @interface AWHLevelLayer : CCLayerColor {
     AWHGameStateManager *gameStateManager;
-  //  NSDictionary* tiledBackgroundDict;
-   // NSDictionary* backgroundDict;
-   // NSDictionary *foodDict;
+    CCLabelTTF *eatenScore;
+    CCLabelTTF *remainingFoods;
 }
 
 @end

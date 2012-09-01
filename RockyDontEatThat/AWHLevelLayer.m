@@ -186,18 +186,29 @@
         gameStateManager.restartMenu = menu;
         
         // Finally, load up the HUD
-        /*int offset=150;
-        int height = 15;
-		CCLabelTTF *eatenLabel = [CCLabelTTF labelWithString:@"Level Score:" fontName:@"Marker Felt" fontSize:24 ];
-        [eatenLabel setColor:ccc3(51, 153, 0)];
-		eatenLabel.position =  ccp( offset + 75 , height );
+        NSDictionary *hudDict = [levelDict objectForKey:@"HUD"];
+        
+        // Level Score Labels
+		CCLabelTTF *eatenLabel = [CCLabelTTF labelWithString:[hudDict objectForKey:@"ScoreLabel"] fontName:[hudDict objectForKey:@"Font"] fontSize:[scaleManager scaleFontSize:12] ];
+        [eatenLabel setColor:ccc3([[hudDict objectForKey:@"FontColorR"] intValue], [[hudDict objectForKey:@"FontColorG"] intValue], [[hudDict objectForKey:@"FontColorB"] intValue])];
+		eatenLabel.position =  [scaleManager scalePointX:[[hudDict objectForKey:@"ScorePositionX"] intValue] andY:[[hudDict objectForKey:@"ScorePositionY"] intValue]];
 		[self addChild: eatenLabel];
         
-        eatenScore = [CCLabelTTF labelWithString:@"0" fontName:@"Marker Felt" fontSize:24 ];
-        [eatenScore setColor:ccc3(51, 153, 0)];
-		eatenScore.position =  ccp( offset + 140 , height );
+        eatenScore = [CCLabelTTF labelWithString:@"0" fontName:[hudDict objectForKey:@"Font"] fontSize:[scaleManager scaleFontSize:12] ];
+        [eatenScore setColor:ccc3([[hudDict objectForKey:@"FontColorR"] intValue], [[hudDict objectForKey:@"FontColorG"] intValue], [[hudDict objectForKey:@"FontColorB"] intValue])]; 
+		eatenScore.position =  [scaleManager scalePointX:[[hudDict objectForKey:@"ScorePositionX"] intValue]+ [[hudDict objectForKey:@"ScoreSpace"] intValue] andY:[[hudDict objectForKey:@"ScorePositionY"] intValue]];
 		[self addChild: eatenScore];
-*/
+        
+        // Remaining Labels
+        CCLabelTTF *remainingLabel = [CCLabelTTF labelWithString:[hudDict objectForKey:@"RemainingLabel"] fontName:[hudDict objectForKey:@"Font"] fontSize:[scaleManager scaleFontSize:12] ];        [remainingLabel setColor:ccc3([[hudDict objectForKey:@"FontColorR"] intValue], [[hudDict objectForKey:@"FontColorG"] intValue], [[hudDict objectForKey:@"FontColorB"] intValue])];
+		remainingLabel.position =  [scaleManager scalePointX:[[hudDict objectForKey:@"RemainingPositionX"] intValue] andY:[[hudDict objectForKey:@"RemainingPositionY"] intValue]];
+		[self addChild: remainingLabel];
+        
+        remainingFoods = [CCLabelTTF labelWithString:@"0" fontName:[hudDict objectForKey:@"Font"] fontSize:[scaleManager scaleFontSize:12] ];
+        [remainingFoods setColor:ccc3([[hudDict objectForKey:@"FontColorR"] intValue], [[hudDict objectForKey:@"FontColorG"] intValue], [[hudDict objectForKey:@"FontColorB"] intValue])]; 
+		remainingFoods.position =  [scaleManager scalePointX:[[hudDict objectForKey:@"RemainingPositionX"] intValue]+ [[hudDict objectForKey:@"RemainingSpace"] intValue] andY:[[hudDict objectForKey:@"RemainingPositionY"] intValue]];
+		[self addChild: remainingFoods];
+
 	}
 	return self;
 }

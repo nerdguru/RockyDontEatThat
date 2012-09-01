@@ -587,12 +587,32 @@
 				<dict>
 					<key>Font</key>
 					<string>PressStart2P.ttf</string>
+					<key>FontSize</key>
+					<string>24</string>
+					<key>FontColorR</key>
+					<string>51</string>
+					<key>FontColorG</key>
+					<string>153</string>
+					<key>FontColorB</key>
+					<string>0</string>
 					<key>ScoreLabel</key>
 					<string>Level Score:</string>
 					<key>RemainingLabel</key>
 					<string>Remaining:</string>
 					<key>CallIcon</key>
 					<string>phone.png</string>
+					<key>ScorePositionX</key>
+					<string>221</string>
+					<key>ScorePositionY</key>
+					<string>25</string>
+					<key>ScoreSpace</key>
+					<string>85</string>
+					<key>RemainingPositionX</key>
+					<string>210</string>
+					<key>RemainingPositionY</key>
+					<string>10</string>
+					<key>RemainingSpace</key>
+					<string>70</string>
 				</dict>
 			</dict>
 			<key>Postlevel</key>
