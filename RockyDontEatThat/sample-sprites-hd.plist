@@ -85,7 +85,7 @@
             <key>ggrapes.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{570,1858},{216,158}}</string>
+                <string>{{570,1837},{216,158}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
@@ -124,15 +124,15 @@
             <key>phone.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{827,1707},{194,149}}</string>
+                <string>{{827,1707},{165,126}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{1,1},{194,149}}</string>
+                <string>{{1,1},{165,126}}</string>
                 <key>sourceSize</key>
-                <string>{196,151}</string>
+                <string>{167,128}</string>
             </dict>
             <key>rbonetreat.png</key>
             <dict>
@@ -209,7 +209,7 @@
             <key>size</key>
             <string>{1024,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:f4a640763ff984b81912e7050aeb8391$</string>
+            <string>$TexturePacker:SmartUpdate:d408b04a3ce7050967f6189441039802$</string>
             <key>textureFileName</key>
             <string>sample-sprites-hd.pvr.ccz</string>
         </dict>

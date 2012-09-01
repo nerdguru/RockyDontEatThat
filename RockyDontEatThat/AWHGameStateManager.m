@@ -21,6 +21,7 @@
 @synthesize numSprites;
 @synthesize restartMenu;
 @synthesize counter;
+@synthesize numCalls;
 
 // Singleton accessor method
 + (id)sharedGameStateManager {
@@ -36,6 +37,7 @@
 -(id)init {
     if( (self=[super init]) ) {
         currentLevel = 0;
+        numCalls=3;
     }
     return self;
     

@@ -21,6 +21,7 @@
     int numSprites;
     CCMenu* restartMenu;
     int counter;
+    int numCalls;
 }
 +(id)sharedGameStateManager;
 -(int)theCurrentLevel;
@@ -36,4 +37,5 @@
 @property (readwrite, assign) int numSprites;
 @property (readwrite, assign) CCMenu* restartMenu;
 @property (readwrite, assign) int counter;
+@property (readwrite, assign) int numCalls;
 @end

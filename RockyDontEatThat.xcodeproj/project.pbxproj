@@ -168,10 +168,10 @@
 		F4D33F6B15C43B5400694C75 /* AWHResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D33F6A15C43B5400694C75 /* AWHResourceManager.m */; };
 		F4D33F6D15C43E1D00694C75 /* Resources.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4D33F6C15C43E1D00694C75 /* Resources.plist */; };
 		F4D33F7015C44B7800694C75 /* AWHSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D33F6F15C44B7700694C75 /* AWHSprite.m */; };
-		F4DBBE1F15F27E1D003D5169 /* sample-sprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4DBBE1B15F27E1D003D5169 /* sample-sprites-hd.plist */; };
-		F4DBBE2015F27E1D003D5169 /* sample-sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4DBBE1C15F27E1D003D5169 /* sample-sprites-hd.pvr.ccz */; };
-		F4DBBE2115F27E1D003D5169 /* sample-sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4DBBE1D15F27E1D003D5169 /* sample-sprites.plist */; };
-		F4DBBE2215F27E1D003D5169 /* sample-sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4DBBE1E15F27E1D003D5169 /* sample-sprites.pvr.ccz */; };
+		F4DBBE2715F29B19003D5169 /* sample-sprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4DBBE2315F29B19003D5169 /* sample-sprites-hd.plist */; };
+		F4DBBE2815F29B19003D5169 /* sample-sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4DBBE2415F29B19003D5169 /* sample-sprites-hd.pvr.ccz */; };
+		F4DBBE2915F29B19003D5169 /* sample-sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4DBBE2515F29B19003D5169 /* sample-sprites.plist */; };
+		F4DBBE2A15F29B19003D5169 /* sample-sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4DBBE2615F29B19003D5169 /* sample-sprites.pvr.ccz */; };
 		F4E9BCC715EC986B002B6C58 /* Doot Doo Theme Game.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCC615EC986B002B6C58 /* Doot Doo Theme Game.mp3 */; };
 		F4E9BCCE15ED1351002B6C58 /* Launch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCCD15ED1351002B6C58 /* Launch.mp3 */; };
 		F4E9BCD015ED1A01002B6C58 /* R2LFood.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCCF15ED1A01002B6C58 /* R2LFood.plist */; };
@@ -491,10 +491,10 @@
 		F4D33F6C15C43E1D00694C75 /* Resources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Resources.plist; sourceTree = "<group>"; };
 		F4D33F6E15C44B7700694C75 /* AWHSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHSprite.h; sourceTree = "<group>"; };
 		F4D33F6F15C44B7700694C75 /* AWHSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHSprite.m; sourceTree = "<group>"; };
-		F4DBBE1B15F27E1D003D5169 /* sample-sprites-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sample-sprites-hd.plist"; sourceTree = "<group>"; };
-		F4DBBE1C15F27E1D003D5169 /* sample-sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-sprites-hd.pvr.ccz"; sourceTree = "<group>"; };
-		F4DBBE1D15F27E1D003D5169 /* sample-sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sample-sprites.plist"; sourceTree = "<group>"; };
-		F4DBBE1E15F27E1D003D5169 /* sample-sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-sprites.pvr.ccz"; sourceTree = "<group>"; };
+		F4DBBE2315F29B19003D5169 /* sample-sprites-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sample-sprites-hd.plist"; sourceTree = "<group>"; };
+		F4DBBE2415F29B19003D5169 /* sample-sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-sprites-hd.pvr.ccz"; sourceTree = "<group>"; };
+		F4DBBE2515F29B19003D5169 /* sample-sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sample-sprites.plist"; sourceTree = "<group>"; };
+		F4DBBE2615F29B19003D5169 /* sample-sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-sprites.pvr.ccz"; sourceTree = "<group>"; };
 		F4E9BCC615EC986B002B6C58 /* Doot Doo Theme Game.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Doot Doo Theme Game.mp3"; sourceTree = "<group>"; };
 		F4E9BCCD15ED1351002B6C58 /* Launch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Launch.mp3; sourceTree = "<group>"; };
 		F4E9BCCF15ED1A01002B6C58 /* R2LFood.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = R2LFood.plist; sourceTree = "<group>"; };
@@ -636,10 +636,10 @@
 		F42F086815CDD8090063F763 /* SpriteSheets */ = {
 			isa = PBXGroup;
 			children = (
-				F4DBBE1B15F27E1D003D5169 /* sample-sprites-hd.plist */,
-				F4DBBE1C15F27E1D003D5169 /* sample-sprites-hd.pvr.ccz */,
-				F4DBBE1D15F27E1D003D5169 /* sample-sprites.plist */,
-				F4DBBE1E15F27E1D003D5169 /* sample-sprites.pvr.ccz */,
+				F4DBBE2315F29B19003D5169 /* sample-sprites-hd.plist */,
+				F4DBBE2415F29B19003D5169 /* sample-sprites-hd.pvr.ccz */,
+				F4DBBE2515F29B19003D5169 /* sample-sprites.plist */,
+				F4DBBE2615F29B19003D5169 /* sample-sprites.pvr.ccz */,
 				F422EDE815DC75F200963D33 /* home-sprites-hd.plist */,
 				F422EDE915DC75F200963D33 /* home-sprites-hd.pvr.ccz */,
 				F422EDEA15DC75F300963D33 /* home-sprites.plist */,
@@ -1144,10 +1144,10 @@
 				F4E9BCCE15ED1351002B6C58 /* Launch.mp3 in Resources */,
 				F4E9BCD015ED1A01002B6C58 /* R2LFood.plist in Resources */,
 				F4E9BCD215EE6A96002B6C58 /* Bite.mp3 in Resources */,
-				F4DBBE1F15F27E1D003D5169 /* sample-sprites-hd.plist in Resources */,
-				F4DBBE2015F27E1D003D5169 /* sample-sprites-hd.pvr.ccz in Resources */,
-				F4DBBE2115F27E1D003D5169 /* sample-sprites.plist in Resources */,
-				F4DBBE2215F27E1D003D5169 /* sample-sprites.pvr.ccz in Resources */,
+				F4DBBE2715F29B19003D5169 /* sample-sprites-hd.plist in Resources */,
+				F4DBBE2815F29B19003D5169 /* sample-sprites-hd.pvr.ccz in Resources */,
+				F4DBBE2915F29B19003D5169 /* sample-sprites.plist in Resources */,
+				F4DBBE2A15F29B19003D5169 /* sample-sprites.pvr.ccz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

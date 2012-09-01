@@ -588,7 +588,7 @@
 					<key>Font</key>
 					<string>PressStart2P.ttf</string>
 					<key>FontSize</key>
-					<string>24</string>
+					<string>12</string>
 					<key>FontColorR</key>
 					<string>51</string>
 					<key>FontColorG</key>
@@ -599,20 +599,33 @@
 					<string>Level Score:</string>
 					<key>RemainingLabel</key>
 					<string>Remaining:</string>
-					<key>CallIcon</key>
-					<string>phone.png</string>
+					<key>Sprite</key>
+					<dict>
+						<key>Name</key>
+						<string>phone.png</string>
+						<key>PositionX</key>
+						<string>455</string>
+						<key>PositionY</key>
+						<string>18</string>
+					</dict>
 					<key>ScorePositionX</key>
-					<string>221</string>
+					<string>271</string>
 					<key>ScorePositionY</key>
 					<string>25</string>
 					<key>ScoreSpace</key>
 					<string>85</string>
 					<key>RemainingPositionX</key>
-					<string>210</string>
+					<string>260</string>
 					<key>RemainingPositionY</key>
 					<string>10</string>
 					<key>RemainingSpace</key>
 					<string>70</string>
+					<key>CallsPositionX</key>
+					<string>425</string>
+					<key>CallsPositionY</key>
+					<string>18</string>
+					<key>CallsSpace</key>
+					<string>-12</string>
 				</dict>
 			</dict>
 			<key>Postlevel</key>

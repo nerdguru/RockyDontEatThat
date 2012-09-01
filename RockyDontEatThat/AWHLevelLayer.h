@@ -14,6 +14,7 @@
     AWHGameStateManager *gameStateManager;
     CCLabelTTF *eatenScore;
     CCLabelTTF *remainingFoods;
+    CCLabelTTF *remainingCalls;
 }
 
 @end
