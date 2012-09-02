@@ -157,6 +157,7 @@
         [[SimpleAudioEngine sharedEngine] preloadEffect:[foodDict objectForKey:@"LaunchEffect"]];
         [self schedule:@selector(fire) interval:[[foodDict objectForKey:@"Interval"] floatValue]];
         gameStateManager.spritesCounter = [[foodDict objectForKey:@"Quantity"] intValue];
+        gameStateManager.activeSprites = gameStateManager.spritesCounter;
         
         // Preload scoring effect
         scoreEffect = [foodDict objectForKey:@"ScoreEffect"];

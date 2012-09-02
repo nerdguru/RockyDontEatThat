@@ -18,6 +18,7 @@
     int removeX;
     int removeY;
     int spritesCounter;
+    int activeSprites;
     int numLivesLeft;
     AWHLevelLayer* currentLevelLayer;
     int levelScore;
@@ -36,5 +37,6 @@
 @property (readwrite, assign) int removeX;
 @property (readwrite, assign) int removeY;
 @property (readwrite, assign) int spritesCounter;
+@property (readwrite, assign) int activeSprites;
 @property (readwrite, assign) int numLivesLeft;
 @end

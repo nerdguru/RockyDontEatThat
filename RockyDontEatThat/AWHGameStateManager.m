@@ -16,6 +16,7 @@
 @synthesize removeX;
 @synthesize removeY;
 @synthesize spritesCounter;
+@synthesize activeSprites;
 @synthesize numLivesLeft;
 
 // Singleton accessor method
@@ -93,9 +94,11 @@
     [[SimpleAudioEngine sharedEngine] playEffect:currentLevelLayer.protagonistEffect];
 }
 -(void)enableRestartMenu {
-    if(spritesCounter == 0) {
+    activeSprites--;
+    if(activeSprites == 0) {
         currentLevelLayer.restartMenu.visible = YES;
     }
+    
 }
 -(void)showNormalProtagonist {
     currentLevelLayer.protagonistEat.visible = NO;
