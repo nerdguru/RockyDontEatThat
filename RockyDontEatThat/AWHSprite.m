@@ -42,33 +42,47 @@
 // Test method that loads the high score plist from fileand saves it to user defaults
 -(void) loadSaveHighScores {
     AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
-    resourceManager.loadHighScoresPlist;
-    resourceManager.saveHighScores;
+    [resourceManager loadHighScoresPlist];
+    [resourceManager saveHighScores];
 }
 // Get rid of the sprite
 -(void) removeMe {
     [self removeFromParentAndCleanup:YES];
     AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
-    if(gameStateManager.counter == 0) {
-        gameStateManager.restartMenu.visible = YES;
+    if(beenEaten){
+        if (value < 0) {
+        // Ate a bad thing, stop the level
+            NSLog(@"Ate a bad thing, stop level");
+        } else {
+        // Ate a good thing, award points
+            NSLog(@"Ate a good thing, award points");
+            [gameStateManager awardPoints:value];
+        }
+    } else {
+        if (value < 0) {
+        // Bad thing went off, award points
+            [gameStateManager awardPoints:value*-1];
+        } else {
+        // Good thing went off, do nothing
+        }
     }
+    [gameStateManager enableRestartMenu];
 }
 
 -(void) eatEffect {
     AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
-    [[SimpleAudioEngine sharedEngine] playEffect:gameStateManager.protagonistEffect];
+    [gameStateManager playProtagonistEffect];
 }
 
 -(void) eatStart {
     AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
-    gameStateManager.protagonist.visible = NO;
-    gameStateManager.protagonistEat.visible = YES;
+    [gameStateManager showEatProtagonist];
 }
 
 -(void) eatEnd {
     AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
-    gameStateManager.protagonistEat.visible = NO;
-    gameStateManager.protagonist.visible = YES;
+    [gameStateManager showNormalProtagonist];
+    beenEaten = YES;
 }
 
 // Build the data structure of actions to execute on this sprite, recursively if necessary
@@ -78,16 +92,16 @@
     
     // Walk through the action types, first the composite ones
     if ([actionType isEqualToString:@"RepeatForever"]) {
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         id childAction = [self processActions:[action objectForKey:@"ChildAction"]];
         return [CCRepeatForever actionWithAction:childAction];
     } else if ([actionType isEqualToString:@"Repeat"]) {
         // Remember that you can't embed a RepateForever inside a Sequence,hence the need for Repeat
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         id childAction = [self processActions:[action objectForKey:@"ChildAction"]];
         return [CCRepeat actionWithAction:childAction times:[[action objectForKey:@"Times"] intValue]];
     } else if ([actionType isEqualToString:@"Parallel"]) {
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         NSArray *childArray = [action objectForKey:@"ChildActions"];
         NSMutableArray *actionsArray = [[NSMutableArray alloc] initWithCapacity:(childArray.count)];
         for (NSDictionary* childDict in childArray ){
@@ -96,7 +110,7 @@
         }
         return [CCSpawn actionsWithArray:actionsArray];
     } else if ([actionType isEqualToString:@"Sequence"]) {
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         NSArray *childArray = [action objectForKey:@"ChildActions"];
         NSMutableArray *actionsArray = [[NSMutableArray alloc] initWithCapacity:(childArray.count)];
         for (NSDictionary* childDict in childArray ){
@@ -108,23 +122,23 @@
     
     // Now the atomic ones
     else if ([actionType isEqualToString:@"RotateBy"]) {
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         return [CCRotateBy actionWithDuration:[[action objectForKey:@"Duration"] floatValue] angle:[[action objectForKey:@"Angle"] floatValue]];
     }
     else if ([actionType isEqualToString:@"Delay"]) {
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         return [CCDelayTime actionWithDuration:[[action objectForKey:@"Duration"] floatValue]];
     }
     else if ([actionType isEqualToString:@"Rotate"]) {
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         return [CCRotateBy actionWithDuration:[[action objectForKey:@"Duration"] floatValue] angle:[[action objectForKey:@"Angle"] floatValue]];
     }
     else if ([actionType isEqualToString:@"ScaleBy"]) {
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         return [CCScaleBy actionWithDuration:[[action objectForKey:@"Duration"] floatValue]  scale:[[action objectForKey:@"Scale"] floatValue]];
     }
     else if ([actionType isEqualToString:@"MoveTo"]) {
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
         float positionX = [scaleManager convertDimension:[action objectForKey:@"PositionX"] ofSprite:self.mySprite];
         float positionY = [scaleManager convertDimension:[action objectForKey:@"PositionY"] ofSprite:self.mySprite];
@@ -154,7 +168,7 @@
         return [CCMoveTo actionWithDuration:duration position:[scaleManager  scalePointX:positionX andY:positionY]];
     }
     else if ([actionType isEqualToString:@"Animate"]) {
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         return [CCAnimate actionWithSpriteSequence:[action objectForKey:@"Sequence"]
                                            numFrames:[[action objectForKey:@"NumFrames"] intValue]
                                                delay:[[action objectForKey:@"Delay"] floatValue]
@@ -163,36 +177,36 @@
     
     // Finally, the custom ones
     else if ([actionType isEqualToString:@"TouchesOn"]) {
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         return [CCCallFunc actionWithTarget:self selector:@selector(touchesOn)];
     }
     else if ([actionType isEqualToString:@"TouchesOff"]) {
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         return [CCCallFunc actionWithTarget:self selector:@selector(touchesOff)];
     }
     else if ([actionType isEqualToString:@"NextLevel"]) {
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         return [CCCallFunc actionWithTarget:self selector:@selector(nextLevel)];
     }
     else if ([actionType isEqualToString:@"RevertOriginalActions"]) {
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         return [CCCallFunc actionWithTarget:self selector:@selector(revertOriginalActions)];
     }
     else if ([actionType isEqualToString:@"LoadSaveHighScores"]) {
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         return [CCCallFunc actionWithTarget:self selector:@selector(loadSaveHighScores)];
     }
     else if ([actionType isEqualToString:@"RemoveMe"]) {
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         return [CCCallFunc actionWithTarget:self selector:@selector(removeMe)];
     } else if ([actionType isEqualToString:@"EatEffect"]) {
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         return [CCCallFunc actionWithTarget:self selector:@selector(eatEffect)];
     } else if ([actionType isEqualToString:@"EatStart"]) {
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         return [CCCallFunc actionWithTarget:self selector:@selector(eatStart)];
     } else if ([actionType isEqualToString:@"EatEnd"]) {
-        NSLog(@"Action processing a %@", actionType);
+        //NSLog(@"Action processing a %@", actionType);
         return [CCCallFunc actionWithTarget:self selector:@selector(eatEnd)];
     }
     
@@ -222,9 +236,18 @@
         // Record touch reactions for later
         touchReactions = [spriteDict objectForKey:@"TouchReactions"];
         
+        // Set the value, if any
+        NSString* spriteValue = [spriteDict objectForKey:@"Value"];
+        if(spriteValue != nil){
+            value = [spriteValue intValue];
+        } else {
+            value = 0;
+        }
+        
         // Set member variables
         [self addChild:mySprite];
         beenTouched = NO;
+        beenEaten = NO;
 
     }
     return self;
@@ -272,7 +295,7 @@
     for (NSDictionary* reactionDict in touchReactions ){
         NSString * touchReactionType = [reactionDict objectForKey:@"TouchReactionType"];
         if ([touchReactionType isEqualToString:@"Actions"]) {
-            NSLog(@"Touch processing a %@", touchReactionType);
+            //NSLog(@"Touch processing a %@", touchReactionType);
             [mySprite stopAllActions];
             [mySprite runAction:[self processActions:[reactionDict objectForKey:@"Action"]]];
         } 

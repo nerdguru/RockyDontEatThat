@@ -15,6 +15,12 @@
 
 @implementation AWHLevelLayer
 
+@synthesize protagonistNormal;
+@synthesize protagonistEat;
+@synthesize protagonistEffect;
+@synthesize scoreEffect;
+@synthesize restartMenu;
+
 -(void)incrementLevel {
     [gameStateManager gotoNextLevel];
 }
@@ -35,10 +41,11 @@
     [self unschedule:@selector(startBackgrondMusic)];
 }
 
+// Interval for foods being fired
 -(void)fire {
     
     // First see if we're done
-    gameStateManager.counter--;
+    gameStateManager.spritesCounter--;
     
     NSDictionary *levelDict = [gameStateManager getLevelDict];
     NSDictionary *foodDict = [levelDict objectForKey:@"Food"];
@@ -46,20 +53,21 @@
     int foodIndex = arc4random() % [foodArray count];  
     NSDictionary* currentSpriteDict = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                                      [[foodArray objectAtIndex:foodIndex] objectForKey:@"Name"], @"Name",
+                                       [[foodArray objectAtIndex:foodIndex] objectForKey:@"Value"], @"Value",
                                      [foodDict objectForKey:@"Template"], @"Template",
                                      nil];
 
-    NSLog(@"Food fire %d", gameStateManager.counter);
+    //NSLog(@"Food fire %d", gameStateManager.spritesCounter);
     AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[AWHResourceManager expandSpriteDict:currentSpriteDict]];
     [self addChild:sprite z:3];
     [sprite release];
     [currentSpriteDict release];
     [[SimpleAudioEngine sharedEngine] playEffect:[foodDict objectForKey:@"LaunchEffect"]];
     
-    if (gameStateManager.counter == 0) {
+    if (gameStateManager.spritesCounter == 0) {
         [self unschedule:@selector(fire)];
     }
-    [remainingFoods setString:[NSString stringWithFormat:@"%d", gameStateManager.counter]];
+    [remainingFoods setString:[NSString stringWithFormat:@"%d", gameStateManager.spritesCounter]];
 }
 
 // on "init" you need to initialize your instance
@@ -108,7 +116,7 @@
                                              nil];
             
             AWHSprite *tile=[[AWHSprite alloc] initWithDict:tileDict];
-            NSLog(@"Dict: %@", tileDict);
+            //NSLog(@"Dict: %@", tileDict);
             [self addChild:tile z:0];
             [tileDict release];
             [tile release];
@@ -121,20 +129,20 @@
         }
         
         // Load up protagonist animation
-        NSDictionary *protagonist = [levelDict objectForKey:@"Protagonist"];
-        AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[protagonist objectForKey:@"MainSprite"]];
+        NSDictionary *protagonistDict = [levelDict objectForKey:@"Protagonist"];
+        AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[protagonistDict objectForKey:@"MainSprite"]];
         [self addChild:sprite z:2];
         
-        [gameStateManager setRemoveX:[[protagonist objectForKey:@"RemoveX"] intValue]];
-        [gameStateManager setRemoveY:[[protagonist objectForKey:@"RemoveY"] intValue]];
-        gameStateManager.protagonistEffect = [protagonist objectForKey:@"Effect"];
+        [gameStateManager setRemoveX:[[protagonistDict objectForKey:@"RemoveX"] intValue]];
+        [gameStateManager setRemoveY:[[protagonistDict objectForKey:@"RemoveY"] intValue]];
+        protagonistEffect = [protagonistDict objectForKey:@"Effect"];
        
-        AWHSprite *eatSprite=[[AWHSprite alloc] initWithDict:[protagonist objectForKey:@"EatSprite"]];
+        AWHSprite *eatSprite=[[AWHSprite alloc] initWithDict:[protagonistDict objectForKey:@"EatSprite"]];
         eatSprite.visible = NO;
         [self addChild:eatSprite z:2];
         
-        gameStateManager.protagonist = sprite;
-        gameStateManager.protagonistEat = eatSprite;
+        protagonistNormal = sprite;
+        protagonistEat = eatSprite;
         
         
         // Start food logic
@@ -148,7 +156,11 @@
         // Food fire
         [[SimpleAudioEngine sharedEngine] preloadEffect:[foodDict objectForKey:@"LaunchEffect"]];
         [self schedule:@selector(fire) interval:[[foodDict objectForKey:@"Interval"] floatValue]];
-        gameStateManager.counter = [[foodDict objectForKey:@"Quantity"] intValue];
+        gameStateManager.spritesCounter = [[foodDict objectForKey:@"Quantity"] intValue];
+        
+        // Preload scoring effect
+        scoreEffect = [foodDict objectForKey:@"ScoreEffect"];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:scoreEffect];
         
         // Temporary restart menu
         CCMenuItemFont *item1 = [CCMenuItemFont itemFromString: @"Start Over" target:self selector:@selector(startOver)];
@@ -156,7 +168,7 @@
 		CCMenu *menu = [CCMenu menuWithItems: item1, nil];
         menu.visible = NO;
 		[self addChild: menu z:4];
-        gameStateManager.restartMenu = menu;
+        restartMenu = menu;
         
         // Finally, load up the HUD
         NSDictionary *hudDict = [levelDict objectForKey:@"HUD"];
@@ -193,7 +205,7 @@
 		callsLabel.position =  [scaleManager scalePointX:[[hudDict objectForKey:@"CallsPositionX"] intValue] andY:[[hudDict objectForKey:@"CallsPositionY"] intValue]];
 		[self addChild: callsLabel];
         
-        remainingCalls = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", gameStateManager.numCalls] fontName:[hudDict objectForKey:@"Font"] fontSize:[scaleManager scaleFontSize:[[hudDict objectForKey:@"FontSize"] intValue]] ];
+        remainingCalls = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", gameStateManager.numLivesLeft] fontName:[hudDict objectForKey:@"Font"] fontSize:[scaleManager scaleFontSize:[[hudDict objectForKey:@"FontSize"] intValue]] ];
         [remainingCalls setColor:ccc3([[hudDict objectForKey:@"FontColorR"] intValue], [[hudDict objectForKey:@"FontColorG"] intValue], [[hudDict objectForKey:@"FontColorB"] intValue])]; 
 		remainingCalls.position =  [scaleManager scalePointX:[[hudDict objectForKey:@"CallsPositionX"] intValue] + [[hudDict objectForKey:@"CallsSpace"] intValue]  andY:[[hudDict objectForKey:@"CallsPositionY"] intValue]];
 		[self addChild: remainingCalls];
@@ -204,4 +216,8 @@
 	return self;
 }
 
+// As actions happen, update the score
+-(void)updateScore:(int)points {
+    [eatenScore setString:[NSString stringWithFormat:@"%d", points]];
+}
 @end

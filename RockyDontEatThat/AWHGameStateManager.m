@@ -7,21 +7,16 @@
 //
 
 #import "AWHGameStateManager.h"
-#import "AWHLevelLayer.h"
 #import "AWHHomeLayer.h"
 #import "AWHResourceManager.h"
 #import "SimpleAudioEngine.h"
+#import "AWHLevelLayer.h"
 
 @implementation AWHGameStateManager
 @synthesize removeX;
 @synthesize removeY;
-@synthesize protagonistEffect;
-@synthesize protagonist;
-@synthesize protagonistEat;
-@synthesize numSprites;
-@synthesize restartMenu;
-@synthesize counter;
-@synthesize numCalls;
+@synthesize spritesCounter;
+@synthesize numLivesLeft;
 
 // Singleton accessor method
 + (id)sharedGameStateManager {
@@ -37,7 +32,7 @@
 -(id)init {
     if( (self=[super init]) ) {
         currentLevel = 0;
-        numCalls=3;
+        numLivesLeft=3;
     }
     return self;
     
@@ -56,9 +51,9 @@
     
     // Create autorelease objects
     CCScene *scene = [CCScene node];
-    AWHLevelLayer *layer = [AWHLevelLayer node];
-    [scene addChild: layer];
-    
+    currentLevelLayer = [AWHLevelLayer node];
+    [scene addChild: currentLevelLayer];
+    levelScore = 0;
     
     // Replace the scene
 
@@ -92,5 +87,27 @@
 -(NSArray *) getHighScores {
     AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
     return [resourceManager getHighScores];
+}
+
+-(void)playProtagonistEffect {
+    [[SimpleAudioEngine sharedEngine] playEffect:currentLevelLayer.protagonistEffect];
+}
+-(void)enableRestartMenu {
+    if(spritesCounter == 0) {
+        currentLevelLayer.restartMenu.visible = YES;
+    }
+}
+-(void)showNormalProtagonist {
+    currentLevelLayer.protagonistEat.visible = NO;
+    currentLevelLayer.protagonistNormal.visible = YES;
+}
+-(void)showEatProtagonist {
+    currentLevelLayer.protagonistNormal.visible = NO;
+    currentLevelLayer.protagonistEat.visible = YES;
+}
+-(void)awardPoints: (int)points{
+    levelScore += points;
+    [currentLevelLayer updateScore:levelScore];
+    [[SimpleAudioEngine sharedEngine] playEffect:currentLevelLayer.scoreEffect];
 }
 @end

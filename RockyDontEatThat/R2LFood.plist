@@ -27,7 +27,7 @@
 						<key>ActionType</key>
 						<string>Rotate</string>
 						<key>Duration</key>
-						<string>8.0</string>
+						<string>7.0</string>
 						<key>Angle</key>
 						<string>720</string>
 					</dict>

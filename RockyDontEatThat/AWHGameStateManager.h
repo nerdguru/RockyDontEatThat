@@ -9,19 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "AWHSprite.h"
+#import "AWHLevelLayer.h"
 
+@class AWHLevelLayer;
 @interface AWHGameStateManager : NSObject
 {
     int currentLevel;
     int removeX;
     int removeY;
-    NSString* protagonistEffect;
-    AWHSprite* protagonist;
-    AWHSprite* protagonistEat;
-    int numSprites;
-    CCMenu* restartMenu;
-    int counter;
-    int numCalls;
+    int spritesCounter;
+    int numLivesLeft;
+    AWHLevelLayer* currentLevelLayer;
+    int levelScore;
 }
 +(id)sharedGameStateManager;
 -(int)theCurrentLevel;
@@ -29,13 +28,13 @@
 -(void)startOver;
 -(NSDictionary*)getLevelDict;
 -(NSArray *) getHighScores;
+-(void)playProtagonistEffect;
+-(void)enableRestartMenu;
+-(void)showNormalProtagonist;
+-(void)showEatProtagonist;
+-(void)awardPoints: (int)points;
 @property (readwrite, assign) int removeX;
 @property (readwrite, assign) int removeY;
-@property (readwrite, assign) NSString* protagonistEffect;
-@property (readwrite, assign) AWHSprite* protagonist;
-@property (readwrite, assign) AWHSprite* protagonistEat;
-@property (readwrite, assign) int numSprites;
-@property (readwrite, assign) CCMenu* restartMenu;
-@property (readwrite, assign) int counter;
-@property (readwrite, assign) int numCalls;
+@property (readwrite, assign) int spritesCounter;
+@property (readwrite, assign) int numLivesLeft;
 @end

@@ -172,6 +172,7 @@
 		F4DBBE2815F29B19003D5169 /* sample-sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4DBBE2415F29B19003D5169 /* sample-sprites-hd.pvr.ccz */; };
 		F4DBBE2915F29B19003D5169 /* sample-sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4DBBE2515F29B19003D5169 /* sample-sprites.plist */; };
 		F4DBBE2A15F29B19003D5169 /* sample-sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4DBBE2615F29B19003D5169 /* sample-sprites.pvr.ccz */; };
+		F4DBBE2C15F2F3E3003D5169 /* Excellent.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4DBBE2B15F2F3E3003D5169 /* Excellent.mp3 */; };
 		F4E9BCC715EC986B002B6C58 /* Doot Doo Theme Game.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCC615EC986B002B6C58 /* Doot Doo Theme Game.mp3 */; };
 		F4E9BCCE15ED1351002B6C58 /* Launch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCCD15ED1351002B6C58 /* Launch.mp3 */; };
 		F4E9BCD015ED1A01002B6C58 /* R2LFood.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCCF15ED1A01002B6C58 /* R2LFood.plist */; };
@@ -495,6 +496,7 @@
 		F4DBBE2415F29B19003D5169 /* sample-sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-sprites-hd.pvr.ccz"; sourceTree = "<group>"; };
 		F4DBBE2515F29B19003D5169 /* sample-sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sample-sprites.plist"; sourceTree = "<group>"; };
 		F4DBBE2615F29B19003D5169 /* sample-sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-sprites.pvr.ccz"; sourceTree = "<group>"; };
+		F4DBBE2B15F2F3E3003D5169 /* Excellent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Excellent.mp3; sourceTree = "<group>"; };
 		F4E9BCC615EC986B002B6C58 /* Doot Doo Theme Game.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Doot Doo Theme Game.mp3"; sourceTree = "<group>"; };
 		F4E9BCCD15ED1351002B6C58 /* Launch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Launch.mp3; sourceTree = "<group>"; };
 		F4E9BCCF15ED1A01002B6C58 /* R2LFood.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = R2LFood.plist; sourceTree = "<group>"; };
@@ -615,6 +617,7 @@
 		F42F086615CDD7E50063F763 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				F4DBBE2B15F2F3E3003D5169 /* Excellent.mp3 */,
 				F4E9BCD115EE6A96002B6C58 /* Bite.mp3 */,
 				F4E9BCCD15ED1351002B6C58 /* Launch.mp3 */,
 				F4E9BCC615EC986B002B6C58 /* Doot Doo Theme Game.mp3 */,
@@ -1148,6 +1151,7 @@
 				F4DBBE2815F29B19003D5169 /* sample-sprites-hd.pvr.ccz in Resources */,
 				F4DBBE2915F29B19003D5169 /* sample-sprites.plist in Resources */,
 				F4DBBE2A15F29B19003D5169 /* sample-sprites.pvr.ccz in Resources */,
+				F4DBBE2C15F2F3E3003D5169 /* Excellent.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

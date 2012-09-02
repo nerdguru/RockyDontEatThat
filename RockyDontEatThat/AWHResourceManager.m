@@ -28,7 +28,7 @@
     if ([dict objectForKey:@"Template"]) {
         // Assume that path is the pathname of a file with the XML contents shown above
         NSString* template = [dict objectForKey:@"Template"];
-        NSLog(@"Template: %@", template);
+        //NSLog(@"Template: %@", template);
         CFStringRef errStr;
         NSString *filePath = [[NSBundle mainBundle] pathForResource:template ofType:@"plist"];
         NSMutableDictionary* elements = (NSMutableDictionary*) CFPropertyListCreateFromXMLData(kCFAllocatorDefault, (CFDataRef) [NSData dataWithContentsOfFile:filePath], kCFPropertyListMutableContainersAndLeaves, &errStr);

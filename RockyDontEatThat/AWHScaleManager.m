@@ -226,8 +226,8 @@
      //       finish = [self scalePointX:tx andY:ty];
     //    }
         float distance = ccpDistance(start, finish); 
-        NSLog(@"Speed: %f Distance: %f Duration: %f", speedFloat, distance, distance/speedFloat);
-        NSLog(@"Start x:%f y:%f  Finish x:%f y:%f", start.x, start.y, finish.x, finish.y);
+        //NSLog(@"Speed: %f Distance: %f Duration: %f", speedFloat, distance, distance/speedFloat);
+        //NSLog(@"Start x:%f y:%f  Finish x:%f y:%f", start.x, start.y, finish.x, finish.y);
         retval = distance/speedFloat;
         if(iPad) 
             retval = retval/2;

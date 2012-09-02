@@ -535,6 +535,8 @@
 				</dict>
 				<key>Food</key>
 				<dict>
+					<key>ScoreEffect</key>
+					<string>Excellent.mp3</string>
 					<key>Interval</key>
 					<string>2.0</string>
 					<key>LaunchEffect</key>
@@ -548,38 +550,62 @@
 						<dict>
 							<key>Name</key>
 							<string>cheese.png</string>
+							<key>Value</key>
+							<string>1</string>
 						</dict>
 						<dict>
 							<key>Name</key>
 							<string>chocolate.png</string>
+							<key>Value</key>
+							<string>-1</string>
 						</dict>
 						<dict>
 							<key>Name</key>
 							<string>cupcake.png</string>
+							<key>Value</key>
+							<string>-1</string>
 						</dict>
 						<dict>
 							<key>Name</key>
 							<string>dkgbonetreat.png</string>
+							<key>Value</key>
+							<string>1</string>
 						</dict>
 						<dict>
 							<key>Name</key>
 							<string>ggrapes.png</string>
+							<key>Value</key>
+							<string>-1</string>
 						</dict>
 						<dict>
 							<key>Name</key>
 							<string>ltgbonetreat.png</string>
+							<key>Value</key>
+							<string>1</string>
 						</dict>
 						<dict>
 							<key>Name</key>
 							<string>tanbonetreat.png</string>
+							<key>Value</key>
+							<string>1</string>
 						</dict>
 						<dict>
 							<key>Name</key>
 							<string>rbonetreat.png</string>
+							<key>Value</key>
+							<string>1</string>
+						</dict>
+						<dict>
+							<key>Name</key>
+							<string>rbonetreat.png</string>
+							<key>Value</key>
+							<string>1</string>
 						</dict>
 						<dict>
 							<key>Name</key>
 							<string>pgrapes.png</string>
+							<key>Value</key>
+							<string>-1</string>
 						</dict>
 					</array>
 				</dict>
