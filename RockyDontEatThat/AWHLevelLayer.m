@@ -39,26 +39,27 @@
     
     // First see if we're done
     gameStateManager.counter--;
-    if (gameStateManager.counter > 0) {
-        NSDictionary *levelDict = [gameStateManager getLevelDict];
-        NSDictionary *foodDict = [levelDict objectForKey:@"Food"];
-        NSArray* foodArray = [foodDict objectForKey:@"Sprites"];
-        int foodIndex = arc4random() % [foodArray count];  
-        NSDictionary* currentSpriteDict = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                                         [[foodArray objectAtIndex:foodIndex] objectForKey:@"Name"], @"Name",
-                                         [foodDict objectForKey:@"Template"], @"Template",
-                                         nil];
+    
+    NSDictionary *levelDict = [gameStateManager getLevelDict];
+    NSDictionary *foodDict = [levelDict objectForKey:@"Food"];
+    NSArray* foodArray = [foodDict objectForKey:@"Sprites"];
+    int foodIndex = arc4random() % [foodArray count];  
+    NSDictionary* currentSpriteDict = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                     [[foodArray objectAtIndex:foodIndex] objectForKey:@"Name"], @"Name",
+                                     [foodDict objectForKey:@"Template"], @"Template",
+                                     nil];
 
-        NSLog(@"Food fire %d", gameStateManager.counter);
-        AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[AWHResourceManager expandSpriteDict:currentSpriteDict]];
-        [self addChild:sprite z:3];
-        [sprite release];
-        [currentSpriteDict release];
-        [[SimpleAudioEngine sharedEngine] playEffect:[foodDict objectForKey:@"LaunchEffect"]];
-    } else {
-
+    NSLog(@"Food fire %d", gameStateManager.counter);
+    AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[AWHResourceManager expandSpriteDict:currentSpriteDict]];
+    [self addChild:sprite z:3];
+    [sprite release];
+    [currentSpriteDict release];
+    [[SimpleAudioEngine sharedEngine] playEffect:[foodDict objectForKey:@"LaunchEffect"]];
+    
+    if (gameStateManager.counter == 0) {
         [self unschedule:@selector(fire)];
     }
+    [remainingFoods setString:[NSString stringWithFormat:@"%d", gameStateManager.counter]];
 }
 
 // on "init" you need to initialize your instance
@@ -140,35 +141,6 @@
         NSDictionary *foodDict = [levelDict objectForKey:@"Food"];
 
         
-        /*
-		// create and initialize a Label
-        int level = [gameStateManager theCurrentLevel];
-		CCLabelTTF *label = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Level: %d",level] fontName:@"PressStart2P.ttf" fontSize:46];
-        
-		// ask director the the window size
-		CGSize size = [[CCDirector sharedDirector] winSize];
-        
-		// position the label on the center of the screen
-		label.position =  ccp( size.width /2 , 30 );
-		
-		// add the label as a child to this Layer
-		[self addChild: label];
-        
-        CCMenuItemFont *item1 = [CCMenuItemFont itemFromString: @"Next Level" target:self selector:@selector(incrementLevel)];
-        item1.color = ccWHITE;
-		CCMenu *menu = [CCMenu menuWithItems: item1, nil];
-		[self addChild: menu];
-        */
-       /* 
-        // Set the timer to fire new background tiles
-        // First, unwind the template to get the speed
-        NSDictionary* actions = [tiledBackgroundDict objectForKey:@"Action"];
-        NSArray* childActions = [actions objectForKey:@"ChildActions"];
-        NSDictionary* moveAction = [childActions objectAtIndex:0];
-        int speed = [[moveAction objectForKey:@"Speed"] intValue];
-        NSLog(@"Speed: %d Width: %f", speed, [tiledSprite.mySprite boundingBox].size.width);
-        [self schedule:@selector(newBackgroundTile) interval:([tiledSprite.mySprite boundingBox].size.width/speed)/1];
-        */
         // Background music
         [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:[backgroundDict objectForKey:@"Music"]];
         [self schedule:@selector(startBackgrondMusic) interval:1.0];
@@ -178,6 +150,7 @@
         [self schedule:@selector(fire) interval:[[foodDict objectForKey:@"Interval"] floatValue]];
         gameStateManager.counter = [[foodDict objectForKey:@"Quantity"] intValue];
         
+        // Temporary restart menu
         CCMenuItemFont *item1 = [CCMenuItemFont itemFromString: @"Start Over" target:self selector:@selector(startOver)];
         item1.color = ccWHITE;
 		CCMenu *menu = [CCMenu menuWithItems: item1, nil];
@@ -205,7 +178,7 @@
 		remainingLabel.position =  [scaleManager scalePointX:[[hudDict objectForKey:@"RemainingPositionX"] intValue] andY:[[hudDict objectForKey:@"RemainingPositionY"] intValue]];
 		[self addChild: remainingLabel];
         
-        remainingFoods = [CCLabelTTF labelWithString:@"0" fontName:[hudDict objectForKey:@"Font"] fontSize:[scaleManager scaleFontSize:[[hudDict objectForKey:@"FontSize"] intValue]] ];
+        remainingFoods = [CCLabelTTF labelWithString:[foodDict objectForKey:@"Quantity"] fontName:[hudDict objectForKey:@"Font"] fontSize:[scaleManager scaleFontSize:[[hudDict objectForKey:@"FontSize"] intValue]] ];
         [remainingFoods setColor:ccc3([[hudDict objectForKey:@"FontColorR"] intValue], [[hudDict objectForKey:@"FontColorG"] intValue], [[hudDict objectForKey:@"FontColorB"] intValue])]; 
 		remainingFoods.position =  [scaleManager scalePointX:[[hudDict objectForKey:@"RemainingPositionX"] intValue]+ [[hudDict objectForKey:@"RemainingSpace"] intValue] andY:[[hudDict objectForKey:@"RemainingPositionY"] intValue]];
 		[self addChild: remainingFoods];
