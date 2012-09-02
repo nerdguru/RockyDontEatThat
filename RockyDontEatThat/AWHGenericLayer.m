@@ -8,8 +8,14 @@
 
 #import "AWHGenericLayer.h"
 #import "AWHSprite.h"
+#import "AWHGameStateManager.h"
 
 @implementation AWHGenericLayer
+
+-(void)startOver {
+    AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
+    [gameStateManager startOver];
+}
 
 -(id)initWithDict:(NSDictionary *)levelDict
 {
@@ -42,6 +48,11 @@
             [self addChild:sprite];
         }
         
+        // Temporary restart menu
+        CCMenuItemFont *item1 = [CCMenuItemFont itemFromString: @"Start Over" target:self selector:@selector(startOver)];
+        item1.color = ccWHITE;
+		CCMenu *menu = [CCMenu menuWithItems: item1, nil];
+		[self addChild: menu];        
         
 	}
 	return self;

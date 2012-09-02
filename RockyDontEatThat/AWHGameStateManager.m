@@ -11,6 +11,7 @@
 #import "AWHResourceManager.h"
 #import "SimpleAudioEngine.h"
 #import "AWHLevelLayer.h"
+#import "AWHGenericLayer.h"
 
 @implementation AWHGameStateManager
 @synthesize removeX;
@@ -64,7 +65,6 @@
 // Logic for incrementing the level state and swapping in the new scene
 -(void)startOver {
     
-    // Increment the level
     currentLevel = 0;
     [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
     
@@ -72,6 +72,27 @@
     CCScene *scene = [CCScene node];
     AWHHomeLayer *layer = [AWHHomeLayer node];
     [scene addChild: layer];
+    
+    // Replace the scene
+    
+    [[CCDirector sharedDirector] replaceScene:scene];
+}
+
+-(void)badExit {
+    
+    // Stop the background music
+    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+    
+    // Get the correct dict
+    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
+    NSDictionary *levelDict = [resourceManager levelDictionaryWithIndex:currentLevel];
+    NSDictionary *badExitDict = [levelDict objectForKey:@"BadExit"];
+    NSLog(@"Bad dict: %@", badExitDict);
+    // Create autorelease objects
+    CCScene *scene = [CCScene node];
+    AWHGenericLayer *layer = [[AWHGenericLayer alloc] initWithDict:badExitDict];
+    [scene addChild: layer];
+    [layer release];
     
     // Replace the scene
     

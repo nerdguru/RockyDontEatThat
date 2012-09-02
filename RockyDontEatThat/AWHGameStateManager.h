@@ -27,6 +27,7 @@
 -(int)theCurrentLevel;
 -(void)gotoNextLevel;
 -(void)startOver;
+-(void)badExit;
 -(NSDictionary*)getLevelDict;
 -(NSArray *) getHighScores;
 -(void)playProtagonistEffect;

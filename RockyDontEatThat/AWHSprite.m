@@ -53,6 +53,7 @@
         if (value < 0) {
         // Ate a bad thing, stop the level
             NSLog(@"Ate a bad thing, stop level");
+            [gameStateManager badExit];
         } else {
         // Ate a good thing, award points
             NSLog(@"Ate a good thing, award points");
