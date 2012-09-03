@@ -19,7 +19,6 @@
 @synthesize protagonistEat;
 @synthesize protagonistEffect;
 @synthesize scoreEffect;
-@synthesize restartMenu;
 
 -(void)incrementLevel {
     [gameStateManager gotoNextLevel];
@@ -162,14 +161,6 @@
         // Preload scoring effect
         scoreEffect = [foodDict objectForKey:@"ScoreEffect"];
         [[SimpleAudioEngine sharedEngine] preloadEffect:scoreEffect];
-        
-        // Temporary restart menu
-        CCMenuItemFont *item1 = [CCMenuItemFont itemFromString: @"Start Over" target:self selector:@selector(startOver)];
-        item1.color = ccWHITE;
-		CCMenu *menu = [CCMenu menuWithItems: item1, nil];
-        menu.visible = NO;
-		[self addChild: menu z:4];
-        restartMenu = menu;
         
         // Finally, load up the HUD
         NSDictionary *hudDict = [levelDict objectForKey:@"HUD"];

@@ -31,7 +31,7 @@
 -(NSDictionary*)getLevelDict;
 -(NSArray *) getHighScores;
 -(void)playProtagonistEffect;
--(void)enableRestartMenu;
+-(void)detectGoodExit;
 -(void)showNormalProtagonist;
 -(void)showEatProtagonist;
 -(void)awardPoints: (int)points;

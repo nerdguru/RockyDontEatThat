@@ -87,7 +87,7 @@
     AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
     NSDictionary *levelDict = [resourceManager levelDictionaryWithIndex:currentLevel];
     NSDictionary *badExitDict = [levelDict objectForKey:@"BadExit"];
-    NSLog(@"Bad dict: %@", badExitDict);
+
     // Create autorelease objects
     CCScene *scene = [CCScene node];
     AWHGenericLayer *layer = [[AWHGenericLayer alloc] initWithDict:badExitDict];
@@ -114,10 +114,26 @@
 -(void)playProtagonistEffect {
     [[SimpleAudioEngine sharedEngine] playEffect:currentLevelLayer.protagonistEffect];
 }
--(void)enableRestartMenu {
+-(void)detectGoodExit {
     activeSprites--;
     if(activeSprites == 0) {
-        currentLevelLayer.restartMenu.visible = YES;
+        // Stop the background music
+        [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+        
+        // Get the correct dict
+        AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
+        NSDictionary *levelDict = [resourceManager levelDictionaryWithIndex:currentLevel];
+        NSDictionary *goodExitDict = [levelDict objectForKey:@"GoodExit"];
+
+        // Create autorelease objects
+        CCScene *scene = [CCScene node];
+        AWHGenericLayer *layer = [[AWHGenericLayer alloc] initWithDict:goodExitDict];
+        [scene addChild: layer];
+        [layer release];
+        
+        // Replace the scene
+        
+        [[CCDirector sharedDirector] replaceScene:scene];
     }
     
 }
