@@ -174,6 +174,7 @@
 		F4DBBE2A15F29B19003D5169 /* sample-sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F4DBBE2615F29B19003D5169 /* sample-sprites.pvr.ccz */; };
 		F4DBBE2C15F2F3E3003D5169 /* Excellent.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4DBBE2B15F2F3E3003D5169 /* Excellent.mp3 */; };
 		F4E7D3E115F3FF0F00A72DB5 /* AWHGenericLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E7D3E015F3FF0F00A72DB5 /* AWHGenericLayer.m */; };
+		F4E7D3E515F7EC0800A72DB5 /* AWHBaseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E7D3E415F7EC0800A72DB5 /* AWHBaseLayer.m */; };
 		F4E9BCC715EC986B002B6C58 /* Doot Doo Theme Game.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCC615EC986B002B6C58 /* Doot Doo Theme Game.mp3 */; };
 		F4E9BCCE15ED1351002B6C58 /* Launch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCCD15ED1351002B6C58 /* Launch.mp3 */; };
 		F4E9BCD015ED1A01002B6C58 /* R2LFood.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCCF15ED1A01002B6C58 /* R2LFood.plist */; };
@@ -500,6 +501,8 @@
 		F4DBBE2B15F2F3E3003D5169 /* Excellent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Excellent.mp3; sourceTree = "<group>"; };
 		F4E7D3DF15F3FF0F00A72DB5 /* AWHGenericLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHGenericLayer.h; sourceTree = "<group>"; };
 		F4E7D3E015F3FF0F00A72DB5 /* AWHGenericLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHGenericLayer.m; sourceTree = "<group>"; };
+		F4E7D3E315F7EC0800A72DB5 /* AWHBaseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHBaseLayer.h; sourceTree = "<group>"; };
+		F4E7D3E415F7EC0800A72DB5 /* AWHBaseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHBaseLayer.m; sourceTree = "<group>"; };
 		F4E9BCC615EC986B002B6C58 /* Doot Doo Theme Game.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Doot Doo Theme Game.mp3"; sourceTree = "<group>"; };
 		F4E9BCCD15ED1351002B6C58 /* Launch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Launch.mp3; sourceTree = "<group>"; };
 		F4E9BCCF15ED1A01002B6C58 /* R2LFood.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = R2LFood.plist; sourceTree = "<group>"; };
@@ -725,6 +728,8 @@
 				F422EC5B15DB1C2B00963D33 /* AWHLevelLayer.m */,
 				F4E7D3DF15F3FF0F00A72DB5 /* AWHGenericLayer.h */,
 				F4E7D3E015F3FF0F00A72DB5 /* AWHGenericLayer.m */,
+				F4E7D3E315F7EC0800A72DB5 /* AWHBaseLayer.h */,
+				F4E7D3E415F7EC0800A72DB5 /* AWHBaseLayer.m */,
 				F4C33CB515B62FFB00816700 /* Resources */,
 				F4C33CC915B62FFC00816700 /* libs */,
 				F4C33E0215B62FFD00816700 /* Supporting Files */,
@@ -1293,6 +1298,7 @@
 				F422EC5C15DB1C2B00963D33 /* AWHLevelLayer.m in Sources */,
 				F422EDE715DB1EEB00963D33 /* AWHGameStateManager.m in Sources */,
 				F4E7D3E115F3FF0F00A72DB5 /* AWHGenericLayer.m in Sources */,
+				F4E7D3E515F7EC0800A72DB5 /* AWHBaseLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

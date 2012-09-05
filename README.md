@@ -17,10 +17,10 @@ The second Epic does the following:
 * Launching food at random heights, rotate and move across screen (Completed v0.2.3)
 * Foods detect touches, move to Rocky's mouth (Completed 0.2.4)
 * HUD + scoring for correct touches and correct bad foods that fall off screen + static explanation screen (Completed 0.2.5)
-* Variable explanation screens for both exit scenarios (Slated 0.2.6)
-* Man losses tracked correctly (Slated 0.2.7)
-* End of game screen (Slated 0.2.8)
-* Intro to level screen (Slated 0.2.9)
+* Variable explanation screens for both exit scenarios, end of game, and intro screens;track call losses(Slated 0.2.6)
+* Improved sample level artwork (Slated 0.2.7)
+* Level 1 and 2 artwork (Slated 0.2.8)
+* Reverse scrolling Sample level (Slated 0.2.9)
 
 
 ## Home Screen Epic (Versions 0.1.x) started 7/17/12, completed 8/14/12

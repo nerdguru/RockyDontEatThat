@@ -3,7 +3,7 @@
 //  RockyDontEatThat
 //
 //  Created by Pete Johnson on 9/2/12.
-//  Copyright 2012 __MyCompanyName__. All rights reserved.
+//  Copyright 2012 Apps With Heart. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
