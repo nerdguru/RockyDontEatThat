@@ -14,6 +14,8 @@
 @interface AWHBaseLayer : CCLayerColor {
     AWHGameStateManager *gameStateManager;
     AWHScaleManager *scaleManager;
+    NSString* backgroundMusic;
+    NSDictionary *myDict;
 }
-
+-(id)initWithDict:(NSDictionary *)layerDict;
 @end

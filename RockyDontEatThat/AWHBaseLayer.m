@@ -14,24 +14,30 @@
 
 @implementation AWHBaseLayer
 
--(id)init
+// Interval callback to start the background music
+-(void)startBackgrondMusic {
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:backgroundMusic];
+    [self unschedule:@selector(startBackgrondMusic)];
+}
+
+-(id)initWithDict:(NSDictionary *)layerDict;
 {
     // Get the ScaleManager
     scaleManager = [AWHScaleManager sharedScaleManager];
     
     // Get the state manager and set the level background color
     gameStateManager = [AWHGameStateManager sharedGameStateManager];
-    NSDictionary *levelDict = [gameStateManager getLevelDict];
+    myDict = layerDict;
     
     // Background, required
-    NSDictionary *backgroundDict = [levelDict objectForKey:@"Background"];
+    NSDictionary *backgroundDict = [myDict objectForKey:@"Background"];
 	if( (self=[super initWithColor:ccc4([[backgroundDict objectForKey:@"Red"] intValue], 
                                         [[backgroundDict objectForKey:@"Green"] intValue], 
                                         [[backgroundDict objectForKey:@"Blue"] intValue], 
                                         [[backgroundDict objectForKey:@"Opacity"] intValue])])) {
         
         // Set the image format, defaulting to RGBA4444
-        NSString *imageFormat = [levelDict objectForKey:@"ImageFormat"];
+        NSString *imageFormat = [myDict objectForKey:@"ImageFormat"];
         if (imageFormat == nil || imageFormat == @"RGBA4444") {
             [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
         } else if (imageFormat == @"RGBA8888") {
@@ -39,7 +45,7 @@
         } 
         
         // Load the sheets, SpriteSheets, required
-        NSString *spriteSheet = [levelDict objectForKey:@"SpriteSheet"];
+        NSString *spriteSheet = [myDict objectForKey:@"SpriteSheet"];
         CCSpriteBatchNode *spritesBNode;
         spritesBNode = [CCSpriteBatchNode batchNodeWithFile:[NSString stringWithFormat:@"%@.pvr.ccz", spriteSheet]];
         [self addChild:spritesBNode];    
@@ -73,6 +79,13 @@
             AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[AWHResourceManager expandSpriteDict:spriteDict]];
             [self addChild:sprite z:1];
             [sprite release];
+        }
+        
+        // Background music, optional
+        backgroundMusic = [backgroundDict objectForKey:@"Music"];
+        if(backgroundMusic != nil) {
+            [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:backgroundMusic];
+            [self schedule:@selector(startBackgrondMusic) interval:1.0];
         }
         
 	}

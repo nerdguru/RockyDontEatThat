@@ -13,37 +13,15 @@
 @implementation AWHGenericLayer
 
 -(void)startOver {
-    AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
     [gameStateManager startOver];
 }
 
--(id)initWithDict:(NSDictionary *)levelDict
+-(id)initWithDict:(NSDictionary *)dict
 {
-    // Start up the ResourceManager and get/apply the background colors
-    
-    NSDictionary *backgroundDict = [levelDict objectForKey:@"Background"];
-	if( (self=[super initWithColor:ccc4([[backgroundDict objectForKey:@"Red"] intValue], 
-                                        [[backgroundDict objectForKey:@"Green"] intValue], 
-                                        [[backgroundDict objectForKey:@"Blue"] intValue], 
-                                        [[backgroundDict objectForKey:@"Opacity"] intValue])])) {
+	if(self=[super initWithDict:dict]) {
         
-        // Set the image format, defaulting to RGBA4444
-        NSString *imageFormat = [levelDict objectForKey:@"ImageFormat"];
-        if (imageFormat == nil || imageFormat == @"RGBA4444") {
-            [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA4444];
-        } else if (imageFormat == @"RGBA8888") {
-            [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
-        } 
-        
-        // Load the sheets
-        NSString *spriteSheet = [levelDict objectForKey:@"SpriteSheet"];
-        CCSpriteBatchNode *spritesBNode;
-        spritesBNode = [CCSpriteBatchNode batchNodeWithFile:[NSString stringWithFormat:@"%@.pvr.ccz", spriteSheet]];
-        [self addChild:spritesBNode];    
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%@.plist", spriteSheet]];
-        
-        // Set up sprites
-        for (NSDictionary* spriteDict in [levelDict objectForKey:@"Sprites"] ){
+         // Set up sprites
+        for (NSDictionary* spriteDict in [dict objectForKey:@"Sprites"] ){
             AWHSprite *sprite=[[AWHSprite alloc] initWithDict:spriteDict];
             [self addChild:sprite];
         }

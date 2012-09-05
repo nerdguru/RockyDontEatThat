@@ -56,16 +56,19 @@
         } else {
         // Ate a good thing, award points
             [gameStateManager awardPoints:value];
+            [gameStateManager detectGoodExit];
         }
     } else {
         if (value < 0) {
         // Bad thing went off, award points
             [gameStateManager awardPoints:value*-1];
+            [gameStateManager detectGoodExit];
         } else {
         // Good thing went off, do nothing
+            [gameStateManager detectGoodExit];
         }
     }
-    [gameStateManager detectGoodExit];
+    
 }
 
 -(void) eatEffect {

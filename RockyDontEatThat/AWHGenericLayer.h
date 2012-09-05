@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "AWHBaseLayer.h"
 
-@interface AWHGenericLayer : CCLayerColor {
+@interface AWHGenericLayer : AWHBaseLayer {
     
 }
--(id)initWithDict:(NSDictionary *)levelDict;
+-(id)initWithDict:(NSDictionary *)dict;
 
 @end
