@@ -66,15 +66,19 @@
 -(void)startOver {
     
     currentLevel = 0;
-    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+    
+    // Get the correct dict
+    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
+    NSDictionary *dict = [resourceManager levelDictionaryWithIndex:currentLevel];
+    NSDictionary *levelDict = [dict objectForKey:@"Level"];
     
     // Create autorelease objects
     CCScene *scene = [CCScene node];
-    AWHHomeLayer *layer = [AWHHomeLayer node];
+    AWHHomeLayer *layer = [[AWHHomeLayer alloc] initWithDict:levelDict];
     [scene addChild: layer];
-    
+    [layer release];
+   
     // Replace the scene
-    
     [[CCDirector sharedDirector] replaceScene:scene];
 }
 
