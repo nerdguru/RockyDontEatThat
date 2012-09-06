@@ -8,21 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "AdWhirlView.h"
-#import "AdWhirlDelegateProtocol.h"
-#import "RootViewController.h"
-#import "AppDelegate.h"
-#import "AWHBaseLayer.h"
+#import "AWHBaseAdLayer.h"
 
-@interface AWHHomeLayer : AWHBaseLayer <AdWhirlDelegate>
+@interface AWHHomeLayer : AWHBaseAdLayer
 {
-
-    // Needed for AdWhirl
-    // See http://www.raywenderlich.com/5350/how-to-integrate-adwhirl-into-a-cocos2d-game
-    RootViewController *viewController;
-    AdWhirlView *adWhirlView;
 }
-
-// Needed for AdWhirl
-@property(nonatomic,retain) AdWhirlView *adWhirlView;
 @end
