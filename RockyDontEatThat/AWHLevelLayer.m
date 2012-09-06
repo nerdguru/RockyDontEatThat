@@ -161,6 +161,7 @@
         // Preload scoring effect
         scoreEffect = [foodDict objectForKey:@"ScoreEffect"];
         [[SimpleAudioEngine sharedEngine] preloadEffect:scoreEffect];
+
         
         // Finally, load up the HUD
         NSDictionary *hudDict = [levelDict objectForKey:@"HUD"];

@@ -11,6 +11,7 @@
 #import "AWHGameStateManager.h"
 #import "AWHScaleManager.h"
 
+@class AWHGameStateManager;
 @interface AWHBaseLayer : CCLayerColor {
     AWHGameStateManager *gameStateManager;
     AWHScaleManager *scaleManager;

@@ -443,8 +443,6 @@
 			</dict>
 		</dict>
 		<dict>
-			<key>Prelevel</key>
-			<dict/>
 			<key>Level</key>
 			<dict>
 				<key>SpriteSheet</key>
@@ -748,8 +746,6 @@
 					</dict>
 				</array>
 			</dict>
-			<key>Postlevel</key>
-			<dict/>
 		</dict>
 	</array>
 </dict>

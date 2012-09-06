@@ -23,33 +23,46 @@
 +(CCScene *) scene
 {
 	// 'scene' is an autorelease object.
-	CCScene *scene = [CCScene node];
+	//CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	AWHHomeLayer *layer = [AWHHomeLayer node];
+	//AWHHomeLayer *layer = [AWHHomeLayer node];
+    // Get the correct dict
+    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
+    NSDictionary *dict = [resourceManager levelDictionaryWithIndex:0];
+    NSDictionary *levelDict = [dict objectForKey:@"Level"];
+    
+    // Create autorelease objects
+    CCScene *scene = [CCScene node];
+    AWHHomeLayer *layer = [[AWHHomeLayer alloc] initWithDict:levelDict];
+    [scene addChild: layer];
+    [layer release];
+
 	
 	// add layer as a child to scene
-	[scene addChild: layer];
+	//[scene addChild: layer];
 	
 	// return the scene 
 	return scene;
 }
 
 // on "init" you need to initialize your instance
--(id) init
+-(id) initWithDict:(NSDictionary *)levelDict
 {
+    /*
     // Start up the ResourceManager and get/apply the background colors
     AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
     
-	NSDictionary *levelDict = [gameStateManager getLevelDict];
+	//NSDictionary *levelDict = [gameStateManager getLevelDict];
     NSDictionary *backgroundDict = [levelDict objectForKey:@"Background"];
 	if( (self=[super initWithColor:ccc4([[backgroundDict objectForKey:@"Red"] intValue], 
                                         [[backgroundDict objectForKey:@"Green"] intValue], 
                                         [[backgroundDict objectForKey:@"Blue"] intValue], 
                                         [[backgroundDict objectForKey:@"Opacity"] intValue])])) {
-		
+	*/	
+    if(self=[super initWithDict:levelDict]) {
         // Get the ScaleManager
-        AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
+        //AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
         
         // Place animated title label
         ccColor3B rockyBrown = ccc3(153,102,51);
@@ -60,7 +73,7 @@
         
         
         // Initialize sprite sheet
-        
+    /*    
         // Set the image format, defaulting to RGBA4444
         NSString *imageFormat = [levelDict objectForKey:@"ImageFormat"];
         if (imageFormat == nil || imageFormat == @"RGBA4444") {
@@ -81,6 +94,9 @@
             AWHSprite *sprite=[[AWHSprite alloc] initWithDict:spriteDict];
             [self addChild:sprite];
         }
+  */
+        // Set up sprites
+        [self initSpritesArray];
         
         // Load up the high score labels
         AWHHighScoreLabels *highScoreLabels = [[AWHHighScoreLabels alloc] initWithArray:[gameStateManager getHighScores]];
@@ -156,7 +172,7 @@
     //6
 	newFrame.size.width = winSize.width;
 	//7
-    AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager];
+//    AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager];
 	//newFrame.origin.x = (self.adWhirlView.bounds.size.width - adSize.width)/2;
     newFrame.origin.x = (self.adWhirlView.bounds.size.width - adSize.width-[scaleManager scaleAdPadding]);
     
@@ -196,7 +212,7 @@
     //7
     // Original code commented out to center the ad
 	//self.adWhirlView.frame = CGRectMake((winSize.width/2)-(adSize.width/2),winSize.height-adSize.height,winSize.width,adSize.height);
-    AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager];
+ //   AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager];
     self.adWhirlView.frame = CGRectMake((winSize.width)-(adSize.width)-[scaleManager scaleAdPadding],winSize.height-adSize.height-[scaleManager scaleAdOriginY]-[scaleManager scaleAdPadding],winSize.width,adSize.height);
     
     

@@ -12,8 +12,9 @@
 #import "AdWhirlDelegateProtocol.h"
 #import "RootViewController.h"
 #import "AppDelegate.h"
+#import "AWHBaseLayer.h"
 
-@interface AWHHomeLayer : CCLayerColor <AdWhirlDelegate>
+@interface AWHHomeLayer : AWHBaseLayer <AdWhirlDelegate>
 {
 
     // Needed for AdWhirl
