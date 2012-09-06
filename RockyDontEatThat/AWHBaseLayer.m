@@ -10,6 +10,8 @@
 #import "AWHBaseLayer.h"
 #import "AWHResourceManager.h"
 #import "SimpleAudioEngine.h"
+#import "AWHSynchLabel.h"
+#import "AWHHighScoreLabels.h"
 
 
 @implementation AWHBaseLayer
@@ -98,5 +100,37 @@
         AWHSprite *sprite=[[AWHSprite alloc] initWithDict:spriteDict];
         [self addChild:sprite];
     }
+}
+
+-(void)initSynchLabel {
+    // First, get the right dict and preload the sound
+    NSDictionary *synchLabelDict = [myDict objectForKey:@"SynchLabel"];
+    NSString* audio = [synchLabelDict objectForKey:@"Audio"];
+    [[SimpleAudioEngine sharedEngine] preloadEffect:audio];
+    
+    ccColor3B baseColor = ccc3([[synchLabelDict objectForKey:@"BaseColorR"] intValue],
+                               [[synchLabelDict objectForKey:@"BaseColorG"] intValue],
+                               [[synchLabelDict objectForKey:@"BaseColorB"] intValue]);
+    ccColor3B highlightColor = ccc3([[synchLabelDict objectForKey:@"HighlightColorR"] intValue],
+                               [[synchLabelDict objectForKey:@"HighlightColorG"] intValue],
+                               [[synchLabelDict objectForKey:@"HighlightColorB"] intValue]);
+
+    AWHSynchLabel *synchLabel=[[AWHSynchLabel alloc] initWithLabel:[synchLabelDict objectForKey:@"Label"] 
+                                                          fontName:[synchLabelDict objectForKey:@"Font"] 
+                                                          fontSize:[scaleManager scaleFontSize:[[synchLabelDict objectForKey:@"FontSize"] intValue]] 
+                                                        withAnchor:[scaleManager scalePointX:[[synchLabelDict objectForKey:@"PositionX"] intValue] andY:[[synchLabelDict objectForKey:@"PositionY"] intValue]] 
+                                                     withBaseColor:baseColor 
+                                                withHighlightColor:highlightColor 
+                                                     withIntervals:[synchLabelDict objectForKey:@"Intervals"]];
+    [self addChild:synchLabel];
+    
+    // Play the sound
+    [[SimpleAudioEngine sharedEngine] playEffect:audio];
+}
+-(void)initHighScores {
+    // Load up the high score labels
+    AWHHighScoreLabels *highScoreLabels = [[AWHHighScoreLabels alloc] initWithArray:[gameStateManager getHighScores]];
+    [self addChild:highScoreLabels];
+
 }
 @end

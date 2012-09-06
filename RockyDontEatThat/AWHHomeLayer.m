@@ -7,14 +7,10 @@
 //
 
 #import "AWHHomeLayer.h"
-#import "SimpleAudioEngine.h"
 #import "CCAnimate+SequenceLoader.h"
 #import "AWHScaleManager.h"
 #import "AWHResourceManager.h"
-#import "AWHGameStateManager.h"
-#import "AWHSynchLabel.h"
-#import "AWHSprite.h"
-#import "AWHHighScoreLabels.h"
+
 
 
 @implementation AWHHomeLayer
@@ -42,24 +38,14 @@
 
     if(self=[super initWithDict:levelDict]) {
         
-        // Place animated title label
-        ccColor3B rockyBrown = ccc3(153,102,51);
-        ccColor3B white = ccc3(255,255,255);
-        [[SimpleAudioEngine sharedEngine] preloadEffect:@"Title.mp3"];
-        AWHSynchLabel *synchLabel=[[AWHSynchLabel alloc] initWithLabel:@"Rocky Don't Eat That!" fontName:@"Hobo.ttf" fontSize:[scaleManager scaleFontSize:54] withAnchor:[scaleManager scalePointX:5 andY:250] withBaseColor:rockyBrown withHighlightColor:white withIntervals:[NSArray arrayWithObjects:@"0.15",@"0.70",@"1.05",@"1.42", @"2.30",nil]];
-        [self addChild:synchLabel];
-        
         // Set up sprites
         [self initSpritesArray];
         
-        // Load up the high score labels
-        AWHHighScoreLabels *highScoreLabels = [[AWHHighScoreLabels alloc] initWithArray:[gameStateManager getHighScores]];
-        [self addChild:highScoreLabels];
-
+        // Set up high scores
+        [self initHighScores];
         
-        // Play the sound
-        [[SimpleAudioEngine sharedEngine] playEffect:@"Title.mp3"];
-
+        // Set up Synch Label
+        [self initSynchLabel];
         
 	}
 	return self;

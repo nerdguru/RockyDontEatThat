@@ -440,6 +440,41 @@
 						</array>
 					</dict>
 				</array>
+				<key>SynchLabel</key>
+				<dict>
+					<key>Audio</key>
+					<string>Title.mp3</string>
+					<key>Font</key>
+					<string>Hobo.ttf</string>
+					<key>Label</key>
+					<string>Rocky Don&apos;t Eat That!</string>
+					<key>BaseColorR</key>
+					<string>153</string>
+					<key>BaseColorG</key>
+					<string>102</string>
+					<key>BaseColorB</key>
+					<string>51</string>
+					<key>HighlightColorR</key>
+					<string>255</string>
+					<key>HighlightColorG</key>
+					<string>255</string>
+					<key>HighlightColorB</key>
+					<string>255</string>
+					<key>PositionX</key>
+					<string>5</string>
+					<key>PositionY</key>
+					<string>250</string>
+					<key>FontSize</key>
+					<string>54</string>
+					<key>Intervals</key>
+					<array>
+						<string>0.15</string>
+						<string>0.70</string>
+						<string>1.05</string>
+						<string>1.42</string>
+						<string>2.30</string>
+					</array>
+				</dict>
 			</dict>
 		</dict>
 		<dict>

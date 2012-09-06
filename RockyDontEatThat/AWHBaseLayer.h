@@ -20,4 +20,6 @@
 }
 -(id)initWithDict:(NSDictionary *)layerDict;
 -(void)initSpritesArray;
+-(void)initSynchLabel;
+-(void)initHighScores;
 @end
