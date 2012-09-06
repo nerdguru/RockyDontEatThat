@@ -22,7 +22,6 @@
     RootViewController *viewController;
     AdWhirlView *adWhirlView;
 }
-+(CCScene *) scene;
 
 // Needed for AdWhirl
 @property(nonatomic,retain) AdWhirlView *adWhirlView;

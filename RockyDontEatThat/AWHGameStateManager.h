@@ -24,6 +24,7 @@
     int levelScore;
 }
 +(id)sharedGameStateManager;
++(CCScene *) scene;
 -(int)theCurrentLevel;
 -(void)gotoNextLevel;
 -(void)startOver;

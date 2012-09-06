@@ -10,7 +10,8 @@
 
 #import "AppDelegate.h"
 #import "GameConfig.h"
-#import "AWHHomeLayer.h"
+//#import "AWHHomeLayer.h"
+#import "AWHGameStateManager.h"
 #import "RootViewController.h"
 
 @implementation AppDelegate
@@ -114,7 +115,7 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [AWHHomeLayer scene]];
+	[[CCDirector sharedDirector] runWithScene: [AWHGameStateManager scene]];
 }
 
 

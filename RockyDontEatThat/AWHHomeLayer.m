@@ -8,30 +8,9 @@
 
 #import "AWHHomeLayer.h"
 #import "CCAnimate+SequenceLoader.h"
-#import "AWHScaleManager.h"
-#import "AWHResourceManager.h"
-
-
 
 @implementation AWHHomeLayer
 @synthesize adWhirlView;
-
-+(CCScene *) scene
-{
-    // Get the correct dict
-    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
-    NSDictionary *dict = [resourceManager levelDictionaryWithIndex:0];
-    NSDictionary *levelDict = [dict objectForKey:@"Level"];
-    
-    // Create autorelease objects
-    CCScene *scene = [CCScene node];
-    AWHHomeLayer *layer = [[AWHHomeLayer alloc] initWithDict:levelDict];
-    [scene addChild: layer];
-    [layer release];
-	
-	// return the scene 
-	return scene;
-}
 
 -(id) initWithDict:(NSDictionary *)levelDict
 {

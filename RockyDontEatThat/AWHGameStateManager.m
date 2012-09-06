@@ -31,6 +31,23 @@
     return sharedGameStateManager;
 }
 
++(CCScene *) scene
+{
+    // Get the correct dict
+    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
+    NSDictionary *dict = [resourceManager levelDictionaryWithIndex:0];
+    NSDictionary *levelDict = [dict objectForKey:@"Level"];
+    
+    // Create autorelease objects
+    CCScene *scene = [CCScene node];
+    AWHHomeLayer *layer = [[AWHHomeLayer alloc] initWithDict:levelDict];
+    [scene addChild: layer];
+    [layer release];
+	
+	// return the scene 
+	return scene;
+}
+
 -(id)init {
     if( (self=[super init]) ) {
         currentLevel = 0;
