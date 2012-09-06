@@ -7,8 +7,6 @@
 //
 
 #import "AWHGenericLayer.h"
-#import "AWHSprite.h"
-#import "AWHGameStateManager.h"
 
 @implementation AWHGenericLayer
 
@@ -21,10 +19,7 @@
 	if(self=[super initWithDict:dict]) {
         
          // Set up sprites
-        for (NSDictionary* spriteDict in [dict objectForKey:@"Sprites"] ){
-            AWHSprite *sprite=[[AWHSprite alloc] initWithDict:spriteDict];
-            [self addChild:sprite];
-        }
+        [self initSpritesArray];
         
         // Temporary restart menu
         CCMenuItemFont *item1 = [CCMenuItemFont itemFromString: @"Start Over" target:self selector:@selector(startOver)];

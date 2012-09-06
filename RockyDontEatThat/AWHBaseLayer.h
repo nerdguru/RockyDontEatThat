@@ -18,4 +18,5 @@
     NSDictionary *myDict;
 }
 -(id)initWithDict:(NSDictionary *)layerDict;
+-(void)initSpritesArray;
 @end

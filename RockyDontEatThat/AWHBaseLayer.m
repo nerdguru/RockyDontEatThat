@@ -92,4 +92,11 @@
 	return self;
 }
 
+-(void)initSpritesArray {
+    // Set up sprites
+    for (NSDictionary* spriteDict in [myDict objectForKey:@"Sprites"] ){
+        AWHSprite *sprite=[[AWHSprite alloc] initWithDict:spriteDict];
+        [self addChild:sprite];
+    }
+}
 @end
