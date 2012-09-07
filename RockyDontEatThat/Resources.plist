@@ -487,11 +487,11 @@
 				<key>SynchLabel</key>
 				<dict>
 					<key>Audio</key>
-					<string>Title.mp3</string>
+					<string>Level1Instructions.mp3</string>
 					<key>Font</key>
 					<string>Hobo.ttf</string>
 					<key>Label</key>
-					<string>Touch the foods &amp; I&apos;ll eat them</string>
+					<string>Touch the foods and I&apos;ll eat them</string>
 					<key>BaseColorR</key>
 					<string>0</string>
 					<key>BaseColorG</key>
@@ -512,11 +512,14 @@
 					<string>26</string>
 					<key>Intervals</key>
 					<array>
-						<string>0.15</string>
-						<string>0.70</string>
-						<string>1.05</string>
-						<string>1.42</string>
-						<string>2.30</string>
+						<string>0.35</string>
+						<string>0.60</string>
+						<string>1.00</string>
+						<string>2.2</string>
+						<string>2.5</string>
+						<string>3.05</string>
+						<string>3.3</string>
+						<string>3.5</string>
 					</array>
 				</dict>
 				<key>Background</key>
@@ -676,7 +679,7 @@
 						<key>PositionX</key>
 						<string>E+</string>
 						<key>PositionY</key>
-						<string>160</string>
+						<string>150</string>
 						<key>Action</key>
 						<dict>
 							<key>ActionType</key>
@@ -687,11 +690,33 @@
 									<key>ActionType</key>
 									<string>MoveTo</string>
 									<key>PositionX</key>
-									<string>440</string>
+									<string>430</string>
 									<key>PositionY</key>
 									<string>StraightY</string>
 									<key>Speed</key>
 									<string>60</string>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>ScaleBy</string>
+									<key>Duration</key>
+									<string>0.1</string>
+									<key>Scale</key>
+									<string>0.9</string>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>Delay</string>
+									<key>Duration</key>
+									<string>0.3</string>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>ScaleBy</string>
+									<key>Duration</key>
+									<string>0.1</string>
+									<key>Scale</key>
+									<string>1.1</string>
 								</dict>
 							</array>
 						</dict>
