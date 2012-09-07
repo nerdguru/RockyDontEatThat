@@ -478,6 +478,53 @@
 			</dict>
 		</dict>
 		<dict>
+			<key>Instructions</key>
+			<dict>
+				<key>SpriteSheet</key>
+				<string>home-sprites</string>
+				<key>ImageFormat</key>
+				<string>RGBA4444</string>
+				<key>Background</key>
+				<dict>
+					<key>Red</key>
+					<string>204</string>
+					<key>Green</key>
+					<string>204</string>
+					<key>Blue</key>
+					<string>153</string>
+					<key>Opacity</key>
+					<string>255</string>
+				</dict>
+				<key>Sprites</key>
+				<array>
+					<dict>
+						<key>Name</key>
+						<string>rocky01.png</string>
+						<key>PositionX</key>
+						<string>95</string>
+						<key>PositionY</key>
+						<string>65</string>
+						<key>Action</key>
+						<dict>
+							<key>ActionType</key>
+							<string>RepeatForever</string>
+							<key>ChildAction</key>
+							<dict>
+								<key>ActionType</key>
+								<string>Animate</string>
+								<key>Sequence</key>
+								<string>rocky%02d.png</string>
+								<key>NumFrames</key>
+								<string>2</string>
+								<key>Delay</key>
+								<string>0.5</string>
+								<key>RestoreOriginalFrame</key>
+								<false/>
+							</dict>
+						</dict>
+					</dict>
+				</array>
+			</dict>
 			<key>Level</key>
 			<dict>
 				<key>SpriteSheet</key>

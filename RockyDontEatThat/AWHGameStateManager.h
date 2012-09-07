@@ -27,6 +27,7 @@
 
 // State control methods
 -(void)gotoNextLevel;
+-(void)gotoNextInstructions;
 -(void)startOver;
 -(void)badExit;
 -(void)detectGoodExit;

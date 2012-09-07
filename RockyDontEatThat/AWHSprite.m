@@ -31,7 +31,7 @@
 // Flip to the next level
 -(void) nextLevel {
     AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
-    [gameStateManager gotoNextLevel];
+    [gameStateManager gotoNextInstructions];
 }
 // Revert the sprite to the original actions passed in at init time
 -(void) revertOriginalActions {
