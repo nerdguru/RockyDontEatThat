@@ -6,7 +6,7 @@
 //  Copyright 2012 AppsWithHeart. All rights reserved.
 //
 
-#import "AWHLevelLayer.h"
+#import "AWHLevelLayerOld.h"
 #import "AWHScaleManager.h"
 #import "AWHSprite.h"
 #import "AWHResourceManager.h"
@@ -132,8 +132,8 @@
         AWHSprite *sprite=[[AWHSprite alloc] initWithDict:[protagonistDict objectForKey:@"MainSprite"]];
         [self addChild:sprite z:2];
         
-        [gameStateManager setRemoveX:[[protagonistDict objectForKey:@"RemoveX"] intValue]];
-        [gameStateManager setRemoveY:[[protagonistDict objectForKey:@"RemoveY"] intValue]];
+        //[gameStateManager setRemoveX:[[protagonistDict objectForKey:@"RemoveX"] intValue]];
+        //[gameStateManager setRemoveY:[[protagonistDict objectForKey:@"RemoveY"] intValue]];
         protagonistEffect = [protagonistDict objectForKey:@"Effect"];
        
         AWHSprite *eatSprite=[[AWHSprite alloc] initWithDict:[protagonistDict objectForKey:@"EatSprite"]];

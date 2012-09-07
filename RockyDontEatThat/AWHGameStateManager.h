@@ -9,35 +9,40 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "AWHSprite.h"
-#import "AWHLevelLayer.h"
 
-@class AWHLevelLayer;
+@class AWHMainLevelLayer;
 @interface AWHGameStateManager : NSObject
 {
     int currentLevel;
-    int removeX;
-    int removeY;
+
     int spritesCounter;
     int activeSprites;
     int numLivesLeft;
-    AWHLevelLayer* currentLevelLayer;
+    AWHMainLevelLayer* currentLevelLayer;
     int levelScore;
 }
+// Instance Methods
 +(id)sharedGameStateManager;
 +(CCScene *) scene;
--(int)theCurrentLevel;
+
+// State control methods
 -(void)gotoNextLevel;
 -(void)startOver;
 -(void)badExit;
+-(void)detectGoodExit;
+
+// Data access methods
 -(NSDictionary*)getLevelDict;
 -(NSArray *) getHighScores;
+
+// Pass through to the active level methods
 -(void)playProtagonistEffect;
--(void)detectGoodExit;
+-(int)removeX;
+-(int)removeY;
 -(void)showNormalProtagonist;
 -(void)showEatProtagonist;
 -(void)awardPoints: (int)points;
-@property (readwrite, assign) int removeX;
-@property (readwrite, assign) int removeY;
+
 @property (readwrite, assign) int spritesCounter;
 @property (readwrite, assign) int activeSprites;
 @property (readwrite, assign) int numLivesLeft;

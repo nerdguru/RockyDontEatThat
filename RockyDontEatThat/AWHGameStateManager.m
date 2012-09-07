@@ -10,12 +10,11 @@
 #import "AWHHomeLayer.h"
 #import "AWHResourceManager.h"
 #import "SimpleAudioEngine.h"
-#import "AWHLevelLayer.h"
+#import "AWHMainLevelLayer.h"
 #import "AWHGenericLayer.h"
 
 @implementation AWHGameStateManager
-@synthesize removeX;
-@synthesize removeY;
+
 @synthesize spritesCounter;
 @synthesize activeSprites;
 @synthesize numLivesLeft;
@@ -57,25 +56,27 @@
     
 }
 
--(int)theCurrentLevel {
-    return currentLevel;
-}
-
 // Logic for incrementing the level state and swapping in the new scene
 -(void)gotoNextLevel {
-    
-    // Increment the level
-    currentLevel++;
+
+    // Stop the background music
     [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+    
+    // Get the correct dict
+    currentLevel++;
+    levelScore = 0;
+    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
+    NSDictionary *dict = [resourceManager levelDictionaryWithIndex:currentLevel];
+    NSDictionary *levelDict = [dict objectForKey:@"Level"];
     
     // Create autorelease objects
     CCScene *scene = [CCScene node];
-    currentLevelLayer = [AWHLevelLayer node];
+    currentLevelLayer = [[AWHMainLevelLayer alloc] initWithDict:levelDict];
     [scene addChild: currentLevelLayer];
-    levelScore = 0;
+    [currentLevelLayer release];
     
     // Replace the scene
-
+    
     [[CCDirector sharedDirector] replaceScene:scene];
 }
 
@@ -99,6 +100,7 @@
     [[CCDirector sharedDirector] replaceScene:scene];
 }
 
+// Execute a bad exit
 -(void)badExit {
     
     // Stop the background music
@@ -120,6 +122,31 @@
     [[CCDirector sharedDirector] replaceScene:scene];
 }
 
+// Figureout if we've reached a good exit, if so execute
+-(void)detectGoodExit {
+    activeSprites--;
+    if(activeSprites == 0) {
+        // Stop the background music
+        [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+        
+        // Get the correct dict
+        AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
+        NSDictionary *levelDict = [resourceManager levelDictionaryWithIndex:currentLevel];
+        NSDictionary *goodExitDict = [levelDict objectForKey:@"GoodExit"];
+        
+        // Create autorelease objects
+        CCScene *scene = [CCScene node];
+        AWHGenericLayer *layer = [[AWHGenericLayer alloc] initWithDict:goodExitDict];
+        [scene addChild: layer];
+        [layer release];
+        
+        // Replace the scene
+        
+        [[CCDirector sharedDirector] replaceScene:scene];
+    }
+    
+}
+
 // Logic for returning the correct Dictionary
 -(NSDictionary*)getLevelDict {
     AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
@@ -135,28 +162,14 @@
 -(void)playProtagonistEffect {
     [[SimpleAudioEngine sharedEngine] playEffect:currentLevelLayer.protagonistEffect];
 }
--(void)detectGoodExit {
-    activeSprites--;
-    if(activeSprites == 0) {
-        // Stop the background music
-        [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
-        
-        // Get the correct dict
-        AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
-        NSDictionary *levelDict = [resourceManager levelDictionaryWithIndex:currentLevel];
-        NSDictionary *goodExitDict = [levelDict objectForKey:@"GoodExit"];
 
-        // Create autorelease objects
-        CCScene *scene = [CCScene node];
-        AWHGenericLayer *layer = [[AWHGenericLayer alloc] initWithDict:goodExitDict];
-        [scene addChild: layer];
-        [layer release];
-        
-        // Replace the scene
-        
-        [[CCDirector sharedDirector] replaceScene:scene];
-    }
-    
+
+// Pass through methods to the level layer
+-(int)removeX {
+    return currentLevelLayer.removeX;
+}
+-(int)removeY{
+    return currentLevelLayer.removeY;
 }
 -(void)showNormalProtagonist {
     currentLevelLayer.protagonistEat.visible = NO;

@@ -11,7 +11,6 @@
 #import "CCAnimate+SequenceLoader.h"
 #import "AWHScaleManager.h"
 #import "AWHResourceManager.h"
-#import "AWHLevelLayer.h"
 #import "AWHGameStateManager.h"
 #import "SimpleAudioEngine.h"
 
