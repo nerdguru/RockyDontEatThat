@@ -22,13 +22,11 @@
         // Set up sprites
         [self initSpritesArray];
         
-        // Start menu
-        CCMenuItemFont *item1 = [CCMenuItemFont itemFromString: @"StartLevel" target:self selector:@selector(startLevel)];
-        item1.color = ccWHITE;
-        item1.fontSize = [scaleManager scaleFontSize:26];
-        item1.fontName = @"Hobo.ttf";
-		CCMenu *menu = [CCMenu menuWithItems: item1, nil];
-		[self addChild: menu];        
+        // Set up labels
+        [self initLabelsArray];
+              
+        // Set up Synch Label
+        [self initSynchLabel];
         
 	}
 	return self;

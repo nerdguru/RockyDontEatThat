@@ -33,6 +33,11 @@
     AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
     [gameStateManager gotoNextInstructions];
 }
+// Start the level
+-(void) startLevel {
+    AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
+    [gameStateManager gotoNextLevel];
+}
 // Revert the sprite to the original actions passed in at init time
 -(void) revertOriginalActions {
     [mySprite stopAllActions];
@@ -188,6 +193,9 @@
     else if ([actionType isEqualToString:@"NextLevel"]) {
         //NSLog(@"Action processing a %@", actionType);
         return [CCCallFunc actionWithTarget:self selector:@selector(nextLevel)];
+    } else if ([actionType isEqualToString:@"StartLevel"]) {
+        //NSLog(@"Action processing a %@", actionType);
+        return [CCCallFunc actionWithTarget:self selector:@selector(startLevel)];
     }
     else if ([actionType isEqualToString:@"RevertOriginalActions"]) {
         //NSLog(@"Action processing a %@", actionType);

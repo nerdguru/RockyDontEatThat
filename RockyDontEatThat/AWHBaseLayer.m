@@ -133,4 +133,18 @@
     [self addChild:highScoreLabels];
 
 }
+-(void)initLabelsArray {
+    // Set up sprites
+    for (NSDictionary* labelDict in [myDict objectForKey:@"Labels"] ){
+        CCLabelTTF *currentLabel = [CCLabelTTF labelWithString:[labelDict objectForKey:@"Text"] 
+                                                      fontName:[labelDict objectForKey:@"Font"] 
+                                                      fontSize:[scaleManager scaleFontSize:[[labelDict objectForKey:@"FontSize"] intValue]]];
+        currentLabel.color = ccc3([[labelDict objectForKey:@"ColorR"] intValue],
+                                   [[labelDict objectForKey:@"ColorG"] intValue],
+                                   [[labelDict objectForKey:@"ColorB"] intValue]);
+        currentLabel.anchorPoint=ccp(0,0);
+        currentLabel.position = [scaleManager scalePointX:[[labelDict objectForKey:@"PositionX"] intValue] andY:[[labelDict objectForKey:@"PositionY"] intValue]] ;
+        [self addChild:currentLabel];
+    }
+}
 @end

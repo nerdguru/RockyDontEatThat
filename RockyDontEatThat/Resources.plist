@@ -481,9 +481,44 @@
 			<key>Instructions</key>
 			<dict>
 				<key>SpriteSheet</key>
-				<string>home-sprites</string>
+				<string>sample-sprites</string>
 				<key>ImageFormat</key>
 				<string>RGBA4444</string>
+				<key>SynchLabel</key>
+				<dict>
+					<key>Audio</key>
+					<string>Title.mp3</string>
+					<key>Font</key>
+					<string>Hobo.ttf</string>
+					<key>Label</key>
+					<string>Touch the foods &amp; I&apos;ll eat them</string>
+					<key>BaseColorR</key>
+					<string>0</string>
+					<key>BaseColorG</key>
+					<string>0</string>
+					<key>BaseColorB</key>
+					<string>0</string>
+					<key>HighlightColorR</key>
+					<string>255</string>
+					<key>HighlightColorG</key>
+					<string>255</string>
+					<key>HighlightColorB</key>
+					<string>255</string>
+					<key>PositionX</key>
+					<string>5</string>
+					<key>PositionY</key>
+					<string>150</string>
+					<key>FontSize</key>
+					<string>26</string>
+					<key>Intervals</key>
+					<array>
+						<string>0.15</string>
+						<string>0.70</string>
+						<string>1.05</string>
+						<string>1.42</string>
+						<string>2.30</string>
+					</array>
+				</dict>
 				<key>Background</key>
 				<dict>
 					<key>Red</key>
@@ -494,16 +529,33 @@
 					<string>153</string>
 					<key>Opacity</key>
 					<string>255</string>
+					<key>Tiled</key>
+					<dict>
+						<key>Name</key>
+						<string>bg1.png</string>
+						<key>PositionY</key>
+						<string>Middle</string>
+						<key>PositionX</key>
+						<string>E+</string>
+					</dict>
 				</dict>
 				<key>Sprites</key>
 				<array>
 					<dict>
 						<key>Name</key>
-						<string>rocky01.png</string>
+						<string>rockyBite.png</string>
 						<key>PositionX</key>
 						<string>95</string>
 						<key>PositionY</key>
 						<string>65</string>
+					</dict>
+					<dict>
+						<key>Name</key>
+						<string>start01.png</string>
+						<key>PositionX</key>
+						<string>380</string>
+						<key>PositionY</key>
+						<string>55</string>
 						<key>Action</key>
 						<dict>
 							<key>ActionType</key>
@@ -513,7 +565,7 @@
 								<key>ActionType</key>
 								<string>Animate</string>
 								<key>Sequence</key>
-								<string>rocky%02d.png</string>
+								<string>start%02d.png</string>
 								<key>NumFrames</key>
 								<string>2</string>
 								<key>Delay</key>
@@ -522,6 +574,148 @@
 								<false/>
 							</dict>
 						</dict>
+						<key>TouchReactions</key>
+						<array>
+							<dict>
+								<key>TouchReactionType</key>
+								<string>Actions</string>
+								<key>Action</key>
+								<dict>
+									<key>ActionType</key>
+									<string>Sequence</string>
+									<key>ChildActions</key>
+									<array>
+										<dict>
+											<key>ActionType</key>
+											<string>TouchesOff</string>
+										</dict>
+										<dict>
+											<key>ActionType</key>
+											<string>ScaleBy</string>
+											<key>Duration</key>
+											<string>0.1</string>
+											<key>Scale</key>
+											<string>0.9</string>
+										</dict>
+										<dict>
+											<key>ActionType</key>
+											<string>Delay</string>
+											<key>Duration</key>
+											<string>0.3</string>
+										</dict>
+										<dict>
+											<key>ActionType</key>
+											<string>StartLevel</string>
+										</dict>
+									</array>
+								</dict>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>Name</key>
+						<string>cheese.png</string>
+						<key>PositionX</key>
+						<string>440</string>
+						<key>PositionY</key>
+						<string>160</string>
+						<key>Action</key>
+						<dict>
+							<key>ActionType</key>
+							<string>Parallel</string>
+							<key>ChildActions</key>
+							<array>
+								<dict>
+									<key>ActionType</key>
+									<string>Repeat</string>
+									<key>Times</key>
+									<string>2</string>
+									<key>ChildAction</key>
+									<dict>
+										<key>ActionType</key>
+										<string>RotateBy</string>
+										<key>Duration</key>
+										<string>4.0</string>
+										<key>Angle</key>
+										<string>360</string>
+									</dict>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>Sequence</string>
+									<key>ChildActions</key>
+									<array>
+										<dict>
+											<key>ActionType</key>
+											<string>Delay</string>
+											<key>Duration</key>
+											<string>2.0</string>
+										</dict>
+										<dict>
+											<key>ActionType</key>
+											<string>MoveTo</string>
+											<key>PositionX</key>
+											<string>145</string>
+											<key>PositionY</key>
+											<string>55</string>
+											<key>Speed</key>
+											<string>100</string>
+										</dict>
+										<dict>
+											<key>ActionType</key>
+											<string>RemoveMe</string>
+										</dict>
+									</array>
+								</dict>
+							</array>
+						</dict>
+					</dict>
+					<dict>
+						<key>Name</key>
+						<string>hand.png</string>
+						<key>PositionX</key>
+						<string>E+</string>
+						<key>PositionY</key>
+						<string>160</string>
+						<key>Action</key>
+						<dict>
+							<key>ActionType</key>
+							<string>Sequence</string>
+							<key>ChildActions</key>
+							<array>
+								<dict>
+									<key>ActionType</key>
+									<string>MoveTo</string>
+									<key>PositionX</key>
+									<string>440</string>
+									<key>PositionY</key>
+									<string>StraightY</string>
+									<key>Speed</key>
+									<string>60</string>
+								</dict>
+							</array>
+						</dict>
+					</dict>
+				</array>
+				<key>Labels</key>
+				<array>
+					<dict>
+						<key>Text</key>
+						<string>Level 1: The Countryside</string>
+						<key>Font</key>
+						<string>Hobo.ttf</string>
+						<key>FontSize</key>
+						<string>26</string>
+						<key>ColorR</key>
+						<string>0</string>
+						<key>ColorG</key>
+						<string>0</string>
+						<key>ColorB</key>
+						<string>0</string>
+						<key>PositionX</key>
+						<string>5</string>
+						<key>PositionY</key>
+						<string>175</string>
 					</dict>
 				</array>
 			</dict>

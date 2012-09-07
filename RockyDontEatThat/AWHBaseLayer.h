@@ -22,4 +22,5 @@
 -(void)initSpritesArray;
 -(void)initSynchLabel;
 -(void)initHighScores;
+-(void)initLabelsArray;
 @end
