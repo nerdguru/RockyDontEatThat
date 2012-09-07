@@ -97,7 +97,7 @@
     CCScene *scene = [CCScene node];
     AWHInstructionsLayer* layer = [[AWHInstructionsLayer alloc] initWithDict:instructionsDict];
     [scene addChild: layer];
-    [currentLevelLayer release];
+    [layer release];
     
     // Replace the scene
     

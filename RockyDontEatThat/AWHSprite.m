@@ -143,6 +143,10 @@
         //NSLog(@"Action processing a %@", actionType);
         return [CCScaleBy actionWithDuration:[[action objectForKey:@"Duration"] floatValue]  scale:[[action objectForKey:@"Scale"] floatValue]];
     }
+    else if ([actionType isEqualToString:@"FadeOut"]) {
+        //NSLog(@"Action processing a %@", actionType);
+        return [CCFadeOut actionWithDuration:[[action objectForKey:@"Duration"] floatValue]];
+    }
     else if ([actionType isEqualToString:@"MoveTo"]) {
         //NSLog(@"Action processing a %@", actionType);
         AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 

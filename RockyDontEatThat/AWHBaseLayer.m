@@ -51,6 +51,7 @@
         CCSpriteBatchNode *spritesBNode;
         spritesBNode = [CCSpriteBatchNode batchNodeWithFile:[NSString stringWithFormat:@"%@.pvr.ccz", spriteSheet]];
         [self addChild:spritesBNode];    
+        [CCSpriteFrameCache purgeSharedSpriteFrameCache]; // Remove what was there before
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%@.plist", spriteSheet]];
         
         // Load up background sprites
