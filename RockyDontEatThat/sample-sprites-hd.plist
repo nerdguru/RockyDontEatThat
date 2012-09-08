@@ -46,7 +46,7 @@
             <key>cheese.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{284,1329},{185,167}}</string>
+                <string>{{284,807},{185,167}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,11 +98,11 @@
             <key>ggrapes.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{284,967},{216,158}}</string>
+                <string>{{730,1829},{216,158}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{1,2},{216,158}}</string>
                 <key>sourceSize</key>
@@ -111,7 +111,7 @@
             <key>hand.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{284,1127},{181,200}}</string>
+                <string>{{890,1829},{181,200}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,11 +137,11 @@
             <key>pgrapes.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{284,807},{216,158}}</string>
+                <string>{{570,1829},{216,158}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{1,2},{216,158}}</string>
                 <key>sourceSize</key>
@@ -150,7 +150,7 @@
             <key>phone.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{453,1329},{165,126}}</string>
+                <string>{{1073,1829},{165,126}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -215,7 +215,7 @@
             <key>start01.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{570,394},{537,298}}</string>
+                <string>{{570,694},{537,298}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -228,7 +228,7 @@
             <key>start02.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{570,694},{535,296}}</string>
+                <string>{{570,1531},{535,296}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -251,6 +251,32 @@
                 <key>sourceSize</key>
                 <string>{266,148}</string>
             </dict>
+            <key>try01.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{570,394},{537,298}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1,1},{537,298}}</string>
+                <key>sourceSize</key>
+                <string>{539,300}</string>
+            </dict>
+            <key>try02.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{284,994},{535,296}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{2,2},{535,296}}</string>
+                <key>sourceSize</key>
+                <string>{539,300}</string>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -261,7 +287,7 @@
             <key>size</key>
             <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:da00dbcaa8f2f1376eede62764513f1b$</string>
+            <string>$TexturePacker:SmartUpdate:801cf1bb65a809ee474340fd56e21c8c$</string>
             <key>textureFileName</key>
             <string>sample-sprites-hd.pvr.ccz</string>
         </dict>
