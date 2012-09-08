@@ -13,6 +13,4 @@
 @interface AWHGenericLayer : AWHBaseLayer {
     
 }
-//-(id)initWithDict:(NSDictionary *)dict;
-
 @end

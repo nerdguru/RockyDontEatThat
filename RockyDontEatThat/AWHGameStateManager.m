@@ -13,6 +13,7 @@
 #import "AWHMainLevelLayer.h"
 #import "AWHInstructionsLayer.h"
 #import "AWHBadExitLayer.h"
+#import "AWHGameOverLayer.h"
 #import "AWHGenericLayer.h"
 
 @implementation AWHGameStateManager
@@ -121,6 +122,26 @@
     [scene addChild: layer];
     [layer release];
    
+    // Replace the scene
+    [[CCDirector sharedDirector] replaceScene:scene];
+}
+
+// Logic for incrementing the level state and swapping in the new scene
+-(void)gameOver {
+    
+    currentLevel = 0;
+    
+    // Get the correct dict
+    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
+    NSDictionary *dict = [resourceManager levelDictionaryWithIndex:currentLevel];
+    NSDictionary *gameOverDict = [dict objectForKey:@"GameOver"];
+    
+    // Create autorelease objects
+    CCScene *scene = [CCScene node];
+    AWHGameOverLayer *layer = [[AWHGameOverLayer alloc] initWithDict:gameOverDict];
+    [scene addChild: layer];
+    [layer release];
+    
     // Replace the scene
     [[CCDirector sharedDirector] replaceScene:scene];
 }

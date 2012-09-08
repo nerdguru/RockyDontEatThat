@@ -16,13 +16,17 @@
     [remainingCalls setString:[NSString stringWithFormat:@"%d", gameStateManager.numLivesLeft]];
     [self unschedule:@selector(decrementLives)];
 }
+-(void)gameOver {
+    [gameStateManager gameOver];
+}
 
 -(id)initWithDict:(NSDictionary *)dict withFileName:(NSString*)fileName
 {
 	if(self=[super initWithDict:dict]) {
         
-        // Set up sprites
-        [self initSpritesArray];
+        if(gameStateManager.numLivesLeft > 0)
+            // Set up sprites
+            [self initSpritesArray];
         
         // Set up passed in food
         NSMutableDictionary* eatenFoodDict = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
@@ -54,8 +58,11 @@
         // Set up Synch Label
         [self initSynchLabel];
         
-        // Set up the call to decrement the lives
-        [self schedule:@selector(decrementLives) interval:2.0];
+        if(gameStateManager.numLivesLeft > 0)
+            // Set up the call to decrement the lives
+            [self schedule:@selector(decrementLives) interval:2.0];
+        else 
+            [self schedule:@selector(gameOver) interval:3.0];
         
 	}
 	return self;

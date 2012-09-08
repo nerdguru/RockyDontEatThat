@@ -476,6 +476,116 @@
 					</array>
 				</dict>
 			</dict>
+			<key>GameOver</key>
+			<dict>
+				<key>SpriteSheet</key>
+				<string>home-sprites</string>
+				<key>ImageFormat</key>
+				<string>RGBA4444</string>
+				<key>Background</key>
+				<dict>
+					<key>Red</key>
+					<string>242</string>
+					<key>Green</key>
+					<string>220</string>
+					<key>Blue</key>
+					<string>219</string>
+					<key>Opacity</key>
+					<string>255</string>
+				</dict>
+				<key>Sprites</key>
+				<array>
+					<dict>
+						<key>Name</key>
+						<string>rocky01.png</string>
+						<key>PositionX</key>
+						<string>95</string>
+						<key>PositionY</key>
+						<string>65</string>
+						<key>Action</key>
+						<dict>
+							<key>ActionType</key>
+							<string>RepeatForever</string>
+							<key>ChildAction</key>
+							<dict>
+								<key>ActionType</key>
+								<string>Animate</string>
+								<key>Sequence</key>
+								<string>rocky%02d.png</string>
+								<key>NumFrames</key>
+								<string>2</string>
+								<key>Delay</key>
+								<string>0.5</string>
+								<key>RestoreOriginalFrame</key>
+								<false/>
+							</dict>
+						</dict>
+					</dict>
+					<dict>
+						<key>Name</key>
+						<string>start01.png</string>
+						<key>PositionX</key>
+						<string>130</string>
+						<key>PositionY</key>
+						<string>200</string>
+						<key>Action</key>
+						<dict>
+							<key>ActionType</key>
+							<string>RepeatForever</string>
+							<key>ChildAction</key>
+							<dict>
+								<key>ActionType</key>
+								<string>Animate</string>
+								<key>Sequence</key>
+								<string>start%02d.png</string>
+								<key>NumFrames</key>
+								<string>2</string>
+								<key>Delay</key>
+								<string>0.5</string>
+								<key>RestoreOriginalFrame</key>
+								<false/>
+							</dict>
+						</dict>
+						<key>TouchReactions</key>
+						<array>
+							<dict>
+								<key>TouchReactionType</key>
+								<string>Actions</string>
+								<key>Action</key>
+								<dict>
+									<key>ActionType</key>
+									<string>Sequence</string>
+									<key>ChildActions</key>
+									<array>
+										<dict>
+											<key>ActionType</key>
+											<string>TouchesOff</string>
+										</dict>
+										<dict>
+											<key>ActionType</key>
+											<string>ScaleBy</string>
+											<key>Duration</key>
+											<string>0.1</string>
+											<key>Scale</key>
+											<string>0.9</string>
+										</dict>
+										<dict>
+											<key>ActionType</key>
+											<string>Delay</string>
+											<key>Duration</key>
+											<string>0.3</string>
+										</dict>
+										<dict>
+											<key>ActionType</key>
+											<string>StartOver</string>
+										</dict>
+									</array>
+								</dict>
+							</dict>
+						</array>
+					</dict>
+				</array>
+			</dict>
 		</dict>
 		<dict>
 			<key>Instructions</key>
@@ -548,9 +658,9 @@
 						<key>Name</key>
 						<string>rockyBite.png</string>
 						<key>PositionX</key>
-						<string>95</string>
+						<string>85</string>
 						<key>PositionY</key>
-						<string>65</string>
+						<string>55</string>
 					</dict>
 					<dict>
 						<key>Name</key>
@@ -1067,7 +1177,7 @@
 						<key>Name</key>
 						<string>rockyBite.png</string>
 						<key>PositionX</key>
-						<string>95</string>
+						<string>85</string>
 						<key>PositionY</key>
 						<string>65</string>
 					</dict>
@@ -1258,7 +1368,7 @@
 						<key>Name</key>
 						<string>rockyBite.png</string>
 						<key>PositionX</key>
-						<string>95</string>
+						<string>85</string>
 						<key>PositionY</key>
 						<string>65</string>
 					</dict>
@@ -1810,7 +1920,7 @@
 						<key>Name</key>
 						<string>rockyBite.png</string>
 						<key>PositionX</key>
-						<string>95</string>
+						<string>85</string>
 						<key>PositionY</key>
 						<string>65</string>
 					</dict>
@@ -2294,7 +2404,7 @@
 						<key>Name</key>
 						<string>rockyBite.png</string>
 						<key>PositionX</key>
-						<string>95</string>
+						<string>85</string>
 						<key>PositionY</key>
 						<string>65</string>
 					</dict>

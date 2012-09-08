@@ -31,6 +31,7 @@
 -(void)startOver;
 -(void)badExit: (NSString*)fileName;
 -(void)detectGoodExit;
+-(void)gameOver;
 
 // Data access methods
 -(NSDictionary*)getLevelDict;
