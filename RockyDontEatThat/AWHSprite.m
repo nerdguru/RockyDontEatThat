@@ -147,6 +147,11 @@
         //NSLog(@"Action processing a %@", actionType);
         return [CCFadeOut actionWithDuration:[[action objectForKey:@"Duration"] floatValue]];
     }
+    
+    else if ([actionType isEqualToString:@"FadeIn"]) {
+        //NSLog(@"Action processing a %@", actionType);
+        return [CCFadeIn actionWithDuration:[[action objectForKey:@"Duration"] floatValue]];
+    }
     else if ([actionType isEqualToString:@"MoveTo"]) {
         //NSLog(@"Action processing a %@", actionType);
         AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
