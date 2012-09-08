@@ -63,6 +63,7 @@
         AWHSprite *eatSprite=[[AWHSprite alloc] initWithDict:[protagonistDict objectForKey:@"EatSprite"]];
         eatSprite.visible = NO;
         [self addChild:eatSprite z:2];
+        [eatSprite release];
         
         protagonistNormal = sprite;
         protagonistEat = eatSprite;

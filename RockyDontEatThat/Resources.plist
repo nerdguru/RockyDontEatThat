@@ -866,33 +866,9 @@
 						</dict>
 						<dict>
 							<key>Name</key>
-							<string>dkgbonetreat.png</string>
+							<string>chocolate.png</string>
 							<key>Value</key>
-							<string>1</string>
-						</dict>
-						<dict>
-							<key>Name</key>
-							<string>ltgbonetreat.png</string>
-							<key>Value</key>
-							<string>1</string>
-						</dict>
-						<dict>
-							<key>Name</key>
-							<string>tanbonetreat.png</string>
-							<key>Value</key>
-							<string>1</string>
-						</dict>
-						<dict>
-							<key>Name</key>
-							<string>rbonetreat.png</string>
-							<key>Value</key>
-							<string>1</string>
-						</dict>
-						<dict>
-							<key>Name</key>
-							<string>rbonetreat.png</string>
-							<key>Value</key>
-							<string>1</string>
+							<string>-1</string>
 						</dict>
 					</array>
 				</dict>
@@ -944,29 +920,164 @@
 			<key>BadExit</key>
 			<dict>
 				<key>SpriteSheet</key>
-				<string>home-sprites</string>
+				<string>sample-sprites</string>
 				<key>ImageFormat</key>
 				<string>RGBA4444</string>
 				<key>Background</key>
 				<dict>
 					<key>Red</key>
-					<string>255</string>
+					<string>204</string>
 					<key>Green</key>
-					<string>0</string>
+					<string>204</string>
 					<key>Blue</key>
-					<string>0</string>
+					<string>153</string>
 					<key>Opacity</key>
 					<string>255</string>
+					<key>Tiled</key>
+					<dict>
+						<key>Name</key>
+						<string>bg1.png</string>
+						<key>PositionY</key>
+						<string>Middle</string>
+						<key>PositionX</key>
+						<string>E+</string>
+					</dict>
+				</dict>
+				<key>SynchLabel</key>
+				<dict>
+					<key>Audio</key>
+					<string>Level1Instructions.mp3</string>
+					<key>Font</key>
+					<string>Hobo.ttf</string>
+					<key>Label</key>
+					<string>Dogs cannot eat</string>
+					<key>BaseColorR</key>
+					<string>204</string>
+					<key>BaseColorG</key>
+					<string>0</string>
+					<key>BaseColorB</key>
+					<string>0</string>
+					<key>HighlightColorR</key>
+					<string>255</string>
+					<key>HighlightColorG</key>
+					<string>255</string>
+					<key>HighlightColorB</key>
+					<string>255</string>
+					<key>PositionX</key>
+					<string>5</string>
+					<key>PositionY</key>
+					<string>150</string>
+					<key>FontSize</key>
+					<string>26</string>
+					<key>Intervals</key>
+					<array>
+						<string>0.35</string>
+						<string>0.60</string>
+						<string>1.00</string>
+						<string>2.2</string>
+						<string>2.5</string>
+						<string>3.05</string>
+						<string>3.3</string>
+						<string>3.5</string>
+					</array>
+				</dict>
+				<key>HUD</key>
+				<dict>
+					<key>Font</key>
+					<string>PressStart2P.ttf</string>
+					<key>FontSize</key>
+					<string>12</string>
+					<key>FontColorR</key>
+					<string>51</string>
+					<key>FontColorG</key>
+					<string>153</string>
+					<key>FontColorB</key>
+					<string>0</string>
+					<key>ScoreLabel</key>
+					<string>Level Score:</string>
+					<key>RemainingLabel</key>
+					<string>Remaining:</string>
+					<key>Sprite</key>
+					<dict>
+						<key>Name</key>
+						<string>phone.png</string>
+						<key>PositionX</key>
+						<string>455</string>
+						<key>PositionY</key>
+						<string>18</string>
+						<key>Action</key>
+						<dict>
+							<key>ActionType</key>
+							<string>Sequence</string>
+							<key>ChildActions</key>
+							<array>
+								<dict>
+									<key>ActionType</key>
+									<string>Delay</string>
+									<key>Duration</key>
+									<string>2.0</string>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>ScaleBy</string>
+									<key>Duration</key>
+									<string>0.1</string>
+									<key>Scale</key>
+									<string>1.5</string>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>Delay</string>
+									<key>Duration</key>
+									<string>0.3</string>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>ScaleBy</string>
+									<key>Duration</key>
+									<string>0.1</string>
+									<key>Scale</key>
+									<string>0.67</string>
+								</dict>
+							</array>
+						</dict>
+					</dict>
+					<key>ScorePositionX</key>
+					<string>271</string>
+					<key>ScorePositionY</key>
+					<string>25</string>
+					<key>ScoreSpace</key>
+					<string>85</string>
+					<key>RemainingPositionX</key>
+					<string>260</string>
+					<key>RemainingPositionY</key>
+					<string>10</string>
+					<key>RemainingSpace</key>
+					<string>70</string>
+					<key>CallsPositionX</key>
+					<string>425</string>
+					<key>CallsPositionY</key>
+					<string>18</string>
+					<key>CallsSpace</key>
+					<string>-12</string>
 				</dict>
 				<key>Sprites</key>
 				<array>
 					<dict>
 						<key>Name</key>
-						<string>rocky01.png</string>
+						<string>rockyBite.png</string>
 						<key>PositionX</key>
 						<string>95</string>
 						<key>PositionY</key>
 						<string>65</string>
+					</dict>
+					<dict>
+						<key>Name</key>
+						<string>start01.png</string>
+						<key>PositionX</key>
+						<string>380</string>
+						<key>PositionY</key>
+						<string>75</string>
 						<key>Action</key>
 						<dict>
 							<key>ActionType</key>
@@ -976,7 +1087,7 @@
 								<key>ActionType</key>
 								<string>Animate</string>
 								<key>Sequence</key>
-								<string>rocky%02d.png</string>
+								<string>start%02d.png</string>
 								<key>NumFrames</key>
 								<string>2</string>
 								<key>Delay</key>
@@ -985,8 +1096,49 @@
 								<false/>
 							</dict>
 						</dict>
+						<key>TouchReactions</key>
+						<array>
+							<dict>
+								<key>TouchReactionType</key>
+								<string>Actions</string>
+								<key>Action</key>
+								<dict>
+									<key>ActionType</key>
+									<string>Sequence</string>
+									<key>ChildActions</key>
+									<array>
+										<dict>
+											<key>ActionType</key>
+											<string>TouchesOff</string>
+										</dict>
+										<dict>
+											<key>ActionType</key>
+											<string>ScaleBy</string>
+											<key>Duration</key>
+											<string>0.1</string>
+											<key>Scale</key>
+											<string>0.9</string>
+										</dict>
+										<dict>
+											<key>ActionType</key>
+											<string>Delay</string>
+											<key>Duration</key>
+											<string>0.3</string>
+										</dict>
+										<dict>
+											<key>ActionType</key>
+											<string>StartLevel</string>
+										</dict>
+									</array>
+								</dict>
+							</dict>
+						</array>
 					</dict>
 				</array>
+				<key>FoodPositionX</key>
+				<string>210</string>
+				<key>FoodPositionY</key>
+				<string>165</string>
 			</dict>
 			<key>GoodExit</key>
 			<dict>

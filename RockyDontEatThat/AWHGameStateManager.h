@@ -29,7 +29,7 @@
 -(void)gotoNextLevel;
 -(void)gotoNextInstructions;
 -(void)startOver;
--(void)badExit;
+-(void)badExit: (NSString*)fileName;
 -(void)detectGoodExit;
 
 // Data access methods

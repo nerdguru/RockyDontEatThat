@@ -181,6 +181,7 @@
 		F4E7D40215FACFE500A72DB5 /* Level2Instructions.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4E7D40115FACFE500A72DB5 /* Level2Instructions.mp3 */; };
 		F4E7D40415FACFF700A72DB5 /* Level3Instructions.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4E7D40315FACFF700A72DB5 /* Level3Instructions.mp3 */; };
 		F4E7D40615FAD49900A72DB5 /* R2LFoodFast.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4E7D40515FAD49900A72DB5 /* R2LFoodFast.plist */; };
+		F4E7D40D15FBA2A200A72DB5 /* AWHBadExitLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E7D40C15FBA2A200A72DB5 /* AWHBadExitLayer.m */; };
 		F4E9BCC715EC986B002B6C58 /* Doot Doo Theme Game.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCC615EC986B002B6C58 /* Doot Doo Theme Game.mp3 */; };
 		F4E9BCCE15ED1351002B6C58 /* Launch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCCD15ED1351002B6C58 /* Launch.mp3 */; };
 		F4E9BCD015ED1A01002B6C58 /* R2LFood.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCCF15ED1A01002B6C58 /* R2LFood.plist */; };
@@ -517,6 +518,8 @@
 		F4E7D40115FACFE500A72DB5 /* Level2Instructions.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Level2Instructions.mp3; sourceTree = "<group>"; };
 		F4E7D40315FACFF700A72DB5 /* Level3Instructions.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Level3Instructions.mp3; sourceTree = "<group>"; };
 		F4E7D40515FAD49900A72DB5 /* R2LFoodFast.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = R2LFoodFast.plist; sourceTree = "<group>"; };
+		F4E7D40B15FBA2A200A72DB5 /* AWHBadExitLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; path = AWHBadExitLayer.h; sourceTree = "<group>"; };
+		F4E7D40C15FBA2A200A72DB5 /* AWHBadExitLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHBadExitLayer.m; sourceTree = "<group>"; };
 		F4E9BCC615EC986B002B6C58 /* Doot Doo Theme Game.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Doot Doo Theme Game.mp3"; sourceTree = "<group>"; };
 		F4E9BCCD15ED1351002B6C58 /* Launch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Launch.mp3; sourceTree = "<group>"; };
 		F4E9BCCF15ED1A01002B6C58 /* R2LFood.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = R2LFood.plist; sourceTree = "<group>"; };
@@ -723,35 +726,10 @@
 		F4C33CB415B62FFB00816700 /* RockyDontEatThat */ = {
 			isa = PBXGroup;
 			children = (
-				F4C33E0615B62FFD00816700 /* AppDelegate.h */,
-				F4C33E0715B62FFD00816700 /* AppDelegate.m */,
-				F4C33E0F15B62FFD00816700 /* GameConfig.h */,
-				F4C33E0915B62FFD00816700 /* RootViewController.h */,
-				F4C33E0A15B62FFD00816700 /* RootViewController.m */,
-				F4C33E3715B8483200816700 /* AWHScaleManager.h */,
-				F4C33E3815B8483200816700 /* AWHScaleManager.m */,
-				F422EDE515DB1EEB00963D33 /* AWHGameStateManager.h */,
-				F422EDE615DB1EEB00963D33 /* AWHGameStateManager.m */,
-				F4D33F6915C43B5400694C75 /* AWHResourceManager.h */,
-				F4D33F6A15C43B5400694C75 /* AWHResourceManager.m */,
-				F4C7243215BC65C1002F89FC /* AWHSynchLabel.h */,
-				F4C7243315BC65C1002F89FC /* AWHSynchLabel.m */,
-				F486185D15C609190065B464 /* AWHHighScoreLabels.h */,
-				F486185E15C609190065B464 /* AWHHighScoreLabels.m */,
-				F4D33F6E15C44B7700694C75 /* AWHSprite.h */,
-				F4D33F6F15C44B7700694C75 /* AWHSprite.m */,
-				F4E7D3E315F7EC0800A72DB5 /* AWHBaseLayer.h */,
-				F4E7D3E415F7EC0800A72DB5 /* AWHBaseLayer.m */,
-				F4E7D3E615F9487100A72DB5 /* AWHBaseAdLayer.h */,
-				F4E7D3E715F9487100A72DB5 /* AWHBaseAdLayer.m */,
-				F4C7243915BC685C002F89FC /* AWHHomeLayer.h */,
-				F4C7243A15BC685C002F89FC /* AWHHomeLayer.m */,
-				F4E7D3E915F958B500A72DB5 /* AWHMainLevelLayer.h */,
-				F4E7D3EA15F958B500A72DB5 /* AWHMainLevelLayer.m */,
-				F4E7D3F415F98C7300A72DB5 /* AWHInstructionsLayer.h */,
-				F4E7D3F515F98C7400A72DB5 /* AWHInstructionsLayer.m */,
-				F4E7D3DF15F3FF0F00A72DB5 /* AWHGenericLayer.h */,
-				F4E7D3E015F3FF0F00A72DB5 /* AWHGenericLayer.m */,
+				F4E7D40715FB038800A72DB5 /* AppSkeleton */,
+				F4E7D40815FB03AD00A72DB5 /* AWHManagers */,
+				F4E7D40915FB03F300A72DB5 /* AWHWidgets */,
+				F4E7D40A15FB042200A72DB5 /* AWHLayers */,
 				F4C33CB515B62FFB00816700 /* Resources */,
 				F4C33CC915B62FFC00816700 /* libs */,
 				F4C33E0215B62FFD00816700 /* Supporting Files */,
@@ -1099,6 +1077,65 @@
 			name = cocos2dExtensions;
 			sourceTree = "<group>";
 		};
+		F4E7D40715FB038800A72DB5 /* AppSkeleton */ = {
+			isa = PBXGroup;
+			children = (
+				F4C33E0615B62FFD00816700 /* AppDelegate.h */,
+				F4C33E0715B62FFD00816700 /* AppDelegate.m */,
+				F4C33E0F15B62FFD00816700 /* GameConfig.h */,
+				F4C33E0915B62FFD00816700 /* RootViewController.h */,
+				F4C33E0A15B62FFD00816700 /* RootViewController.m */,
+			);
+			name = AppSkeleton;
+			sourceTree = "<group>";
+		};
+		F4E7D40815FB03AD00A72DB5 /* AWHManagers */ = {
+			isa = PBXGroup;
+			children = (
+				F4C33E3715B8483200816700 /* AWHScaleManager.h */,
+				F4C33E3815B8483200816700 /* AWHScaleManager.m */,
+				F422EDE515DB1EEB00963D33 /* AWHGameStateManager.h */,
+				F422EDE615DB1EEB00963D33 /* AWHGameStateManager.m */,
+				F4D33F6915C43B5400694C75 /* AWHResourceManager.h */,
+				F4D33F6A15C43B5400694C75 /* AWHResourceManager.m */,
+			);
+			name = AWHManagers;
+			sourceTree = "<group>";
+		};
+		F4E7D40915FB03F300A72DB5 /* AWHWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				F4C7243215BC65C1002F89FC /* AWHSynchLabel.h */,
+				F4C7243315BC65C1002F89FC /* AWHSynchLabel.m */,
+				F486185D15C609190065B464 /* AWHHighScoreLabels.h */,
+				F486185E15C609190065B464 /* AWHHighScoreLabels.m */,
+				F4D33F6E15C44B7700694C75 /* AWHSprite.h */,
+				F4D33F6F15C44B7700694C75 /* AWHSprite.m */,
+			);
+			name = AWHWidgets;
+			sourceTree = "<group>";
+		};
+		F4E7D40A15FB042200A72DB5 /* AWHLayers */ = {
+			isa = PBXGroup;
+			children = (
+				F4E7D3E315F7EC0800A72DB5 /* AWHBaseLayer.h */,
+				F4E7D3E415F7EC0800A72DB5 /* AWHBaseLayer.m */,
+				F4E7D3E615F9487100A72DB5 /* AWHBaseAdLayer.h */,
+				F4E7D3E715F9487100A72DB5 /* AWHBaseAdLayer.m */,
+				F4C7243915BC685C002F89FC /* AWHHomeLayer.h */,
+				F4C7243A15BC685C002F89FC /* AWHHomeLayer.m */,
+				F4E7D3E915F958B500A72DB5 /* AWHMainLevelLayer.h */,
+				F4E7D3EA15F958B500A72DB5 /* AWHMainLevelLayer.m */,
+				F4E7D3F415F98C7300A72DB5 /* AWHInstructionsLayer.h */,
+				F4E7D3F515F98C7400A72DB5 /* AWHInstructionsLayer.m */,
+				F4E7D40B15FBA2A200A72DB5 /* AWHBadExitLayer.h */,
+				F4E7D40C15FBA2A200A72DB5 /* AWHBadExitLayer.m */,
+				F4E7D3DF15F3FF0F00A72DB5 /* AWHGenericLayer.h */,
+				F4E7D3E015F3FF0F00A72DB5 /* AWHGenericLayer.m */,
+			);
+			name = AWHLayers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1327,6 +1364,7 @@
 				F4E7D3E815F9487100A72DB5 /* AWHBaseAdLayer.m in Sources */,
 				F4E7D3EB15F958B500A72DB5 /* AWHMainLevelLayer.m in Sources */,
 				F4E7D3F615F98C7400A72DB5 /* AWHInstructionsLayer.m in Sources */,
+				F4E7D40D15FBA2A200A72DB5 /* AWHBadExitLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

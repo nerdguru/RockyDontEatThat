@@ -12,6 +12,7 @@
 #import "SimpleAudioEngine.h"
 #import "AWHMainLevelLayer.h"
 #import "AWHInstructionsLayer.h"
+#import "AWHBadExitLayer.h"
 #import "AWHGenericLayer.h"
 
 @implementation AWHGameStateManager
@@ -125,7 +126,7 @@
 }
 
 // Execute a bad exit
--(void)badExit {
+-(void)badExit: (NSString*)fileName {
     
     // Stop the background music
     [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
@@ -137,7 +138,7 @@
 
     // Create autorelease objects
     CCScene *scene = [CCScene node];
-    AWHGenericLayer *layer = [[AWHGenericLayer alloc] initWithDict:badExitDict];
+    AWHBadExitLayer *layer = [[AWHBadExitLayer alloc] initWithDict:badExitDict withFileName:fileName];
     [scene addChild: layer];
     [layer release];
     

@@ -56,7 +56,7 @@
     if(beenEaten){
         if (value < 0) {
         // Ate a bad thing, stop the level
-            [gameStateManager badExit];
+            [gameStateManager badExit:fileName];
         } else {
         // Ate a good thing, award points
             [gameStateManager awardPoints:value];
@@ -239,7 +239,8 @@
         
         // Initialize the sprite with data from the dict and with the help of the scaleManager
         AWHScaleManager *scaleManager = [AWHScaleManager sharedScaleManager]; 
-        self.mySprite=[CCSprite spriteWithSpriteFrameName:[spriteDict objectForKey:@"Name"]];
+        fileName = [spriteDict objectForKey:@"Name"];
+        self.mySprite=[CCSprite spriteWithSpriteFrameName:fileName];
         mySprite.scale = [scaleManager scaleImage];
         mySprite.position=[scaleManager scalePointX:[scaleManager convertDimension:[spriteDict objectForKey:@"PositionX"] ofSprite:self.mySprite] andY:[scaleManager convertDimension:[spriteDict objectForKey:@"PositionY"] ofSprite:self.mySprite]];
         //NSLog(@"Position: x %f y %f", mySprite.position.x,mySprite.position.y);

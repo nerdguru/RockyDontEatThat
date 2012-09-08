@@ -11,9 +11,6 @@
 
 @implementation AWHInstructionsLayer
 
--(void)startLevel {
-    [gameStateManager gotoNextLevel];
-}
 
 -(id)initWithDict:(NSDictionary *)dict
 {
