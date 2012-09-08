@@ -525,9 +525,9 @@
 						<key>Name</key>
 						<string>start01.png</string>
 						<key>PositionX</key>
-						<string>130</string>
+						<string>300</string>
 						<key>PositionY</key>
-						<string>200</string>
+						<string>65</string>
 						<key>Action</key>
 						<dict>
 							<key>ActionType</key>
@@ -583,6 +583,27 @@
 								</dict>
 							</dict>
 						</array>
+					</dict>
+				</array>
+				<key>Labels</key>
+				<array>
+					<dict>
+						<key>Text</key>
+						<string>Game Over</string>
+						<key>Font</key>
+						<string>PressStart2P.ttf</string>
+						<key>FontSize</key>
+						<string>40</string>
+						<key>ColorR</key>
+						<string>0</string>
+						<key>ColorG</key>
+						<string>0</string>
+						<key>ColorB</key>
+						<string>0</string>
+						<key>PositionX</key>
+						<string>100</string>
+						<key>PositionY</key>
+						<string>175</string>
 					</dict>
 				</array>
 			</dict>
@@ -1056,7 +1077,7 @@
 				<key>SynchLabel</key>
 				<dict>
 					<key>Audio</key>
-					<string>Level1Instructions.mp3</string>
+					<string>DogsCannotEat.mp3</string>
 					<key>Font</key>
 					<string>Hobo.ttf</string>
 					<key>Label</key>
@@ -1081,14 +1102,10 @@
 					<string>26</string>
 					<key>Intervals</key>
 					<array>
-						<string>0.35</string>
-						<string>0.60</string>
-						<string>1.00</string>
-						<string>2.2</string>
-						<string>2.5</string>
-						<string>3.05</string>
-						<string>3.3</string>
-						<string>3.5</string>
+						<string>0.12</string>
+						<string>0.90</string>
+						<string>1.5</string>
+						<string>2.0</string>
 					</array>
 				</dict>
 				<key>HUD</key>
@@ -1125,7 +1142,7 @@
 									<key>ActionType</key>
 									<string>Delay</string>
 									<key>Duration</key>
-									<string>2.0</string>
+									<string>3.0</string>
 								</dict>
 								<dict>
 									<key>ActionType</key>
@@ -1179,7 +1196,7 @@
 						<key>PositionX</key>
 						<string>85</string>
 						<key>PositionY</key>
-						<string>65</string>
+						<string>55</string>
 					</dict>
 					<dict>
 						<key>Name</key>
@@ -1187,24 +1204,63 @@
 						<key>PositionX</key>
 						<string>380</string>
 						<key>PositionY</key>
-						<string>75</string>
+						<string>165</string>
 						<key>Action</key>
 						<dict>
 							<key>ActionType</key>
-							<string>RepeatForever</string>
-							<key>ChildAction</key>
-							<dict>
-								<key>ActionType</key>
-								<string>Animate</string>
-								<key>Sequence</key>
-								<string>start%02d.png</string>
-								<key>NumFrames</key>
-								<string>2</string>
-								<key>Delay</key>
-								<string>0.5</string>
-								<key>RestoreOriginalFrame</key>
-								<false/>
-							</dict>
+							<string>Sequence</string>
+							<key>ChildActions</key>
+							<array>
+								<dict>
+									<key>ActionType</key>
+									<string>TouchesOff</string>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>FadeOut</string>
+									<key>Duration</key>
+									<string>0</string>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>MakeVisible</string>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>Delay</string>
+									<key>Duration</key>
+									<string>7.0</string>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>TouchesOn</string>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>FadeIn</string>
+									<key>Duration</key>
+									<string>0.5</string>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>Repeat</string>
+									<key>Times</key>
+									<string>1000</string>
+									<key>ChildAction</key>
+									<dict>
+										<key>ActionType</key>
+										<string>Animate</string>
+										<key>Sequence</key>
+										<string>start%02d.png</string>
+										<key>NumFrames</key>
+										<string>2</string>
+										<key>Delay</key>
+										<string>0.5</string>
+										<key>RestoreOriginalFrame</key>
+										<false/>
+									</dict>
+								</dict>
+							</array>
 						</dict>
 						<key>TouchReactions</key>
 						<array>
@@ -1243,12 +1299,20 @@
 								</dict>
 							</dict>
 						</array>
+						<key>StartHidden</key>
+						<string>YES</string>
 					</dict>
 				</array>
 				<key>FoodPositionX</key>
 				<string>210</string>
 				<key>FoodPositionY</key>
 				<string>165</string>
+				<key>BadEffect</key>
+				<string>AteSomethingHeShouldntHave.mp3</string>
+				<key>Delay</key>
+				<string>3.0</string>
+				<key>FoodDelay</key>
+				<string>2.0</string>
 			</dict>
 			<key>GoodExit</key>
 			<dict>
@@ -1305,43 +1369,6 @@
 				<string>sample-sprites</string>
 				<key>ImageFormat</key>
 				<string>RGBA4444</string>
-				<key>SynchLabel</key>
-				<dict>
-					<key>Audio</key>
-					<string>Level2Instructions.mp3</string>
-					<key>Font</key>
-					<string>Hobo.ttf</string>
-					<key>Label</key>
-					<string>Don&apos;t touch things I cannot eat.</string>
-					<key>BaseColorR</key>
-					<string>0</string>
-					<key>BaseColorG</key>
-					<string>0</string>
-					<key>BaseColorB</key>
-					<string>0</string>
-					<key>HighlightColorR</key>
-					<string>255</string>
-					<key>HighlightColorG</key>
-					<string>255</string>
-					<key>HighlightColorB</key>
-					<string>255</string>
-					<key>PositionX</key>
-					<string>5</string>
-					<key>PositionY</key>
-					<string>150</string>
-					<key>FontSize</key>
-					<string>26</string>
-					<key>Intervals</key>
-					<array>
-						<string>0.18</string>
-						<string>0.58</string>
-						<string>1.00</string>
-						<string>1.78</string>
-						<string>2.0</string>
-						<string>2.7</string>
-						<string>3.22</string>
-					</array>
-				</dict>
 				<key>Background</key>
 				<dict>
 					<key>Red</key>
@@ -1370,7 +1397,7 @@
 						<key>PositionX</key>
 						<string>85</string>
 						<key>PositionY</key>
-						<string>65</string>
+						<string>55</string>
 					</dict>
 					<dict>
 						<key>Name</key>
@@ -1782,7 +1809,7 @@
 						<key>PositionX</key>
 						<string>95</string>
 						<key>PositionY</key>
-						<string>65</string>
+						<string>55</string>
 						<key>Action</key>
 						<dict>
 							<key>ActionType</key>
@@ -1922,7 +1949,7 @@
 						<key>PositionX</key>
 						<string>85</string>
 						<key>PositionY</key>
-						<string>65</string>
+						<string>55</string>
 					</dict>
 					<dict>
 						<key>Name</key>
@@ -2266,7 +2293,7 @@
 						<key>PositionX</key>
 						<string>95</string>
 						<key>PositionY</key>
-						<string>65</string>
+						<string>55</string>
 						<key>Action</key>
 						<dict>
 							<key>ActionType</key>
@@ -2406,7 +2433,7 @@
 						<key>PositionX</key>
 						<string>85</string>
 						<key>PositionY</key>
-						<string>65</string>
+						<string>55</string>
 					</dict>
 					<dict>
 						<key>Name</key>
@@ -2750,7 +2777,7 @@
 						<key>PositionX</key>
 						<string>95</string>
 						<key>PositionY</key>
-						<string>65</string>
+						<string>55</string>
 						<key>Action</key>
 						<dict>
 							<key>ActionType</key>

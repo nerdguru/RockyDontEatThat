@@ -18,6 +18,9 @@
         // Set up sprites
         [self initSpritesArray];
         
+        // Set up labels
+        [self initLabelsArray];
+        
 	}
 	return self;
 }

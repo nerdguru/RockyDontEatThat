@@ -7,14 +7,20 @@
 //
 
 #import "AWHBadExitLayer.h"
+#import "SimpleAudioEngine.h"
 
 
 @implementation AWHBadExitLayer
 
 -(void)decrementLives {
+    [[SimpleAudioEngine sharedEngine] playEffect:badEffect];
     gameStateManager.numLivesLeft--;
     [remainingCalls setString:[NSString stringWithFormat:@"%d", gameStateManager.numLivesLeft]];
     [self unschedule:@selector(decrementLives)];
+}
+-(void)playFoodEffect {
+    [[SimpleAudioEngine sharedEngine] playEffect:foodEffect];
+    [self unschedule:@selector(playFoodEffect)];
 }
 -(void)gameOver {
     [gameStateManager gameOver];
@@ -38,6 +44,10 @@
         [self addChild:eatSprite];
         [eatSprite release];
         [eatenFoodDict release];
+        NSArray *chunks = [fileName componentsSeparatedByString: @"."];
+        foodEffect = [NSString stringWithFormat:@"%@.mp3",[chunks objectAtIndex:0]];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:foodEffect];
+        [self schedule:@selector(playFoodEffect) interval:[[dict objectForKey:@"FoodDelay"] floatValue]];
         
         // Load up the HUD
         NSDictionary *hudDict = [dict objectForKey:@"HUD"];
@@ -58,11 +68,14 @@
         // Set up Synch Label
         [self initSynchLabel];
         
-        if(gameStateManager.numLivesLeft > 0)
+        if(gameStateManager.numLivesLeft > 0) {
             // Set up the call to decrement the lives
-            [self schedule:@selector(decrementLives) interval:2.0];
+            badEffect = [dict objectForKey:@"BadEffect"];
+            [[SimpleAudioEngine sharedEngine] preloadEffect:badEffect];
+            [self schedule:@selector(decrementLives) interval:[[dict objectForKey:@"Delay"] floatValue]];
+        }
         else 
-            [self schedule:@selector(gameOver) interval:3.0];
+            [self schedule:@selector(gameOver) interval:[[dict objectForKey:@"Delay"] floatValue]];
         
 	}
 	return self;

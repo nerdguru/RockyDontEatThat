@@ -12,6 +12,8 @@
 
 @interface AWHBadExitLayer : AWHBaseLayer {
     CCLabelTTF *remainingCalls;
+    NSString* badEffect;
+    NSString* foodEffect;
 }
 -(id)initWithDict:(NSDictionary *)dict withFileName:(NSString*)fileName;
 @end

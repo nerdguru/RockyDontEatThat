@@ -183,6 +183,9 @@
 		F4E7D40615FAD49900A72DB5 /* R2LFoodFast.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4E7D40515FAD49900A72DB5 /* R2LFoodFast.plist */; };
 		F4E7D40D15FBA2A200A72DB5 /* AWHBadExitLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E7D40C15FBA2A200A72DB5 /* AWHBadExitLayer.m */; };
 		F4E7D41015FBBE8C00A72DB5 /* AWHGameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E7D40F15FBBE8C00A72DB5 /* AWHGameOverLayer.m */; };
+		F4E7D41215FBC13D00A72DB5 /* AteSomethingHeShouldntHave.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4E7D41115FBC13D00A72DB5 /* AteSomethingHeShouldntHave.mp3 */; };
+		F4E7D41415FBC51400A72DB5 /* DogsCannotEat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4E7D41315FBC51400A72DB5 /* DogsCannotEat.mp3 */; };
+		F4E7D41615FBCBFE00A72DB5 /* chocolate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4E7D41515FBCBFE00A72DB5 /* chocolate.mp3 */; };
 		F4E9BCC715EC986B002B6C58 /* Doot Doo Theme Game.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCC615EC986B002B6C58 /* Doot Doo Theme Game.mp3 */; };
 		F4E9BCCE15ED1351002B6C58 /* Launch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCCD15ED1351002B6C58 /* Launch.mp3 */; };
 		F4E9BCD015ED1A01002B6C58 /* R2LFood.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4E9BCCF15ED1A01002B6C58 /* R2LFood.plist */; };
@@ -523,6 +526,9 @@
 		F4E7D40C15FBA2A200A72DB5 /* AWHBadExitLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHBadExitLayer.m; sourceTree = "<group>"; };
 		F4E7D40E15FBBE8C00A72DB5 /* AWHGameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWHGameOverLayer.h; sourceTree = "<group>"; };
 		F4E7D40F15FBBE8C00A72DB5 /* AWHGameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWHGameOverLayer.m; sourceTree = "<group>"; };
+		F4E7D41115FBC13D00A72DB5 /* AteSomethingHeShouldntHave.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AteSomethingHeShouldntHave.mp3; sourceTree = "<group>"; };
+		F4E7D41315FBC51400A72DB5 /* DogsCannotEat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DogsCannotEat.mp3; sourceTree = "<group>"; };
+		F4E7D41515FBCBFE00A72DB5 /* chocolate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chocolate.mp3; sourceTree = "<group>"; };
 		F4E9BCC615EC986B002B6C58 /* Doot Doo Theme Game.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Doot Doo Theme Game.mp3"; sourceTree = "<group>"; };
 		F4E9BCCD15ED1351002B6C58 /* Launch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Launch.mp3; sourceTree = "<group>"; };
 		F4E9BCCF15ED1A01002B6C58 /* R2LFood.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = R2LFood.plist; sourceTree = "<group>"; };
@@ -643,9 +649,12 @@
 		F42F086615CDD7E50063F763 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				F4E7D41515FBCBFE00A72DB5 /* chocolate.mp3 */,
 				F4DBBE2B15F2F3E3003D5169 /* Excellent.mp3 */,
 				F4E9BCD115EE6A96002B6C58 /* Bite.mp3 */,
 				F4E9BCCD15ED1351002B6C58 /* Launch.mp3 */,
+				F4E7D41315FBC51400A72DB5 /* DogsCannotEat.mp3 */,
+				F4E7D41115FBC13D00A72DB5 /* AteSomethingHeShouldntHave.mp3 */,
 				F4E7D3F715FA5B8600A72DB5 /* Level1Instructions.mp3 */,
 				F4E7D40115FACFE500A72DB5 /* Level2Instructions.mp3 */,
 				F4E7D40315FACFF700A72DB5 /* Level3Instructions.mp3 */,
@@ -1230,6 +1239,9 @@
 				F4E7D40215FACFE500A72DB5 /* Level2Instructions.mp3 in Resources */,
 				F4E7D40415FACFF700A72DB5 /* Level3Instructions.mp3 in Resources */,
 				F4E7D40615FAD49900A72DB5 /* R2LFoodFast.plist in Resources */,
+				F4E7D41215FBC13D00A72DB5 /* AteSomethingHeShouldntHave.mp3 in Resources */,
+				F4E7D41415FBC51400A72DB5 /* DogsCannotEat.mp3 in Resources */,
+				F4E7D41615FBCBFE00A72DB5 /* chocolate.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

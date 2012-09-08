@@ -79,7 +79,9 @@
     }
     
 }
-
+-(void) makeVisible {
+    mySprite.visible = YES;
+}
 -(void) eatEffect {
     AWHGameStateManager *gameStateManager = [AWHGameStateManager sharedGameStateManager];
     [gameStateManager playProtagonistEffect];
@@ -215,6 +217,10 @@
         //NSLog(@"Action processing a %@", actionType);
         return [CCCallFunc actionWithTarget:self selector:@selector(startOver)];
     }
+    else if ([actionType isEqualToString:@"MakeVisible"]) {
+        //NSLog(@"Action processing a %@", actionType);
+        return [CCCallFunc actionWithTarget:self selector:@selector(makeVisible)];
+    }
     else if ([actionType isEqualToString:@"RevertOriginalActions"]) {
         //NSLog(@"Action processing a %@", actionType);
         return [CCCallFunc actionWithTarget:self selector:@selector(revertOriginalActions)];
@@ -254,6 +260,10 @@
         mySprite.position=[scaleManager scalePointX:[scaleManager convertDimension:[spriteDict objectForKey:@"PositionX"] ofSprite:self.mySprite] andY:[scaleManager convertDimension:[spriteDict objectForKey:@"PositionY"] ofSprite:self.mySprite]];
         //NSLog(@"Position: x %f y %f", mySprite.position.x,mySprite.position.y);
         //NSLog(@"Dimensions: w %f h %f", [mySprite boundingBox].size.width,[mySprite boundingBox].size.height);
+        
+        NSString* startHidden = [spriteDict objectForKey:@"StartHidden"];
+        if([startHidden isEqualToString:@"YES"])
+            mySprite.visible = NO;
         
         
         // Set up actions
