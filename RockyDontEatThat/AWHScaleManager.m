@@ -241,7 +241,7 @@
     int retval = 0;
     CGSize size = [[CCDirector sharedDirector] winSize];
     retval = size.width/width;
-    NSLog(@"Sprite Width: %f Win width: %f Retval: %d", width, size.width, retval);
+    //NSLog(@"Sprite Width: %f Win width: %f Retval: %d", width, size.width, retval);
     return retval+1;
 }
 

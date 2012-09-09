@@ -46,6 +46,7 @@
         [eatenFoodDict release];
         NSArray *chunks = [fileName componentsSeparatedByString: @"."];
         foodEffect = [NSString stringWithFormat:@"%@.mp3",[chunks objectAtIndex:0]];
+        NSLog(@"Effect: %@", foodEffect);
         [[SimpleAudioEngine sharedEngine] preloadEffect:foodEffect];
         [self schedule:@selector(playFoodEffect) interval:[[dict objectForKey:@"FoodDelay"] floatValue]];
         
@@ -79,5 +80,10 @@
         
 	}
 	return self;
+}
+
+-(void)onExit {
+    [[SimpleAudioEngine sharedEngine] unloadEffect:foodEffect];
+
 }
 @end
