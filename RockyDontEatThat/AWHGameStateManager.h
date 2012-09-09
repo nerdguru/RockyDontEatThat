@@ -20,6 +20,7 @@
     int numLivesLeft;
     AWHMainLevelLayer* currentLevelLayer;
     int levelScore;
+    int totalScore;
 }
 // Instance Methods
 +(id)sharedGameStateManager;
@@ -48,4 +49,6 @@
 @property (readwrite, assign) int spritesCounter;
 @property (readwrite, assign) int activeSprites;
 @property (readwrite, assign) int numLivesLeft;
+@property (readwrite, assign) int totalScore;
+@property (readwrite, assign) int levelScore;
 @end

@@ -13,6 +13,7 @@
 #import "AWHMainLevelLayer.h"
 #import "AWHInstructionsLayer.h"
 #import "AWHBadExitLayer.h"
+#import "AWHGoodExitLayer.h"
 #import "AWHGameOverLayer.h"
 #import "AWHGenericLayer.h"
 
@@ -21,6 +22,8 @@
 @synthesize spritesCounter;
 @synthesize activeSprites;
 @synthesize numLivesLeft;
+@synthesize totalScore;
+@synthesize levelScore;
 
 // Singleton accessor method
 + (id)sharedGameStateManager {
@@ -182,7 +185,7 @@
         
         // Create autorelease objects
         CCScene *scene = [CCScene node];
-        AWHGenericLayer *layer = [[AWHGenericLayer alloc] initWithDict:goodExitDict];
+        AWHGoodExitLayer *layer = [[AWHGoodExitLayer alloc] initWithDict:goodExitDict];
         [scene addChild: layer];
         [layer release];
         
