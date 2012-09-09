@@ -1358,11 +1358,11 @@
 					</dict>
 					<dict>
 						<key>Name</key>
-						<string>start01.png</string>
+						<string>cont01.png</string>
 						<key>PositionX</key>
 						<string>380</string>
 						<key>PositionY</key>
-						<string>95</string>
+						<string>75</string>
 						<key>Action</key>
 						<dict>
 							<key>ActionType</key>
@@ -1387,7 +1387,7 @@
 									<key>ActionType</key>
 									<string>Delay</string>
 									<key>Duration</key>
-									<string>7.0</string>
+									<string>7.5</string>
 								</dict>
 								<dict>
 									<key>ActionType</key>
@@ -1409,7 +1409,7 @@
 										<key>ActionType</key>
 										<string>Animate</string>
 										<key>Sequence</key>
-										<string>start%02d.png</string>
+										<string>cont%02d.png</string>
 										<key>NumFrames</key>
 										<string>2</string>
 										<key>Delay</key>
@@ -1480,16 +1480,56 @@
 					<key>ScorePositionX</key>
 					<string>240</string>
 					<key>ScorePositionY</key>
-					<string>170</string>
+					<string>140</string>
 					<key>ScoreSpace</key>
 					<string>85</string>
 					<key>TotalScorePositionX</key>
 					<string>240</string>
 					<key>TotalScorePositionY</key>
-					<string>155</string>
+					<string>125</string>
 					<key>TotalScoreSpace</key>
 					<string>85</string>
 				</dict>
+				<key>SynchLabel</key>
+				<dict>
+					<key>Audio</key>
+					<string>TotalScore.mp3</string>
+					<key>Font</key>
+					<string>Hobo.ttf</string>
+					<key>Label</key>
+					<string>Excellent! Let&apos;s add to your total score.</string>
+					<key>BaseColorR</key>
+					<string>0</string>
+					<key>BaseColorG</key>
+					<string>0</string>
+					<key>BaseColorB</key>
+					<string>0</string>
+					<key>HighlightColorR</key>
+					<string>255</string>
+					<key>HighlightColorG</key>
+					<string>255</string>
+					<key>HighlightColorB</key>
+					<string>255</string>
+					<key>PositionX</key>
+					<string>5</string>
+					<key>PositionY</key>
+					<string>150</string>
+					<key>FontSize</key>
+					<string>26</string>
+					<key>Intervals</key>
+					<array>
+						<string>1.04</string>
+						<string>2.15</string>
+						<string>2.5</string>
+						<string>2.85</string>
+						<string>2.95</string>
+						<string>3.25</string>
+						<string>3.62</string>
+						<string>4.21</string>
+					</array>
+				</dict>
+				<key>FirstDelay</key>
+				<string>4.2</string>
 			</dict>
 		</dict>
 		<dict>
@@ -2255,11 +2295,11 @@
 					</dict>
 					<dict>
 						<key>Name</key>
-						<string>start01.png</string>
+						<string>cont01.png</string>
 						<key>PositionX</key>
 						<string>380</string>
 						<key>PositionY</key>
-						<string>95</string>
+						<string>75</string>
 						<key>Action</key>
 						<dict>
 							<key>ActionType</key>
@@ -2284,7 +2324,7 @@
 									<key>ActionType</key>
 									<string>Delay</string>
 									<key>Duration</key>
-									<string>7.0</string>
+									<string>7.5</string>
 								</dict>
 								<dict>
 									<key>ActionType</key>
@@ -2306,7 +2346,7 @@
 										<key>ActionType</key>
 										<string>Animate</string>
 										<key>Sequence</key>
-										<string>start%02d.png</string>
+										<string>cont%02d.png</string>
 										<key>NumFrames</key>
 										<string>2</string>
 										<key>Delay</key>
@@ -2377,20 +2417,56 @@
 					<key>ScorePositionX</key>
 					<string>240</string>
 					<key>ScorePositionY</key>
-					<string>170</string>
+					<string>140</string>
 					<key>ScoreSpace</key>
 					<string>85</string>
 					<key>TotalScorePositionX</key>
 					<string>240</string>
 					<key>TotalScorePositionY</key>
-					<string>155</string>
+					<string>125</string>
 					<key>TotalScoreSpace</key>
 					<string>85</string>
 				</dict>
+				<key>SynchLabel</key>
+				<dict>
+					<key>Audio</key>
+					<string>TotalScore.mp3</string>
+					<key>Font</key>
+					<string>Hobo.ttf</string>
+					<key>Label</key>
+					<string>Excellent! Let&apos;s add to your total score.</string>
+					<key>BaseColorR</key>
+					<string>0</string>
+					<key>BaseColorG</key>
+					<string>0</string>
+					<key>BaseColorB</key>
+					<string>0</string>
+					<key>HighlightColorR</key>
+					<string>255</string>
+					<key>HighlightColorG</key>
+					<string>255</string>
+					<key>HighlightColorB</key>
+					<string>255</string>
+					<key>PositionX</key>
+					<string>5</string>
+					<key>PositionY</key>
+					<string>150</string>
+					<key>FontSize</key>
+					<string>26</string>
+					<key>Intervals</key>
+					<array>
+						<string>1.04</string>
+						<string>2.15</string>
+						<string>2.5</string>
+						<string>2.85</string>
+						<string>2.95</string>
+						<string>3.25</string>
+						<string>3.62</string>
+						<string>4.21</string>
+					</array>
+				</dict>
 				<key>FirstDelay</key>
-				<string>3.0</string>
-				<key>ScoreInterval</key>
-				<string>0.1</string>
+				<string>4.2</string>
 			</dict>
 		</dict>
 		<dict>
@@ -3086,11 +3162,11 @@
 					</dict>
 					<dict>
 						<key>Name</key>
-						<string>start01.png</string>
+						<string>cont01.png</string>
 						<key>PositionX</key>
 						<string>380</string>
 						<key>PositionY</key>
-						<string>95</string>
+						<string>75</string>
 						<key>Action</key>
 						<dict>
 							<key>ActionType</key>
@@ -3115,7 +3191,7 @@
 									<key>ActionType</key>
 									<string>Delay</string>
 									<key>Duration</key>
-									<string>7.0</string>
+									<string>7.5</string>
 								</dict>
 								<dict>
 									<key>ActionType</key>
@@ -3137,7 +3213,7 @@
 										<key>ActionType</key>
 										<string>Animate</string>
 										<key>Sequence</key>
-										<string>start%02d.png</string>
+										<string>cont%02d.png</string>
 										<key>NumFrames</key>
 										<string>2</string>
 										<key>Delay</key>
@@ -3208,20 +3284,56 @@
 					<key>ScorePositionX</key>
 					<string>240</string>
 					<key>ScorePositionY</key>
-					<string>170</string>
+					<string>140</string>
 					<key>ScoreSpace</key>
 					<string>85</string>
 					<key>TotalScorePositionX</key>
 					<string>240</string>
 					<key>TotalScorePositionY</key>
-					<string>155</string>
+					<string>125</string>
 					<key>TotalScoreSpace</key>
 					<string>85</string>
 				</dict>
+				<key>SynchLabel</key>
+				<dict>
+					<key>Audio</key>
+					<string>TotalScore.mp3</string>
+					<key>Font</key>
+					<string>Hobo.ttf</string>
+					<key>Label</key>
+					<string>Excellent! Let&apos;s add to your total score.</string>
+					<key>BaseColorR</key>
+					<string>0</string>
+					<key>BaseColorG</key>
+					<string>0</string>
+					<key>BaseColorB</key>
+					<string>0</string>
+					<key>HighlightColorR</key>
+					<string>255</string>
+					<key>HighlightColorG</key>
+					<string>255</string>
+					<key>HighlightColorB</key>
+					<string>255</string>
+					<key>PositionX</key>
+					<string>5</string>
+					<key>PositionY</key>
+					<string>150</string>
+					<key>FontSize</key>
+					<string>26</string>
+					<key>Intervals</key>
+					<array>
+						<string>1.04</string>
+						<string>2.15</string>
+						<string>2.5</string>
+						<string>2.85</string>
+						<string>2.95</string>
+						<string>3.25</string>
+						<string>3.62</string>
+						<string>4.21</string>
+					</array>
+				</dict>
 				<key>FirstDelay</key>
-				<string>3.0</string>
-				<key>ScoreInterval</key>
-				<string>0.1</string>
+				<string>4.2</string>
 			</dict>
 		</dict>
 		<dict>
@@ -3917,11 +4029,11 @@
 					</dict>
 					<dict>
 						<key>Name</key>
-						<string>start01.png</string>
+						<string>cont01.png</string>
 						<key>PositionX</key>
 						<string>380</string>
 						<key>PositionY</key>
-						<string>95</string>
+						<string>75</string>
 						<key>Action</key>
 						<dict>
 							<key>ActionType</key>
@@ -3946,7 +4058,7 @@
 									<key>ActionType</key>
 									<string>Delay</string>
 									<key>Duration</key>
-									<string>7.0</string>
+									<string>7.5</string>
 								</dict>
 								<dict>
 									<key>ActionType</key>
@@ -3968,7 +4080,7 @@
 										<key>ActionType</key>
 										<string>Animate</string>
 										<key>Sequence</key>
-										<string>start%02d.png</string>
+										<string>cont%02d.png</string>
 										<key>NumFrames</key>
 										<string>2</string>
 										<key>Delay</key>
@@ -4039,20 +4151,56 @@
 					<key>ScorePositionX</key>
 					<string>240</string>
 					<key>ScorePositionY</key>
-					<string>170</string>
+					<string>140</string>
 					<key>ScoreSpace</key>
 					<string>85</string>
 					<key>TotalScorePositionX</key>
 					<string>240</string>
 					<key>TotalScorePositionY</key>
-					<string>155</string>
+					<string>125</string>
 					<key>TotalScoreSpace</key>
 					<string>85</string>
 				</dict>
+				<key>SynchLabel</key>
+				<dict>
+					<key>Audio</key>
+					<string>TotalScore.mp3</string>
+					<key>Font</key>
+					<string>Hobo.ttf</string>
+					<key>Label</key>
+					<string>Excellent! Let&apos;s add to your total score.</string>
+					<key>BaseColorR</key>
+					<string>0</string>
+					<key>BaseColorG</key>
+					<string>0</string>
+					<key>BaseColorB</key>
+					<string>0</string>
+					<key>HighlightColorR</key>
+					<string>255</string>
+					<key>HighlightColorG</key>
+					<string>255</string>
+					<key>HighlightColorB</key>
+					<string>255</string>
+					<key>PositionX</key>
+					<string>5</string>
+					<key>PositionY</key>
+					<string>150</string>
+					<key>FontSize</key>
+					<string>26</string>
+					<key>Intervals</key>
+					<array>
+						<string>1.04</string>
+						<string>2.15</string>
+						<string>2.5</string>
+						<string>2.85</string>
+						<string>2.95</string>
+						<string>3.25</string>
+						<string>3.62</string>
+						<string>4.21</string>
+					</array>
+				</dict>
 				<key>FirstDelay</key>
-				<string>3.0</string>
-				<key>ScoreInterval</key>
-				<string>0.1</string>
+				<string>4.2</string>
 			</dict>
 		</dict>
 	</array>

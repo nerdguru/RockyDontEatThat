@@ -67,6 +67,9 @@
         NSString* scoreIntervalString = [dict objectForKey:@"ScoreInterval"];
         if(scoreIntervalString != nil)
             scoreInterval = [scoreIntervalString floatValue];
+        
+        // Set up Synch Label
+        [self initSynchLabel];
     
 	}
 	return self;
