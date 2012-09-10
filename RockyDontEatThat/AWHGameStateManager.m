@@ -56,7 +56,8 @@
 -(id)init {
     if( (self=[super init]) ) {
         currentLevel = 0;
-        numLivesLeft=3;
+        numLivesLeft = 3;
+        totalScore = 0;
     }
     return self;
     
@@ -113,6 +114,8 @@
 -(void)startOver {
     
     currentLevel = 0;
+    numLivesLeft = 3;
+    totalScore = 0;
     
     // Get the correct dict
     AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];

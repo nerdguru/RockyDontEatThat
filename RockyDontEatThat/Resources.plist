@@ -479,7 +479,7 @@
 			<key>GameOver</key>
 			<dict>
 				<key>SpriteSheet</key>
-				<string>home-sprites</string>
+				<string>sample-sprites</string>
 				<key>ImageFormat</key>
 				<string>RGBA4444</string>
 				<key>Background</key>
@@ -497,54 +497,75 @@
 				<array>
 					<dict>
 						<key>Name</key>
-						<string>rocky01.png</string>
+						<string>rockyBite.png</string>
 						<key>PositionX</key>
-						<string>95</string>
+						<string>85</string>
 						<key>PositionY</key>
-						<string>65</string>
-						<key>Action</key>
-						<dict>
-							<key>ActionType</key>
-							<string>RepeatForever</string>
-							<key>ChildAction</key>
-							<dict>
-								<key>ActionType</key>
-								<string>Animate</string>
-								<key>Sequence</key>
-								<string>rocky%02d.png</string>
-								<key>NumFrames</key>
-								<string>2</string>
-								<key>Delay</key>
-								<string>0.5</string>
-								<key>RestoreOriginalFrame</key>
-								<false/>
-							</dict>
-						</dict>
+						<string>55</string>
 					</dict>
 					<dict>
 						<key>Name</key>
-						<string>start01.png</string>
+						<string>cont01.png</string>
 						<key>PositionX</key>
-						<string>300</string>
+						<string>380</string>
 						<key>PositionY</key>
-						<string>65</string>
+						<string>75</string>
 						<key>Action</key>
 						<dict>
 							<key>ActionType</key>
-							<string>RepeatForever</string>
-							<key>ChildAction</key>
-							<dict>
-								<key>ActionType</key>
-								<string>Animate</string>
-								<key>Sequence</key>
-								<string>start%02d.png</string>
-								<key>NumFrames</key>
-								<string>2</string>
-								<key>Delay</key>
-								<string>0.5</string>
-								<key>RestoreOriginalFrame</key>
-								<false/>
-							</dict>
+							<string>Sequence</string>
+							<key>ChildActions</key>
+							<array>
+								<dict>
+									<key>ActionType</key>
+									<string>TouchesOff</string>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>FadeOut</string>
+									<key>Duration</key>
+									<string>0</string>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>MakeVisible</string>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>Delay</string>
+									<key>Duration</key>
+									<string>3.0</string>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>TouchesOn</string>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>FadeIn</string>
+									<key>Duration</key>
+									<string>0.5</string>
+								</dict>
+								<dict>
+									<key>ActionType</key>
+									<string>Repeat</string>
+									<key>Times</key>
+									<string>1000</string>
+									<key>ChildAction</key>
+									<dict>
+										<key>ActionType</key>
+										<string>Animate</string>
+										<key>Sequence</key>
+										<string>cont%02d.png</string>
+										<key>NumFrames</key>
+										<string>2</string>
+										<key>Delay</key>
+										<string>0.5</string>
+										<key>RestoreOriginalFrame</key>
+										<false/>
+									</dict>
+								</dict>
+							</array>
 						</dict>
 						<key>TouchReactions</key>
 						<array>
@@ -573,7 +594,7 @@
 											<key>ActionType</key>
 											<string>Delay</string>
 											<key>Duration</key>
-											<string>0.3</string>
+											<string>0.5</string>
 										</dict>
 										<dict>
 											<key>ActionType</key>
@@ -583,6 +604,8 @@
 								</dict>
 							</dict>
 						</array>
+						<key>StartHidden</key>
+						<string>YES</string>
 					</dict>
 				</array>
 				<key>Labels</key>
@@ -593,7 +616,7 @@
 						<key>Font</key>
 						<string>PressStart2P.ttf</string>
 						<key>FontSize</key>
-						<string>40</string>
+						<string>30</string>
 						<key>ColorR</key>
 						<string>0</string>
 						<key>ColorG</key>
@@ -601,11 +624,40 @@
 						<key>ColorB</key>
 						<string>0</string>
 						<key>PositionX</key>
-						<string>100</string>
+						<string>120</string>
 						<key>PositionY</key>
 						<string>175</string>
 					</dict>
 				</array>
+				<key>HUD</key>
+				<dict>
+					<key>Font</key>
+					<string>PressStart2P.ttf</string>
+					<key>FontSize</key>
+					<string>12</string>
+					<key>FontColorR</key>
+					<string>51</string>
+					<key>FontColorG</key>
+					<string>153</string>
+					<key>FontColorB</key>
+					<string>0</string>
+					<key>ScoreLabel</key>
+					<string>Level Score:</string>
+					<key>TotalScoreLabel</key>
+					<string>Total Score:</string>
+					<key>ScorePositionX</key>
+					<string>240</string>
+					<key>ScorePositionY</key>
+					<string>140</string>
+					<key>ScoreSpace</key>
+					<string>85</string>
+					<key>TotalScorePositionX</key>
+					<string>240</string>
+					<key>TotalScorePositionY</key>
+					<string>125</string>
+					<key>TotalScoreSpace</key>
+					<string>85</string>
+				</dict>
 			</dict>
 		</dict>
 		<dict>
