@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "AWHBaseLayer.h"
+#import "AWHSprite.h"
 
 @interface AWHMainLevelLayer : AWHBaseLayer {
     CCLabelTTF *eatenScore;

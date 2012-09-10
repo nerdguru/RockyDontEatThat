@@ -9,6 +9,12 @@
 * When tests pass: update this file, tag, archive, close milestone, push archive to TestFlight, and install on Suzie's iPhone
 * Increment build #s as needed
 
+## Remaining Stuff
+* Cut scenes
+* Social Media
+* Food from top level
+* Food from bottom level
+
 ## Game Play Screen Epic (Versions 0.2.x), started 8/15/12
 The second Epic does the following:
 
@@ -18,9 +24,9 @@ The second Epic does the following:
 * Foods detect touches, move to Rocky's mouth (Completed 0.2.4)
 * HUD + scoring for correct touches and correct bad foods that fall off screen + static explanation screen (Completed 0.2.5)
 * Variable explanation screens for both exit scenarios, end of game, and intro screens;track call losses(Slated 0.2.6)
-* Improved sample level artwork (Slated 0.2.7)
-* Level 1 and 2 artwork (Slated 0.2.8)
-* Reverse scrolling Sample level (Slated 0.2.9)
+* Minimum level score loses a call (Slated 0.2.7)
+* Reverse scrolling Sample level (Slated 0.2.8)
+* High score board (Slated 0.2.9)
 
 
 ## Home Screen Epic (Versions 0.1.x) started 7/17/12, completed 8/14/12

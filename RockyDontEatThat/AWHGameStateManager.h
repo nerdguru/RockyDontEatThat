@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "AWHSprite.h"
+#import "AWHResourceManager.h"
 
 @class AWHMainLevelLayer;
 @interface AWHGameStateManager : NSObject
 {
+    AWHResourceManager *resourceManager;
+    
     int currentLevel;
 
     int spritesCounter;
@@ -37,6 +39,7 @@
 // Data access methods
 -(NSDictionary*)getLevelDict;
 -(NSArray *) getHighScores;
+-(BOOL)isLastLevel;
 
 // Pass through to the active level methods
 -(void)playProtagonistEffect;

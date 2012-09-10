@@ -58,6 +58,7 @@
         currentLevel = 0;
         numLivesLeft = 3;
         totalScore = 0;
+        resourceManager = [AWHResourceManager sharedResourceManager];
     }
     return self;
     
@@ -72,7 +73,6 @@
     // Get the correct dict
     
     levelScore = 0;
-    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
     NSDictionary *dict = [resourceManager levelDictionaryWithIndex:currentLevel];
     NSDictionary *levelDict = [dict objectForKey:@"Level"];
     
@@ -95,7 +95,6 @@
     
     // Get the correct dict
     currentLevel++;
-    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
     NSDictionary *dict = [resourceManager levelDictionaryWithIndex:currentLevel];
     NSDictionary *instructionsDict = [dict objectForKey:@"Instructions"];
     
@@ -118,7 +117,6 @@
     totalScore = 0;
     
     // Get the correct dict
-    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
     NSDictionary *dict = [resourceManager levelDictionaryWithIndex:currentLevel];
     NSDictionary *levelDict = [dict objectForKey:@"Level"];
     
@@ -138,7 +136,6 @@
     currentLevel = 0;
     
     // Get the correct dict
-    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
     NSDictionary *dict = [resourceManager levelDictionaryWithIndex:currentLevel];
     NSDictionary *gameOverDict = [dict objectForKey:@"GameOver"];
     
@@ -159,7 +156,6 @@
     [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
     
     // Get the correct dict
-    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
     NSDictionary *levelDict = [resourceManager levelDictionaryWithIndex:currentLevel];
     NSDictionary *badExitDict = [levelDict objectForKey:@"BadExit"];
 
@@ -182,7 +178,6 @@
         [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
         
         // Get the correct dict
-        AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
         NSDictionary *levelDict = [resourceManager levelDictionaryWithIndex:currentLevel];
         NSDictionary *goodExitDict = [levelDict objectForKey:@"GoodExit"];
         
@@ -201,14 +196,19 @@
 
 // Logic for returning the correct Dictionary
 -(NSDictionary*)getLevelDict {
-    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
     NSDictionary *groupDict = [resourceManager levelDictionaryWithIndex:currentLevel];
     return [groupDict objectForKey:@"Level"];
 }
 
 -(NSArray *) getHighScores {
-    AWHResourceManager *resourceManager = [AWHResourceManager sharedResourceManager];
     return [resourceManager getHighScores];
+}
+-(BOOL)isLastLevel{
+    int ll = [resourceManager lastLevel];
+    if(ll == currentLevel)
+        return YES;
+    else 
+        return NO;
 }
 
 -(void)playProtagonistEffect {

@@ -24,14 +24,20 @@
     [self unschedule:@selector(firstDelay)];
     [self schedule:@selector(addTotal) interval:scoreInterval];
 }
+-(void)gotoGameOver {
+    [self unschedule:@selector(gotoGameOver)];
+    [gameStateManager gameOver];
+}
 
 -(id)initWithDict:(NSDictionary *)dict
 {
 	if(self=[super initWithDict:dict]) {
         
-        // Set up sprites
-        [self initSpritesArray];
-        
+        if(![gameStateManager isLastLevel])
+            // Set up sprites
+            [self initSpritesArray];
+        else
+            [self schedule:@selector(gotoGameOver) interval:4.0];
         // Load up the HUD
         NSDictionary *hudDict = [dict objectForKey:@"HUD"];
         

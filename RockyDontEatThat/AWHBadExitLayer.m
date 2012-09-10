@@ -8,6 +8,7 @@
 
 #import "AWHBadExitLayer.h"
 #import "SimpleAudioEngine.h"
+#import "AWHSprite.h"
 
 
 @implementation AWHBadExitLayer

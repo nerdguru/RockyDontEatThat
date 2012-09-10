@@ -12,6 +12,7 @@
 #import "SimpleAudioEngine.h"
 #import "AWHSynchLabel.h"
 #import "AWHHighScoreLabels.h"
+#import "AWHSprite.h"
 
 
 @implementation AWHBaseLayer

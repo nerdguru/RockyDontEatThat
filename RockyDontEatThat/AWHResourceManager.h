@@ -18,6 +18,7 @@
 +(NSDictionary *)expandSpriteDict:(NSDictionary *)dict;
 -(NSDictionary *)levelDictionaryWithIndex:(int)index;
 -(NSArray *) getHighScores;
+-(int)lastLevel;
 -(void) saveHighScores;
 -(void) deleteHighScores;
 -(void) loadHighScoresPlist;

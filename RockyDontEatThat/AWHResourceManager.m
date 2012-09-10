@@ -68,6 +68,10 @@
     NSArray *levelArray = [resourcesDict objectForKey:@"Levels"];
     return [levelArray objectAtIndex:index];
 }
+-(int)lastLevel{
+    NSArray *levelArray = [resourcesDict objectForKey:@"Levels"];
+    return [levelArray count]-1;
+}
 
 -(NSArray *) getHighScores {
     return highScoreArray;
