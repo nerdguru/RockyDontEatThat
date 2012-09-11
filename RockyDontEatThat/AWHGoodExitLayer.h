@@ -13,6 +13,7 @@
 @interface AWHGoodExitLayer : AWHBaseLayer {
     CCLabelTTF *levelScore;
     CCLabelTTF *totalScore;
+    CCLabelTTF *remainingCalls;
     float scoreInterval;
 }
 

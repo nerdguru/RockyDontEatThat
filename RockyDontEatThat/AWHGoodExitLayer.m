@@ -7,10 +7,25 @@
 //
 
 #import "AWHGoodExitLayer.h"
+#import "AWHSprite.h"
 
 
 @implementation AWHGoodExitLayer
 
+-(void)addBonus {
+    if (gameStateManager.numLivesLeft == 0)
+        [self unschedule:@selector(addTotal)];
+    else {
+        gameStateManager.numLivesLeft--;
+        gameStateManager.totalScore = gameStateManager.totalScore + 10;
+        [remainingCalls setString:[NSString stringWithFormat:@"%d", gameStateManager.levelScore]];
+        [totalScore setString:[NSString stringWithFormat:@"%d", gameStateManager.totalScore]];
+    }
+}
+-(void)bonusDelay {
+    [self unschedule:@selector(bonusDelay)];
+    [self schedule:@selector(addBonus) interval:scoreInterval];
+}
 -(void)addTotal {
     
     gameStateManager.levelScore--;
@@ -19,6 +34,11 @@
     [totalScore setString:[NSString stringWithFormat:@"%d", gameStateManager.totalScore]];
     if(gameStateManager.levelScore == 0)
         [self unschedule:@selector(addTotal)];
+    
+    if(gameStateManager.levelScore == 0 && [gameStateManager isLastLevel])
+        // Bonus processing
+        [self schedule:@selector(bonusDelay) interval:1.0];
+    
 }
 -(void)firstDelay {
     [self unschedule:@selector(firstDelay)];
@@ -33,13 +53,18 @@
 {
 	if(self=[super initWithDict:dict]) {
         
+        NSDictionary *hudDict = [dict objectForKey:@"HUD"];
+        
         if(![gameStateManager isLastLevel])
             // Set up sprites
             [self initSpritesArray];
         else
-            [self schedule:@selector(gotoGameOver) interval:4.0];
+            [self schedule:@selector(gotoGameOver) interval:[[hudDict objectForKey:@"GameOverDelay"] intValue]];
         // Load up the HUD
-        NSDictionary *hudDict = [dict objectForKey:@"HUD"];
+        
+        AWHSprite *callsSprite=[[AWHSprite alloc] initWithDict:[hudDict objectForKey:@"Sprite"]];
+        [self addChild:callsSprite];
+        [callsSprite release];
         
         // Level Score Labels
 		CCLabelTTF *eatenLabel = [CCLabelTTF labelWithString:[hudDict objectForKey:@"ScoreLabel"] fontName:[hudDict objectForKey:@"Font"] fontSize:[scaleManager scaleFontSize:[[hudDict objectForKey:@"FontSize"] intValue]] ];
@@ -51,6 +76,16 @@
         [levelScore setColor:ccc3([[hudDict objectForKey:@"FontColorR"] intValue], [[hudDict objectForKey:@"FontColorG"] intValue], [[hudDict objectForKey:@"FontColorB"] intValue])]; 
 		levelScore.position =  [scaleManager scalePointX:[[hudDict objectForKey:@"ScorePositionX"] intValue]+ [[hudDict objectForKey:@"ScoreSpace"] intValue] andY:[[hudDict objectForKey:@"ScorePositionY"] intValue]];
 		[self addChild: levelScore];
+        
+        CCLabelTTF *callsLabel = [CCLabelTTF labelWithString:@"x" fontName:[hudDict objectForKey:@"Font"] fontSize:[scaleManager scaleFontSize:[[hudDict objectForKey:@"FontSize"] intValue]] ];        
+        [callsLabel setColor:ccc3([[hudDict objectForKey:@"FontColorR"] intValue], [[hudDict objectForKey:@"FontColorG"] intValue], [[hudDict objectForKey:@"FontColorB"] intValue])];
+		callsLabel.position =  [scaleManager scalePointX:[[hudDict objectForKey:@"CallsPositionX"] intValue] andY:[[hudDict objectForKey:@"CallsPositionY"] intValue]];
+		[self addChild: callsLabel];
+        
+        remainingCalls = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", gameStateManager.numLivesLeft] fontName:[hudDict objectForKey:@"Font"] fontSize:[scaleManager scaleFontSize:[[hudDict objectForKey:@"FontSize"] intValue]] ];
+        [remainingCalls setColor:ccc3([[hudDict objectForKey:@"FontColorR"] intValue], [[hudDict objectForKey:@"FontColorG"] intValue], [[hudDict objectForKey:@"FontColorB"] intValue])]; 
+		remainingCalls.position =  [scaleManager scalePointX:[[hudDict objectForKey:@"CallsPositionX"] intValue] + [[hudDict objectForKey:@"CallsSpace"] intValue]  andY:[[hudDict objectForKey:@"CallsPositionY"] intValue]];
+		[self addChild: remainingCalls];
         
         // Total Score Labels
         CCLabelTTF *totalScoreLabel = [CCLabelTTF labelWithString:[hudDict objectForKey:@"TotalScoreLabel"] fontName:[hudDict objectForKey:@"Font"] fontSize:[scaleManager scaleFontSize:[[hudDict objectForKey:@"FontSize"] intValue]] ];        

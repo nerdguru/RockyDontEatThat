@@ -1541,6 +1541,23 @@
 					<string>125</string>
 					<key>TotalScoreSpace</key>
 					<string>85</string>
+					<key>Sprite</key>
+					<dict>
+						<key>Name</key>
+						<string>phone.png</string>
+						<key>PositionX</key>
+						<string>455</string>
+						<key>PositionY</key>
+						<string>18</string>
+					</dict>
+					<key>CallsPositionX</key>
+					<string>425</string>
+					<key>CallsPositionY</key>
+					<string>18</string>
+					<key>CallsSpace</key>
+					<string>-12</string>
+					<key>GameOverDelay</key>
+					<string>10.0</string>
 				</dict>
 				<key>SynchLabel</key>
 				<dict>
@@ -2376,7 +2393,7 @@
 									<key>ActionType</key>
 									<string>Delay</string>
 									<key>Duration</key>
-									<string>7.5</string>
+									<string>8.5</string>
 								</dict>
 								<dict>
 									<key>ActionType</key>
@@ -2478,6 +2495,23 @@
 					<string>125</string>
 					<key>TotalScoreSpace</key>
 					<string>85</string>
+					<key>Sprite</key>
+					<dict>
+						<key>Name</key>
+						<string>phone.png</string>
+						<key>PositionX</key>
+						<string>455</string>
+						<key>PositionY</key>
+						<string>18</string>
+					</dict>
+					<key>CallsPositionX</key>
+					<string>425</string>
+					<key>CallsPositionY</key>
+					<string>18</string>
+					<key>CallsSpace</key>
+					<string>-12</string>
+					<key>GameOverDelay</key>
+					<string>10.0</string>
 				</dict>
 				<key>SynchLabel</key>
 				<dict>
@@ -3243,7 +3277,7 @@
 									<key>ActionType</key>
 									<string>Delay</string>
 									<key>Duration</key>
-									<string>7.5</string>
+									<string>8.5</string>
 								</dict>
 								<dict>
 									<key>ActionType</key>
@@ -3345,6 +3379,23 @@
 					<string>125</string>
 					<key>TotalScoreSpace</key>
 					<string>85</string>
+					<key>Sprite</key>
+					<dict>
+						<key>Name</key>
+						<string>phone.png</string>
+						<key>PositionX</key>
+						<string>455</string>
+						<key>PositionY</key>
+						<string>18</string>
+					</dict>
+					<key>CallsPositionX</key>
+					<string>425</string>
+					<key>CallsPositionY</key>
+					<string>18</string>
+					<key>CallsSpace</key>
+					<string>-12</string>
+					<key>GameOverDelay</key>
+					<string>10.0</string>
 				</dict>
 				<key>SynchLabel</key>
 				<dict>
@@ -4110,7 +4161,7 @@
 									<key>ActionType</key>
 									<string>Delay</string>
 									<key>Duration</key>
-									<string>7.5</string>
+									<string>8.5</string>
 								</dict>
 								<dict>
 									<key>ActionType</key>
@@ -4212,6 +4263,23 @@
 					<string>125</string>
 					<key>TotalScoreSpace</key>
 					<string>85</string>
+					<key>Sprite</key>
+					<dict>
+						<key>Name</key>
+						<string>phone.png</string>
+						<key>PositionX</key>
+						<string>455</string>
+						<key>PositionY</key>
+						<string>18</string>
+					</dict>
+					<key>CallsPositionX</key>
+					<string>425</string>
+					<key>CallsPositionY</key>
+					<string>18</string>
+					<key>CallsSpace</key>
+					<string>-12</string>
+					<key>GameOverDelay</key>
+					<string>10.0</string>
 				</dict>
 				<key>SynchLabel</key>
 				<dict>
